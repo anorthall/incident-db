@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Editing high scores{% endblock %}
+{% block description %}A leaderboard of who has made the most edits.{% endblock %}
+
+{% block content %}
+  <h1 class="page-header">Editing leaderboard</h1>
+  <div class="table-responsive">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Editor</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for user, score in scores %}
+          {% if score > 0 %}
+            <tr>
+              <th scope="row">{{ forloop.counter }}</th>
+              <td>{{ user.name }}</td>
+              <td>{{ score }}</td>
+            </tr>
+          {% endif %}
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

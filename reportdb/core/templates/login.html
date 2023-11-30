@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}Sign in to ACA DB{% endblock %}
+
+{% block content %}
+  <div class="mw-600px mx-auto">
+    <h1 class="page-header">Login</h1>
+
+    {% crispy form %}
+
+    <p class="mt-3 text-center text-muted">
+      If you have any issues, please email <code>andrew@caver.dev</code>.
+    </p>
+  </div>
+{% endblock content %}
