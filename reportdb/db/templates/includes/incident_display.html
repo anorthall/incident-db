@@ -1,0 +1,74 @@
+<dl class="row g-1">
+  <dt class="col-4 col-xl-2">Publication</dt>
+  <dd class="col-8 col-xl-4">
+    <a class="text-decoration-none" href="{{ incident.publication.get_absolute_url }}">
+      {{ incident.publication|default:"<span class='text-muted'>Not recorded</span>" }}
+    </a>
+
+    {% if incident.publication and incident.publication_page %}
+      {% if incident.publication.get_pdf_url %}
+        <a class="link-secondary text-decoration-none" href="{{ incident.publication.get_pdf_url }}">
+          page {{ incident.publication_page }} <i class="bi bi-file-pdf"></i>
+        </a>
+      {% else %}
+        <span class="text-muted">page {{ incident.publication_page }}</span>
+      {% endif %}
+    {% endif %}
+  </dd>
+
+  <dt class="col-4 col-xl-2">Date</dt>
+  <dd class="col-8 col-xl-4">
+    {{ incident.date|date:"jS M Y" }}
+    {% if incident.approximate_date %}<span class="text-muted">approximate</span>{% endif %}
+  </dd>
+
+  <dt class="col-4 col-xl-2">Cave</dt>
+  <dd class="col-8 col-xl-4">{{ incident.cave|default:"Unknown" }}</dd>
+
+  <dt class="col-4 col-xl-2">State</dt>
+  <dd class="col-8 col-xl-4">{{ incident.state|default:"Unknown" }}</dd>
+
+  <dt class="col-4 col-xl-2">County</dt>
+  <dd class="col-8 col-xl-4">{{ incident.county|default:"Unknown" }}</dd>
+
+  <dt class="col-4 col-xl-2">Country</dt>
+  <dd class="col-8 col-xl-4">{{ incident.country|default:"Unknown" }}</dd>
+
+  <dt class="col-4 col-xl-2">Category</dt>
+  <dd class="col-8 col-xl-4">{{ incident.get_category_display }}</dd>
+
+  <dt class="col-4 col-xl-2">Incident type</dt>
+  <dd class="col-8 col-xl-4">{{ incident.get_incident_type_display }}</dd>
+
+  <dt class="col-4 col-xl-2">Primary cause</dt>
+  <dd class="col-8 col-xl-4">{{ incident.primary_cause|default:"Unknown" }}</dd>
+
+  <dt class="col-4 col-xl-2">Secondary cause</dt>
+  <dd class="col-8 col-xl-4">{{ incident.secondary_cause|default:"&mdash;" }}</dd>
+
+  <dt class="col-4 col-xl-2">Group type</dt>
+  <dd class="col-8 col-xl-4">{{ incident.get_group_type_display }}</dd>
+
+  <dt class="col-4 col-xl-2">Group size</dt>
+  <dd class="col-8 col-xl-4">{{ incident.group_size|default:"Unknown" }}</dd>
+
+  <dt class="col-4 col-xl-2">Aid type</dt>
+  <dd class="col-8 col-xl-4">{{ incident.get_aid_type_display }}</dd>
+
+  <dt class="col-4 col-xl-2">Source</dt>
+  <dd class="col-8 col-xl-4">{{ incident.get_source_display }}</dd>
+
+  <dt class="col-4 col-xl-2">Incident flags</dt>
+  <dd class="col-8 col-xl-4">{% include "includes/incident_flags.html" %}</dd>
+
+  {% if data_status is not False %}
+    <dt class="col-4 col-xl-2">Data status</dt>
+    <dd class="col-8 col-xl-4">
+      {% if incident.approved %}
+        Complete <span class="text-success"><i class="ms-1 bi bi-check-circle-fill"></i></span>
+      {% else %}
+        <span class="text-danger fw-bolder">Incomplete <i class="ms-1 bi bi-exclamation-triangle-fill"></i></span>
+      {% endif %}
+    </dd>
+  {% endif %}
+</dl>

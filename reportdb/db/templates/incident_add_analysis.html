@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block main_content_class %}smaller-container{% endblock %}
+
+{% block title %}Add analysis to {{ incident.cave }}{% endblock %}
+
+{% block content %}
+  {% include "includes/editing_notes_warning.html" %}
+
+  <h1 class="page-header">
+    Add report analysis
+  </h1>
+
+  {% include "includes/incident_display.html" %}
+  {% include "includes/injured_cavers.html" %}
+
+  <h2 class="subtitle underline">Add analysis text</h2>
+  <div class="alert alert-info text-start mb-4">
+    <div class="mb-3">
+      <strong><i class="bi bi-info-circle-fill me-2"></i>What am I doing?</strong>
+    </div>
+
+    <p>
+      You are viewing an <strong>already approved</strong> report which has a blank analysis section. Most likely, the
+      report was approved before the analysis section was added to the report form. Please check the report text to see
+      if it contains analysis, and if so, remove it from the report text field and add it to the analysis field below.
+    </p>
+
+    <p>
+      If the report text does not contain analysis, you can click the "Report contains no analysis" button below to
+      remove the report from the task queue.
+    </p>
+
+    <p class="mb-0">
+      If the analysis section of the existing report contains a header, such as <code>Analysis:</code>, this should be
+      removed when copying the text.
+    </p>
+  </div>
+
+  <form method="post">
+    {% crispy form %}
+    <div class="d-flex flex-column mt-4">
+      <input name="submit" type="submit" value="Save and start next task" class="btn btn-success mb-2">
+      <input name="viewreport" type="submit" value="Save and view report" class="btn btn-outline-primary mb-2">
+      <input name="editreport" type="submit" value="Save and edit report" class="btn btn-outline-secondary mb-2">
+      <input name="noanalysis" type="submit" value="Report contains no analysis" class="btn btn-outline-danger mb-2">
+    </div>
+  </form>
+{% endblock %}

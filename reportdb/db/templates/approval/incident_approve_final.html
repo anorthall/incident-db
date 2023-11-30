@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+
+{% block main_content_class %}smaller-container{% endblock %}
+
+{% block title %}Approve incident in {{ incident.cave }}{% endblock %}
+
+{% block content %}
+  <div class="progress mb-3" role="progressbar" aria-label="Form progress" aria-valuenow="Step 5 of 5" aria-valuemin="0" aria-valuemax="100" style="height: 20px">
+    <div class="progress-bar" style="width: 100%">100%</div>
+  </div>
+
+  <h1 class="page-header">
+    <span class="extra d-none d-sm-inline">Approving {% if incident.cave %}</span> {{ incident.cave }}{% else %}on</span> {{ incident.date|date }}{% endif %}
+  </h1>
+  <p class="lead">
+    Please review the entire incident below and check you are happy with it.
+  </p>
+
+  <p>
+    You may wish to go back to the following approval steps to make changes:
+  </p>
+
+  <ol class="mb-4">
+    {% if incident.data_input_source == incident.DataInput.AI %}
+      <li><a class="text-decoration-none" href="{% url 'db:approve_incident_date' incident.pk %}">Approve incident date and location</a></li>
+    {% endif %}
+    <li><a class="text-decoration-none" href="{% url 'db:approve_report_text' incident.pk %}">Approve report text</a></li>
+    <li><a class="text-decoration-none" href="{% url 'db:approve_injured_cavers' incident.pk %}">Approve injured cavers</a></li>
+    <li><a class="text-decoration-none" href="{% url 'db:approve_metadata' incident.pk %}">Approve incident metadata</a></li>
+    <li><a class="text-decoration-none" href="{% url 'db:approve_incident_flags' incident.pk %}">Approve incident flags</a></li>
+  </ol>
+
+  {% if incident.editing_notes %}
+    <div class="alert alert-danger text-start">
+      <div class="mb-3">
+        <strong><i class="bi bi-exclamation-triangle-fill me-2"></i> Editing notes</strong>
+      </div>
+      <p>
+        This incident has the following editing notes:
+      </p>
+
+      <div class="indent my-3">
+        {{ incident.editing_notes|linebreaks }}
+      </div>
+
+      <p>
+        Please resolve any issues mentioned in these notes and clear the editing notes field before approving the incident.
+      </p>
+
+      <p class="mb-0">
+        Editing notes can be updated on the
+        <a target="_blank" href="{% url 'db:incident_edit' pk=incident.pk %}">edit incident</a> page.
+      </p>
+    </div>
+  {% endif %}
+
+  {% with incident.empty_fields as empty_fields %}
+    {% if empty_fields %}
+      <div class="alert alert-warning text-start">
+        <div class="mb-3">
+          <strong><i class="bi bi-exclamation-triangle-fill me-2"></i> Missing fields</strong>
+        </div>
+
+        <p>The following fields are still empty or unknown:</p>
+        <ul class="mb-3">
+          {% for field in empty_fields %}
+            <li>{{ field }}</li>
+          {% endfor %}
+        </ul>
+        <p class="mb-0">
+          You may approve the incident without proper values for these fields as long as you are
+          confident they cannot be filled out.
+        </p>
+      </div>
+    {% endif %}
+  {% endwith %}
+
+  {% if not incident.injured_cavers.all %}
+    <div class="alert alert-warning text-start">
+      <div class="mb-3">
+        <strong><i class="bi bi-exclamation-triangle-fill me-2"></i> No injured cavers</strong>
+      </div>
+      <p class="mb-0">
+        There are no injured cavers listed for this incident. You may approve the incident in this state, as
+        long as you are confident that it is correct.
+      </p>
+    </div>
+  {% endif %}
+
+  <hr class="my-4">
+
+  {% include "includes/incident_display.html" with data_status=False %}
+  {% include "includes/injured_cavers.html" with allow_editing_injured_cavers=False %}
+
+  {% if incident.incident_report %}
+    <h3 class="section">Incident report</h3>
+    {{ incident.incident_report|linebreaks }}
+  {% endif %}
+
+  {% if incident.incident_analysis %}
+    <h3 class="section">Incident analysis</h3>
+    {{ incident.incident_analysis|linebreaks }}
+  {% endif %}
+
+  {% if incident.incident_summary %}
+    <h3 class="section">Summary</h3>
+    {{ incident.incident_summary|linebreaks }}
+  {% endif %}
+
+  {% if incident.incident_references %}
+    <h3 class="section">References</h3>
+    {{ incident.incident_references|linebreaks }}
+  {% endif %}
+
+  {% if incident.incident_notes %}
+    <h3 class="section">Notes</h3>
+    {{ incident.incident_notes|linebreaks }}
+  {% endif %}
+
+  <hr class="my-4">
+
+  <div class="d-flex justify-content-end align-items-center mt-4">
+    <a href="{% url 'db:approve_incident_flags' pk=incident.pk %}" class="btn btn-secondary me-2">Go back</a>
+    <button type="button" data-bs-toggle="modal" data-bs-target="#approveModal" class="btn btn-success">Approve <i class="ms-1 bi bi-check-circle-fill"></i></button>
+  </div>
+
+  <div class="modal fade" id="approveModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">Approve incident</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          {% if not incident.editing_notes %}
+            Is this incident fully complete and ready for publication online?
+          {% else %}
+            <p>
+              This incident has editing notes which are preventing approval. Please review the alerts
+              on the page and resolve any issues before approving the incident.
+            </p>
+
+            <p>
+              Once the editing notes have been removed, please refresh the page and try again.
+            </p>
+          {% endif %}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          {% if not incident.editing_notes %}
+            <form method="post">
+              {% csrf_token %}
+              <button class="btn btn-success">Approve <i class="ms-1 bi bi-check-circle-fill"></i></button>
+            </form>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

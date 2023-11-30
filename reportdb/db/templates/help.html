@@ -1,0 +1,450 @@
+{% extends "base.html" %}
+
+{% block main_content_class %}smaller-container{% endblock %}
+
+{% block title %}Help{% endblock %}
+{% block description %}General information for editors and project volunteers.{% endblock %}
+
+{% block content %}
+  <h1 class="page-header">Help for Editors</h1>
+  <p class="lead">This page provides guidance on editing incidents.</p>
+
+  <h2 class="subtitle underline">General principles</h2>
+  <p>
+    The purpose of this project is to make information about caving incidents available in a modern
+    and accessible format. For this to be done, incidents need to be categorised, and the
+    <strong>metadata</strong> relating to an incident &mdash; such as the cave name or the type of group
+    involved &mdash; need to be separated from the content of the incident report itself.
+  </p>
+
+  <h3 class="section less-mt">Editing UI</h3>
+  <p>
+    When editing an incident, fields which do not have a value, or are marked as <code>None</code> or <code>Unknown</code>,
+    are highlighted in red. This does not mean that you are <em>required</em> to fill out these fields before proceeding.
+    Rather, it is simply to draw your attention to data that is not held in the database. If you have reviewed the incident
+    report and are unable to populate the field based on the data available, you can leave it as it is.
+  </p>
+
+  <h3 class="section less-mt">Data normalisation</h3>
+  <p>
+    Care should be taken to ensure that information relating to each incident is structured within appropriate fields. The
+    <code>Incident report</code> field need not contain a header with the cave name, as the cave name is already stored in the
+    incident metadata. Similarly, analysis of the incident should not be in the <code>Incident report</code> field
+    as <code>Incident analysis</code> is a separate field. This normalisation of data is critical for producing a consistent
+    and accessible database and the principle applies to all fields, not just the ones mentioned above.
+  </p>
+
+  <h3 class="section less-mt">AI generated data</h3>
+  <p>
+    Incidents are initially extracted from the original ACA Journal PDFs using OCR and then analysed by an AI model which
+    extracts metadata and properly formats the incident report. <strong>AI models are prone to errors,</strong> and it is
+    important that editors thoroughly check the data which has been generated.
+  </p>
+
+  <p>
+    The <code>Incident report</code> field is automatically compared to the original and flagged if it is significantly different, which
+    helps to mitigate the possibility of this information being incorrect. In other cases, however, the AI is asked to make a subjective
+    judgement, such as when populating the <code>Category</code> or <code>Primary cause</code> fields. Editors should take extra
+    time in reviewing these fields and not hesitate to change them if they are incorrect.
+  </p>
+
+  <h3 class="section less-mt">Approval process</h3>
+  <p>
+    The incident approval process should be fairly straightforward and is designed to ensure that the data is correct and
+    consistent. The process consists of either five or six steps, depending on whether the incident was processed by artificial
+    intelligence or not.
+  </p>
+
+  <p>
+    When clicking the <code>Approve reports</code> menu option, you will be presented with the following pages:
+  </p>
+
+  <ol>
+    <li><em>AI incidents</em> &mdash; a page to check the date of the incident is correct.</li>
+    <li><em>All incidents</em> &mdash; a page to check the incident report, analysis, references and summary.</li>
+    <li><em>All incidents</em> &mdash; a page to add any injured cavers to the injured cavers table.</li>
+    <li><em>All incidents</em> &mdash; a page to check the incident metadata.</li>
+    <li><em>All incidents</em> &mdash; a page to check the incident flags.</li>
+    <li><em>All incidents</em> &mdash; a final review page before the incident is approved and published.</li>
+  </ol>
+
+  <p>
+    Each page will display either the original pre-AI-processing text, or the edited incident report, as a reference to help you
+    determine if the data is correct.
+  </p>
+
+  <p>
+    It is strongly recommended to read the text at the top of each approval page, at least initially, as this changes
+    depending on the type of incident being approved and provides guidance on what to look for.
+  </p>
+
+  <h3 class="section less-mt">Errors after approval</h3>
+  <p>
+    Incidents may still be edited after they have been approved and editors are encouraged to do so, should they spot any
+    errors that need correction. Simply select the "Edit incident" option from the menu and make the necessary changes.
+  </p>
+
+  <p>
+    Editing an incident that has been approved will not 'unapprove' it, and the incident will remain published.
+  </p>
+
+  <h2 class="subtitle underline" id="metadataHelp">Incident metadata</h2>
+  <h3 class="section less-mt">Date</h3>
+  <p>
+    The date of the incident. For some incidents, the precise date is not known, in which case the closest month or year
+    should be selected, and the <code>Approximate date</code> checkbox used. For example, if we only know that the incident
+    occurred in 1970, the date should be entered as <code>1970-01-01</code> and the <code>Approximate date</code> checkbox
+    selected. If the incident occurred in June 1970, but no date is given, the date should be entered as <code>1970-06-01</code>
+    and the <code>Approximate date</code> checkbox selected.
+  </p>
+
+  <h3 class="section less-mt">Cave</h3>
+  <p>
+    The name of the cave in which the incident occurred. If the cave name is not known, you must enter <code>Unknown</code>.
+  </p>
+
+  <h3 class="section less-mt">State</h3>
+  <p>
+    The state in which the incident occurred. Always use the full name of the state &mdash; New York, not NY. If the state
+    is not known, the field must be left blank.
+  </p>
+
+  <h3 class="section less-mt">County</h3>
+  <p>
+    The full name of the county in which the incident occurred. If the county is not known, the field must be left blank.
+  </p>
+
+  <h3 class="section less-mt">Country</h3>
+  <p>
+    The country in which the incident occurred. If the incident occurred in the United States, you must enter <code>USA</code>.
+    For all other countries, the full name of the country should be used. If the country is not known, you must enter
+    <code>Unknown</code>.
+  </p>
+
+  <h3 class="section less-mt">Category</h3>
+  <p>
+    The overall category of the incident. Most incidents will fall into either the <code>Caving</code> or <code>Cave diving</code>
+    categories.
+  </p>
+
+   <div class="table-responsive">
+    <table class="table table-sm">
+      <thead>
+        <tr>
+          <th scope="col">Category</th>
+          <th scope="col">Meaning</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td><code>Unknown</code></td>
+          <td>It is not possible to determine the category from the incident report.</td>
+        </tr>
+
+        <tr>
+          <td><code>Caving</code></td>
+          <td>The incident involves a trip into a cave, mine, or other underground space.</td>
+        </tr>
+
+        <tr>
+          <td><code>Caving related</code></td>
+          <td>
+            The incident involves a cave, mine, or other underground space but is not typically caving related &mdash; for example
+            a crime committed in a cave.
+          </td>
+        </tr>
+
+        <tr>
+          <td><code>Cave diving</code></td>
+          <td>
+            The incident involves a trip into a cave, mine, or other underground space in which diving equipment was used.
+          </td>
+        </tr>
+
+        <tr>
+          <td><code>Other</code></td>
+          <td>
+            The incident does not fit into any of the above categories. Enter more information in the <code>Notes</code> field if necessary.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="section less-mt">Primary type</h3>
+  <p>
+    Almost all caving related incidents can be categorised into one of the types listed in the dropdown. Please select the one
+    which best describes the incident. If the incident does not fit into any of the available types, you must enter <code>Other</code>.
+  </p>
+
+  <h3 class="section less-mt">Secondary and tertiary type</h3>
+  <p>
+    These fields are optional and should only be used if the incident can be categorised into more than one type. For example,
+    if a caver suffered a fall which was caused by faulty equipment, the primary type would be <code>Caver fall</code> and the
+  secondary type would be <code>Equipment problems</code>. In most cases, <code>None</code> will be selected.
+
+  <h3 class="section less-mt">Primary and secondary cause</h3>
+  <p>
+    These fields are a free form text description of what you feel the causes of the incident were. The secondary cause field should
+    only be used when there was clearly more than one cause. Some examples of values found in these fields may be:
+  </p>
+
+  <ul>
+    <li>Not properly prepared</li>
+    <li>Poor judgement</li>
+    <li>Inaccurate weather forecast</li>
+    <li>Lack of training</li>
+  </ul>
+
+  <p>
+    These fields are optional, but it is strongly recommended that you fill in at least the <code>Primary cause</code> field. If no cause
+    can be determined, you must leave both of these fields blank.
+  </p>
+
+  <h3 class="section less-mt">Aid type</h3>
+  <p>
+    The type of aid (rescue) required for this incident. <code>Unknown</code> must only be selected if it is not possible to determine if
+    aid was required or not, otherwise <code>None</code> must be used to indicate that no organised rescue took place. If SPAR (self-rescue)
+    techniques were used but no external aid was required, <code>None</code> must be selected.
+  </p>
+
+  <p>
+    If more than one category is met, such as both <code>Surface aid</code> and <code>Underground aid</code>, the most severe category of intervention
+    must be selected, which would be <code>Underground aid</code> in this case. If someone died and their body was recovered from a cave,
+    <code>Body recovery</code> must be selected.
+  </p>
+
+  <div class="table-responsive">
+    <table class="table table-sm">
+      <thead>
+        <tr>
+          <th scope="col">Field</th>
+          <th scope="col">Meaning</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td><code>Unknown</code></td>
+          <td>It is not possible to determine type of aid delivered from the report.</td>
+        </tr>
+
+        <tr>
+          <td><code>None</code></td>
+          <td>No organised rescue took place. Self-rescue <em>may</em> have taken place.</td>
+        </tr>
+
+        <tr>
+          <td><code>Surface aid</code></td>
+          <td>Aid was provided outside of the cave, such as an ambulance attending after cavers exited.</td>
+        </tr>
+
+        <tr>
+          <td><code>Underground aid</code></td>
+          <td>
+            Aid was provided inside of the cave, such as an organised search party to find lost cavers, or an injured caver was hauled out.
+          </td>
+        </tr>
+
+        <tr>
+          <td><code>Body recovery</code></td>
+          <td>
+            Someone died inside of the cave and their body was recovered by a rescue team.
+          </td>
+        </tr>
+
+        <tr>
+          <td><code>Aid on standby</code></td>
+          <td>
+            A rescue team was organised, and may have gone to the cave, but no aid was required.
+          </td>
+        </tr>
+
+        <tr>
+          <td><code>Other</code></td>
+          <td>
+            Any aid provided which does not fit into the above categories.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="section less-mt">Group type</h3>
+  <p>
+    The type of group involved in the incident.
+  </p>
+  <p>
+    This field can be very subjective, and your judgement should be used, in particular when deciding between <code>Cavers</code> and
+    <code>Novice cavers</code> or between <code>Novice cavers</code> and <code>Non-cavers</code>.
+  </p>
+
+  <h3 class="section less-mt">Group size</h3>
+  <p>
+    The total number of people in the underground group when the incident occurred &mdash; <strong>not</strong> the number of injured people or the number
+    of people directly involved. Do not include any rescuers that were not part of the original group. If the group size is not known, you must leave
+    this field blank.
+  </p>
+
+  <h3 class="section less-mt">Source</h3>
+  <p>
+    This is the source of the information contained within the original incident report. It is not who <em>submitted</em> it to the ACA Journal, nor
+    who wrote the report, but rather who provided the original information regarding the incident. For example, if the incident report is based on a
+    report by a newspaper, the source would be <code>Third party</code>. If the source is not known, you must select <code>Unknown</code>.
+  </p>
+
+    <div class="table-responsive">
+    <table class="table table-sm">
+      <thead>
+        <tr>
+          <th scope="col">Field</th>
+          <th scope="col">Meaning</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td><code>Unknown</code></td>
+          <td>It is not possible to determine the source of the information.</td>
+        </tr>
+
+        <tr>
+          <td><code>Injured caver</code></td>
+          <td>Someone who was underground and injured as part of the incident provided the information.</td>
+        </tr>
+
+        <tr>
+          <td><code>Member of injured caver's party</code></td>
+          <td>Someone who was underground at the time of the incident but not injured provided the information.</td>
+        </tr>
+
+        <tr>
+          <td><code>Third party</code></td>
+          <td>
+            The information was provided by someone who was not present at the time of the incident.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="section less-mt" id="incidentFlagsHelp">Incident flags</h3>
+  <p>
+    A number of <em>flags</em> exist, to mark incidents which have certain characteristics. If an incident meets the criteria for a flag,
+    the checkbox must be selected. You may select any, or none, of the flags for any given incident.
+  </p>
+
+  <div class="table-responsive">
+    <table class="table table-sm">
+      <thead>
+        <tr>
+          <th scope="col">Flag</th>
+          <th scope="col">Meaning</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td><code>Fatality</code></td>
+          <td>Someone died as part of, or as a result of, the incident.</td>
+        </tr>
+
+        <tr>
+          <td><code>Injury</code></td>
+          <td>Someone was physically injured as part of the incident. This flag should also be selected if there was a fatality.</td>
+        </tr>
+
+        <tr>
+          <td><code>Multiple incidents</code></td>
+          <td>
+            The caving trip contained a series of incidents which are not directly related. For example, several falls, or two unrelated injuries.
+            Some subjectivity may be required to determine if the incidents are related or not.
+          </td>
+        </tr>
+
+        <tr>
+          <td><code>Rescue duration over 24 hours</code></td>
+          <td>
+            A rescue team was on-site at the incident for more than 24 hours. This does not include the time taken to travel to the cave or any time
+            that a rescue team was on standby but not at the location of the incident.
+          </td>
+        </tr>
+
+        <tr>
+          <td><code>Vertical incident</code></td>
+          <td>
+            The incident involved the usage of vertical caving techniques. Do not include simple free climbing in this category. As a general guide, this
+            flag should be selected if some equipment, such as a rope, or ladders, was required to ascend or descend the cave.
+          </td>
+        </tr>
+
+        <tr>
+          <td><code>SPAR</code></td>
+          <td>
+            Self-rescue (SPAR) techniques were used by the caving group to resolve the incident. This does not include any techniques used by any external
+            rescue teams which attended later. An example of SPAR would be a caver who fell and injured themselves but was able to exit the cave without
+            assistance from their group, or a group which set up a hauling system themselves. This flag must be selected if the SPAR was unsuccessful
+            and organised rescue later took place.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="subtitle underline">Incident text fields</h2>
+  <h3 class="section less-mt">Incident report</h3>
+  <p>
+    The original text of the incident report from the ACA Journal or submitter of the incident. This field should contain a
+    factual description of the events that took place underground <strong>only</strong> and should not contain any
+    analysis or references to external publications or resources.
+  </p>
+
+  <h3 class="section less-mt">Incident analysis</h3>
+  <p>
+    Any analysis of the incident which was included in the original publication. Do not provide your own analysis.
+  </p>
+
+  <h3 class="section less-mt">Summary</h3>
+  <p>
+    A short (maximum 400 characters) summary of the incident. This should be a factual description of the incident, and you
+    may provide the summary yourself. Examples of short summaries may be:
+  </p>
+
+  <ul>
+    <li>John Smith (24), fell 10 feet whilst attempting a free climb and left the cave unaided.</li>
+    <li>A group of four cavers were trapped by rising water and were rescued by a team of six ten hours later.</li>
+  </ul>
+
+  <h3 class="section less-mt">References</h3>
+  <p>
+    A list of references to external publications, resources, or websites which contain information about the incident. This
+    could be caving journal articles, newspaper websites, or other sources of information such as names of cavers who reported
+    the incident. If the reference is to a printed publication, the name, author, date, year and page number must be provided if
+    available.
+  </p>
+
+  <p>Each reference must be entered on a new line.</p>
+
+  <h3 class="section less-mt">Notes</h3>
+  <p>
+    Any other information which may be relevant to someone reading the incident. Some examples may be:
+  </p>
+
+  <ul>
+    <li>Some parts of the incident report were missing from the original publication.</li>
+    <li>This incident report was later found to be inaccurate in the respect of ...</li>
+  </ul>
+
+  <h3 class="section less-mt">Editing notes</h3>
+  <p>
+    The editing notes field is only visible to people who are signed in as an editor of the database. It should contain information
+    relating to editing only. If the editing notes field is populated, it will be considered as having <em>items to action</em> and
+    it will not be possible to approve it. An example of text contained in the editing notes field may be:
+  </p>
+
+  <ul>
+    <li>Is this cave name correct? I think it is misspelt.</li>
+    <li>Is this incident a duplicate of the incident on 1984-05-01?</li>
+  </ul>
+{% endblock %}

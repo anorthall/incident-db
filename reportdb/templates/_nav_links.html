@@ -1,0 +1,83 @@
+{% load active_link_tags %}
+
+{% if incident %}
+  <h5 class="header">Incident</h5>
+  <a class="nav-link {% active_link "db:incident_detail" pk=incident.pk %}" href="{% url "db:incident_detail" pk=incident.pk %}">Overview</a>
+
+  {% if user.is_authenticated and user.is_editor %}
+    <a class="nav-link {% active_link 'db:incident_edit' pk=incident.pk %}" href="{% url 'db:incident_edit' incident.pk %}">Edit incident</a>
+
+    {% if incident.approved %}
+      <form action="{% url 'db:incident_unapprove' pk=incident.pk %}" method="post" id="unapproveIncidentForm">
+        {% csrf_token %}
+        <a class="nav-link" href="javascript:{}" onclick="document.getElementById('unapproveIncidentForm').submit(); return false;">
+          Unapprove incident
+        </a>
+      </form>
+    {% else %}
+      {% if incident.data_input_source == incident.DataInput.AI %}
+        <a class="nav-link" href="{% url 'db:approve_incident_date' incident.pk %}">Approve incident</a>
+      {% else %}
+        <a class="nav-link" href="{% url 'db:approve_report_text' incident.pk %}">Approve incident</a>
+      {% endif %}
+    {% endif %}
+
+    {% if not incident.incident_report %}
+      <a class="nav-link {% active_link 'db:add_report_text' pk=incident.pk %}" href="{% url 'db:add_report_text' incident.pk %}">Add report text</a>
+    {% endif %}
+  {% endif %}
+
+  {% if incident.publication %}
+    {% if incident.publication.pdf_file %}
+      <a class="nav-link" href="{{ incident.publication.pdf_file.url }}">View PDF</a>
+    {% endif %}
+  {% endif %}
+{% endif %}
+
+{% if user.is_authenticated and user.is_editor %}
+  {% if report_text_pending or analysis_pending or approval_pending %}
+    <h5 class="header">Tasks <small>{{ total_tasks }}</small></h5>
+
+    {% if report_text_pending %}
+      <a class="nav-link" href="{% url 'db:find_report_to_add_text' %}">
+        Add text <small class="text-muted">{{ report_text_pending }}</small>
+      </a>
+    {% endif %}
+
+    {% comment %}  Disabled for now as not required
+    {% if analysis_pending %}
+      <a class="nav-link" href="{% url 'db:find_report_to_add_analysis' %}">
+        Add analysis <small class="text-muted">{{ analysis_pending }}</small>
+      </a>
+    {% endif %}
+    {% endcomment %}
+
+    {% if approval_pending %}
+      <a class="nav-link" href="{% url 'db:find_report_to_approve' %}">
+        Approve reports <small class="text-muted">{{ approval_pending }}</small>
+      </a>
+    {% endif %}
+  {% endif %}
+{% endif %}
+
+<h5 class="header">Project</h5>
+
+<a class="nav-link {% active_link "db:help" %}" href="{% url "db:help" %}">Help</a>
+<a class="nav-link {% active_link "db:about" %}" href="{% url "db:about" %}">About</a>
+<a class="nav-link" href="{% url "db:random_incident" %}">Random</a>
+
+{% if user.is_authenticated and user.is_editor %}
+  <a class="nav-link {% active_link 'editlog:index' %}" href="{% url "editlog:index" %}">Edit log</a>
+  <a class="nav-link {% active_link 'editlog:scores' %}" href="{% url "editlog:scores" %}">Scores</a>
+{% endif %}
+
+<h5 class="header">Account</h5>
+{% if user.is_authenticated %}
+  {% if user.is_superuser %}
+    <a class="nav-link {% active_link "core:admin" %}" href="{% url "admin:index" %}">Admin</a>
+  {% endif %}
+  <a class="nav-link {% active_link "core:password" %}" href="{% url "core:password" %}">Password</a>
+  <a class="nav-link" href="{% url "core:logout" %}">Sign out</a>
+{% else %}
+  <a class="nav-link {% active_link "core:login" %}" href="{% url "core:login" %}?next={{ request.path }}">Sign in</a>
+{% endif %}

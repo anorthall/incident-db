@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block main_content_class %}smaller-container{% endblock %}
+
+{% block title %}Incident in {{ incident.cave }} on {{ incident.date }}{% endblock %}
+{% block description %}An ACA report regarding an incident in {{ incident.cave }} on {{ incident.date }}.{% endblock %}
+
+{% block content %}
+  {% include "includes/incident_header.html" %}
+  <div class="p-1"></div>
+  {% include "includes/incident_display.html" %}
+  {% include "includes/injured_cavers.html" with allow_editing_injured_cavers=True %}
+
+  {% if incident.incident_report %}
+    <h3 class="section">Incident report</h3>
+    {{ incident.incident_report|linebreaks }}
+  {% endif %}
+
+  {% if incident.incident_analysis %}
+    <h3 class="section">Incident analysis</h3>
+    {{ incident.incident_analysis|linebreaks }}
+  {% endif %}
+
+  {% if incident.incident_summary %}
+    <h3 class="section">Summary</h3>
+    {{ incident.incident_summary|linebreaks }}
+  {% endif %}
+
+  {% if incident.incident_references %}
+    <h3 class="section">References</h3>
+    {{ incident.incident_references|linebreaks }}
+  {% endif %}
+
+  {% if incident.incident_notes %}
+    <h3 class="section">Notes</h3>
+    {{ incident.incident_notes|linebreaks }}
+  {% endif %}
+
+  {% if user.is_authenticated and user.is_editor and incident.editing_notes %}
+    <h3 class="section less-mt">Editing notes</h3>
+    {{ incident.editing_notes|linebreaks }}
+  {% endif %}
+
+  {% include "includes/incident_last_updated.html" %}
+{% endblock content %}
