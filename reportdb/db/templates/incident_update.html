@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block main_content_class %}smaller-container{% endblock %}
+
+{% block title %}Edit incident in {{ incident.cave }}{% endblock %}
+
+{% block content %}
+  {% include "includes/incident_header.html" with verb="editing" %}
+
+  <p class="lead">
+    Fields that do not have a value are highlighted in red for your attention.
+  </p>
+  <p class="form-text">
+    For more detailed help, and a style guide, see the
+    <a target="_blank" href="{% url 'db:help' %}">help page</a>.
+  </p>
+
+  <hr class="my-4">
+
+  <form method="post" id="incidentUpdateForm">
+    {% crispy form %}
+
+    <input type="submit" value="Save and update incident" class="d-block w-100 mt-3 btn btn-lg btn-primary">
+  </form>
+
+  <div class="mt-3">
+    {% include "includes/incident_last_updated.html" %}
+  </div>
+
+  <script>
+    // Script to highlight empty fields or fields that are set to unknown
+    // when the page loads and when the user changes a field
+
+    const form = document.getElementById('incidentUpdateForm');
+    const excluded = getExcluded(form);
+
+    form.addEventListener('input', function(event) {
+      updateValidation(form, excluded);
+      //updateIncidentText();
+    });
+
+    updateValidation(form, excluded);
+    //updateIncidentText(form);
+
+    function getExcluded(form) {
+      const excluded = ["incident_notes", "editing_notes"];
+
+      // Exclude any fields that already have is-invalid set by the backend
+      Array.from(form.elements).forEach((input) => {
+        if (input.classList.contains('is-invalid')) {
+          excluded.push(input.name);
+        }
+      });
+
+      return excluded;
+    }
+
+    function updateValidation(form, excluded) {
+      Array.from(form.elements).forEach((input) => {
+        if (input.type === 'submit') {
+          return;
+        } else if (excluded.includes(input.name)) {
+          return;
+        }
+
+        if (input.value === '') {
+          input.classList.add('is-invalid');
+        } else if (input.tagName === 'SELECT') {
+          if (input.value === 'YY') {
+            input.classList.add('is-invalid');
+          } else if (input.value === 'XX') {
+            if (input.name !== 'aid_type') {
+              input.classList.add('is-invalid');
+            }
+          } else {
+            input.classList.remove('is-invalid');
+          }
+        } else {
+          input.classList.remove('is-invalid');
+        }
+      });
+    }
+
+    //function updateIncidentText() {
+    //  document.getElementById('incidentText').innerHTML = document.getElementById('id_incident_report').value.replace(/\n/g, '<br>');
+    //}
+
+  </script>
+{% endblock content %}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block main_content_class %}smaller-container{% endblock %}
+
+{% block title %}Approve incident in {{ incident.cave }}{% endblock %}
+
+{% block content %}
+  <h1 class="page-header">
+    <span class="extra d-none d-sm-inline">Approving {% if incident.cave %}</span> {{ incident.cave }}{% else %}on</span> {{ incident.date|date }}{% endif %}
+  </h1>
+
+  <p class="lead">
+    <mark>This incident was originally processed by AI. Please take extra care when reviewing the data.</mark>
+  </p>
+
+  {% include "approval/includes/save_progress_help_text.html" %}
+
+  <p>
+    First, please verify the date and location of the incident has been correctly extracted from the original text.
+    Remember, if an approximate date is given in the report (such as April 1980), please use the first day of the month
+    (1st April 1980 in this example) and check the "Approximate date" box. If only a year is given, enter the 1st of January
+    on that year and check the "Approximate date" box. <mark>The AI is prone to errors when extracting
+    dates, so please check this carefully.</mark>
+  </p>
+
+  {% include "approval/includes/original_text.html" %}
+
+  <h3 class="section">Metadata</h3>
+
+  <form method="post" class="approval-metadata" id="metadataForm">
+    {% csrf_token %}
+    {% crispy form %}
+
+    <div class="d-flex justify-content-end align-items-center mt-4">
+      <button class="btn btn-primary">Next <i class="ms-1 bi bi-arrow-right"></i></button>
+    </div>
+  </form>
+
+
+  {% include "approval/includes/highlight_incomplete_js.html" with form_id="metadataForm" %}
+{% endblock %}

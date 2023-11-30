@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block main_content_class %}smaller-container{% endblock %}
+
+{% block title %}Project information{% endblock %}
+{% block description %}A summary of the project and how to get involved.{% endblock %}
+
+{% block content %}
+  <h1 class="page-header">About this project</h1>
+  <p class="lead">
+    This project aims to digitise and index all American Caving Accident reports published by the National Speleological Society.
+  </p>
+
+  <h3 class="section">Project goals</h3>
+
+  <ul>
+    <li>To digitise the extensive collection of caving incident reports held by the NSS.</li>
+    <li>To make the incident reports available in a format which can be easily utilised for educational and research purposes.</li>
+    <li>To present the data in a manner which is easily searchable and well indexed.</li>
+    <li>To preserve this important historical information in a format which can built upon by future generations of cavers.</li>
+  </ul>
+
+  <h2 class="subtitle">History</h2>
+  <p>
+    ACA reports, which date back over 50 years, have historically only been available in a journal format, which in recent
+    years has been published online as a PDF. The PDFs are not searchable and the data is not indexed in any way, making
+    it difficult to find information on specific incidents or to perform any kind of analysis on the data.
+  </p>
+
+  <p>
+    Before the creation of this website, NSS volunteers generously donated their time to compile a spreadsheet containing an index of every
+    incident report ever published. This spreadsheet was then used as the basis for the database which powers this website.
+  </p>
+
+  <p>
+    The primary function of this website is to provide a user-friendly interface for volunteers to validate and format
+    the data extracted from the spreadsheet and PDFs and make it ready for publication online. This involves entering
+    data in specific metadata fields attached to each incident record and reviewing the data to ensure it is
+    consistent and properly formatted.
+  </p>
+
+  <h2 class="subtitle">Workflow</h2>
+  <p>
+    The process of digitising the collection of incident reports requires a significant amount of human intervention.
+    This website has been designed to allow volunteers to complete the various tasks required quickly
+    and easily with minimal time commitment. If a team of people can each spend just ten minutes a day working on this
+    project then we can make significant progress towards our goal.
+  </p>
+
+  <p>
+    When this website was created, incidents were originally added manually and processed almost entirely by hand. We soon
+    upgraded to a system which did the bulk of the processing using artificial intelligence, vastly reducing the amount of
+    volunteer time required to process each incident. The current workflow is as follows:
+  </p>
+
+  <ol>
+    <li>Data is extracted from the ACA Journal PDFs using OCR software.</li>
+    <li>AI analysis is performed on the OCR data to extract the incident report and metadata.</li>
+    <li>The incident is published on the website with a "data incomplete" warning.</li>
+    <li>Volunteers review the AI analysis and correct any errors.</li>
+    <li>The incident is published on the website with an "approved" tag.</li>
+  </ol>
+{% endblock %}

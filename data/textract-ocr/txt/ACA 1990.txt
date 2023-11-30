@@ -1,0 +1,3132 @@
+
+NSS NEWS
+DECEMBER 1990, PART II
+O
+American
+Caving
+Accidents
+1990
+AMERICAN CAVING ACCIDENTS - 1990
+This publication is only as good as the reports sent. It is probably fair to say that all the facts are never received and that
+inaccuracies may be found in these pages. Furthermore, you may find yourself in disagreement with the comments made
+regarding a particular incident. There is often no clear conclusion that can be drawn. I offer my opinions and those of others
+as a guideline; draw your own conclusions if you like. There is no single set of rules that can define "safe caving" for every
+caver. But read on--if you read this publication, your safety awareness will surely increase.
+Send any information on any incident to:
+Steve Knutson, Editor
+American Caving Accidents
+41811 S. E. Louden Road
+Corbett, OR 97019
+The following is a breakdown of incidents for the last five
+2.
+CAUSE OF INCIDENT
+years by result and cause. It is obviously superficial, but will
+allow us to draw some rough conclusions and serve as a guide
+Code-Cause
+1986
+1987
+1988
+1989
+1990
+to incident types.
+a-Acetylene Explosion
+3
+0
+1
+1
+0
+b-Bad Air
+3
+2
+1
+1
+1
+c-Caver Fall
+25
+14
+20
+19
+21
+1.
+RESULT OF INCIDENT
+d-Drowning
+1
+2
+0
+2
+0
+e-Equipment Failure
+14
+17
+20
+20
+17
+Code-Result
+1986
+1987
+1988
+1989
+1990
+f-Flood
+1
+3
+3
+4
+1
+AA-Fatality
+4
+3
+4
+1
+4
+h-Hypothermic
+1
+2
+0
+5
+0
+A-Injury & Aid
+10
+15
+11
+16
+17
+i-Illness
+0
+0
+2
+3
+2
+B-Aid (no injury)
+21
+15
+20
+20
+20
+1-Losing the Way
+8
+5
+3
+9
+4
+C-Injury (no aid)
+10
+15
+14
+14
+10
+r-Rockfall
+12
+17
+7
+11
+11
+D-No injury or aid
+19
+16
+12
+21
+5
+s-Stuck
+3
+1
+0
+1
+1
+Total
+64
+64
+61
+72
+56
+x-Exhaustion
+0
+1
+1
+3
+0
+Total AA,A,B,C
+45
+48
+49
+51
+51
+o-Other
+3
+4
+8
+6
+7
+3.
+SCUBA
+9
+7
+10
+5
+9
+NSS NEWS
+PREVIOUSLY UNREPORTED:
+VOLUME 48
+Bo
+December 1990, Part II
+Berry Creek Cave
+TX
+3-21-87
+NUMBER 13
+De
+Pregame Pit
+AL
+2-12-89
+Beh
+Mystery Hole
+TN
+9-23-89
+The NSS News (ISSN-0027-7010) is published by the National Speleological
+Ce
+Unnamed Pit
+TN
+Fall 1989
+Society, Inc., Cave Ave., Huntsville, AL 35810. Second class postage paid
+Cie
+at Huntsville, AL and additional offices.
+Lechuguilla Cave
+NM
+12-29-89
+POSTMASTER: Send address changes to National Speleological Society,
+Inc., Cave Ave., Huntsville, AL 35810.
+Copyright 1990 by the National Speleological Society, Inc.
+1990 INCIDENTS:
+Front Cover: Handline Falls, Middle Millerton Lake Cave, California. Photo
+by Dave Bunnell.
+Rear Cover: Skylight Entrance, Basketball Cave, California. Photo by Dave
+Be
+Chapel Cave
+AL
+1-7
+Bunnell.
+Dr
+Tuskarora Cave
+KS
+1-10 B
+Rear Inside Cover: Daniel Longhurst, Deatons Cave near Taylorsville, Georgia. Photo
+AAi
+Center-of-the-Earth
+HA
+1-10 A
+by Gary Beasley.
+Co
+Big Manhole Cave
+NM
+1-14 A
+Photo Developing: Bill Frantz
+Bc
+Unnamed Cave
+HA
+1-14 B
+Proofreading Assistance: Peri Frantz
+Production Assistance: Bob Richardson
+Co
+Mystery Cave
+MO
+1-21
+Ae
+Lechuguilla Cave
+NM
+2-18
+NSS News December 1990 330
+AAc
+Wolff Cave
+AL
+2-15
+DIVING:
+Be
+Sloan's Valley Cave
+KY
+February A
+Ac
+Lechuguilla Cave
+NM
+February B
+Ac
+Lechuguilla Cave
+NM
+February C
+AAd
+Peacock Spring
+FL
+4-9
+Ac
+King Blair
+IN
+3-3
+AAd
+Troy Spring
+FL
+4-14
+Co
+Lechuguilla Cave
+NM
+March
+AAd
+Diepolder Sink #2
+FL
+5-11
+Cc
+Brier Cave
+FL
+3-11
+AAd
+Otter Spring
+FL
+5-19
+Ac
+John Brown's Cave
+WV
+3-15
+AAd
+Eagle's Nest Sink
+FL
+August
+Ace
+Huccacove Cave
+CO
+3-25
+AAd
+Devil's Den
+FL
+10-7
+Be
+Bear Cave
+PA
+4-8
+AAd
+Sac Actun, Mexico MX
+10-17
+AAr
+Lent Cave
+IN
+4-29
+AAd
+Peacock Spring
+FL
+11-4
+Be
+Johnson's Cave
+TN
+May A
+Co
+The Sinkhole
+TN
+May B
+Ar
+Unspecified Cave
+TX
+5-13
+Ac
+Laurel Caverns
+PA
+5-26 A
+Do
+Beard's Cave
+AR
+5-26 B
+Ac
+Devil's Kitchen Cave
+WV
+5-27 A
+AMERICAN CAVING ACCIDENTS - 1990
+Be
+Bowden Cave
+WV
+5-27 B
+Cr
+Stephens Gap Cave
+AL
+6-9
+Be
+New Trout Cave
+WV
+6-18
+Bo
+Kennamer Cave
+AL
+June A
+The total of consequential incidents, Codes AA, A, B, and C
+Cr
+Elwood's Drop
+IA
+June B
+are 51 for 1990, in keeping with a small and gradual increase
+Ac
+Ape Cave
+WA
+6-24
+over the last 5 years. As in previous years, three causes were
+Db
+Jack Spring Cave
+KS
+Summer A
+dominant, caver fall (19 incidents), equipment failure (17
+Ace
+Antonia Pit
+MO
+Summer B
+incidents) and rockfall (11 incidents). Most of these were not
+Cre
+Bigfoot Cave
+CA
+July
+"acts-of-God" and were, presumably, preventable. Let's go
+Bl
+Buckner's Cave
+IN
+7-8
+through the causes in alphabetical order and make some
+Co
+McFail's Cave
+NY
+7-21
+comments:
+Be
+Johnson's Cave
+TN
+7-22
+Bse
+Cave Disappointment
+NY
+7-28
+a) Acetylene Explosions - There were none, due possibly to a
+Be
+Unnamed Cave
+VA
+8-2
+gradual change by many cavers from carbide to electric light.
+Br
+Rotorhead Cave
+WY
+8-11
+Bc
+Tres Charros Cave
+WY
+8-12
+b) Bad Air - The only incident was Summer A, where
+Cc
+Organ Cave
+WV
+Fall A
+petroleum fumes were apparently brought into the cave from an
+De
+Pherris Pit
+TN
+Fall B
+oil field by bad weather. Might one expect more of this in
+Ac
+Spanish Cave
+CO
+9-1
+coming years?
+Bs
+Bee Tree Cave
+IN
+9-16
+Ble
+Nickwackett Cave
+VT
+9-29
+c) Caver Fall - These ranged from stepping in a hole and
+Dr
+Apogee Cave
+CA
+10-8
+falling over (6-24) to an 80 foot non-rappel (Summer B).
+Br
+Sunbeam Cave
+CA
+10-13
+Injuries were numerous: death (2-25), broken neck vertebrae
+Ar
+Trapdoor Cave
+IN
+10-14
+(3-11), broken pelvis and vertebrae (3-15), arm rappel yielding
+Aec
+Hole-to-Hell
+ID
+10-26
+a broken ankle and lower leg (3-25), broken legs (5-26 A, 5-27
+Ac
+Onyx
+AZ
+11-10 A
+A, 6-24), arm (11-10 A), foot (11-18), and broken ankles
+Bl
+Bone/Norman Cave
+WV
+11-10 B
+(Summer B). Several of these should have been belayed. Three
+Ac
+Ladd's Mt. Cave
+GA
+11-18
+(2-18, Summer B, and 3-25) were out-of-control rappels. One
+Bf
+Onesquethaw Cave
+NY
+12-1
+rappeller unclipped to untangle the rope and fell 80 feet to his
+Be
+Natural Well
+AL
+12-6
+death (12-13). A thwarted through-trip and lack of ascenders
+AAc
+Bullis Hole
+TX
+12-13
+led to a hand-over-hand ascent and fall (12-31). The only
+Alce
+Agua Caliente Cave
+AZ
+12-31
+broken rope was hemp (10-26).
+d) Drowning - None.
+e) Equipment Failure - The second leading cause: a lack of
+ascending gear (1-7, February A, 7-22, 7-28, and 12-31) with
+NSS News December 1990 331
+two of those due to a thwarted crossover, a lack of a helmet
+good record of the participants' intentions. American caving
+(July), stolen rope (May A), insufficient friction on a rappel
+rope continues to be used without failure. Fatalities also
+device (2-18), out-of-control arm rappel due to lack of rappel
+continue to be moderate in actual cave exploration, with one
+device (3-25), flashlights only (4-8 and 5-27 B), and light
+due to rock movement in a crawlway (4-29) and one from
+failure using carbide (6-18). There was a rope abrasion using
+rappelling (12-13).
+a frog system (Fall B), and webbing jammed in a chest roller
+The following incident was reprinted in the Loyal Hanna
+(12-6). It appears that there are fewer (?) flashlight caver light
+Troglodyte, Spring, 1990, p. 35:
+failures than before, and more technical equipment failures.
+"On Thursday last, two young gentlemen, J. Herron and a
+There was also a good example of what happens to a solo caver
+friend by the name of Anderson, entered Bear Cave, near
+who suffers light failure (8-2).
+Hillside, for the purpose of exploring it. Not returning, their
+friends on Friday morning organized for a search, under the
+f) Flood - There was only one, in clear weather, due to a
+lead of George Rhey, Esq. The party entered the cave at 9
+broken beaver dam that may, in fact, have been vandalized by
+a.m., and in two hours thereafter found them in an exhausted
+humans (12-1). The number of sudden storms may determine
+condition, having given up all hope of rescue. Their light
+the number of flooding incidents but it is nice to think that just
+having given out, they were unable to find their way back.
+possibly we are staying out of bad caves on rainy days.
+Their rescuers deserve their lasting gratitude for the timely
+assistance rendered."
+h) Hypothermia - No incidents revolved around hypothermia.
+This refers to Bear Cave, Westmoreland County,
+Pennsylvania. No, it is not from this year, or even this
+i) Illness - Only one, a cardiac arrest and death of a caver lost
+lifetime--it occurred October 21, 1875, 115 years ago. Yet it
+briefly in a hot cave (1-10 B).
+reads just like a contemporary account of lost cavers--in fact,
+see 4-8-90 of this issue for a similar incident in the same cave.
+1) Lost - There actually were 3 or 4 strandings due, apparently,
+Why do people continue to enter a lightless environment
+mainly to disorientation (7-8, 9-29, 11-10 B, and 12-31).
+without backup light sources?? Is there some compulsion?
+Surely anyone can see that a light failure in a cave will leave
+o) Other - Always an entertaining category - can you believe
+you stranded. Why do we do it? Can education prevent this
+bashing your own knee with a sledge (1-14 A), eating carbide
+sort of compulsive risk-taking?
+(1-21), catching your penis in your carabiner (March), being
+shocked by lightening inside a cave (5-26 B), rappelling to a
+snake on a ledge (June A), and being sliced by knife-blade
+rocks (7-21)?
+ARE WE DOOMED?
+r) Rockfall - Probably the worst hazard in caving since it is
+never entirely preventable. There were several that came close
+Can the public, or cavers, be educated into safe caving?
+to being a Floyd Collins repeat, with rockfall or shifting rock
+Perhaps there is an answer in the results of such educational
+in a crawlway (1-10 A, 8-11, 10-8, 10-13 and 10-14). One did
+efforts by the cave diving community.
+result in a fatality (4-29). There were the usual falling rocks
+Some years ago, the National Speleological Society gave
+(6-9, June B, and July) as well as an overhanging tree dropping
+sanction to the obviously dangerous sport of cave diving by
+a limb on ascending cavers (May B).
+chartering the NSS Cave Diving Section. This group, along
+with the National Association for Cave Diving led to the
+s) Stuck - Only one of this potentially deadly predicament, a
+establishment of a set of safety rules and certification through
+caver caught by his belt buckle (9-16).
+training and the result, for a period of time, was that only
+untrained, uncertified cave divers (that is, ones drifting into
+t) Trapped - A solo caver was stranded for loss of light (8-2).
+cave diving from the diving community) were involved in fatal
+incidents. The certified cave divers, meanwhile, strived to warn
+x) Exhaustion - None.
+the others of the dangers by, for instance, getting regulations in
+place at some popular sites. Moreover, the NACD and CDS
+It is easy to conclude that exposed climbs should be belayed
+preached their lifesaving rules.
+or handlined, one should never rappel without ascending gear,
+Results in very recent years are interesting. The rate of death
+and that one can never be too careful around loose rocks.
+among non-certified cave divers has decreased. Now we are
+Rappelling can be dangerous, especially if you use unfamiliar
+experiencing fatalities from certified cave divers. There are
+techniques. It must be said that a brake or second point of
+four (5-11, August, 10-17, and 11-4) reported in this issue.
+attachment to the rope while rappelling would have prevented
+So what has gone wrong? Perhaps there is an answer in
+the 2-18 incident and, perhaps, the 12-13 incident as well.
+another parallel. Years ago, when I was learning to blast, to
+Several incidents were made much worse by failure to leave a
+NSS News December 1990 332
+use explosives, I was impressed by what the Blaster's Handbook
+an activity also dangerous, and with even greater psychological
+(DuPont Company, Wilmington, Delaware) had to say about the
+barriers than climbing. Besides the fear of height, one had to
+similarly hazardous activity of blasting. I now quote from page
+overcome whatever fear they had of the dark, the closeness, and
+410 of the 16th Edition (1977).
+of whatever gristly wildlife was lurking just beyond the
+"Personnel designated to handle explosive materials should
+dwindling entrance light.
+have intelligence and common sense and be trained in the use
+Now I look at rock climbing and am amazed, dismayed: skin
+of explosives.
+tight suits in designer patterns, cute little shoes, color matched
+A small minority, however, will never have the proper
+to the suit and helmet, courses in climbing at schools and
+attitude to become safe and efficient blasters, no matter how
+community centers, artificial climbing walls in gyms and even
+much they are trained or how well they learn the technical
+in individuals' garages, routes on big walls (like Half Dome in
+aspects of blasting.
+Yosemite National Park) fixed with protection, "top-roping" to
+Men who, through ignorance, carelessness, or bravado,
+eliminate the danger, and even televised rock-climbing
+follow unsafe practices constitute the greatest problem to
+competition. I am amazed--rock climbing has become popular.
+blasting safety. If a man is careless, reckless, or unwilling to
+So now I realize that it will happen to caving. The wheels
+mend his ways, he should be removed from all contact with
+may already be in motion for the final revolution, and my
+explosives.
+personal prediction is that we'll know that caving has arrived
+Very w blasting accidents are caused by lack of knowledge
+when a complete caving outfit is available at your local sporting
+or experience. They are more frequently the result of a mental
+goods/adventure store. and I don't think this is far off.
+attitude that does not put safety before every other
+Already we see commercials on TV featuring caving and the
+consideration."
+publicity from the Lechuguilla Project alone has been extra-
+It appears that there are some who simply should never
+ordinary. The Mobley rescue was grossly over publicized, but
+become blasters--those who cannot resist impulses to show off,
+perhaps this tells us something about the news media's readiness
+to improvise, to cut corners, to shortcut safety rules. In short,
+to feature caving. When the news media decides you are
+they would not, indeed, could not in the long run, follow a set
+interesting, there is no putting them off.
+of safety rules and would be a danger to themselves and others.
+I don't want this to happen, but I feel it will. I urge us to be
+Cave diving is a very similar activity--where one must be
+ready perhaps, since we are now enticing the public with the
+ever aware and calculate every move. Some people, the
+glory of caving, as in the massive publicity accrued by the
+egotistical or impulsive or improvising types are simply
+Lechuguilla Project, we should go public with the techniques
+psychologically ill-equipped and, it appears to me, should not
+we have evolved over so many years, the means to survive, so
+be certified. I believe that the cave diving community must find
+to speak.
+we can have influence and good effect if we
+some way to turn away such people, to fail trainees who show
+educate, but will be bypassed if we don't.
+such traits, if it wants to return to a clean safety record.
+Perhaps it is too late for this. such screening may not
+be
+possible. In any case, the training obviously must include
+attitude conditioning.
+I guess what I am trying to get at is that you can set up
+PREVIOUSLY UNREPORTED
+educational programs, but you will invariably educate some
+people to their deaths. Should this deter the educational efforts?
+BERRY CREEK CAVE, TX
+March 21, 1987
+I think not; I think the good will outweigh the bad.
+Bo - Aid, Other
+On March 21, 1987, a group of cavers entered Berry Creek
+Cave in Williamson County, Texas. One caver (29) had just
+ARE WE READY FOR THIS?
+entered total darkness, about 40 feet from, and 20 feet below
+the entrance when he was stung on the inner side of his left
+arm, near the elbow, by a scorpion, Vaejovis reddelli. "The
+I began caving many years ago and at that time was also
+initial response was a sharp, burning pain, beginning like a fire
+heavily involved in rock climbing. As with caving, the sport
+ant bite but then becoming like red-hot pins sticking into the
+of climbing was then far outside general public acceptance and
+area." A half hour later, a 2-inch area around the sting was red
+your companions seemed always to be unusual and interesting
+and swollen. The shoulder, elbow and wrist joints began to
+people. The sport was dangerous, psychologically difficult to
+ache. This continued for two days with the elbow pain the
+get into, often led to physical and elemental hardship. It
+most severe. Seven hours after the sting, the area around it
+was also pure--you climbed only for the personal challenge.
+developed a bruise-like appearance; ten hours later the biceps
+Climbers did not particularly care what they looked like, but
+muscle ached and was sensitive to the touch. On the second
+mainly cared that their garb and equipment were functional.
+day, itching set in and lasted for 1-1/2 days. After a week, the
+I left climbing after a few years and concentrated on caving,
+NSS News December 1990
+333
+swelling was gone but the redness continued; in the second
+were applied to his chest and hands while a tarp tent was
+week, it changed to pale purple and there was "a small amount
+fashioned over him. This was then heated with a Petzl carbide
+of exfoliation that lasted a few days".
+lamp. Two more rescuers descended with dry thermal
+underwear and medical supplies. Rollins' temperature was 94.2
+REFERENCE: James Reddell, "Cave Scorpion Sting", The
+degrees. The thermal underwear was put on him; he was re-
+Texas Caver, August, 1988.
+wrapped in the blanket and placed in the tent. Coffee was
+brought down--Rollins temperature had come up to 98 degrees.
+COMMENTS: The victim weighed 160 pounds and was in
+He drank the coffee and was walked around. At that time it
+good health; he had been stung by the scorpion Centruroides
+was decided that he appeared OK to climb. The dam was
+vittatus in the past with no reaction so he was apparently was
+opened a bit to drain the pool behind it. After closing the dam,
+not allergic to such stings. An allergic person should be careful
+Rollins was equipped with a helmet and ascending system and
+to avoid stings.
+was tandemed up with a rescuer above and another alongside on
+the second rope. The climb took 15 to 20 minutes.
+PREGAME PIT, AL
+February 12, 1989
+REFERENCE: Buddy Lane, "Rescue in Mystery Hole",
+Beh - Aid, Equipment Failure, Hypothermia
+Speleonews, October 1989, p. 168.
+On February 12, three cavers prepared to explore a virgin 57-
+COMMENTS: Rollins had never been in a cave, but was a
+foot pit in Madison County, Alabama. Only one was
+rock climber. He believed if the rope did not reach, there
+experienced in vertical caving. The pit was rigged and the
+would be a ledge on which to change over to ascend. He had
+experienced caver descended. A second caver started down, but
+a second rope to tie onto the end of the first, but free-hanging
+had long hair which caught in his rack. He quickly attached a
+was unable to do so. At least he admitted, "I was stupid".
+safety Jumar above the rack but was unable to free his hair.
+The man on the bottom called to have the rest of the 150-foot
+UNNAMED PIT, TN
+Fall, 1989
+rope lowered so he could climb to the stranded caver to assist.
+Ce - Injury, Equipment Failure
+Meanwhile, the caver on rope found a foothold and was able to
+clear his rack and the trip continued without further incident.
+A resident of Cookeville discovered a 65-foot pit near the
+Winona Motel in Putnam County, Tennessee. He managed to
+REFERENCE: Gary Griner, Personal Communication,
+descend this shaft on a knotted rope, hand-over-hand, but could
+undated, 1 page.
+not get back up. He was hauled out by the Putnam County
+Rescue Squad a short time later.
+MYSTERY HOLE, TN
+September 23, 1989
+Beh - Aid, Equipment Failure, Hypothermia
+REFERENCE: Richard Finch, "Intrepid Adventurer Descends
+Six Hundred Foot Pit Hand Over Hand!", Speleonews
+On September 23, a group of three went to Lookout
+Nashville, Chattanooga and Upper Cumberland Grottos, NSS),
+Mountain to explore Mystery Hole, Hamilton County,
+December 1989, p. 202-3.
+Tennessee. This thousand foot cave has a freefall entrance pit
+with a stream cascading down unless a dam spillway is closed
+LECHUGUILLA CAVE, NM
+December 29, 1989
+with a plug. They rigged a two hundred feet of rope, of
+Cie - Injury, Illness, Equipment Failure
+necessity, in the full force of the falls. Chuck Rollins (19),
+wearing shorts and a tee-shirt, without a helmet and with a
+On Tuesday, December 26, at 11 a.m., a group of three (part
+flashlight for light, rappelled in only to reach the end, still
+of a larger expedition) entered Lechuguilla Cave in the
+about a hundred feet above the floor. He was unable to do a
+Guadalupe Mountains, New Mexico. Their objective was the
+change-over and ascend, so his companions went for help.
+Far Eastern part of the cave. They carried packs with gear for
+Rollins was left hanging in the falls.
+a 3-day camp in the cave. Shari Lydy (37) was wearing a pair
+At 4 p.m. the Hamilton County Emergency Operations
+of relatively-new boots (Hi-Tec canvas-upper). These had been
+Center mobilized the County Cave Rescue team. As soon as
+used on several short cave trips, a hike around Slaughter
+they arrived, they rigged a lowering system on the rope in
+Canyon on the 22nd, and a moderate-length trip into
+place, using a second rope, and another rope was rigged for
+Lechuguilla on December 23-24. On the 25th there was "minor
+rappelling the pit. Rollins was then lowered to the bottom,
+abrasion" evident on her left heel and two toes, so she carried
+after having been in the waterfall for about two hours. The
+Bacitracin cream, moleskin, and Spenco "second skin" on the 3-
+water, flowing into the pit was shut off and two rescuers
+day trip in case something worse developed. Furthermore, she
+descended to attend to the victim.
+taped her toes and heel before entering the cave.
+Rollins was wrapped in a wool blanket and Epteh Heat Packs
+On Wednesday evening she observed blisters on her
+NSS News December 1990 334
+previously abraided toes and a new abrasion on her right foot.
+Monday, January 8.
+By Thursday evening the blisters on the left foot had broken
+and were oozing and painful with some swelling. The foot
+REFERENCE: 1) Ed. "Six Men Rescued from Area Cave",
+"smelled like something rotting". Bacitracin caused intense
+The Huntsville Times, January 8, 1990, p. 2B.
+burning and throbbing for 2 hours.
+2) Greg Freese, Accident Report, unpublished, undated.
+On Friday they started the trip out. With her boots on, the
+3) Bill Vamedoe, "Chapel Cave Rescue", Accident Report,
+left foot was very painful. Once she started walking, the pain
+unpublished, undated.
+dissipated, but 2 hours later, at the top of the Aragonitemare,
+the pain returned intensely. She took two Tylenol tablets but
+COMMENTS: The cavers in question "were aware of the NSS
+was limping badly.
+and the Huntsville Grotto and had been on a horizontal trip, but
+At the bottom of Apricot Pit, her left foot was numb. Her
+they said that they preferred not to cave with the grotto because
+toes were very painful and halfway up became agonizingly so.
+the grotto required hardhats(!)." Needless(?) to say, they were
+She abandoned her pack to be carried out by her companions
+grossly underequipped and are lucky there were not more
+and other cavers. She was able to make her way out slowly.
+serious consequences.
+Back at the field house, both feet and ankles were swollen
+and several toes were "mushy". She was later diagnosed to
+TUSKARORA CAVE, KS
+January 10A
+have cellulitis and put on antibiotics.
+Dr Rockfall
+REFERENCE: Shari Lydy, "NSS Accident Report Form",
+On Wednesday, January 10, James Potts and companions
+undated, 2 pages.
+were mapping in Tuskarora Cave, Bourbon County, Kansas.
+While exiting the cave, Potts was in a crawlway when a large
+COMMENTS: Lydy says that the boots had rubber liners and
+rock fell from the wall, landing "right in front of my nose".
+thus did not "breathe". She had only one pair of socks and
+This blocked the passage sufficiently that he had to roll it down
+these, as a result, were always damp and dirty.
+the passage until it fell into a hole.
+REFERENCE: James Potts, in "Trip Reports", The Kansas
+Kaver, May 1990, Vol. 7, p. 9.
+1990 ACCIDENTS
+CENTER-OF-THE-EARTH, HA
+January 10B
+CHAPEL CAVE, AL
+January 7
+AAi Illness
+Be - Lack of Equipment
+On Wednesday, January 10, a group of three people entered
+At 6 a.m. on Sunday, January 7, a group of six cavers
+a lava cave near Route 137 in Opihikao in the Puna District,
+entered Chapel Cave, Morgan County, Alabama. These were
+Hilo, Hawaii. These were Rodney Armour (55), his wife, Jo,
+Bill Campbell (18), Bill Consuela (20), Denny Hamilton (19),
+and Mauve Fisher. The entrance is in a sink about 11 feet
+Al Marks (20), and Allen Grant (23). It was a winter's day in
+deep; an initial, short, descending, body-sized tube or
+Alabama, with steady rain and a 38-degree F temperature.
+constriction leads to a stoop-way that continues descending as
+The main Chapel Entrance to the cave is in a small sink with
+it enlarges to a walkway. The cave has numerous small side
+a tributary stream gully from higher on the mountain. The
+leads and is described as being "as large as a city block". With
+other, Wildcat Entrance, is prone to flooding. At the entrance
+hot water pools and a temperature of 96 degrees F, the cave is
+is a short, overhung drop that conducts the gully stream; 50 feet
+locally popular as a natural sauna.
+into the cave is a 60-foot pit leading to the main part of the
+The trio explored for a bit, and at some point Rodney
+cave. The cavers had only three seat harnesses and one set of
+Armour became separated from the other two. Fisher and Jo
+Gibbs ascenders; their upper bodies were insulated only by T-
+Armour exited the cave and at 2:30 p.m. reported Rodney
+shirts and they had no hardhats.
+missing. Rescuers soon found the missing caver but he was
+The cavers successfully reached the main part of the cave.
+dead, lying in a very narrow passage. The heat forced rescuers
+When they tried to exit, they found they could not get back up
+to work in 20-minute shifts, but since the cave was not large,
+the 60-foot drop. They had left word with their families that
+the body was removed by 4:15 p.m. An autopsy later revealed
+they were going either to Maubry or Chapel Cave and at 8 p.m.
+death to be due to cardiac arrest.
+they were reported overdue to authorities. At 9 p.m. caver
+rescuers were mobilized and, after checking the Maubry Cave
+REFERENCES:
+entrance for the victims' vehicle, they located the six at the
+1) Rod Thompson, "Washington State Visitor Dies in Big Isle
+bottom of the 60-foot pit in Chapel. The six were assisted up
+Lava Tube," Star Bulletin, January 11, 1990.
+the pit and out, the operation being completed at 1 a.m.,
+2) Ed., "Tourist Dies in Lava Tube", Ibid., January 11, 1990,
+NSS News December 1990 335
+p. 12) Chris Reed, "Puna Police Look to Block Entrance to
+Cave after Death of Tourist", Hawaii Tribune-Herald, January
+LECHUGUILLA CAVE, NM
+February 18
+12, 1990.
+Ae - Equipment Failure
+3) Chris Reed, "puna Police Look to Block Entrance to Cave
+after Death of Tourist", Hawaii Tribune-Herald, January 12,
+On February 18, Neil Bakstrom, Dave Belski and Bill Heath
+1990.
+planned to enter Lechuguilla Cave in New Mexico for a 5-day
+4) D. Hunter Bishop, "6 Feet Under in Opihikao", Ibid.,
+stay as part of the Microclimatology Study Project. Bakstrom's
+January 24, 1990, p. 1.
+vertical gear had recently been stolen so he had borrowed gear
+5) Frank Reid, "Death in Hawaiian Lava-Tube Cave",
+from the Park Service. Instead of a rack, he chose a "French
+Computer Bulletin Board, January 12, 1990.
+Carabiner rig" which apparently used a single carabiner for
+braking friction. He reasoned that the pits he would encounter
+COMMENTS: The group was apparently using flashlights and
+were relatively short.
+had no real caving equipment. The Armours were visiting a
+At the 70-foot entrance pit a new rope had been rigged.
+nearby retreat. The cardiac arrest may have been caused by
+Belski and Heath descended. When Bakstrom rappelled, he
+panic when Armour found himself alone--parties should stay
+quickly went out of control, lacking friction from his rappel
+together.
+device, and hit bottom at "near freefall speed", injuring his
+right ankle.
+The ankle was taped to help immobilize it and Belski
+UNNAMED CAVE, HA
+January 14
+ascended to give assistance when Bakstrom reached the lip.
+Be - Equipment Failure
+Using a single-foot Texas rig, Bakstrom was able to climb out.
+With aid from Belski and Heath, he hopped the mile to the
+On Sunday, January 14, William Goidell was attending a
+vehicles. At a hospital, the ankle was diagnosed as fractured;
+party with friends near Hawaii Volcanoes National Park in
+he also suffered a 6-inch-square rope burn on his left thigh.
+Hawaii. Late in the evening, they decided to experience a
+natural sauna at a steam vent area on some bluffs about a mile
+REFERENCES:
+downslope from park headquarters. "Goidell was unfamiliar
+1) Bill Heath, Accident Report, "Windy Passages," (Pajarito
+with the steam vent area. After removing his clothes, the man
+Grotto, NSS) 3 (3) March 1990, p. 22.
+walked into a steam cloud and disappeared."
+2) Dan Clardy, Personal Communication.
+Goidell stepped into an unseen fissure in the lava, landing on
+a ledge 25 feet down. He called for help and a rescue attempt
+COMMENTS: Bakstrom is reportedly "an extremely
+was made by his friends, using a rope made of towels knotted
+competent climber and caver". Still, to save a few ounces, he
+together. This didn't work, so they sought help at nearby
+chose an unfamiliar device over a rack. Bad choice. My usual
+Kilauea Military Camp. Park rangers were notified and hauled
+advice in a situation like this is to test the friction braking you
+Goidell out of the hole at about 2 a.m. (two hours after he fell
+are getting at the lip, but it may be better to refrain from using
+in), using conventional nylon rope and body harness.
+an unfamiliar device until you get a chance to practice with it.
+REFERENCE: Hugh Clark, "Visitor Lands in Deep Trouble
+WOLFF CAVE, AL
+February 25
+at Geothermal Sauna Soiree", The Honolulu Advertiser,
+AAc - Caver Fall
+January 19, 1990, p. A-4.
+On February 25, a group of four people were exploring
+MYSTERY CAVE, MO
+January 21
+around the vertical entrance to Wolff Cave, Morgan County,
+Co - Other
+Alabama. The cave is near the residence of two of these
+people. A small stream cascades over the cliff above the
+On a trip into Mystery Cave, Missouri, January 21, 1990,
+entrance. At 2:15 p.m., one of the group, Scott Holmes (17),
+Aaron Addison and companions proceeded to the Coon Room
+decided to climb behind the waterfall on a ledge. He lost his
+via a 600 foot crawlway. They stopped there to have a bite to
+footing and fell some 45 feet into the entrance pit. The
+eat and take photos. Addison took his baby bottle of candy,
+authorities were notified and rescuers soon arrived and found
+rattled it, opened it, and tossed down a mouthful. The bad
+Holmes dead from head injuries. The body was evacuated in 3-
+news was that it was his carbide bottle; the good news was that
+1/2 hours using two haul systems.
+he was able to spit it out and suffer only minor burns. He
+suggests keeping food and carbide in different style containers.
+REFERENCES:
+1) Greg Freese, Accident Report, undated.
+REFERENCE: Aaron Addison, "Tale of Two Baby Bottles,"
+2) Ed., "Union Hill Youth Falls to His Death," The Decatur
+The Crawlway Courier, 24(1) Spring, 1990, p. 5-6.
+Daily, February 26, 1990.
+NSS News December 1990 336
+3) Greg Freese, "Fatality in Entrance of Wolff's Cave,"
+fixed with a handline and John McLean went down first,
+Huntsville Grotto News, March 1990, p. 12.
+carrying a 40 pound pack. At the bottom of the handline, the
+slope continued for a short distance as a 30 degree slope.
+SLOAN'S VALLEY CAVE, KY
+February A
+McLean started down but slipped. He broke his fall with one
+Be - Attempted Crossover, Lack of Gear
+arm and suffered a dislocated shoulder. McLean had this
+happen before, so he was able to relocate the joint by the time
+In February, a group of 20 students from Ohio University
+the rest of his party came to his aid. He aborted the trip and
+entered the Screaming Willies entrance of Sloan's Valley Cave
+proceeded out without further incident.
+in Pulaski County, Kentucky. They intended to do a crossover
+trip, coming out an entrance that did not require a rope ascent.
+REFERENCE:
+Gary Petrie, Personal Communication,
+They thus did not take ascending gear; furthermore, some were
+October 6, 1991.
+without helmets and lights. Earlier, they had encountered other
+cavers at Sloan's and had been told that water levels were above
+KING BLAIR CAVE, IN
+March 3
+normal and that their proposed trip may not be possible.
+Ac - Caver Fall
+When they were unable to get to the other entrance, they
+returned to Screaming Willier where they were hauled out by
+At about 11:30 a.m. on Sunday, March 3, a group of three
+other cavers using a pulley system.
+cavers, including Aaron Howell (20), and Jeff Schepper, entered
+King Blair Cave, about eight miles southwest of Bloomington,
+REFERENCE: Bob Wright, Cave Cricket Gazette, April
+Indiana. They proceeded to a point about 1300 feet from the
+1990.
+entrance where King Blair connects with Brinegar's Cave. At
+this point, at about 2:30 p.m., Howell was climbing a vertical
+LECHUGUILLA CAVE, NM
+February B
+pitch when he slipped and fell about 30 feet, landing on a
+Ac - Caver Fall
+narrow ledge with 40 foot drops on either side. He suffered
+multiple lacerations, fractured ribs and was unconscious for ten
+On a February expedition to the National Park Service's
+minutes. His companions went for help after giving what first
+Lechuguilla Cave in the Guadalupe Mountains of southern New
+aid they could.
+Mexico, a group of cavers was heading into the cave. After one
+At about 10:30 p.m. paramedics reached the victim and
+hour's travel, they came to an exposed traverse that was
+placed him in a SKED for transport through the cave. A large
+equipped with a handline for safety. The experienced members
+group of rescuers worked in teams to move the victim to the
+of the party proceeded across without actually clipping in.
+entrance, negotiating vertical pitches and narrow, low passages,
+Clinton Cline, on his first trip in this cave, started across in
+including the Bathtubs, a 2-1/2 foot high passage with two feet
+similar fashion, but lost his footing partway and was unable to
+of water. At times, a "human highway" was formed with
+hold onto the rope. He fell twenty feet, landing on a ledge that
+rescuers lying down and passing the victim along over them.
+saved him a further 60 foot drop, and suffered three broken
+One point had to be enlarged with chisel and hammer. The
+ribs. He was able to retreat from the trip under his own power,
+victim suffered a bit from dehydration and hypothermia, but
+including a 150-foot, free-drop ascent.
+reached the entrance at about 6:30 a.m. Monday.
+REFERENCE: Garry Petrie, Personal Communication,
+REFERENCES:
+September 6, 1991.
+1) Will Ott, NSS Accident Report, undated, 9 pps.
+2) Bill Pittman, "Rescuers Free Spelunker," The Indianapolis
+COMMENTS: A handline is just what an exposed traverse
+News, March 5, 1990, p. 1, A-12.
+such as this needs. It only takes a second to clip in--to not do
+3) Stephen Beaven, "Rescuers Reach Man Trapped in Cave,"
+so is silly. The experienced cavers obviously knew the traverse
+The Herald-Times, March 5, 1990.
+and felt little danger of falling. They should,however, have
+4) Julie Creek, "Man Rescued From Cave," Ibid., March 6,
+urged the "new guy" to clip in; you just don't know what
+1990.
+another caver might find difficult. and it
+could
+save
+you
+5) Anne Kibbler, "DeGroote: Rescue Points to Need for
+having to spend your trip hauling someone out.
+Special Team," Ibid.
+LECHUGUILLA CAVE, NM
+February C
+COMMENTS: The cavers were said to be experienced and it
+Ac - Caver Fall
+may be that they did what any other caver would have done or
+have to do to traverse the cave, but the incident seems to point
+On a February expedition to Lechuguilla Cave in New
+out the need for some sort of aid at that point in the cave--a
+Mexico, a group was proceeding into the cave. About ten
+fixed handline or whatever. In any case, to do an exposed
+minutes in, they came to a flowstone-slope descent. This was
+climb without a belay, where a fall could mean injury or death,
+NSS News December 1990 337
+with so much difficult passage between the caver and the
+to continue rather than having someone behind her help her
+entrance seems a bit unjustifiable.
+retreat from the headfirst position. Still, it is human nature to
+try to make the best of a bad situation and carry on even when
+LECHUGUILLA CAVE, NM
+March
+we realize we've made a bad decision. She also points out that
+Co Other
+a helmet more firmly held in position might have caused her
+head to "whiplash", yielding a similar result. In any case,
+In Lechuguilla Cave there were some incidents resulting from
+injuries of this sort can easily be much more serious.
+the use of shorts to combat the warm cave environment. On a
+photo trip, one caver was carrying a pack which was tethered
+JOHN BROWN'S CAVE, WV
+March 15
+below him on a sling to a non-locking carabiner.
+Ac - Caver Fall
+Unfortunately, once while rappelling and once while ascending,
+the carabiner opened and caught his penis. There was no
+At about 6:30 p.m. on March 15, Mark Wetzel, Tim Jordan,
+permanent damage.
+and David Walker (Jordan's son), entered John Brown's Cave
+Similarly, Neil Mestler was ascending and caught his penis
+in West Virginia and spotted a ledge climb that led to a
+in his lower ascender.
+chimney-climb lead. After touring the cave, they stopped while
+Thomas Zanes was using a Mitchell rig, with the lower
+Jordan attempted the previously encountered ledge climb.
+Jumar controlled by a bungi cord. This ascender sometimes
+Wetzel promised he would follow if it went anywhere.
+caught his leg, but this only resulted in bruises.
+Jordan got 25 feet up, at which point he lost his holds and
+fell, head-first, onto a slope, down which he tumbled. Wetzel
+REFERENCE: Dan Clardy, Personal Communication, July,
+immediately sent Walker for the trauma box and bag (outside in
+1990.
+the van). Jordan seemed to be in reasonably good condition,
+and after Wetzel placed a cervical collar on the victim's neck,
+COMMENTS: The ascender problems might be solved using
+Jordan made it out with minimal assistance. At the entrance
+one with the opening on the opposite side, or wear a jock strap.
+where they had to pass a steel plate with a 1-1.5 foot gap, they
+rolled Jordan onto his side and pulled him out. At Jefferson
+BRIER CAVE, FL
+March 11
+Memorial Hospital, it was determined that he had broken his
+Cc - Caver Fall
+pelvis and a piece off a lumbar vertebrae.
+On March 11, a group of cavers entered Brier Cave in north-
+REFERENCE: Mark Wetzel, "Trip Report - John Brown's
+central Florida. This was a trip to show the cave to visiting
+Cave," The West Virginia Caver, 8 (4) August, 1990, p.6.
+dignitaries of the National Speleological Society. Evelyn
+Bradshaw, one of the group, had seen slides of the cave and
+COMMENTS: If you can't take the fall without very low
+decided to limit her activities to the entrance area.
+probability of injury, use a belay! Still, it is always nice to
+The entrance to the cave is a 12-foot climb-down with a
+hear about a self-rescue and this one must have been painful.
+cement cap and a cement door, set in manhole style. The trip
+leader described the climb-down and descended. Bradshaw
+HUCCACOVE CAVE, CO
+March 25
+misunderstood and went in headfirst. Seeing the descent, she
+Ace - Broken Ankle on Rappel
+stopped but couldn't back up. Communication was made with
+the trip leader. He apparently did not understand her incorrect
+On Sunday, March 25, Jon Barker, Kevin Smith, Steve
+orientation. Hoping for the best, she let herself slide forward.
+Smith, Ben Evans, Leigh Evans, and Jeff Fowler entered
+In an instant, she fell, striking her head on the opposite wall.
+Huccacove Cave, near Cave of the Winds, near Manitou
+At the bottom, she soon discovered that the only result seemed
+Springs, Colorado. Their objective was a photography session
+to be a sore head and neck--apparently her hard hat had been
+in the newly-discovered Mammoth Extension.
+jammed back on her head SO that the back edge struck her neck.
+They had consulted cavers experienced with the route and
+She continued a short way on, then exited with no difficulty.
+were advised to expect tight crawls and climbs where an
+The head and neck pain was gone after two weeks, but neck
+ascender would be handy on handlines. As a result, they
+stiffness continued. Two months after the incident, the neck
+brought only one figure-8 for descent.
+was x-rayed, revealing a fracture of the second vertebrae. A
+Just after noon, they arrived at the top of the Overlook drop,
+neck brace was worn for three months.
+leading from Hucky's Secret to God's Country. The descent
+involves 20 feet of steep slope to an overhanging 15-foot pitch.
+REFERENCE: Evelyn Bradshaw, Accident Report, August
+Barker and Leigh Evans used Barker's figure-8 while the other
+3, 1990, 2 pages.
+four opted to apply "arm rappels" where the rope goes around
+behind the back, and under each armpit with one wrap around
+COMMENTS: Bradshaw admits having made a poor decision
+each arm. Three cavers descended using this technique
+NSS News December 1990 338
+successfully; however, when Steve Smith came down, he
+REFERENCES:
+slipped the rope too much at the over-hang and lost his balance.
+1) Tom Metzger, Personal Communication, September 26,
+Since the rappel was done angled to one side, he then
+1990.
+pendulumed ten feet, striking a wall. He was able to get his
+2) Kim Opatka, "New Florence Men Lost in Area Cave,"
+feet ahead of him, but struck with his right heel hitting the wall
+Latrobe Bulletin, April 9, 1990, p. 1, 6.
+first. (The force of this broke his ankle and the end of the
+3) Ed., "New Florence Men Lost in Cave Briefly," Tribune-
+tibia and fibula in the lower leg.)
+Review (Greenburg), April 10, 1990, p. D-1.
+Smith completed the rappel and was diagnosed as having a
+4) Ed., "Two Men Rescued from Bear Cave," Indiana
+severe sprain in his very painful right ankle. Another caving
+Gazette, April 10, 1990, p. 13.
+group was working on a dig nearby and one caver was enlisted
+(Plus similar accounts in other local papers.)
+to help. The ankle was splinted with two Jumars and some
+survey tape. Smith and two companions then started out of the
+LENT CAVE, IN
+April 29
+cave, the victim moving slowly under his own power. The rest
+AAr - Rockfall
+would follow as a second group. Smith made it the thousand
+feet to the entrance and down the gully to the Williams Canyon
+At about 6 p.m. on Saturday, April 29, Roger Neeley (30)
+Road, where a ride was obtained in a passing car. At a hospital
+and four companions entered Lent Cave, Greene County,
+later it was determined that the ankle was broken as were the
+Indiana. All were inexperienced, but the cave is unusual for the
+ends of the tibia and fibula in the lower leg. The ankle
+area in having large rooms and passages.
+received an operation and a complete recovery is expected.
+They proceeded about 1,000 feet into the cave, negotiating
+one crawl, to a place where a large boulder, some 15'x5'x3' in
+REFERENCE: Kevin and Steve Smith, "Steve 0, Wall 1
+size blocked most of the passage. Two of the party squeezed
+Rocky Mountain Caving, Spring, 1990, p. 9.
+past, but when Neeley attempted this, the boulder moved,
+pinning him to the bedrock wall of the passage. Two of the
+COMMENTS: Mountaineers developed the arm rappel for
+cavers left to summon help while the remaining two freed
+descents down a slope. I repeat, down a slope. Cavers seem
+Neeley and administered CPR. The authorities were called at
+to keep applying the technique to free descents. For free
+7:15 p.m. Paramedics and fire department personnel were
+descents without a descender, use a body rappel--rope through
+dispatched and arrived a little after 7:30 p.m. The victim was
+the crotch, around to the front, up across the chest and over the
+soon found to be dead; the body removal took about 2-1/2
+opposite shoulder, down the back and held with the right hand
+hours. He apparently died of internal injuries.
+(if it went over the left shoulder) for braking. If you don't
+know how to do it--find out and practice it.
+REFERENCES:
+1) Will Ott, NSS Accident Report, 9 pages, undated.
+2) Ed., "Death of Explorer Called Freak Accident," The
+BEAR CAVE, PA
+April 8
+Indianapolis News, April 30, 1990.
+Be - Equipment Failure
+3) Gayle Robbins, "Area Man Dies in 'Freak' Cave Accident
+Saturday," The Evening World (Bloomfield), April 30, 1990,
+Shortly after 3 p.m. on Sunday, April 8, a group of two, Van
+p. 1, 8.
+Morrow (26) and James Holland (24), entered Bear Cave in
+Westmoreland County, Pennsylvania. They had registered to
+COMMENTS: In the press, the incident was generally referred
+explore the cave at a parking lot at the home of the owner of
+to as a "freak" accident. Not so--rock movement and instability
+the cave. For the exploration they brought two flashlights--at
+is common in caves. Don't crawl under or climb on boulders
+the entrance one proved to have a bad bulb, so they left it
+or loose rock until you at least try to ascertain the stability.
+behind.
+They pushed into the maze-like cave doing a stream crawl
+JOHNSON'S CAVE, TN
+May A
+that soaked their clothes. When the light went dim, they tried
+Be - Equipment Failure
+to retrace their route, getting back through the stream crawl to
+a room called the Serpent's Sanctum. Confused by crawlways
+In May, Jeff Wood and Bill Overton went to Johnson's Cave,
+beyond this point, they stopped to wait for help.
+Putnam County, Tennessee, parking on the road close to the
+When they failed to return that evening, Morrow's wife
+entrance. They proceeded into the cave to the 40-foot pit which
+called authorities and both public agencies and cave rescuers
+they rigged and descended. At the bottom, they tied off their
+responded. The stranded cavers were found around midnight
+rope and made their way further into the cave, rigging and
+and led from the cave. The batteries from the flashlight left at
+descending a second pit. After 11 hours in the cave, they were
+the entrance probably would have gotten them out.
+on their way out when they arrived at the first pit to find the
+rope missing.
+NSS News December 1990
+339
+Wood is a rock climber so he began to free-climb the pit.
+The entrance, a two-foot triangular opening in breakdown, led
+Halfway up, his Wheat lamp quit. Overton quickly scrounged
+to an easy eight-foot downclimb and on to a large downsloping,
+a cyalume from his pack, quickly got it going, and threw it up
+dirt-floored passage. This proved to be a room with a sloping
+to Wood, who was able to hold it in his mouth and complete
+boulder floor, bare in the middle part and covered with red clay
+the climb. He then rigged the second pit-rope for Overton.
+near the bottom, some 180 feet below the surface. The cave
+They hurried for the entrance, hoping to catch the
+continued at the end of the room with a climb-down on
+perpetrators, or at least find their names in the register at the
+breakdown to what appeared to be a lower room. The purpose
+Hall of the Mountain King. They soon smelled smoke and
+of the present trip was to photograph six-foot soda straws in a
+assumed it was the perpetrators burning the evidence.
+lower room, so James Jasek descended to find himself in a
+breakdown room eight feet high and 12 feet long, with a ceiling
+REFERENCES:
+of "car-sized" boulders. He saw no lead, but noticed fresh
+1) Morris Sullivan, Pesonal Communication, August 4,
+white rock chips on the floor indicating recent collapse, so he
+1990, 1 page.
+went back to where he could yell to the others not to come
+2) Patricia Williams, "Spelunker Pleads Guilty to Stealing,"
+down, that it was unsafe.
+The Tennessean, July 31, 1990.
+Jasek then returned to the breakdown room and looked for
+the lead to the soda straw room. He approached a free-standing
+COMMENTS: Stealing gear you know is in use--pretty low
+"monolith" about two feet wide, 18 inches thick, and about
+trick, right? But there is a second, happy ending--see July 22
+seven feet tall which suddenly began to fall toward him. He
+report.
+put out both arms to push it away, but its weight was
+irresistible. It continued to fall, failing to crush him only
+THE SINKHOLE, TN
+May B
+because he rolled left as it knocked him over. Still, it fell on
+Cor - Rockfall, Other
+his legs and he yelled "with what could be called a true death
+scream". Luckily, it continued to slide down a slope, leaving
+In mid-May a strange group arrived at The Sinkhole on
+him free. His left foot took most of the pressure and his heel
+Lookout Mountain near Chattanooga, Tennessee. The group
+bone was fractured. He yelled to the others that he was hurt.
+included several veteran vertical cavers, a writer, and Burt
+Jasek was able to crawl out of the breakdown room and meet
+Grossman, a defensive end for the San Diego Chargers football
+the others. Coming to his aid, they thought from the sound of
+team. They intended to provide Grossman with his first vertical
+his scream that he had fallen down a pit. He was unable to put
+cave experience as a publicity stunt. They spent most of the
+weight on his foot without intense pain and walking, even with
+day practicing at a nearby cliff and felt ready for the real thing.
+someone's help, was impossible. Still, with assistance, he was
+The pit was rigged with parallel ropes and caver
+able to crawl and climb to the entrance in about 40 minutes.
+photographers were poised on a ledge a few feet from the top,
+The vehicle was parked about a half-mile away and he was able
+to record the historic moment. The descent went well and the
+to hunch along on his behind for most of this. When his arms
+exit began with Buddy Lane and Grossman climbing the parallel
+gave out, the others carried him the remaining 300 feet. He
+ropes. Suddenly, a branch "a foot in diameter and twenty-five
+was taken to a hospital for treatment of the injury.
+feet long" broke off a large, overhanging oak tree landing on
+Grossman's rope at the edge of the pit; most of it stayed there,
+REFERENCES:
+but a ten foot piece broke off and continued down the pit.
+1) James Jasek, "Jim's Sunday Surprise," The Texas Caver,
+Cavers stationed on the bottom with flash guns saw this,
+June 1990, p. 67-69.
+yelled "Rock!", and scrambled for cover. The warning came
+2) James Jasek, Personal Communication, May 21, 1990.
+too late for Lane who was struck a glancing blow on the face.
+Lane put his hand to his face and pulled it back, covered with
+COMMENTS: Jasek feels there are some caves that simply
+blood. He and Grossman exited as fast as they could and Lane
+should be avoided on account of the danger. This particular
+headed for a hospital for treatment of facial lacerations.
+incident could easily have been much more serious, even fatal.
+In Jasek's words, "I consider myself to be a careful and
+REFERENCE: Roger Ling, "Falling Trees, Bees, and Other
+cautious caver, always on the lookout for a dangerous situation.
+Underground Adventures," Speleonews, October, 1990, p. 95-
+This situation caught me by surprise and even though my
+97.
+reaction. was instantaneous, I was unable to move fast
+enough. (A) cave is a part of nature, and as such, is a very
+unforgiving master when disturbed or thrown out of balance.
+UNSPECIFIED CAVE, TX
+May 13
+We must respect it with a vengeance and be ever aware that we
+Ar- Rockfall
+are trespassers in a world of delicate balance."
+On Sunday, May 13, a group of four entered a cave in Texas.
+NSS News December 1990 340
+LAUREL CAVERNS, PA
+May 26 A
+muscle contraction. No one was injured, so they continued,
+Ac - Caver Fall
+reaching the entrance at 8:30 p.m.; the survey team had exited
+earlier and reported that a thunderstorm had occurred outside
+On Saturday, May 26, a group of eight cavers entered Laurel
+the cave at around 6:30 p.m.
+Caverns, a commercial tour cave in Fayette County,
+Pennsylvania. The cave, longest in the state, is a series of
+REFERENCE: Michael Zawada, "Electric Shock from a
+sizable passages connecting large breakdown rooms. Visitors
+Thunderbolt in Beard's Cave, Arkansas", undated, unpublished
+commonly climb over the breakdown.
+report, 3 pps.
+The group was a church outing, led by Ken De la Sandro
+(30). In one room, Ken began downclimbing a breakdown pile
+COMMENTS: Electrical discharge from thunderstorm
+when he lost his holds and fell approximately 15 feet, landing
+lightning is an equalizing of potentials between the atmosphere
+feet-first in a small pool of water. The victim was a paramedic
+and a portion of the earth, but is not limited to the absolute
+and did his own diagnosis--a fractured fibula. He exited the
+surface of the earth, but rather a portion of the surface, such as
+cave with aid from his companions. At a hospital, the diagnosis
+a hill or mountain. Thus, it occurs that ground currents result
+was confirmed--the fibula was fractured in three places.
+in gullies, or fractures on the side of hills or mountains and, as
+we see here, even in caves. This is no joke--one does not have
+REFERENCE: Dan Peden, Personal Communication, June
+to be "hit" by lightening to be injured or killed. Zawada states
+2, 1990, 4 pp.
+"Severe electric shocks have been reported to cause heart
+fibrillation, muscle contractions, bone fractures,
+COMMENTS: Peden notes the following: "In the emergency
+unconsciousness, and respiratory paralysis." Beware.
+care field, a fall of greater than ten feet where the patient lands
+on his feet, is referred to as the "Don Juan Syndrome" named
+DEVIL'S KITCHEN CAVE, WV
+May 27 A
+after the fictional Don Juan, who leaped from balconies to
+Ac - Caver Fall
+escape jealous husbands. While the chief complaint of these
+patients is usually lower extremity pain (ankle, leg, knee), a
+Late in the afternoon of Sunday, May 27, Halley Hoth (27)
+more serious lumbar spine injury often results from the transfer
+and friends had been river rafting when they began to explore
+of energy through this area. Thus, lower back injury with
+Cooper's Rock State Park, on the Monogalia and Preston
+potentially serious spinal involvement must always be
+County Line in West Virginia. Devil's Kitchen Cave, a single
+considered in evaluating and treating (such) victims. When
+fissure passage leading to a large room, is located in the Park,
+possible, back immobilization should be employed until x-ray
+so the group decided to have a look. A little after 7 p.m., Hoth
+and neurologic exams show negative."
+took a fall in the large room and suffered major injuries. The
+cave, though short, is apparently rather difficult and Hoth's
+BEARD'S CAVE, AR
+May 26 B
+companions spent two hours trying to deal with the situation
+Do Other
+before calling the authorities.
+When EMS personnel arrived, they diagnosed a broken
+On Saturday, May 26, a group of ten cavers from Little Rock
+femur, possible broken pelvis, and hypothermia. In addition,
+Grotto entered Beard's Cave in Arkansas. A weather forecast
+the injuries were causing a great deal of pain. The victim was
+on the radio had predicted severe thunderstorms for that area on
+removed from the cave via a skylight in the ceiling of the 75-
+Saturday, but at 11 a.m., as they stood at the entrance debating
+foot room. This involved a main haul vertically to a Tyrolean
+the wisdom of entering, the clouds broke a bit and the sun
+traverse line which got him to the surface at a main section of
+shone through. Thus encouraged, and wearing wetsuits, they
+the park overlook. The haul took about two hours. The victim
+proceeded through the series of entrance chambers, where
+reached the ambulance in the parking lot in about two hours.
+"roaring water cascaded down the chutes."
+They then broke into a survey team of three and a push team
+REFERENCE: George Dasher, "West Virginia Cave
+of seven. All were keeping an eye out for rising water. Four
+Rescues," The West Virginia Caver, August, 1990, 8 (4), p.
+hours later, the push team reached the "terminal upper room".
+11.
+They spent some time there before returning to the stream
+passage, some 3/4 mile from the entrance.
+BOWDEN CAVE, WV
+May 27 B
+At 6:30 p.m. they had gone about 200 feet in the knee deep
+Be Equipment Failure
+water when Dewayne Agin (27), Camille Lide, Adriane Slover
+(30) and Michael Zawada (25), the only ones in the water at
+At about 7 p.m. on Sunday, May 27, a group of three,
+that point, "experienced a brief but substantial electric shock".
+Robert Hutton (25), Paul Osterling (25), and Mark Thyram
+Two minutes later, there was a second shock and Zawada's
+(23), entered the main entrance to Bowden Cave, Randolph
+hand was jerked a foot from the wall he was touching by a
+County, West Virginia. They had no helmets and only three
+NSS News December 1990 341
+flashlights. They intended to do a crossover trip, exiting a
+of "Rock!" was occurring every so often during the operation
+particular back entrance of the cave. Though the group leader
+as a caver would accidently knock a stone down the pit. The
+had been in the cave four or five times, he apparently had not
+best advice is to avoid such scenarios.
+heard that this particular entrance had been blocked by a large
+boulder for many years. Still, this ignorance was not crucial as
+NEW TROUT CAVE, WV
+June 18
+the group was not able to find that entrance. Unfortunately,
+Be - Equipment Failure
+two lights failed and the last grew dim. They couldn't find
+their way back to the main entrance.
+At around 9 a.m. on Monday, June 18, a group of three
+When they failed to return to their camp near Seneca Rocks
+cavers entered New Trout Cave, Pendelton County, West
+the following morning, friends notified authorities in Elkins and
+Virginia. This is one of four National Speleological Society
+public agencies as well as caver rescuers were mobilized.
+owned caves known as Trout Rock Caves along the South
+Firemen and EMS personnel arrived first and two firemen
+Branch of the Potomac River. The three were Gary Lutes (37)
+plus a paramedic entered the main entrance at around 9 a.m.
+and his two sons, Gary Jr. (13) and Timothy (9). Lutes' caving
+Cavers soon arrived and went in the higher entrance to sweep
+experience stretched back 20 years, but the two boys were
+search back toward the main entrance. The three in the main
+essentially novices. They each had a new Premier carbide lamp
+entrance followed the main passage up and into the Water
+and Gary Sr. carried the one pack containing their only extra
+Passage. The three lost cavers were found in the maze beyond
+food, water, and carbide along with their backup lights, a
+the Water Passage. Everyone was out by 11:10 a.m.
+cigarette lighter and a candle. Lutes had experience in this
+particular cave and they were also equipped with gloves,
+REFERENCE:
+George Dasher, "West Virginia Cave
+kneepads, and hardhats.
+Rescues", The Region Record, 4 (3), September 1990 (also
+They proceeded 1,000 feet to the Big Room, some 50 feet
+from The West Virginia Caver, August 1990, 8 (4) p. 11) p.
+across and 20 feet high. They had a bite to eat, then proceeded
+38.
+into the Maze, a honeycomb of ledges, corridors and tight
+passages. When they came to an eight foot drop into a tight
+STEPHENS GAP CAVE, AL
+June 9
+section of passage, Lutes left the pack--he didn't want to
+Cr Rockfall
+struggle with it in the tight places. They had recarbided ten
+minutes before and should have been good for two to three
+On Saturday, June 9, a group of eight cavers attending the
+hours. Ten minutes later they had proceeded some 200 feet
+Southeast Regional Meeting (NSS) decided to do the 142 foot
+when Tim's light began to fail. They turned back but had gone
+Stephens Gap Cave entrance pit in Alabama. They arrived at
+only 20 feet before it failed completely. Lutes began to hurry
+the pit at 11 a.m. to find a group of seven already there;
+back to the pack, with the boys following, when Gary Jr.'s
+another group of five arrived shortly.
+light failed. The area passages were mostly crawlways and
+After several of the group of eight had descended the pit,
+stoopways and Lutes realized he was confused. He tried one
+they decided to visit the cave itself. They rigged at the
+false lead, then another, with the boys asking, "Dad, are you
+"Window" drop, on the side of the pit opposite the trail. This
+lost?". When his light, the last of the three, went out, there
+starts as a three foot oval slot which joins the main pit and
+was no denying it, they were lost.
+allows cavers to get off at a convenient ledge.
+Lutes considered crawling on in the dark with the boys
+At about 2 p.m. Don Lance (23) the last of the eight-group
+hanging on to him, but if he couldn't find the pack with light,
+to ascend, was coming out the Window when "a three-foot
+how could he do it in the dark? He gathered the spent carbide
+section of a boulder at his side suddenly broke off and fell into
+from the three lamps, collected the unspent pellets, and using
+the pit". The call of "Rock! Rock!" went out instantly as the
+urine in the water chamber, got one lamp going. He didn't find
+rock struck the ledge below, shattering into several "bowling
+the pack, but got the three of them into a more spacious
+ball" sized pieces that showered into the pit. One caver from
+chamber, where they could almost stand, before this carbide,
+another group was hit a glancing blow on the leg by a small
+too, was expended. They sat down to wait in the 54 degree
+piece but this caused no injury and he was able to continue.
+cave, sitting on their kneepads to conserve heat.
+Lance froze and observed that another piece was poised to fall.
+Lutes knew they had a long wait ahead of them--he had not
+He was able to maneuver past this and there was no further
+informed anyone of their intentions. On Wednesday, a local
+incident. Lance suffered only minor lacerations on his thigh.
+resident called the West Virginia State Police to report Lutes'
+vehicle which hadn't been moved for three days. It had Florida
+REFERENCE: Dan Lance, NSS Accident Report, undated,
+plates, so Florida authorities were questioned. Lutes' address
+2 pp.
+in Florida was obtained and called with no answer on
+Wednesday and Thursday.
+COMMENTS: This is one of the most hazardous situations in
+In the cave, the Lutes were going through some changes,
+caving--the multi crew pit descent. Lance reports that the call
+coughing from the dust and dehydration, having chest pains,
+NSS News December 1990 342
+irregular breathing, seeing flashes of light, yearning for water
+only one pack? Why didn't urinating in the lamp work long
+and food, crying, consoling each other, thinking they were
+enough to get them to their pack?"
+going to die, and praying for one more chance at life. Finally,
+"This rescue should never have taken place. Gary Lutes
+they lay down together, weak and knowing the end was coming.
+violated every rule that the NSS and the rest of organized
+On Friday, the State Police contacted Barry Chute of the
+caving preaches to each and every one of us: Carry three
+Potomac Speleological Society (the Lutes' vehicle was, of
+sources of light each! Tell someone where you are caving and
+course, parked near the caves), who called a Florida caver who
+when you will return!"
+learned that the Lutes' were in Pendleton County to go caving,
+The dust that caused respiratory problems apparently is soot,
+followed by a visit to grandparents on Thursday night. The
+left by nitrate miners years ago.
+grandparents, when contacted, had assumed the trio was having
+a good time caving and was merely delaying their visit.
+KENNAMER CAVE, AL
+June A
+Cave rescuers were soon mobilized. One immediate problem
+Bo - Other
+was lack of knowledge as to which of the four caves the victims
+were in--their vehicle was merely parked on Highway 220.
+On a Saturday in June, four cavers went to Kennamer Cave,
+There was no note on it, nor in the register near the entrance to
+Alabama, to get some photos of 120-foot Kenna Pit, the
+New Trout Cave. Lutes was known to be a "squeeze freak" and
+entrance to the cave. The pit was rigged and John Van
+one thought was that he was trapped in the Airblower, a
+Swearingen went down first. From a previous trip he recalled
+bedding plane constriction in the back of Hamilton Cave.
+seeing a bird's nest just ten feet below the lip. Wanting to be
+The cavers on the scene broke up into small parties and did
+careful when he passed it, he used his legs to keep well out
+a cursory search of each cave, finding no sign, and no note in
+from the wall. As he arrived at the nest, he was amazed to
+either of the registers in Hamilton or Trout Caves. More cavers
+observe a five-foot snake coiled on it. Stopping, he looked
+were mobilized. When New Trout was searched in earnest, the
+closely but was unable to tell if it was poisonous. His situation
+Lutes' pack was soon found and runners were sent to the
+was not good if the snake were dangerous--legs spread wide
+surface to concentrate the manpower. When the rescuers,
+with the bottom part of his torso just above the level of the
+expecting a body recovery, continued into the Maze, they were
+nest. His lower legs were within easy striking distance of the
+surprised to have their shouts returned by the Lutes'. Gary
+snake. With his shunt locked, he considered the situation.
+Lutes and Gary Jr. were able to exit under their own power, but
+If he tried to put on a foot ascender, his body would pivot
+Tim was too weak and had to be carried out. They had been in
+into the snake; if he kicked out dropping past the snake, he
+the cave for four days and 17 hours.
+might not drop far enough and get the snake in the face, and he
+would still have to ascend and the rope might knock the snake
+REFERENCES:
+down on him. Moreover, being only ten feet below the lip
+1) Greg Moore, "Family Saved After Five Days in Cavern",
+greatly reduced his penduluming and kicking-out ability.
+Sunday Gazette-Mail (Charleston, WV), June 24, 1990.
+Van Swearingen contemplated this for 30 seconds, then called
+2) AP, "Family Recited Bible While Trapped in Cave",
+up to his companions, asking them to look for a long stick.
+Marietta Daily Journal, June 25, 1990, p. 1A, 8A.
+Such was soon produced and the snake was dislodged, falling
+3) Meg Grant, "Entombed in a Cave for Five Days, a Father
+down the pit. The snake survived the fall and was later caught
+and His Two Young Sons Are Rescued on the Verge of Death",
+in a bag and returned to the surface. A description of the snake
+People Magazine, August 13, 1990, p. 99-106.
+later yielded the opinion that it might have been a copperhead.
+4) George Dasher, "West Virginia Cave Rescues", The Region
+Record, 4 (3) September 1990, p. 37-40 (from The West
+REFERENCE: John Van Swearingen IV, "A Snake in my
+Virginia Caver, August 1990, 8 (4) p. 11.)
+Face", The Huntsville Grotto Newsletter, June/July 1990, p.
+5) Russ Carter, "Editors Analysis", The Region Record, 4
+45.
+(3), September 1990, pp. 39, 42.
+ELWOOD'S DROP, IA
+June B
+COMMENTS: Incredible! Unbelievable! I always thought
+Cr - Rockfall
+the NSS was immune from the totally absurd incidents, the dim
+flashlights and knotted ropes. But Mr. Lutes has clearly broken
+In June, three cavers did 54-foot deep Elwood's Drop in
+new ground, and I now turn him over to the kind ministrations
+Winneshick County, Iowa. On the way out, Mike Nelson was
+of the honorable Russ Carter.
+halfway up when he was struck by a fist-sized rock which had
+"Why did an NSS Caver, with 20 years of experience, enter
+fallen from the lip of the drop. The rock brushed his jaw and
+a cave with only one light per person? Why did their carbide
+struck his arm at the inside of the elbow, leaving a minor
+lamps run out of water after only an hour when normally they
+bruise. He continued without further incident. Nelson was the
+last three to four hours? Why did they leave their pack after
+second caver to ascend so the instability may have been caused
+they had to refill their lamps after 45 minutes in the cave? Why
+by the first to go up.
+NSS News December 1990 343
+REFERENCE: Mike Nelson, "Accident Report", July 10,
+ANTONIA PIT, MO
+Summer B
+1990, unpublished, 1 pp.
+Ace - Caver Fall, Equipment Failure
+On a summer trip to Antonia Pit, two cavers, Lannis
+APE CAVE, WA
+June 24
+Crutcher and Jack Parker rigged the 80-foot drop and prepared
+Ac - Caver Fall
+to go down. Parker descended first; Crutcher rigged in and
+started down but found, to her exhilaration, that her rack,
+At about 4:30 p.m. on Sunday, June 24, a group of eleven
+which she had carefully applied to the rope, was not functioning
+entered the upper entrance to Ape Cave in the Mt. St. Helens
+properly. Parker heard the rappel going too fast and grabbed the
+Volcanic National Monument in southern Washington. This
+rope, thus breaking her descent with his arms. Still, she hit
+was a co-ed scout outing from Port Orchard, Washington. The
+hard, spraining her ankles and bruising Parker's forearms. It
+group was in the area to climb the south side of Mt. St. Helens
+was then discovered that the rack hadn't malfunctioned, it was
+and wanted to do the cave as a "warm-up". The scouts had no
+simply not attached to her seat harness. She had rappelled on
+helmets or individual lights and had to cluster around to closely
+her gloves. They exited the cave with some difficulty, and later
+follow the three adult leaders who each had a rental gas lantern.
+x-rays showed the ankles to be broken.
+They proceeded some 500 feet into the descending lava tube.
+Trip leader, Scott Hansen (41), was leading when his left foot
+REFERENCE: Lannis Crutcher, Meramec Caver (Meramec,
+stepped into a crack between two knee-high lava boulders,
+Valley Grotto, Missouri), July 1990.
+slipped on the muddy surface and toppled sideways. He
+received cuts from the sharp lava and suffered a broken left leg.
+BIGFOOT CAVE, CA
+July
+One of the leaders administered first aid while the other
+Cre - Rockfall, Equipment Failure
+herded the group back outside and sent runners to notify the
+National Park Service of the problem. NPS and Sheriff's
+In early July, a group of cavers entered Bigfoot Cave,
+Department personnel assisted in the evacuation of the victim.
+Siskiyou County, California, via the Hanging Rocks Entrance,
+He reached the ambulance three hours after the accident.
+to rig the series of pits inside for use during pre-convention
+activities at the NSS annual convention. After rigging the pits,
+REFERENCE: John Clardy, Personal Report, undated, 5 pp.
+Bob Richardson and companions proceeded to the Hanging
+Rocks-Discovery Passage connection, where Hanging Rocks
+COMMENTS: Clardy was at the scene and informed the group
+Cave had been connected to Bigfoot a few years before. The
+of NSS educational services, which they sorely needed.
+connection was through a highly-inclined, slot that had been
+dug open--one-handed, one arm extended, and one arm back to
+fit in the slot. Richardson wanted to remove additional material
+JACK SPRING CAVE, KS
+Summer A
+to make the squeeze easier. To facilitate his ability to turn his
+Db - Bad Air
+head and see while in the dig, he removed his helmet before
+entering. He was moving loose material when a rock fell from
+A group of four cavers entered Jack Spring Cave, Chase
+higher in the slot, striking him on the head and causing a scalp
+County, Kansas, for a survey trip. Before they reached their
+laceration. Richardson backed out of the slot, received first aid
+survey starting point, approximately 3,600 feet into the cave,
+from his companions, and exited the cave, wearing his helmet.
+they noted the odor of petroleum. As soon as the survey was
+started, two of the four were complaining about not feeling
+REFERENCE: Bob Richardson, Personal Communication,
+well. By the 110th survey station, at approximately 5,200 feet
+July 1990.
+in, Jon Beard and James Young turned back; at that point,
+Young was having to rest during each survey leg, even though
+BUCKNER CAVE, IN
+July 8
+it was walking passage. A few hundred feet toward the
+Bl - Losing the Way
+entrance Beard developed a very bad headache and vomited the
+first of six times, the last after exiting. It is speculated that
+On Sunday, July 8, a group of 16 cavers, an adult and 15
+high local precipitation runoff in 1990 had carried oil well
+young people ages between the ages of 8 and 16, entered
+effluent into the cave, as well as depleting the oxygen content.
+Buckner Cave in Monroe County, Indiana, and proceeded to the
+The cave is poorly ventilated.
+Volcano Room before they became totally disoriented. They sat
+it out and were rescued by a local emergency squad around
+REFERENCE: Jonathan Beard, Ozark Underground, August
+midnight.
+1990.
+REFERENCE: Will Ott, Cave Incident Information Form,
+8 pps., July 16, 1990.
+NSS News December 1990 344
+McFAIL'S CAVE, NY
+July 21
+4) Morris Sullivan, Personal Communication, August 4,
+Co Other
+1990.
+At approximately 12:00 p.m. on Saturday, July 21, 1990,
+COMMENTS: This common little incident has a wonderful
+Ken Davis, Kevin Dumont, Eric Kirchner, and Christine
+footnote--one of those little twists of fate that I find so dear.
+Langford entered McFail's Cave, Schoharie Co., New York,
+One of the rescuers, Jody Landrum, Chairman of the
+via the Hall's Hole entrance. The qualified McFail's leader for
+Nashville Chapter of the NSS, had listened at a chapter meeting
+the group was Kevin Dumont. The group proceeded down the
+to Ward and Overton's account of having rope and rigging gear
+Coeyman's Passage to the Main Passage, then travelled directly
+stolen at Johnson's Cave in May. At the current rescue,
+to the main sump. The entire group was warned near the start
+Landrum overheard Wallis talking about stealing a rope.
+of the trip of thin lateral layers of sandstone which have been
+Landrum inquired; Wallis showed him the gear--the rope was
+eroded to razor sharpness that are present in part of the cave.
+the same as the one belonging to Ward and the carabiners were
+It was pointed out by the leader that people in the past had
+stamped with the initials "WO" for William Overton. Busted!
+emerged from the cave with serious cuts on their cheeks.
+Wallis pleaded guilty and received two 30-day suspended
+Shortly after leaving the sump and heading back upstream,
+sentences of which he was required to serve five days each, as
+Langford's left wrist made contact with the wall. Because of
+well as a $50 fine and court costs. According to Sullivan, this
+this contact, Langford suffered one serious cut and several
+totalled around $1,100.
+smaller ones. The wrist was cleaned with Neosporin and
+bandaged compressed gauze and medical tape that were in a first
+CAVE DISAPPOINTMENT, NY
+July 28
+aid kit Davis carried. The group then proceeded out of the cave
+Bse - Stuck, Equipment Failure
+with a short diversion upstream past the Coeyman's Passage.
+Langford ascended out of Hall's Hole with little difficulty. She
+At about noon on July 28, a group of four entered Cave
+later saw a doctor who informed her that she could have used
+Disappointment with the intention of doing a crossover trip and
+stitches but it was healing fine without them.
+exiting Hanors Cave in time for the Helderberg-Hudson Grotto
+meeting at 4 p.m. The group were Richard Atwood, Pete
+REFERENCE: Kevin Dumont, "Accident Report", August 14,
+Johnson (leader), and Johnson's sons, Kyle (10) and Evan (7).
+1990, 1 page, unpublished, reproduced here in entirety.
+They rigged the 50-foot entrance drop and rappelled in. At
+the bottom there is a 10-12 inch wide crack that leads down at
+JOHNSON'S CAVE, TN
+July 22
+a 45 degree angle for about five feet to a wider, horizontal
+Be - Equipment Failure
+chamber about six to seven feet long. Johnson and his sons
+proceeded through the slot but, when Atwood tried to follow,
+On Sunday, July 22, a group of six entered Johnson's Cave,
+he became stuck. He tried to climb back up, but thin
+Putnam County, Tennessee. These were Mike Wallis (19),
+projections on the walls caught his clothes, impeding progress.
+Yvette Sherman (18), Toby Jordan (16), Allen Watts (16),
+After a half-hour of struggling, he returned to the bottom of the
+Dusty Proctor (14), and Russell Millheim (17). Wallis had
+entrance pit.
+reportedly been to the cave some ten times, but one might
+The problem now was that Atwood and the boys had no rope
+presume the others to be inexperienced. They were equipped
+ascending gear. Johnson and the other two returned to the pit
+with water, food, flashlights, and a rope.
+and Johnson ascended. He rigged a 30-foot cable ladder to the
+The group proceeded as far as the 40-foot drop where they
+end of the rappel rope and re-rigged the pit so that it could be
+rigged the rope, and all but Proctor and Millheim descended.
+ascended via the ladder with the other end of the rappel rope
+They found that it was not so easy to get back up. No one
+used to belay the climbers. A climber would ascend the ladder
+had any ascending equipment and it was soon clear that they
+to a ledge, the ladder would be repositioned and the climber
+were stranded in the 56-degree cave. Fortunately, Proctor and
+would continue to the surface.
+Millheim were able to go for help.
+The boys got out in this manner, but Atwood was too tired
+Rescue volunteers and public agency personnel arrived at
+from his struggle and could only get halfway up the ladder.
+dawn Monday and had the stranded cavers out by 8 a.m.
+At 2:45 p.m. Johnson hiked back to the truck and drove to
+the grotto meeting to initiate a rescue going. Cavers responded
+REFERENCES:
+and the stranded caver was hauled out of the pit at 4:30 p.m.
+1) Patricia Williams, "Proper Gear Would Have Helped:
+Caver", The Tennessean, July 24, 1990, p. 1A.
+REFERENCE: Lloyd Johnson, Personal Communication,
+2) Ed., "Theft Victim's Name Wrong in Cave Story", Ibid.,
+undated, 2 pages.
+August 1, 1990.
+3) Patricia Williams, "Spelunker Pleads Guilty to Stealing",
+COMMENTS: Johnson feels he should have had more
+Ibid., July 31, 1990.
+knowledge of the cave--he had only one caver's description of
+NSS News December 1990 345
+the crossover and two maps, neither of which showed a
+belay, moved on a bit and was able to fetch Fowler out of his
+squeeze. One should take special care in planning crossovers--
+hole. He was checked by an EMT and they headed for the
+they seem to create an inordinate number of incidents.
+entrance. A belay got everyone across the top of the first pit
+and they were soon out.
+UNNAMED CAVE, VA
+August 2
+Be - Equipment Failure
+REFERENCE: Mike Lawhorn, "Cave Rescue-August 3,
+1990", The West Virginia Caver, (5), October 1990, p. 8-9.
+At about 1 p.m. on Thursday, August 2, Mark Fowler (27),
+entered a newly opened cave in a road cut on US 460 in
+ANALYSIS: "Mark Fowler broke all the rules in the book.
+Tazewell County, Virginia, near the West Virginia-Virginia
+He went into a highly unstable cave. He left no instructions or
+border. An excavation had exposed the cave but the opening
+information as to his intentions. He had no extra lights or
+was too small to enter. On July 30, Fowler had enlarged this
+provisions. He did not have the proper equipment and he was
+opening and made a short excursion into the cave.
+caving alone."
+Thursday was Fowler's day off; he wore coveralls but no
+It was just blind luck that led rescuers to check that particular
+helmet and had a single electric light. He explored for a couple
+hole and, if Fowler had not been able to communicate, he
+of hours. After down climbing into a hole with steep mud
+would probably still be there.
+banks on the walls, the light failed. In the dark, Fowler could
+not climb up so he sat down to wait for help.
+ROTORHEAD CAVE, WY
+August 11
+Fowler's parents reported him missing at about 11 p.m., but
+Br - Rockfall
+he had not told them where he was going. He commonly went
+solo caving, but had not taken all his caving gear and had taken
+On Saturday, August 11, a group of three cavers entered
+his gym clothes. Fowler did not drive, so his whereabouts
+Rotorhead Cave in the Bighorn Mountains of north-central
+would not be revealed by a vehicle near the entrance of a cave.
+Wyoming. These were Blaine Davis, Dave Baker, and Monte
+His caving friends were unaware of the road cut cave and
+Harnden. The cave entrance is in a small, obscure sink about
+figured Beacon Cave in Mercer County was the most likely, and
+1/4 mile from the Hunt Mountain Road. This entrance leads
+spent the night searching upstream in that cave. At 7 a.m. on
+past moss-covered rocks to a broad, low room with a few small
+Friday a general call went out for cave rescuers.
+speleothems. A hole along the right wall leads on, up a slope
+A group went back to Beacon Cave, split into two groups--
+and through a constriction to a debris choke where a slight air
+each taking an entrance--searching until they met in the cave, at
+flow indicated more cave beyond. The group had come to dig
+which point they all searched downstream with no success.
+and made good progress until they encountered a huge
+As this group left, another arrived and was directed to search
+breakdown block that essentially filled the passage. They
+yet another part of the cave. They also found nothing.
+inspected it, deciding to dig around it on the right side. After
+The rescuers reformed and decided to send a group to Big
+30 minutes or so a portion of the block was broken off and
+Springs Cave and another to check out some of the caves west
+removed. The hole was still too small for Davis or Harnden,
+along US 460. They stopped at the new section of road to
+but Baker was able to squeeze past on his left side. He then
+check some openings and noticed evidence of excavation at one.
+had to position himself for the upward move to get between the
+Two rescuers entered this while a second passable opening was
+block and the ceiling where a seven-inch gap apparently led
+checked by another team. The first group reached a 30-foot pit
+further. The vertical angle to reach the gap was 70 degrees.
+about 50 feet in and started yelling to see if the other group had
+As Baker struggled with this, the others turned to an
+entered the same cave. In reply, they heard "a voice which
+adjacent, alternate dig. Occasionally, they would stop to listen
+sounded way off". Silence among the rescuers was requested
+to Baker's efforts. After numerous breaks, they suddenly heard
+and achieved. Mark's name was shouted--he replied.
+nothing and called to him. His response couldn't be understood
+The victim's exact location was not easy to determine; the
+so Harnden backed out of his dig to hear Baker calling for help.
+cave was quite fractured from construction blasting. They
+He went to his aid immediately to find that as Baker had tried
+began to penetrate further by rigging and rappelling the pit
+to get between the block and the ceiling, a 30 pound, triangular
+while the State Police blocked traffic on US 460, keeping
+rock had dislodged and landed on his back; any movements by
+vehicles away from the entrance.
+Baker now caused the rock to settle to his right, wedging
+Passages off the bottom of the pit ended with no victim. As
+between him and the wall and trapping him. For Harden, an
+they ascended the pit, a crawl near the top with scuff marks was
+image of Floyd Collins came "like a rocketship from hell".
+noticed. Yelling indicated the victim to be down this.
+Harnden could squeeze in and reach the tip of the rock but
+The 30-foot crawl led to a walking slot for 40 feet, then
+wiggling it only served to wedge it tighter to Baker's right.
+turned right and became a 4-foot tube sloping up and over
+After some effort, it seemed that the rock would have to come
+another 30-foot pit. At this point, they conversed with Fowler,
+out, along Baker's right side. Davis, in the chamber behind
+learning that he was unhurt but in a hole he couldn't climb. A
+and below, was wondering if sleeping bags to ward off
+rope was brought and one caver traversed above the pit on
+NSS News December 1990 346
+hypothermia, and outside help, should be obtained. They
+had to chimney out with his arms; when he swung his body out,
+discussed this and decided to work on the rock for awhile.
+there were no footholds and he fell the 20 feet. He landed on
+Harden returned and managed to tip the rock up, turning a
+his feet, twisting his ankle and bruising his back. He was able
+jagged corner into Baker's back and, with "considerable effort",
+to exit under his own power without too much difficulty.
+forced it back between him and the wall, gouging Baker's back
+in the process. The rock was passed back to Davis and they all
+REFERENCE: Raymond Sira, Speleothems (Northern New
+wiggled out of the squeeze.
+Jersey Grotto), Fall 1990.
+REFERENCE: Monte Harnden, "The Close Call", Rocky
+PHERRIS PIT, TN
+Fall B
+Mountain Caving, Autumn 1990, p. 25.
+De - Equipment Failure
+TRES CHARROS CAVE, WY
+August 12
+A group of cavers was doing 252-foot Pherris Pit in
+Bc - Caver Fall
+Tennessee and had rigged two ropes to facilitate the effort.
+Angela Morgan ascended with a Frog System and was 40 feet
+On Sunday, August 12, three cavers, Blaine Davis, Dave
+from the top when someone above noticed that the sheath had
+Baker, and Monte Harnden entered Tres Charros Cave in the
+worn through on the rope she was using. She was informed
+Bighorn Mountains of north-central Wyoming. They had no
+and switched over to the second rope and completed her ascent.
+map of the cave and previously had only been as far as Bat Veil
+Falls. They proceeded down the 40-foot pit at Bat Veil and
+REFERENCE: Ray Hardcastle, "Ray's Review", NSS News,
+headed downstream to the big falls where they crossed into
+May 1991, p. 154 (in Undergraph Interground [Intergraph
+upper level passage, getting as far as the 110-foot Virgin's
+Grotto, NSS], October 1990).
+Promise Pit. They then retreated to the big falls and found
+their way into Hayford and into Sheepherder Canyons.
+COMMENTS: It appears the rope rubbed on rock at the lip
+Near a dry sump that had been dug open, they entered a
+through a hole in the rope pad. Apparently the Frog System
+cross-joint passage and headed down this to where it resembled
+was also producing bounce in the rope during the ascent. The
+a 30-40 foot diameter funnel with very steep sides. Harnden
+combination wore the rope very quickly. I must comment that
+wanted a closer look at the pit in the center so he started down
+"bounce", either during ascent or descent, should be considered
+the apparently virgin slope. Their only rope had been rigged at
+unacceptable. If you tend to bounce, and cannot damp it out or
+Bat Veil Falls, so he relied on the mud crust yielding footholds
+become smoother, you should change equipment or techniques.
+in the sand beneath. For several steps this worked fine as his
+It is not the fault of rope stretch. Furthermore, avoid cavers
+heels dug in well, but the sand then turned to rock with the
+who generate bounce-they are a danger to themselves and
+mud acting as a lubricant. Harnden's feet shot out from under
+others.
+him and he was "sliding uncontrollably toward the hell's mouth
+below". He let out a scream and tried to get a climbing
+SPANISH CAVE, CO
+September
+protection stopper into some crack. Fortunately he had chosen
+Ac - Caver Fall
+his down-route so as to be above a small dormer-like protrusion
+at the edge of the he was stopped by this. As he held
+On Saturday, September 1, a group of five cavers backpacked
+on, "I could probably have clung to greased glass with little
+three miles and entered the Frank's Pit (upper) Entrance to
+more than my fingernails", his companions tied every spare bit
+Spanish Cave, at over 11,000 feet elevation, in the Rocky
+of sling together and lowered the resulting line to him. Thus
+Mountains of Colorado. They were Jerry and Helen Hassemer
+aided, Harnden got back up the slope and they left the cave
+(51), Jim Wilson, Skip Withrow, and Steve Hawkins, all of the
+without further incident.
+Colorado Grotto, NSS, and experienced cavers. The objectives
+were a through-trip to the lowest entrance and a survey of the
+REFERENCE: Monte Harnden, "The Close Call", Rocky
+connection between the Waterfall Pit and the Black Slide.
+Mountain Caving, Autumn 1990, p. 25-26.
+They squeezed through the small slot of the Frank's Pit
+Entrance and rappelled the 140-foot drop. The group proceeded
+ORGAN CAVE, WV
+Fall A
+to the Black Slide where Jerry Hassemer and Hawkins went
+Cc - Caver Fall
+ahead to the Waterfall Pit to establish voice contact through the
+unsurveyed connection. After waiting a half hour, the trailing
+On a trip to Organ Cave, West Virginia, cavers Raymond
+group became chilled in the 34 degree, breezy cave and yelled
+Sira and Sandy Knapp were attempting to follow a map to get
+that they were going on. They proceeded to the Overhand
+to the Sarver Room via the Octopus Passage when the crawl
+Dome Room, just beyond the Black Slide where an etrier is
+they were in broke into a large room with a 20-foot drop to the
+hung to facilitate the 13-foot descent. This is a rope or sling
+floor. When Sira, in the lead, emerged from the tight crawl, he
+with loops tied or sewn at intervals for foot and hand holds.
+NSS News December 1990 347
+At about 8 p.m., Helen Hassemer began the descent. After
+canyon passage, over the Saddle and down the Crevice. On the
+getting over the edge, she had trouble finding the next lower
+climb back to the Saddle, Bunton (22) became trapped when his
+foot loop. Her other foot came out of its loop, leaving her
+belt buckle caught on a protrusion and he was unable to get a
+hanging by her hands. She called to Wilson for help. He
+foothold to force himself past the obstruction.
+started to climb to her position, but she lost her grip and fell 12
+His companion went for help and the caver was freed by
+feet to the bottom of the drop, landing on her back.
+emergency services personnel at about 5:30 p.m.
+Wilson yelled to Withrow to get Hassemer and Hawkins.
+Wilson descended and examined the still conscious victim. She
+REFERENCE: Will Ott, Cave Incident Information Form,
+had a high level of pain in her lower back but could squeeze her
+undated, 7 pps.
+hand and move her feet. There were apparently no broken
+bones or nerve damage. By the time the others arrived, she was
+shivering and uncertain of her ability to even stand.
+NICKWACKETT CAVE, VT
+September 29
+The danger of hypothermia and remote location of the cave
+Ble - Losing the Way, Equipment Failure
+demanded that the group self-rescue, so her damaged headlamp
+was repaired and she was helped up. She seemed strong enough
+Between 2 and 3 p.m. on Saturday, September 29, John
+so they set off with Jerry leading the way. They proceeded past
+Butler (26) and John Presti (31) entered Nickwackett Cavern in
+the Coral Slide and through the T-slot where one must manage
+Chittenden, Vermont. They were dressed in pants and flannel
+a 2 X 2-foot crawlway at the crossbar.
+shirts over T-shirts, had no hard hats, and had only flashlights
+Just short of the First Great Chamber they had to help her up
+for light. Intending to explore for only an hour, they proceeded
+an ascent with a rope looped under her armpits--this allowed
+into the 200-foot long crawlway cave. They passed through
+them to pull from above and lift from below. They then
+two small rooms and slid down a steep, narrow bellycrawl.
+traversed for 200 feet above a 50-foot deep fissure. At the Jug,
+This led to a small chamber some four feet high and three feet
+an exposed traverse above a 170-foot deep pit, and near the
+wide, followed by a constriction and another chamber. They
+lower entrance, they were able to cross easily on a heavy crust
+had lost one flashlight on the way in and planned to retrieve it
+of snow and ice. They exited the cave at 10:30 p.m. and
+on the way out. When the second light began to fade, they
+Hassemer was taken to a hospital. She had suffered a burst
+turned back but became disoriented. They became convinced
+compression of the lumbar I vertebra. Nearly complete
+that a passage they had not traversed coming in was the way out
+recovery is expected.
+and tried to make it work about 15 different times--they were
+sure that a squeeze past a rock would go if they just did it right.
+REFERENCES:
+When 12 hours had passed, their flashlight finally went out, and
+1) Helen Hassemer, NSS Accident Report, undated, 2 pages.
+they were forced to sit and wait for rescue.
+2) James V. Wilson, "Spanish! Ole!", Rocky Mountain
+On Monday night Butler failed to report for work and the
+Caving, Autumn 1990, p. 12, 27.
+State Police were called. The police made inquiries and learned
+that the pair had told acquaintances that they planned to explore
+COMMENTS: The victim had made three previous through
+some caves that weekend. On Tuesday, a State Trooper,
+trips and so was familiar with this particular etrier. The
+Dennis Holman, investigated further, going to local caves that
+difference this time was that no one was below, helping spot her
+he thought the men might have gotten directions to.
+footwork. Her helmet, a Joe Brown, and a small backpack
+There was no sign of them at the Pittsford Ice Caves (a
+probably saved her from more serious injury.
+woman at a store had told them these were "wimp" caves), but
+An etrier is, in essence, a cable ladder, except that it is more
+their car was found at Nickwackett Cavern, with a knapsack and
+difficult to use. No such ladder should ever be used without a
+some clothing found just inside the cave entrance.
+belay. An etrier is a rock climbing tool. I personally feel that
+Meanwhile, the two were not faring well in the cave. With
+a rope should be rigged for short drops and even a 10-foot drop
+no food or water and the temperature barely above freezing,
+should be easily rappelled. Etriers should not be used in place
+they huddled together between rocks trying to stay warm.
+of rope, but there have been several reported accidents of this
+The police officer and a man from the Pittsford Fire
+type. Just don't use them.
+Department entered and found the lost cavers only 70 to 80 feet
+from the entrance. They had been in the cave for three days.
+BEE TREE CAVE, IN
+September 16
+They were treated for hypothermia (body temperature 95
+Bs Stuck
+degrees F), but were otherwise unharmed.
+At about 4 p.m. on Sunday, September 16, two poorly
+REFERENCES:
+equipped cavers, Bob Bowling (20) and Tony Bunton (22)
+1) Michael Maynard, "Men Lost in Cave Rescued", Rutland
+entered Bee Tree Cave in Monroe County, Indiana. They
+Herald, October 3, 1990, pp. 1, 4.
+entered the "football-sized" entrance and descended the initial
+2)
+Amy Blotcher Guerro, "Brocton Men's Venture into
+NSS News December 1990 348
+Vermont Cave Becomes 3-Day Ordeal", The Enterprise
+have to be freed from upstream. Fortunately, the stream
+(Brocton), October 3, 1990, p. 1.
+passage at that point is broad, something not obvious since most
+of it is only an inch or two high. Fritzke noticed a ceiling
+APOGEE CAVE, CA
+October 8
+channel in the low area and succeeded in trenching and digging
+Dr - Rockfall
+his way around the collapse.
+Fritzke proceeded to remove the entrapping rocks, a nasty
+On October 8, a group of cavers entered Apogee Cave, the
+operation, since removal of rocks at first caused others to come
+highest of the group of caves in and adjacent to Marble Valley
+down from above. Still, Maxwell was freed in some 15
+in Siskiyou County, California. The cave is rather complex
+minutes of digging. He was able to exit the cave under his own
+with the main part being a sinuous, multi-level affair with offset
+power. He had been trapped for about 35 minutes.
+(out-of-phase) sinuosities. One side lead they mapped led to a
+blockage of massive breakdown. Through spaces in this, a
+REFERENCE: Rich Sundquist, "Caving in the Marbles", The
+large chamber with an enticing echo could be seen above. One
+Valley Caver, Winter 1990.
+caver penetrated a squeeze and found a complicated way up into
+the room. Derek Hoyle and companions were working on
+COMMENTS: Maxwell's bent-knee position probably saved
+another route and were encouraged by the remarks from the
+him from suffocation. In the cold alpine cave he also probably
+chamber, that it appeared to be virgin. Hoyle was trying to
+would not have survived a lengthy excavation. The separation
+negotiate a large slab and had just removed himself from under
+of the party could also have been fatal-keep together.
+it when it suddenly slammed down, eliminating the space he had
+exited. After a few minutes to revive their courage, the group
+squeezed up through the breakdown, only to find that the room
+TRAPDOOR CAVE, IN
+October 16
+was known and mapped.
+Ar Rockfall
+REFERENCE: Derek Hoyle, Personal Communication,
+About 2 a.m. Sunday morning, October 14, a group of four
+October 8, 1990.
+approached Trapdoor Cave near Bloomington in Monroe
+County, Indiana. They had been partying, had become bored,
+SUNBEAM CAVE, CA
+October 13
+and decided to go caving. One had been caving once before;
+Br - Rockfall
+they had two hardhats, a half-dozen flashlights and some beer.
+They signed the register at the Buckner's Cave kiosk and
+On Saturday, October 13, three cavers entered Sunbeam
+proceeded to the Trapdoor Cave Entrance, a narrow, eight-foot
+Cave, a cold alpine cave in the Marble Mountain Wilderness of
+climbdown. The climb leads to a 20-foot crawl into the first
+northern California. These were Mark Fritzke, Andy Maxwell
+room of the cave. The first caver, Kurt, entered at 3:15 a.m.
+and Jerry Davis. They descended the 60-foot entrance pit and
+and, without a helmet, did the crawlway face up. At the end,
+the narrow crevice leading to the stream level. They proceeded
+he reached up to grab a rock in the ceiling to pull himself into
+upstream through a stream passage bellycrawl. Part of this
+a sitting position. The rock fractured, dropping a "briefcase-
+passage has an unstable ceiling and the newcomers, Davis and
+sized" piece, as well as smaller pieces, onto his face and upper
+Maxwell, were warned of this before they went through.
+body. He fell backward from his near-sitting position, his head
+After some time in the upstream area, the group headed for
+striking a rock protruding from the floor at a 45-degree angle.
+the exit, but split when Davis stopped to recarbide. Maxwell,
+He screamed for help.
+a novice caver, remained with Davis while Fritzke continued on
+The "experienced" caver came to his aid, but could not free
+to the bottom of the entrance drop. After getting his lamp
+him from the debris. The other two were sent for help and
+going, Davis led the way as he and Maxwell continued toward
+contacted Dick Blenz at his home nearby, and a rescue callout
+the entrance. When they passed through the unstable area,
+was initiated. The Indiana Scientific Speleological Association
+Maxwell apparently forgot the warnings, since he proceeded on
+Speleorendesvous was that weekend and cavers camping in the
+hands and knees. When he bumped the ceiling at one point, it
+area were mobilized. The rocks were removed and the victim
+collapsed, thrusting him forward, his knees bent, arms trapped
+exited under his own power. He had suffered only bruises and
+by his sides, and only his head and shoulders protruding from
+a head laceration.
+the rocks. He was held immobile by several hundred pounds of
+rocks. The crawlway was low enough that Maxwell's body
+REFERENCE: Jay Savage, "Accident Report--Trapdoor Cave,
+blocked access to the collapse.
+Indiana", unpublished, undated, 3 pages.
+Davis assessed the situation and headed for the entrance to
+get Fritzke. This took longer than it should have since, at first,
+COMMENTS: "This accident is another in the series of
+he couldn't remember the way. In 15 minutes, he and Fritzke
+incidents involving inexperienced persons going into caves for
+were back at the collapse. It was obvious that Maxwell would
+thrills. They were tired to begin with, had been drinking,
+NSS News December 1990 349
+lacked proper equipment, and.
+had no idea what they were
+COMMENTS: Johns feels that the ability of local emergency
+getting into."
+services to deal with the unusual situation probably saved
+Savage also reports that this particular cave entrance has
+Harper's life. In the West, distances are great and what
+instability resulting from: 1) fracturing due to freeze-thaw
+organized cave rescue exists cannot usually be fast in response.
+cycles, 2) a sandstone conglomerate in the limestone at the
+Helping to train existing rescue agencies in cave rescue seems
+entrance drop, and 3) water erosion during rainstorms when, on
+a good idea.
+occasion, a pond with a whirlpool covers the entrance.
+ONYX CAVE, AZ
+November 10A
+HOLE-TO-HELL, ID
+October 26
+Ac - Caver Fall
+Aec -Equipment Failure, Caver Fall
+At about 10:30 a.m. on Saturday, November 10, Richard
+On Thursday evening, October 25, two students from College
+Lind (leader), David Harley, Elke and Herbert Buschbeck, and
+of Southern Idaho, Zack Harper (18) and Jess Morgan (19),
+James Luper entered Onyx Cave, near Sonoita, Arizona. Lind
+were in Dead Horse Cave, Gooding County, Idaho. They were
+had visited the cave many times and was familiar with the
+decorating the lava cave for a dance on Friday. Harper knew
+numerous tricky climbs with vertical exposure and slippery
+of a nearby cave, Hole-to-Hell that was a pigeon roost. They
+surfaces. All were experienced cavers but it was the first time
+decided to catch some to release during the dance as a prank.
+in Onyx for Harley and Herbert Buschbeck. Their ages ranged
+They entered Hole-to-Hell shortly after 3 a.m. on October
+from 25-35.
+26, each armed with a flashlight, some "clothesline twine", and
+They proceeded about 1,200 feet from the entrance to a lower
+an old hemp rope. The 52-foot entrance is a 4-foot diameter
+section of the cave, through one low crawlway and several
+shaft opening into a bell-shaped chamber containing the pigeon
+exposed up-and-down climbs. At about 11:30 a.m., Harley was
+roost and a pile of guano-covered breakdown.
+climbing a ten-foot pitch from a ledge above a five-foot deep
+The descent was made hand-over-hand on the hemp rope.
+dry rimstone pool, when he lost his holds and fell about ten
+The pigeon hunt was apparently unsuccessful SO they began
+feet. It was quickly diagnosed that he had suffered a broken
+climbing out. Morgan made it to the first ledge 24 feet up.
+forearm. A sling was rigged to secure the arm to his side and
+Harper was almost to the ledge when the rope, having frayed on
+they headed out. They had extra ropes and ascending gear; a
+the sharp lava, broke, dropping Harper 22 feet to the
+makeshift rig was devised to allow the victim to climb rope at
+breakdown below.
+each vertical pitch. Part way out, they found a broken stalactite
+Morgan apparently down-climbed, found Harper still able to
+that was used, with foam padding, nylon webbing and duct
+climb. He tied him to the end of the clothesline and re-
+tape, to splint the arm. They exited the cave at 3 p.m.
+ascended to the ledge. Harper, with Morgan pulling, got to
+within 4 feet of the ledge before the clothesline broke, and he
+REFERENCE: Sweet, "Onyx Cave Accident", unpublished
+again fell to the breakdown. Morgan apparently also fell, but
+report, undated, 2 pages. (Based on interviews with Luper and
+suffered only minor forearm and face lacerations. Harper had
+Lind, November 15, 1990.)
+by now accumulated major fractures and lacerations on his
+upper body and head and was in critical condition. Morgan
+COMMENTS: Luper and Lind attribute this accident to
+stayed with Harper, trying to keep him alive.
+overconfidence. Harley was an experienced rock climber and
+At 7 a.m. a friend arrived at Dead Horse Cave expecting to
+moved up the pitch quickly, violating the basic rule of
+find them camped there. They were not, and Harper's truck
+climbing--to maintain three points of support (good holds) at all
+was visible on a hill to the northwest. Near the truck he spied
+times. I would point out that a truly developed rock climber
+the entrance to Hole-to-Hell and at the edge he could hear
+knows when he is secure and what is chancy. My own rule is
+Morgan yelling "Breathe, dammit! Breathe!" He went for
+to resist climbing anything without a belay that I can't come off
+help, notifying the Gooding County Sheriff's Office at 7:48
+of without injury. A spotter below such a short pitch might
+a.m. An ambulance, firefighters and Jerome County Search and
+have prevented an injury in a fall like this--the idea is that the
+Rescue were mobilized, arriving at 8:25 a.m. Paramedics
+spotter tries to keep the falling caver from landing on his head,
+rappelled in, stabilized Harper, and placed him in a Stokes
+arm or other fragile part of the body.
+litter. He was winched to the surface at 9:30 a.m., and flown
+by helicopter to Magic Valley Regional Medical Center, still in
+BONE/NORMAN CAVE, WV
+November 10B
+critical condition. Morgan was brought to the surface at 10
+Bl - Losing the Way
+a.m. Harper survived.
+Saturday afternoon, November 10, a group of four Canadian
+REFERENCE: David Johns, "NSS Accident Report Form",
+cavers entered the Bone Cave Entrance to the Bone/Norman
+undated, 3 pages.
+System in Greenbriar County, West Virginia, with the intention
+of doing a crossover, exiting the Norman Cave Entrance. The
+NSS News December 1990 350
+leader was an experienced caver, and had done the crossover
+cavers from Syracuse University entered Onesquethaw Cave,
+some three years before. Two were novices and for the one, it
+about ten miles southwest of Albany, New York. These were
+was his first cave trip. Their ages were estimated to be from
+Scott Baisch (23), Lynn Cowan (24), Nick Springer (20), Peter
+late teens to early twenties.
+Bowie (20), and Laura Selicaro (20). The weather was clear
+Bone/Norman is a 14-mile extremely complex system; the
+and the streambed leading to the entrance was dry. The cave
+Bone Cave portion is quite dry while Norman has a very active
+consists of 4,500 feet of mapped passage; an initial 500 feet of
+stream. The crossover normally takes about six hours with the
+walking passage becomes a low, muddy crawl, finally yielding
+connection being a very tight squeeze.
+to a series of tall chambers. There are numerous twisting side
+It rained all night Friday and many planned cave trips into
+passages with ceiling heights of 1-1/2 to 20 feet. At the back
+wet caves had been aborted. The group of four proceeded
+is a water-filled passage that connects to nearby Jordan Cave.
+through Bone Cave, through the connection and to the point in
+About 15 minutes into the cave, they reached the Second
+Norman where one leaves the stream and ascends into a huge
+Room, near the end of the walking section, and passed a scout
+breakdown passage that leads to the entrance. There are several
+group which was practicing belayed climbing. The scout group
+routes through the breakdown from the stream up into the
+exited the cave a little after 4 p.m. with the stream still dry.
+passage, all involving constrictions between the breakdown.
+After a change of clothes, the scout leader returned to find
+The Canadians took a route that led to a small breakdown room
+water over one foot deep flowing into the entrance. He went to
+beneath the main borehole. At this point the beginner was out
+a nearby house and called the Albany County Sheriff, and
+of light and the leader was apparently confused as to the route.
+cavers were alerted at around 4:40 p.m.
+They hesitated.
+Emergency personnel responded quickly and it was
+At midnight, their friends came to the WVACS Fieldhouse to
+determined that a beaver dam had collapsed about two miles
+report them overdue. Cavers responded and soon located the
+upstream, at Lawson Lake, creating the flood. Resources were
+group. They were not totally out of options, but with a little
+mobilized and heavy equipment was used to repair the beaver
+extra light and guidance were soon out. The last rescue group
+dam and build a second dam just downstream. Pumps (3,000
+was out and back to the Fieldhouse by 6 a.m.
+gallons per minute) would then try to lower the water level
+behind the second dam to insure its stability.
+REFERENCE: George Dasher, Personal Communications,
+At 5:45 p.m. a group, which included open-water divers,
+November 18, 1990; November 26, 1990. (Also, Al Stubbe,
+entered and found the crawl at the end of the walking passage
+Tidewater Ooze [Tidewater Grotto], December 1990.)
+to be sumped. A certified cave diver arrived at 6:45 p.m. He
+and his equipment sherpas entered. He was able to penetrate
+COMMENTS: It may well be that this was a non-incident. It
+the first crawl. About this time, efforts upstream began to pay
+is reported that the Canadians had slept in and not entered the
+off and the water level began to drop, unsumping the crawl.
+cave until late--thus they may not have been "overdue" and
+Meanwhile, cavers evaluated the dam construction and found
+might have gotten out quite well on their own.
+that hay bales were being used. At 8:05 p.m., the rescue team
+was withdrawn from the cave and the Sheriff was informed that
+LADD'S MOUNTAIN CAVE, GA
+November 18
+the dam was considered unsafe. There were out by 9:05 p.m.
+Ac - Caver Fall
+At 10 p.m. the group stranded in the cave noticed the water
+level dropping. They were getting cold, and as soon as it
+At around 4 p.m. on Sunday, November 18, two men, Ray
+looked safe, headed out, reaching the surface at 11:22 p.m.
+Thomas (24) and Donald Chitwood, entered a cave on Ladd's
+They were taken to a nearby local hospital and treated for
+Mountain in Bartow County, Georgia. At one point, Thomas
+hypothermia.
+thought he saw gold and climbed the wall to investigate. He
+fell, fracturing and dislocating a bone in one foot. Chitwood
+REFERENCES:
+ran to get help. The Sheriff was contacted and mobilized the
+1) Mark McGuire, "Five Explorers Escape from Flooded Cave
+Bartow County Rescue Squad, which carried out the evacuation
+in New Scotland", Albany Times-Union, December 2, 1990,
+of the victim.
+page B-1.
+2) Nan Clements "2 Newark Explorers Survive Cave Flood",
+REFERENCE: Ed., "Bartowan Injures Foot in Fall While
+News-Journal (Wilmington, Delaware), December 3, 1990.
+Exploring Caves", The Daily Tribune (Cartersville, GA),
+4)
+Thom Engel, "The Onesquethaw Cave Incident",
+November 19, 1990; Family Living, p. 4.
+Northeastern Caver, March 1991, pp. 6-9.
+5) Paul Rubin, "Analysis of the Onesquethaw Cave Rescue",
+ONESQUETHAW CAVE, NY
+December 1
+Ibid., p. 10-11.
+Bf Flood
+COMMENTS: Beaver dams don't fail--it appears that someone
+At about 3:15 p.m. on Saturday, December 1, a group of five
+was illegally tampering it in a protected wetland area; the water
+NSS News December 1990
+351
+had also suddenly risen in the cave on the two prior weekends.
+They rigged at the ledge to a stemple (nine-foot length of
+After the rescue, the temporary dams were removed and the
+telephone pole) set across the opening. To this was fixed a
+beaver dam left open; this presumably removed the threat of
+cable ladder and a blue, dynamic rope. The sergeant descended
+such flooding.
+first, reportedly slipping free for 10 or 15 feet, and then yelled
+up that he had a snarl in the rope. Saying that he was getting
+NATURAL WELL, AL
+December6
+off rope to pass the snarl, he then yelled in fear and fell the rest
+Be - Equipment Failure
+of the way to the bottom of the pit.
+The others went for help. A rescuer arrived and descended
+On Thursday, December 6, a group of six cavers went for an
+the drop only a little more than an hour later. The sergeant lay,
+evening of pit-bopping at Natural Well in Alabama. A 600-foot
+sprawled and deformed, under the coil of excess rescuer rope;
+rope was rigged so that it afforded two ropes in the pit. After
+his skin was cold and bluish, he had no pulse and had already
+doing the pit once or twice, one caver went home, and the rest
+begun to rigor. His pupils were dilated, the irises were milky
+decided to tour the cave at the bottom. With that done, they
+and dry. He was dead. The body was hauled out soon after.
+began to exit with Kurt Butefish and Toni Blankenship going up
+first; Bob Caraway was outside, having stayed on top to guard
+REFERENCES:
+the rope.
+1) Vicky Smith, "Tragedy at Bullis Hole Cave", The Texas
+Butefish made it up but when Blankenship was 20 feet from
+Caver, February 1991, p. 21-23.
+the top, and against the wall, her chest roller seized on the
+2) Kelly Shannon, "Army Soldier Falls to Death in Cave",
+nylon webbing safety to one ascender. It wouldn't budge, so
+Associated Press in Commonwealth-Journal (Somerset,
+she yelled to those on top--no answer. A yell to those on the
+Kentucky), December 16, 1990.
+bottom alerted John Brown, who started up the other rope to
+Various other newspapers.
+help. Brown was able to move his rope close to Blankenship
+but neither the pin nor the webbing would budge.
+COMMENTS: This is a bit strange. If there were a snarl in
+Repositioning himself, he applied maximum force and the
+the rope, surely one would not get off rope to deal with it-you
+webbing popped free. They continued out.
+would pull it up to you and work on it. What purpose did the
+cable ladder play? Was it for climbing in the narrow chimney
+REFERENCE: Toni Blankenship, "Not Just Another Night at
+and the rope for use in the lower part where it suddenly got
+Natural Well", Huntsville Grotto Newsletter, May-June 1991,
+larger? Could the soldier have been descending the ladder and
+p. 14.
+released his hold on it to undo a snarl in the rope? Elison had
+reportedly been on "similar expeditions" before, but "had not
+COMMENTS: Webbing running through a chest roller is not
+assisted the salamander researchers before". Did he know what
+really a good idea--webbing is far less abrasion resistant than
+this pit involved? Is it possible that the ladder was the total
+rope since it is woven and all strands come to the surface. A
+means of descent and ascent, and the rope just a belay? The
+little abrasion causes much greater loss of strength than with a
+others were reportedly "only modestly qualified as cavers". It
+sheath rope.
+doesn't sound like a belay was involved.
+BULLIS HOLE, TX
+December 13
+AAc - Caver Fall
+AGUA CALIENTE CAVE, AZ
+December 31
+Alec - Lost, Equipment Failure, Caver Fall
+Thursday, December 13, a group of four prepared to enter a
+cave on Camp Bullis, an Army training facility on the outskirts
+On Monday, December 31 at about 11 a.m., Kevin Sears (21)
+of San Antonio, Texas. One was Murray Elison III (40), a
+and a companion (male, similar age), entered Agua Caliente
+sergeant in the Army, while the other three were an employee
+Cave in the western foothills of the Santa Rita Mountains south
+of the Texas Department of Parks and Wildlife, a University of
+of Tucson, Arizona. The cavers each had a flashlight, and they
+Texas graduate student, and a civilian employee of Camp Bullis.
+had enough 1/2 inch polypropylene rope to rig the Loop Pit.
+Their intention was to conduct research on an endangered
+They were dressed in jeans, short-sleeved shirts and tennis shoes
+salamander species.
+and they had no head protection. The dry, dusty cave is warm
+The entrance is a vertical drop with the initial rectangular
+(72 degrees F). Both had prior experience in the cave, having
+opening some eight by five feet, with a perfection in dimensions
+explored together counter-clockwise around the Loop as far as
+that makes it appear to have been man-modified. The entrance
+the White Sand (Lake) Room.
+drop falls 12-15 feet to a ledge where the pit continues with
+This trip, they entered the upper entrance, and took about
+dimensions of two to three feet diameter in a twisting fashion
+eight minutes to get to the 40-foot Loop Pit, going clockwise.
+decorated with rock projections until it suddenly opens to
+They rigged the rope and descended. The trip continued
+widths of 20-30 feet. The total depth is in excess of 100 feet.
+clockwise to the White Sand Room. Unfortunately, neither
+NSS News December 1990 352
+caver recognized the room and could not find the route they had
+no further cave or cavern diving experience.
+explored on the previous trip which would have allowed them
+The associate led the way into the cavern zone, tying the end
+to exit without further rope work. At 1 p.m., they gave up and
+of the guideline to a ledge at a depth of 25 feet. Shortly after,
+returned to the Loop Pit.
+a silt-out occurred and the leader, thinking they were all
+1:30 p.m., Sears attempted the hand-over-hand ascent. He
+together, reeled up the line as they exited, untying it at the
+was able to get near the top, but at that point, reached a section
+ledge. Above this, they hit clear water and realized the 53-
+of smooth flowstone and lost his footing. Hanging by his
+year-old was not with them. A search was attempted but was
+hands, he lost his grip and fell.
+not successful. The body was found later--it reportedly
+Sears was not substantially injured by the fall, so he tried the
+appeared that fruitless efforts had been made by the victim to
+ascent again. At the same place he again lost his footing and
+find the exit.
+grip and fell. As in the first fall, he covered his head with his
+arms to avoid head injury. Still, this time he was injured; he
+REFERENCE:
+was in great pain and found himself unable to get to his feet.
+1) Ed., "Peacock III Claims Life of Certified Cavern Diver",
+Sears' companion ascended, exited the cave and reached a
+Underwater Speleology 17 (2), p. 7.
+phone at about 3 p.m. Authorities were notified and at around
+2) Ed., "Think It Can't Happen to Us? Think Again", Ibid.
+7 p.m. the Southern Arizona Rescue Association (SARA) was
+called out. Local cavers were called between 7:30 and 8:30
+COMMENTS: The dive was ill-conceived. Cave diving is
+p.m. Rescuers began to arrive on the scene and Sears was
+extremely dangerous. With the training received in obtaining
+diagnosed as having a broken upper leg bone (femur) and
+Cave Certification (NSS, CDS or NACD) one has a reasonable
+possible broken pelvis. He was strapped to a backboard and
+safety margin. The 53-year-old and his son, who had no
+given an IV. No food, water, or other medication was
+training at all, should not have been on the dive.
+administered.
+The victim's lack of experience was reflected in his
+The cave was rigged for hauling in four places--the Loop Pit,
+equipment--he had a snorkel, a fairly heavy weightbelt, wrist
+the climb into the Register Room, the Beer Can Slide, and the
+lanyards on his lights, and no back-up reel. The latter
+climb out to the lower entrance. The victim was further
+prevented him from conducting a systematic search--the line
+belayed for all but 50 feet of the route between the Loop Pit
+from a backup reel can be tied and a "home-base" established
+and the bottom of the climb to the Register Room.
+from which to conduct your search for the exit.
+At 11:15 p.m., Sears was hauled up the Loop Pit and
+The victim did have adequate light though he had turned
+transferred to a Stokes Litter; he was brought to the surface at
+them off prior to drowning, probably in hopes of seeing light
+2 a.m. and carried by helicopter to the University Medical
+from the entrance or from his companions.
+Center at 2:30 a.m. At the hospital he was treated for abrasions
+Depth also played no factor--the body was recovered at -25
+and contusions, but found to have no broken bones.
+feet depth and the maximum depth was -65 feet. However,
+"most exposure-suit compression takes place in the first 20 feet
+REFERENCE: Henry Schneiker, Personal Communication,
+of descent. Such rapid suit compression easily leads to loss of
+January 2, 1991, 2 pages.
+buoyancy control among out-of-practice divers and,
+consequently, to silt-outs as well.
+COMMENTS: A bit later into the evening there would have
+The site was poorly chosen for novice diving. Peacock III is
+been far fewer able rescuers, as this was New Year's Eve.
+reported to usually have a coating of light, feathery silt, making
+it a site only for "advanced" cave divers. Avoiding the deadly
+silt-outs is a matter of proper equipment and weighting, as well
+as body control gained from diving experience.
+TROY SPRING, FL
+April 14
+SCUBA
+AAd - Drowning
+On Saturday, April 14, two divers entered Troy Spring in
+PEACOCK SPRING, FL
+April 9
+Lafayette County, Florida, a popular open-water training site.
+AAd - Drowning
+Neither diver had been through formal cave or cavern training.
+The two had voiced their intention to penetrate a very small
+On Tuesday, April 9, a group of three entered Peacock
+cave opening at the -80-foot level and associates had tried to
+Spring III, a popular cave diving site in Florida. They were a
+dissuade them, to no avail. The divers had a spool of
+man (53), his ten-year-old son, and an adult associate. The two
+monofilament fishing line which they reeled out as a guide line.
+adults had become cavern certified in late 1988. The associate
+As they proceeded down into the spring, the strong current
+had subsequently become cave certified, but the other man had
+caused the lead diver's regulator to free-flow. Their efforts
+NSS News December 1990 353
+resulted in rapid breathing which rapidly depleted both their air
+cave. This was not noticed by his buddy or by the other two
+supplies. They made their way some 55 feet into the cave
+diving teams which had been surveying and were now exiting.
+before the lead diver ran low on air. His companion did not
+He reached the downstream Ballroom and after some
+have an octopus, SO they had to share a single second stage,
+wandering found a marked line. His buddy, meanwhile, had
+passing it back and forth. Meanwhile, the current carried them
+begun decompressing in the entrance basin, but became
+back toward the entrance, entangling them in their line. They
+concerned and searched the basin at his 30-foot stop. Later, he
+soon became helpless, so thoroughly tangled that they both
+and another diver again dove to the Junction Room but found
+drowned, within sight of the surface. The second diver still had
+no trace of the victim.
+1700 pounds of air left, but could not reach his second stage to
+The body was found the following day by recovery specialists
+use it. When the body recovery took place, it took 10 minutes
+after a 25-minute search, on the bottom, at -241 feet. It took
+to cut them free of the tangled line.
+three teams seven hours to complete the body recovery.
+REFERENCE: Ed., "Double Drowning Closes Troy",
+REFERENCE: Dustin Cless, "Cave Diver Drowns at
+Underwater Speleology, 17 (2), p. 5.
+Diepolder Sink Number Two", Underwater Speleology, (3),
+p. 6.
+COMMENTS: The divers had one small light apiece. They
+were unused to such activity and used air at an unusual rate.
+COMMENTS: The victim had logged 75 cave dives and was
+The leader failed to turn back on the use of 1/3 of his air; they
+reportedly known for pushing himself with a desire to emulate
+used a "notoriously poor substitute for a proper guideline."
+more experienced divers. The loss of contact with the guideline
+"Although 80 feet is still above the depth at which serious
+was the principal factor in the incident but this, and the
+narcosis usually occurs, many divers are at least somewhat
+resulting disorientation, may be due to the depth of the dive:
+impaired at this depth. Additionally, the exertion resulting
+"Using compressed air below 130 feet severely impairs most
+from an inexperienced diver's attempt to swim into a strong
+divers. Even more pronounced effects are guaranteed below
+current can easily bring about the onset of narcosis at depths
+200 feet. Beset with narcosis and the accumulated carbon
+shallower than that at which it would otherwise occur."
+dioxide that results from the unusually strenuous respiration
+These divers may have been saved by proper training, but it
+required at depth, the victim apparently succumbed to depth-
+occurs to this observer that training is no substitute for good
+induced blackout. Slowly losing buoyancy, he dropped
+sense. Some people simply should not become cave divers.
+headfirst some 40 feet before hitting bottom. Recovery divers
+observed no signs of struggle; the victim's mask remained in
+DIEPOLDER SINK #2, FL
+May 11
+place." It can be assumed from this description that he drowned
+AAd - Drowning
+after losing consciousness.
+It appeared the victim was setting a personal depth record
+On the evening of May 11, two divers entered Diepolder
+and, excited about seeing new cave, extended past the planned
+Sink #2, in Hernando County, Florida, one of the largest
+turnaround at 2000 psi air reserve. Using mixed gas might
+known underwater caves, including depths in excess of 300 feet.
+have given him a better chance of survival.
+One was a 25-year-old man from Hudson, Florida, who had
+completed a cave diver training course in December 1989. He
+OTTER SPRING, FL
+May 19
+and his more-experienced buddy planned to visit the
+AAd - Drowning
+downstream portion of the cave; it was his first dive at this site.
+Visibility was significantly reduced by recent, heavy rains.
+On Saturday, May 19, divers visited Otter Spring in Gilchrist
+Two other teams of divers were to enter a bit later.
+County in north Florida. They were an International Diving
+They followed the guideline through the entrance restriction
+Educators Association (IDEA) Instructor Trainer and four newly
+and encountered near-zero visibility at the Junction Room.
+certified open-water divers, Kenneth Ives (25), Ron Welch,
+They took the downstream guideline, breaking into clear water
+Allyn Welch (25), and Chris Gallup (22). Otter Spring is a
+on the upper circuit line. They corrected a buoyancy problem,
+simple basin with a "very advanced" cave leading from the
+signalled OK to each other, and began a slow descent on the
+bottom at a depth of -40 feet. The instructor repeatedly
+lower circuit line, heading into the cave.
+admonished the four to stay out of the cave but allowed them to
+The lower line lies at a depth of -250 feet. Halfway through
+enter the water with lights, violating park rules.
+the dive, his partner noticed when the 25-year-old momentarily
+The dive began and the group encountered the cave entrance
+dropped below the line, then continued at a faster pace. This
+where the instructor signalled them not to enter. The instructor
+line completes a circuit, taking them back to the Junction Room
+continued with the dive and Ron Welch followed. Ives,
+at a depth of -210 feet. When they reached this point, they had
+however, was apparently determined to enter the cave. Gallup
+re-entered the silted water. The 25-year-old suddenly lost his
+and Allyn Welch tried to dissuade him but could not, so they
+grip on the guideline, became disoriented and swam back down
+followed, hoping to keep him out of trouble.
+NSS News December 1990 354
+The surfaces of the cave are coated with fine, feathery silt
+COMMENTS: "Diving on air, a person at -150 feet is
+which was immediately stirred up by the three divers, who
+decidedly mentally impaired. That impairment is increased at
+became disoriented and after awhile began to run out of air.
+-200 feet. Moreover, irrespective of the other gases involved,
+On the surface, other divers noticed the absence of the three.
+oxygen 'can become toxic at depth.'"
+The commotion alerted Woody Jasper, an expert cave diver who
+"Experienced Cave divers continue to die in accidents that
+was attending a company picnic at the park. Perhaps he was
+can be primarily attributed to depth. One diver in Uno Spring
+planning a dive, for he also happened to have his gear with
+in 1979, two in Eagle's Nest in 1982, one in Little Dismal Sink
+him. He quickly suited up and entered the water.
+in 1988, one in Diepolder Sink in 1990, and Brent Potts in
+Gallup and Welch, meanwhile, had lost trace of Ives. When
+Eagle's Nest in 1990. six good divers in eleven years."
+one ran out of air, they shared until it was all gone.
+Fortunately, they had encountered a small air pocket and this
+DEVIL'S DEN, FL
+October 7
+sustained them for a short period before it, too, was exhausted
+AAd - Drowning
+of oxygen. The two lost consciousness.
+Jasper quickly found the two in the air pocket. Thinking that
+On Sunday, October 7, a group of three divers entered
+one of them moved, showing life, he purged some air into the
+Devil's Den in Levy County, Florida. They were Ken
+pocket. Neither victim showed response, or reacted to the offer
+Kroslowitz, Chris Marcott and Charles "Buddy Pues (55). Pues
+of a shared octopus, so he pulled one down and towed him at
+was apparently rescue certified for open water but had no cave
+all speed to the surface where other company employees began
+or cavern training. He had dived at the site two weeks prior.
+to administer CPR. Jasper returned to the air pocket where the
+At around noon, the three did a dive. Only Pues had brought
+second victim had recovered consciousness; he accepted the
+a second set of tanks and went down a second time at about
+octopus and was escorted to the surface.
+2:15 p.m. He proceeded through the cavern area and about 200
+Jasper again returned to the cave and found the body of the
+feet into the cave area, at about 70 feet depth, he apparently
+third victim, who had apparently drowned some 20-30 minutes
+stirred up some silt and ended up in a low, bedding-plane
+earlier. The unconscious victim, Welch, responded to the CPR,
+passage about 2 feet high, where he ran out of air and drowned.
+but, at the last report, remained in critical condition in intensive
+The body recovery crew found "clawing" marks in the silt.
+care in a hospital.
+REFERENCES:
+REFERENCES:
+1) Kelly Brady, "Recovery Report", October 8, 1990,
+1) Ed., "Woody Jasper's Courage Makes Possible the 'Miracle
+unpublished, 2 pages.
+at Otter'", Underwater Speleology, 17 (3), p. 5.
+2) Karen Voyles, "Man Drowns in Cave After Ignoring Diving
+2) Norma Wagner, "Expert Cave Diver Saves Two Novices; a
+Conditions", The Gainsville Sun, October 1990.
+Third Dies", St. Petersburg Times, May 22, 1990, p. 1, 14A.
+3) Ed., "Deaths in Mexico and Florida", Underwater
+Speleology, 17 (5), September/October 1990, p. 4.
+COMMENTS: The three had no proper equipment or training,
+nor did they do any planning. The culprit here, however, is
+SAC ACTUN, MEXICO
+October17
+simply human psychology. It is obvious that some, perhaps all
+AAd - Drowning
+of us, will at some time deliberately take a life-threatening risk
+on the pure hope or chance that fate, or whatever, will sustain
+At 10:30 a.m., a group of eight divers and one tank sherpa
+them. Sometimes we are not sustained.
+arrived at the parking lot six kilometers north of Tulum, in
+Yucatan, Mexico. It was the fifth day of a six-day group
+EAGLE'S NEST SINK, FL
+August
+diving affair. All were cave certified. A detailed sketch of the
+AAd - Drowning
+cave system was made and the dive plan was discussed. The
+plan was to enter the Sac Actun Cenote, traverse the cave and
+In August, two divers entered Eagle's Nest Spring in
+exit the Grand Cenote, a trip of 22 minutes, reaching depths of
+Hernando County, Florida. One was Brent Potts, a "highly
+40 feet. It was explained that about 280 feet "upstream" from
+experienced" cave diver. He apparently became separated from
+Sac Actun they would traverse a temporary, 70-foot gap line
+his partner, and was found unconscious, drowned, at -200 feet
+with a pink direction-line marker at the start which connected
+without a second stage in his mouth. They were using
+with the permanent line going "downstream" to the Grand
+compressed air.
+Cenote. The lead divers would be installing this temporary
+line. The group would then retrace their path back to Sac
+REFERENCE: Marty Moore and Mike Poskey, "We Are
+Actun; they were in two teams of four and the second team
+Dying", The National Association for Cave Diving Journal,
+would reel up the temporary line. At Sac Actun they would
+October-November-December 1990, p. 74.
+recalculate "thirds" and take another passage leading to a third
+cenote via a formation room and a loop in the passage.
+NSS News December 1990 355
+The first leg proceeded well, taking 24 minutes. At the
+right. Hoping this was the way to the third cenote, they took
+Grand Cenote, a second line was attached and strung out into
+it but when 100 feet in found a line arrow pointing the direction
+the large "cavern" zone, to help guide them back to the cave
+they came from, retreated and continued out the main guideline.
+passage. All had started the dive with 3000 psi in their double
+One diver's fin strap popped off and there was a delay while
+80 cubic foot tanks and now had 23-2400 psi left with one
+his companions helped with it. The fins had been properly
+having 2600.
+taped, but were of the new adjustable type. Stress increased--
+They spent 15 minutes on the surface and the plan for the
+they had not seen a direction arrow for some time. The two
+remainder of the dive was reviewed twice, again reminding
+bringing up the rear were now swimming faster and passed their
+them of the cave layout with a sketch on a dive slate. When
+companions, stirring up some silt and disappearing from sight.
+one member was in doubt, the plan was reviewed a third time.
+One of the two who were now last ran out of air and began to
+Everyone agreed that they understood.
+share with the other. They were about 600 feet from Sac
+They started back, but quickly diverted to one side of the
+Actun. The fin strap popped off again and they abandoned it,
+cavern zone to observe a crocodile skeleton. A second delay
+making swimming more difficult. Two hundred feet later, they
+occurred when a member of the first team dropped his/her mask
+dropped a video camera and kept going.
+and a member of the second team retrieved it. They regrouped
+The first-team leader headed toward the pink marker on the
+and continued into the cave zone, the second group about 100
+way to Grand Cenote and saw three lights heading toward him.
+feet behind, reeling in the cavern zone line.
+As he approached the first two lights, he saw that they were
+At the 70-foot gap, the first-team leader detached the reel,
+sharing air. These two gave hand signals--big trouble behind.
+sending his three teammates ahead. The second team arrived
+They had just passed the faster two, obviously out of air.
+moments later. Three second-team divers started to swim across
+The first-team leader swam into the cave and discovered a
+the gap while the fourth was given the reel and signals were
+body dangling limp from an air pocket in the ceiling. He tried
+given for him to reel it in while the first-team leader swam
+pulling it to administer air, but it was too buoyant. Pulling off
+ahead to catch up with his group.
+his regulator, he purged it, sending fresh air into the pocket.
+The first-team leader caught up with his group at the other
+Sticking his hand into the air pocket, he felt the diver's face to
+end of the 70-foot gap (the pink direction-line marker) and
+find it still warm and the diver gulping for air. He placed his
+made the required sharp left turn, leading toward Sac Actun.
+long hose regulator second stage into the air pocket and the
+He looked back, saw one second-team member following, and
+diver responded, grabbing at it.
+the rest arriving at the pink marker. However, when they
+After a minute or so of breathing, the diver dropped down
+arrived at Sac Actun, they could see no following lights.
+from the air pocket. The first-team leader pried the victim's
+It was assumed that this was due to the second team suffering
+face mask from his left hand and put it in his right hand; the
+a jammed reel; they recalculated "thirds" and proceeded on the
+victim put it on and cleared it. Firmly taking the victim's right
+third leg of the session, the traverse to the third cenote. A gap
+hand, the leader escorted him the 150 feet to the surface.
+line was laid and they swam to the third cenote. The leader
+The two second team divers sharing air had just made it to
+was uneasy about the second group and inquired of the others
+the surface on the last of their shared air. Since another diver
+as to the last time they had seen the second group. They agreed
+was still missing, the first-team leader and a second first-team
+the last time was at the pink marker.
+diver returned to the cave. They found the second victim,
+The three were told to stay there and the first-team leader
+twenty feet beyond the first, on the floor face up, regulator out
+went back. At Sac Actun, the second team was not in sight.
+of his mouth. They pushed one of their regulators into his
+At the pink marker (the 70-foot gap) he found the gap-line reel
+mouth with no response. Each diver grabbed an arm and pulled
+had been replaced. He proceeded to the Grand Cenote and
+the victim as fast as they could to Sac Actun Cenote. The
+found no one. He returned to the third cenote, got his group,
+victim was given mouth-to-mouth resuscitation for five minutes,
+and returned to Sac Actun. He then headed in alone, toward
+but it was futile. He was dead.
+Grand Cenote, for one more look.
+Meanwhile, the reel diver on the second team had gotten
+REFERENCE: Steve Gerrard, "Cave Diver Drowns in Sac
+about 1/3 of the line reeled in when the leader came back and
+Actun", The National Association for Cave Diving Journal,
+signalled for him to replace it. He did so and they swam back
+October-November-December 1990, p. 71-73.
+to the pink marker, where the leader turned right and headed
+deeper into the cave system. The other divers followed,
+COMMENTS: Everyone was fully cave trained. The deceased
+including the one who had started to follow the first team. At
+had logged 53 cave dives. A continuous guide line was
+one point, the leader stopped to check his air supply, then
+maintained throughout the dive. The only apparent factor in the
+continued. After traversing some 1000 feet, the leader stopped
+incident was disorientation, possibly due to unfamiliarity with
+and asked, via his slate, why they hadn't met the first team.
+the cave. I would speculate that in a weightless environment
+They decided to turn back.
+such as this, that even closing your eyes for a short period
+One diver still had 1500 psi, the others were down to 1000.
+during which your body chanced to rotate, would be enough to
+Shortly, they observed a "snap and gap" line heading to the
+NSS News December 1990 356
+bring complete disorientation. In any case, this well-equipped,
+December 1990, p. 70.
+well-planned, intelligently carried out dive, by well-trained and
+2) Ed., "Accident Closes Peacock Springs to Solo Cave
+experienced divers, resulted in a fatality. Perhaps cave divers
+Diving", Underwater Speleology, November/December 1990,
+lose sight of how dangerous a sport this is. Perhaps a rule that
+p. 3.
+every diver, before a dive, must turn to each of his companions
+and say, "Well, it was nice knowing you--I may not see you on
+the surface alive again", might serve to remind them.
+It appears that only one diver may have been confused. Two
+of the survivors stated that they "still understood the dive plan
+but were lulled into the following-a-leader syndrome.
+The rigging of the cave was obviously confusing. The
+following week it was redone so that no gap now exists between
+cenotes and pushing further into the cave at the old pink marker
+now requires a gap line.
+I should also say that the plan was rather complicated. Under
+partial narcosis or dive euphoria/panic, it is obviously difficult
+to remember anything--keep it simple.
+PEACOCK SPRINGS, FL
+November 4
+AAd - Drowning
+On Sunday, November 4, Darden Davis (46) entered the
+Olsen Sink Entrance to the Peacock Springs Cave System in
+Suwannee County in north Florida. Davis was an experienced
+and certified cave diver, and was equipped with dual-manifolded
+104 cubic-foot doubles and an 80-cubic-foot stage bottle. He
+proceeded into the upstream tunnel, with which he was
+reportedly familiar, on a legal, solo dive.
+His body was found 150 feet from Olsen Sink. The 80 was
+empty, but there was 1200 psi in the 104's. The valve
+regulator (SPG) had been turned off. When the equipment was
+tested later, it was found that there was a second stage free-flow
+malfunction. This may be the reason it had been turned off.
+"Davis was presumably then trying to exit and bumped the
+other valve handle to the backup regulator causing it to shut off
+or he might have only cranked it open a bit initially and as tank
+pressure dropped, it no longer was able to allow the backup
+regulator to function.
+It is hypothesized that, under the stress of breathing from a
+poorly performing backup regulator, the deceased may have
+forgotten about having turned the primary regulator off (which
+would cause his SPG to read zero). He might have concluded
+a dead SPG and a hard-drawing regulator meant that his doubles
+were nearly dry, and thus have resorted to his stage bottle."
+On the stage bottle a single hose regulator with two second
+stages was attached, one was found to be sticking. As the
+deceased tried to exit the cave system in an emergency, there
+could have been air lost from the second stage not being used.
+NOTICE:
+In any case, it was his last dive. The Florida State Parks have
+since been closed to solo diving.
+We are proposing a 10-year collective issue of American
+Caving Accidents with essays, incident reports and Safety
+REFERENCES:
+Committee articles. Please make any suggestions,
+1) Ed., "Cave Diver Drowns in Olsen Sink", The National
+complaints, and/or new information on old incident reports
+Association for Cave Diving Journal, October-November-
+as soon as possible. This will cover 1981 through 1990.
+NSS News December 1990
+357
+National Speleological Society
+Accident/Incident Report Form
+Date of Accident/Incident:
+Day of Week:
+Time:
+Cave:
+State:
+Reported by:
+Name
+Address
+City
+State
+Zip
+Name(s) of Person(s)
+Age
+Sex
+Experience
+Affiliation
+Injuries or
+Involved
+Comments
+Describe the accident as completely as possible on the back of this form or on a separate sheet. If possible obtain
+information from those involved. Use additional sheets if necessary. A report in the style of "American Caving Accidents"
+is ideal. The following checklist is suggested as a guide for information to be included:
+( ) Events leading to accident. Location and conditions in cave.
+The Accident/Incident
+( ) Description of how it occurred.
+( ) Nature of injuries sustained.
+( ) Analysis of main cause.
+( ) Contributory causes (physical condition of caver, weather, equipment, clothing, etc.).
+( ) What might have been done to prevent the accident/incident.
+Rescue
+( ) Actions following accident/incident.
+( ) Persons contacted for help. A flowchart may be helpful.
+( ) Details of rescue procedures.
+Further details were reported in:
+( ) Newspapers
+( ) Grotto newsletter
+( ) Other
+(Please enclose copies if possible.)
+National Speleological Society
+Please return completed report to the NSS as
+Cave Avenue
+soon as possible after the accident.
+Huntsville, Alabama 35810
+"CAVERS SERVING CAVERS
+304-772-5049 or 304-772-3074

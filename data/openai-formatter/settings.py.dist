@@ -1,0 +1,7 @@
+OPENAI_API_KEY = ""
+ASSISTANT_ID = ""
+MODEL = "gpt-4-1106-preview"
+DATA_FILE = ""  # File to load incidents from
+LOG_FILE = "openai.log"
+PROMPT_FILE = "prompt.txt"  # File to load prompt from
+CHAR_LIMIT = 32768  # Max number of characters per request

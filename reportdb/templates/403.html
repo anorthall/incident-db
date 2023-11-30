@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Permission denied</h1>
+  <p>You do not have permission to view this page. Why not go back to the <a href="{% url 'db:index' %}">homepage</a>?</p>
+{% endblock %}
