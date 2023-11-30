@@ -1,0 +1,31 @@
+{% if incident.fatality %}
+  <i class="bi bi-emoji-dizzy" data-bs-toggle="tooltip" data-bs-title="Fatality"></i>&nbsp;
+{% elif incident.injury %}
+  <i class="bi bi-bandaid" data-bs-toggle="tooltip" data-bs-title="Injury"></i>&nbsp;
+{% endif %}
+
+{% if incident.vertical %}
+  <i class="bi bi-ladder" data-bs-toggle="tooltip" data-bs-title="Vertical"></i>&nbsp;
+{% endif %}
+
+{% if incident.aid_type != incident.AidType.UNKNOWN and incident.aid_type != incident.AidType.NONE %}
+  <i class="bi bi-heart-pulse" data-bs-toggle="tooltip" data-bs-title="{{ incident.get_aid_type_display }}"></i>&nbsp;
+{% endif %}
+
+{% if incident.multiple_incidents %}
+  <i class="bi bi-diagram-2" data-bs-toggle="tooltip" data-bs-title="Multiple incidents"></i>&nbsp;
+{% endif %}
+
+{% if incident.spar %}
+  <i class="bi bi-gear" data-bs-toggle="tooltip" data-bs-title="SPAR techniques used"></i>&nbsp;
+{% endif %}
+
+{% if incident.rescue_over_24_hours %}
+  <i class="bi bi-clock-history" data-bs-toggle="tooltip" data-bs-title="Rescue over 24 hours in duration"></i>&nbsp;
+{% endif %}
+
+{% if incident.approved %}
+  <span class="text-success"><i class="bi bi-check2-circle" data-bs-toggle="tooltip" data-bs-title="Data checked and approved"></i></span>&nbsp;
+{% else %}
+  <span class="text-danger"><i class="bi bi-x-circle" data-bs-toggle="tooltip" data-bs-title="Data entry not yet completed"></i></span>&nbsp;
+{% endif %}

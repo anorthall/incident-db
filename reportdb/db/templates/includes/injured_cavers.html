@@ -1,0 +1,144 @@
+{% load crispy_forms_tags %}
+
+{% if injured_cavers_htmx %}
+  <div hx-swap-oob="true" id="messages">
+    {% for message in messages %}
+      <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
+<div id="injuredCavers">
+  <h3 class="section d-flex flex-row justify-content-between align-content-center">
+    Injured cavers
+    {% if allow_editing_injured_cavers %}
+      {% if not incident.approved and user.is_authenticated and user.is_editor %}
+        <button data-bs-toggle="modal" data-bs-target="#addCaverModal" class="btn btn-sm btn-primary">Add</button>
+      {% endif %}
+    {% endif %}
+  </h3>
+
+  <div class="mb-4">
+    {% if incident.injured_cavers.all %}
+      <div class="table-responsive">
+        <table class="table" style="white-space: nowrap;">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Age</th>
+              <th class="d-none d-md-table-cell">Sex</th>
+              <th>Injuries</th>
+              <th>Injured areas</th>
+              {% if allow_editing_injured_cavers %}
+                {% if not incident.approved and user.is_authenticated and user.is_editor %}<th></th>{% endif %}
+              {% endif %}
+            </tr>
+          </thead>
+
+          <tbody>
+            {% for caver in incident.injured_cavers.all %}
+              <tr class="align-middle" id="injuredCaver{{ caver.pk }}">
+                {% if caver.surname or caver.first_name %}
+                  <td>{% if caver.surname %}{{ caver.surname }}{% if caver.first_name %}, {% endif %}{% endif %}{{ caver.first_name }}</td>
+                {% else %}
+                  <td><span class="text-muted">Not recorded</span></td>
+                {% endif %}
+                <td>{{ caver.age|default:"<span class='text-muted'>Not recorded</span>" }}</td>
+                <td class="d-none d-md-table-cell">{{ caver.sex|default:"<span class='text-muted'>Not recorded</span>" }}</td>
+                <td>{{ caver.injuries|default:"<span class='text-muted'>Not recorded</span>" }}</td>
+                <td>{{ caver.injury_areas|default:"<span class='text-muted'>Not recorded</span>" }}</td>
+                {% if allow_editing_injured_cavers %}
+                  {% if not incident.approved and user.is_authenticated and user.is_editor %}
+                    <td class="text-end">
+                      <a data-bs-toggle="modal" data-bs-target="#editCaverModal{{ caver.pk }}" class="btn btn-sm btn-outline-primary me-1">
+                        Edit
+                      </a>
+                      <button data-bs-toggle="modal" data-bs-target="#deleteCaverModal{{ caver.pk }}" class="btn btn-sm btn-outline-danger">
+                        Delete
+                      </button>
+                    </td>
+                  {% endif %}
+                {% endif %}
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% else %}
+      <p class="text-muted">No injured cavers recorded.</p>
+    {% endif %}
+
+    {% if allow_editing_injured_cavers %}
+      {# Delete and edit caver modals #}
+      {% for caver in incident.injured_cavers.all %}
+        <div class="modal fade" id="deleteCaverModal{{ caver.pk }}" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5">Delete caver</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                Are you sure you want to delete this caver?
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <form hx-target="#injuredCavers" hx-swap="outerHTML" hx-post="{% url 'db:injured_caver_delete' caver.pk %}">
+                  {% csrf_token %}
+                  <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">Delete caver</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal modal-lg fade" id="editCaverModal{{ caver.pk }}" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5">Edit caver</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <form hx-target="#injuredCavers" hx-swap="outerHTML" hx-post="{% url 'db:injured_caver_update' caver.pk %}">
+                {% csrf_token %}
+                <div class="modal-body">
+                  {% crispy caver.get_update_form %}
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Update caver</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    {% endif %}
+
+    {% if allow_editing_injured_cavers %}
+      <div class="modal modal-lg fade" id="addCaverModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5">Add caver</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <form hx-target="#injuredCavers" hx-swap="outerHTML" hx-post="{% url 'db:injured_caver_add' incident.pk %}">
+              {% csrf_token %}
+              <div class="modal-body">
+                {% crispy injured_caver_add_form %}
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Add caver</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Internal server error</h1>
+  <p>
+    Something has gone wrong whilst creating this page. I've received a report and will look into it.
+    For now, why not go back to the <a href="{% url 'db:index' %}">homepage</a>?
+  </p>
+{% endblock %}

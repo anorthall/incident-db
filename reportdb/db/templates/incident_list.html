@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+{% block description %}A list of caving incident reports.{% endblock %}
+
+{% block content %}
+  <h1 class="page-header">
+    {{ title }}
+  </h1>
+
+  <div class="table-responsive">
+    <table class="table table-sm table-hover">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Cave</th>
+          <th class="d-none d-lg-table-cell">State</th>
+          <th class="d-none d-xl-table-cell">Country</th>
+          <th class="d-none d-lg-table-cell">Category</th>
+          <th class="d-none d-md-table-cell">Type</th>
+          <th class="d-none d-lg-table-cell">Flags</th>
+          <th class="d-none d-sm-table-cell"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for incident in incidents %}
+        <tr class="align-middle" data-href="{{ incident.get_absolute_url }}" style="white-space: nowrap;">
+          <td>
+            <span class="d-none d-sm-inline">{{ incident.date }}</span>
+            <span class="d-sm-none">{{ incident.date|date:"Y-m-d" }}</span>
+          </td>
+          <td><a href="{{ incident.get_absolute_url }}">{{ incident.cave }}</a></td>
+          <td class="d-none d-lg-table-cell">{{ incident.state }}</td>
+          <td class="d-none d-xl-table-cell">{{ incident.country }}</td>
+          <td class="d-none d-lg-table-cell">{{ incident.get_category_display }}</td>
+          <td class="d-none d-md-table-cell">{{ incident.get_incident_type_display }}</td>
+          <td class="d-none d-lg-table-cell">{% include "includes/incident_flags.html" %}</td>
+          <td class="text-end d-none d-sm-table-cell">
+            <a href="{{ incident.get_absolute_url }}"
+               class="btn btn-sm {% if incident.approved %}btn-outline-success{% else %}btn-outline-secondary{% endif %}">
+              View
+            </a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <div class="table-legend">
+      {{ incidents|length }} incidents
+    </div>
+  </div>
+{% endblock content %}

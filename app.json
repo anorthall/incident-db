@@ -1,0 +1,20 @@
+{
+  "name": "aca report db",
+  "description": "A Django app containing a database of ACA reports",
+  "keywords": ["django"],
+  "repository": "https://github.com/anorthall/incident-db",
+  "healthchecks": {
+    "web": [
+        {
+            "type":        "startup",
+            "name":        "web check",
+            "description": "Checking if the app responds to /healthcheck/",
+            "path":        "/core/healthcheck",
+            "attempts": 5
+        }
+    ]
+  },
+  "addons": [
+    "dokku-postgres"
+  ]
+}

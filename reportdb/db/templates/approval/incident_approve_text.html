@@ -1,0 +1,303 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+
+{% block main_content_class %}smaller-container{% endblock %}
+
+{% block title %}Approve incident in {{ incident.cave }}{% endblock %}
+
+{% block content %}
+  <div class="progress mb-3" role="progressbar" aria-label="Form progress" aria-valuenow="Step 1 of 5" aria-valuemin="0" aria-valuemax="100" style="height: 20px">
+    <div class="progress-bar" style="width: 20%">20%</div>
+  </div>
+
+  <h1 class="page-header">
+    <span class="extra d-none d-sm-inline">Approving {% if incident.cave %}</span> {{ incident.cave }}{% else %}on</span> {{ incident.date|date }}{% endif %}
+  </h1>
+
+  <p class="lead">
+    Please check the incident report fields below and make any changes that are required.
+  </p>
+
+  {% if not incident.data_input_source == incident.DataInput.AI %}
+    {% include "approval/includes/save_progress_help_text.html" %}
+  {% endif %}
+
+  {% if incident.data_input_source == incident.DataInput.AI %}
+    <p>
+      This incident was formatted by AI and the incident report, analysis, references and summary fields
+      should have been automatically populated.
+    </p>
+
+    <p>
+      A text similarity score is shown next to each field. This is an algorithmic measure of how similar the text in
+      the field is to the original text.
+      <mark>
+        If the similarity score for each field is above 60%, you are only required to verify that the summary is an
+        accurate description of the incident before progressing to the next page. If any of the fields have
+        a score below 60%, please check the text carefully against the original text and make any changes that are required.
+      </mark>
+    </p>
+  {% else %}
+    <p>
+      Remember to ensure that the incident report, analysis and references are split into their separate fields, and no fields
+      contain headers such as the date or cave name.
+    </p>
+  {% endif %}
+
+  {% include "approval/includes/original_text.html" %}
+
+  <form method="post" class="mt-5">
+    {% csrf_token %}
+    <div class="approval-report-text" id="incident_report_text_container">
+      <h3 class="section d-flex align-content-center justify-content-between">
+        <span>
+          Incident report
+          {% if incident_report_sim is not None %}
+            <span class="badge {% if incident_report_sim >= 60 %}bg-success text-white{% else %}bg-danger text-white{% endif %} ms-2">
+              <span class="d-none d-md-inline">Similarity: </span>{{ incident_report_sim }}%
+            </span>
+          {% endif %}
+        </span>
+        <span class="d-flex align-content-center justify-content-end">
+          {% if incident.publication and incident.publication.pdf_file %}
+            <a class="btn btn-sm btn-secondary me-2" href="{{ incident.publication.pdf_file.url }}"><i class="bi bi-file-pdf-fill"></i></a>
+          {% endif %}
+          <button type="button" class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#reportModal"><i class="bi bi-question-lg"></i></button>
+        </span>
+      </h3>
+      {{ form.incident_report|as_crispy_field }}
+    </div>
+
+    <div class="approval-report-text">
+      <h3 class="section d-flex align-content-center justify-content-between">
+        <span>
+          Incident analysis
+          {% if incident_analysis_sim is not None %}
+            <span class="badge {% if incident_analysis_sim >= 60 %}bg-success text-white{% else %}bg-danger text-white{% endif %} ms-2">
+              <span class="d-none d-md-inline">Similarity: </span>{{ incident_analysis_sim }}%
+            </span>
+          {% endif %}
+        </span>
+        <button type="button" class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#analysisModal"><i class="bi bi-question-lg"></i></button>
+      </h3>
+      {{ form.incident_analysis|as_crispy_field }}
+    </div>
+
+    <div class="approval-report-text">
+      <h3 class="section d-flex align-content-center justify-content-between">
+        <span>
+          References
+          {% if incident_references_sim is not None %}
+            <span class="badge {% if incident_references_sim >= 60 %}bg-success text-white{% else %}bg-danger text-white{% endif %} ms-2">
+              <span class="d-none d-md-inline">Similarity: </span>{{ incident_references_sim }}%
+            </span>
+          {% endif %}
+        </span>
+        <button type="button" class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#referencesModal"><i class="bi bi-question-lg"></i></button>
+      </h3>
+      {{ form.incident_references|as_crispy_field }}
+    </div>
+
+    <div class="approval-report-text">
+      <h3 class="section d-flex align-content-center justify-content-between">
+        Incident summary
+        <button type="button" class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#summaryModal"><i class="bi bi-question-lg"></i></button>
+      </h3>
+      {{ form.incident_summary|as_crispy_field }}
+    </div>
+
+    <div class="approval-report-text">
+      <h3 class="section d-flex align-content-center justify-content-between">
+        Notes
+        <button type="button" class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#notesModal"><i class="bi bi-question-lg"></i></button>
+      </h3>
+      {{ form.incident_notes|as_crispy_field }}
+    </div>
+
+    <div class="d-flex justify-content-end align-items-center mt-4">
+      {% if incident.data_input_source == incident.DataInput.AI %}
+        <button type="button" data-bs-toggle="modal" data-bs-target="#previousPageModal" class="btn btn-secondary me-2">Go back</button>
+      {% endif %}
+      <button type="submit" class="btn btn-primary">Next <i class="ms-1 bi bi-arrow-right"></i></button>
+    </div>
+  </form>
+
+  <div class="modal modal-lg fade" id="reportModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">Incident report</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>This field contains a factual account of what happened during the incident.</p>
+
+          <p>The incident report field should:</p>
+          <ul>
+            <li>describe the factual circumstances of the incident</li>
+            <li>be copied directly from the original publication</li>
+            <li><strong>not</strong> be left blank</li>
+            <li><strong>not</strong> include any analysis</li>
+            <li><strong>not</strong> have the text changed from the original publication</li>
+            <li><strong>not</strong> include any references to external publications</li>
+            <li><strong>not</strong> contain any headers such as the date or cave name</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal modal-lg fade" id="analysisModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">Incident analysis</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>This field contains analysis of the incident, if included in the original publication.</p>
+
+          <p>The incident analysis field should:</p>
+          <ul>
+            <li>include analysis from the original publication only</li>
+            <li>be left blank if no analysis was included with the original report</li>
+            <li><strong>not</strong> include your own analysis</li>
+            <li><strong>not</strong> have the text changed from the original publication</li>
+            <li><strong>not</strong> include any references to external publications</li>
+            <li><strong>not</strong> contain any headers such as the date or cave name</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal modal-lg fade" id="summaryModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">Incident summary</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>This field contains a brief summary of the facts surrounding the incident.</p>
+
+          <p>The incident analysis field should:</p>
+          <ul>
+            <li>be a maximum of 400 characters</li>
+            <li>be edited or written by you</li>
+            <li><strong>not</strong> be left blank</li>
+            <li><strong>not</strong> include any analysis</li>
+            <li><strong>not</strong> include any references to external publications</li>
+            <li><strong>not</strong> contain any headers such as the date or cave name</li>
+          </ul>
+
+          <p>Examples of values for this field:</p>
+          <ul>
+            <li><em>A caver fell 10m down a pitch and sustained a broken leg.</em></li>
+            <li><em>A group of four cavers were trapped by rising water and were rescued by a team of six ten hours later.</em></li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal modal-lg fade" id="referencesModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">References</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>This field contains any references to external publications or websites with information about this incident.</p>
+
+          <p>The references field should:</p>
+          <ul>
+            <li>contain one reference per line</li>
+            <li>contain the name, author, date, year and page number of any articles in printed publications</li>
+            <li>contain the name, author, date and URL of any articles on websites</li>
+            <li>include <strong>all</strong> references, even if not mentioned in the original publication</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal modal-lg fade" id="notesModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">Notes</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>This field contains any notes that may be useful to people reading this incident report.</p>
+
+          <p>The notes field should:</p>
+          <ul>
+            <li>be left blank in most cases</li>
+            <li>contain any factual corrections to the original report</li>
+            <li>contain any relevant information regarding the accuracy of the data or analysis</li>
+            <li>contain any other important information that does not fit within another field</li>
+            <li><strong>not</strong> contain any information already in another field</li>
+            <li><strong>not</strong> contain any information which has its own dedicated field</li>
+            <li><strong>not</strong> contain information useful only to editors of the incident database</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% if incident.data_input_source == incident.DataInput.AI %}
+    <div class="modal fade" id="previousPageModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5">Are you sure?</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Any changes you have made will be lost when returning to the previous page. Are you sure
+              you want to go back?
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <a href="{% url 'db:approve_incident_date' incident.pk %}" class="btn btn-danger">Go back</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  <script>
+    /* Resize the textareas to fit their content on input */
+    function resizeTextarea(textarea) {
+      textarea.style.height = 'auto';
+      textarea.style.height = textarea.scrollHeight + 10 + 'px';
+    }
+
+    document.querySelectorAll('textarea').forEach(textarea => {
+      textarea.addEventListener('input', () => resizeTextarea(textarea));
+    });
+
+    document.querySelectorAll('textarea').forEach(textarea => resizeTextarea(textarea));
+  </script>
+{% endblock %}

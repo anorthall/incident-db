@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block main_content_class %}smaller-container{% endblock %}
+
+{% block title %}Add report text to {{ incident.cave }}{% endblock %}
+
+{% block header_scripts %}
+  {{ block.super }}
+  <script type="text/javascript">
+    function jumpBetweenElements(maxNumber = {{ find_count|default:"Infinity" }}) {
+      let currentNumber = 0;
+
+      function getNextElement() {
+        const currentElementId = `wanted-text${currentNumber}`;
+        const currentElement = document.getElementById(currentElementId);
+
+        // Reset to 0 if the current element doesn't exist or if the maximum number is reached
+        if (!currentElement || currentNumber >= maxNumber) {
+          currentNumber = 0;
+        } else {
+          currentNumber++;
+        }
+
+        return currentElement;
+      }
+
+      return getNextElement;
+    }
+
+    const getFoundText = jumpBetweenElements();
+  </script>
+{% endblock %}
+
+{% block content %}
+  {% include "includes/editing_notes_warning.html" %}
+
+  <div class="alert alert-info">
+    <strong>Please see the <a href="#instructions">instructions for use</a> below before proceeding.</strong>
+  </div>
+
+  <h1 class="page-header">
+    Add report text
+  </h1>
+
+  {% include "includes/incident_display.html" %}
+  {% include "includes/injured_cavers.html" %}
+
+  <h2 class="subtitle underline mb-0">Report text</h2>
+  <h3 class="section less-mt">Computer extracted text</h3>
+
+  <div class="mb-3 d-flex flex-column flex-lg-row">
+    <button class="btn btn-sm btn-success mb-2 mb-lg-0 me-lg-2"
+      onclick="getFoundText().scrollIntoView();">
+      Try and find relevant text
+    </button>
+    {% if incident.publication.get_pdf_url %}
+      <a class="btn btn-sm btn-primary mb-2 mb-lg-0 me-lg-2" href="{{ incident.publication.get_pdf_url }}" target="_blank">View original PDF file</a>
+    {% endif %}
+    {% if incident.publication.get_text_url %}
+      <a class="btn btn-sm btn-secondary mb-2 mb-lg-0" href="{{ incident.publication.get_text_url }}" target="_blank">View extracted text file</a>
+    {% endif %}
+  </div>
+
+  <div class="border mb-4" style="max-height: 400px; overflow-y: scroll;">
+    <samp>{{ report_text|safe|linebreaks }}</samp>
+  </div>
+
+  <script type="text/javascript">
+    function removeLinebreaks() {
+      let text = document.getElementById('id_incident_report').value;
+      document.getElementById('id_incident_report').value = text.replace(/\n+/g, ' ');
+    }
+  </script>
+
+  <h3 class="section">Formatted text</h3>
+
+  <button class="btn btn-sm btn-primary mb-3" onclick="removeLinebreaks()">
+    Remove linebreaks from copied text
+  </button>
+
+  <form method="post">
+    {% crispy form %}
+    <input name="submit" type="submit" value="Save and start next task" class="btn btn-success me-2 mb-2 mb-lg-0">
+    <input name="viewreport" type="submit" value="Save and view report" class="btn btn-outline-primary me-2 mb-2 mb-lg-0">
+    <input name="editreport" type="submit" value="Save and edit report" class="btn btn-outline-secondary">
+  </form>
+
+  <hr class="my-4">
+
+  <h2 class="subtitle underline" id="instructions">Instructions for use</h2>
+  <p>
+    The purpose of this page is to digitise report text from original NSS News articles into the online database.
+    The text has been automatically extracted from PDF files, but it is not perfect &mdash; there is a requirement for a
+    human to identify the correct text and copy it into the box below. This text will be published on the NSS website,
+    so please ensure that it is accurate and well-formatted. <strong>You should use the metadata displayed about the
+    incident record to match it to the appropriate record in the original journal.</strong>
+  </p>
+
+  <p>
+    The computer extracted text from the from the NSS News PDF file is displayed above (in full), and it may take
+    some scrolling to find the relevant article. <strong>There is a button above the computer extracted text which
+    will attempt to find the relevant portion of the report automatically and scroll to it</strong>, and you can also
+    search for features of the incident, such as the name of somebody involved, using the search function in your web
+    browser. On Windows this can be accessed by pressing Ctrl + F, or on Mac by pressing Cmd + F.
+  </p>
+
+  <p>
+    Sometimes, the data in the extracted text file may be corrupted, missing, or otherwise unusable. In this case you
+    must open the PDF file and copy the text manually. The button to open the PDF file is adjacent to the extracted text.
+  </p>
+
+  <p>
+    Once you have located the relevant incident report and copied it into the <code>Formatted text</code> field,
+    you may wish to press the <code>Remove linebreaks from copied text</code> button to remove excessive linebreaks
+    from the text. You can then read through the text and add linebreaks to make it more readable where appropriate.
+    This method will be much faster than removing the excess linebreaks manually.
+  </p>
+
+  <h3 class="section">Incident text and duplicate data</h3>
+  <p>
+    The incident report, the incident analysis, and any references, should be split into their respective fields.
+    Do not duplicate any data in separate fields. For example, do not include the date at the top of the incident
+    report (unless it is referenced in the report itself in a sentence), as the date of the incident is already
+    recorded in the incident record.
+  </p>
+
+  <h3 class="section">Style guidance</h3>
+  <p>
+    The text should be formatted with sensible line breaks and paragraphs.
+    The computer extracted text often has a new line in the middle of a sentence, which should be removed.
+    Often, the computer extraction will have mistaken a character, for example, a period instead of a comma
+    &mdash; this should be corrected. A new section, such as <code>"Analysis:"</code> should stand alone with a clear
+    line above and below it. Any references to external publications should be moved to the <code>References</code>
+    field. Any mention to the cave name at the start of a report should be removed. An example of a properly formatted report
+    <a target="_blank" href="https://gist.github.com/anorthall/a812c31ed0b239afc4b1ad321d63b43d">can be found here</a>.
+  </p>
+
+  <h3 class="section">Editing notes</h3>
+  <p>
+    An editing notes field is displayed below the text box. This is for
+    any notes that you may have about the report, such as if you are unsure about the accuracy of the
+    text, or if you have made any changes to the text that you would like to explain. Entering text
+    into will cause the report to be flagged in a list of reports 'requiring review' and prevent
+    it being approved until the notes have been reviewed.
+  </p>
+{% endblock %}

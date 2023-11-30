@@ -1,0 +1,14 @@
+{% load crispy_forms_field %}
+
+<div class="col-lg-4">
+  <div class="form-group mb-1">
+    {% crispy_field field 'class' 'form-check-input' %}
+    <label for="{{ field.id_for_label }}" class="form-check-label">
+        {{ field.label }}
+    </label>
+    {% if field.errors and forloop.last and not inline_class and forloop.parentloop.last %}
+        {% include 'bootstrap5/layout/field_errors_block.html' %}
+    {% endif %}
+  </div>
+  {% include 'bootstrap5/layout/help_text.html' %}
+</div>
