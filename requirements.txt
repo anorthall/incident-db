@@ -39,7 +39,7 @@ distro==1.8.0
     # via openai
 dj-database-url==2.1.0
     # via -r requirements.in
-django==4.2.7
+django==4.2.11
     # via
     #   -r requirements.in
     #   crispy-bootstrap5
@@ -136,9 +136,7 @@ sqlparse==0.4.4
     #   django
     #   django-debug-toolbar
 tablib[html,ods,xls,xlsx,yaml]==3.5.0
-    # via
-    #   django-import-export
-    #   tablib
+    # via django-import-export
 tqdm==4.66.1
     # via openai
 typing-extensions==4.8.0
