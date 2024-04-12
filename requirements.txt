@@ -82,7 +82,7 @@ humanize==4.9.0
     # via -r requirements.in
 identify==2.5.31
     # via pre-commit
-idna==3.6
+idna==3.7
     # via
     #   anyio
     #   httpx
@@ -136,9 +136,7 @@ sqlparse==0.4.4
     #   django
     #   django-debug-toolbar
 tablib[html,ods,xls,xlsx,yaml]==3.5.0
-    # via
-    #   django-import-export
-    #   tablib
+    # via django-import-export
 tqdm==4.66.1
     # via openai
 typing-extensions==4.8.0
