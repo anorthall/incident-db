@@ -70,7 +70,7 @@ et-xmlfile==1.1.0
     # via openpyxl
 filelock==3.13.1
     # via virtualenv
-gunicorn==21.2.0
+gunicorn==22.0.0
     # via -r requirements.in
 h11==0.14.0
     # via httpcore
@@ -136,9 +136,7 @@ sqlparse==0.4.4
     #   django
     #   django-debug-toolbar
 tablib[html,ods,xls,xlsx,yaml]==3.5.0
-    # via
-    #   django-import-export
-    #   tablib
+    # via django-import-export
 tqdm==4.66.1
     # via openai
 typing-extensions==4.8.0
