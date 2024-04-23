@@ -81,8 +81,6 @@ class IncidentManager(models.Manager):
 
 @reversion.register()
 class Incident(models.Model):
-    objects = IncidentManager()
-
     class DataInput(models.TextChoices):
         UNKNOWN = "YY", "Unknown"
         HUMAN = "HU", "Human"
@@ -369,6 +367,8 @@ class Incident(models.Model):
         null=True,
         blank=True,
     )
+
+    objects = IncidentManager()
 
     def __str__(self):
         return self.date.strftime("%Y-%m-%d") + " " + self.cave

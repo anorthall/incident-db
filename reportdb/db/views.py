@@ -112,14 +112,13 @@ class PublicationDetail(ListView):
     context_object_name = "incidents"
 
     def get_queryset(self, *args, **kwargs):
-        queryset = (
+        return (
             super()
             .get_queryset()
             .select_related("publication")
             .filter(publication__id=self.kwargs["publication_id"])
             .order_by("-approved", "date")
         )
-        return queryset
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
@@ -234,7 +233,7 @@ class IncidentAddText(EditorOnly, RevisionMixin, UpdateView):
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(**kwargs)
-        with open(self.object.publication.get_text_path(), "r") as f:
+        with open(self.object.publication.get_text_path()) as f:
             text = f.read()
         text, count = highlight_text_from_incident(text, self.object)
         context["report_text"] = text
@@ -257,7 +256,7 @@ class IncidentAddText(EditorOnly, RevisionMixin, UpdateView):
                 self.request, "The report has been saved and you can now edit it below."
             )
             return redirect(reverse("db:incident_edit", args=[self.object.pk]))
-        elif self.request.POST.get("viewreport"):
+        if self.request.POST.get("viewreport"):
             messages.success(self.request, "The report has been saved.")
             return redirect(self.object.get_absolute_url())
 
@@ -305,7 +304,7 @@ class IncidentAddAnalysis(EditorOnly, RevisionMixin, UpdateView):
                 self.request, "The report has been saved and you can now edit it below."
             )
             return redirect(reverse("db:incident_edit", args=[self.object.pk]))
-        elif self.request.POST.get("viewreport"):
+        if self.request.POST.get("viewreport"):
             messages.success(self.request, "The report has been saved.")
             return redirect(self.object.get_absolute_url())
 
@@ -516,13 +515,13 @@ class InjuredCaverAdd(InjuredCaverHTMXView):
 
             messages.success(request, "The injured caver has been added.")
             return self.render_to_response()
-        else:
-            messages.error(
-                request,
-                "There was an error adding the injured caver. "
-                "Please ensure you have filled in the form correctly and try again.",
-            )
-            return self.render_to_response()
+
+        messages.error(
+            request,
+            "There was an error adding the injured caver. "
+            "Please ensure you have filled in the form correctly and try again.",
+        )
+        return self.render_to_response()
 
 
 class InjuredCaverUpdate(InjuredCaverHTMXView):
@@ -547,13 +546,13 @@ class InjuredCaverUpdate(InjuredCaverHTMXView):
 
             messages.success(request, "The injured caver has been updated.")
             return self.render_to_response()
-        else:
-            messages.error(
-                request,
-                "There was an error adding the injured caver. "
-                "Please ensure you have filled in the form correctly and try again.",
-            )
-            return self.render_to_response()
+
+        messages.error(
+            request,
+            "There was an error adding the injured caver. "
+            "Please ensure you have filled in the form correctly and try again.",
+        )
+        return self.render_to_response()
 
 
 class InjuredCaverDelete(InjuredCaverHTMXView):

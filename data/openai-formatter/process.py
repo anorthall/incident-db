@@ -35,10 +35,10 @@ def main():
     log(f"Starting run with chat completions API at {time_now}.", print_msg=True)
     client = OpenAI(api_key=settings.OPENAI_API_KEY)
 
-    with open(settings.DATA_FILE, "r") as f:
+    with open(settings.DATA_FILE) as f:
         data = f.read()
 
-    with open(settings.PROMPT_FILE, "r") as f:
+    with open(settings.PROMPT_FILE) as f:
         prompt = f.read()
 
     log(

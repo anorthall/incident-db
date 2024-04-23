@@ -1,5 +1,4 @@
-"""
-A script to sort the raw text from AWS Textract into two equal columns.
+"""A script to sort the raw text from AWS Textract into two equal columns.
 
 It is designed to take the JSON output from AWS Textract for a document where there are
 two (and only two) columns of text per page. It crudely splits the page from the exact
@@ -82,7 +81,6 @@ class Column:
 
 def filter_line(line):
     """Apply various filters to lines"""
-
     # Remove lines that are just numbers
     match = re.search(r"^\d*$", line.text)
     if match:

@@ -1,5 +1,4 @@
-"""
-ASGI config for reportdb project.
+"""ASGI config for reportdb project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
