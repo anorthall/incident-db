@@ -143,8 +143,7 @@ class IncidentResource(resources.ModelResource):
     def dehydrate_aid_type(self, incident):
         if incident.aid_type != "None":
             return incident.aid_type
-        else:
-            return "Unknown"
+        return "Unknown"
 
     def dehydrate_date(self, incident):
         date_format = "%B %-d, %Y"
@@ -152,12 +151,10 @@ class IncidentResource(resources.ModelResource):
         if incident.approximate_date:
             if date.month == 1 and date.day == 1:
                 return f"{date.year}"
-            elif date.day == 1:
+            if date.day == 1:
                 return f"{date.strftime('%B')} {date.year}"
-            else:
-                return f"{date.strftime(date_format)}"
-        else:
-            return date.strftime(date_format)
+            return f"{date.strftime(date_format)}"
+        return date.strftime(date_format)
 
     def dehydrate_injured_cavers(self, incident):
         injured_cavers = []

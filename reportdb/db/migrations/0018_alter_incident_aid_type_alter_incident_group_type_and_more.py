@@ -4,8 +4,7 @@ from django.db import migrations, models
 
 
 def convert_source_values(apps, schema_editor):
-    """
-    Convert Incident.source values from U, C, P and T
+    """Convert Incident.source values from U, C, P and T
     to Incident.UNKNOWN, Incident.SOURCE_CAVER, Incident.SOURCE_PARTY
     and Incident.SOURCE_THIRD_PARTY.
     """

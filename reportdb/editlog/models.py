@@ -27,8 +27,8 @@ class EditLogEntry(models.Model):
     def __str__(self):
         if self.incident:
             return f"{self.user} {self.verb} {self.incident}: {self.message}"
-        else:
-            return f"{self.user} {self.verb}: {self.message}"
+
+        return f"{self.user} {self.verb}: {self.message}"
 
     def save(self, *args, **kwargs):
         if self.incident:

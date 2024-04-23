@@ -4,9 +4,7 @@ from db.models import Incident
 
 
 def highlight_text_from_incident(text, incident):
-    """Iterate through the text and HTML highlight any values which
-    match values within incident fields.
-    """
+    """Iterate through the text and highlight any values which match the incident."""
     fields = [  # Fields to search for in the text
         "primary_cause",
         "secondary_cause",
@@ -37,12 +35,16 @@ def highlight_text_from_incident(text, incident):
     return text, count
 
 
-def _get_original(processed_text: str, original_text: str, count_words=3) -> (str, str):
-    """Get the original text of a field by finding the first
-    three words and the last three words of the field and
-    returning the text between them.
-    """
+def _get_original(
+    processed_text: str,
+    original_text: str,
+    count_words=3,
+) -> (str, str):
+    """Get the original text of a field.
 
+    This function retrieves the original text of a field by finding the first three
+    words and the last three words of the field and returning the text between them.
+    """
     processed_words = processed_text.split()
     processed_words = [word.strip() for word in processed_words]
     processed_words = [word for word in processed_words if word]
@@ -63,9 +65,7 @@ def _get_original(processed_text: str, original_text: str, count_words=3) -> (st
 
 
 def similarity(incident: Incident, field: str) -> float:
-    """Calculate the similarity between `field` and the original text of the
-    incident as contained in the `original_text` field.
-    """
+    """Calculate similarity between `field` and the original text of the incident."""
     field_text = getattr(incident, field)
     if not field_text or not incident.original_text:
         return 0

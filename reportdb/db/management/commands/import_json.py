@@ -3,8 +3,9 @@ import json
 import os
 import re
 
-from db.models import Incident, InjuredCaver, Publication
 from django.core.management.base import BaseCommand, CommandError
+
+from db.models import Incident, InjuredCaver, Publication
 
 
 class Command(BaseCommand):
@@ -26,8 +27,8 @@ class Command(BaseCommand):
         publication = options["publication"][0]
         try:
             self.publication = Publication.objects.get(name=publication)
-        except Publication.DoesNotExist:
-            raise CommandError(f"Publication {publication} does not exist.")
+        except Publication.DoesNotExist as err:
+            raise CommandError(f"Publication {publication} does not exist.") from err
 
         incidents = self.process_json_file(file_name)
 
@@ -37,9 +38,9 @@ class Command(BaseCommand):
         )
 
     def process_json_file(self, file_name: str):
-        """Process a JSON file of incident data"""
+        """Process a JSON file of incident data."""
         incidents = []
-        with open(file_name, "r") as json_file:
+        with open(file_name) as json_file:
             data = json.load(json_file)
 
         for incident in data:
@@ -48,7 +49,7 @@ class Command(BaseCommand):
         return incidents
 
     def process_incident(self, incident):
-        """Process an incident and return the Incident object"""
+        """Process an incident and return the Incident object."""
         page = incident["page"]
         assert page > 0, f"Invalid page: {page}"
         date, approx = self.parse_date(incident["date"])
@@ -130,7 +131,7 @@ class Command(BaseCommand):
             )
 
     def parse_date(self, date: str):
-        """Parse the date and return a tuple of the date and approximate boolean"""
+        """Parse the date and return a tuple of the date and approximate boolean."""
         if not date:
             raise ValueError("Date cannot be empty")
 

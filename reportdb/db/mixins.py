@@ -18,17 +18,17 @@ class EditorOnly(UserPassesTestMixin):
 
 
 class ApprovalMixin(EditorOnly):
-    """A mixin for views relating to incident approval"""
+    """A mixin for views relating to incident approval."""
 
     def test_func(self):
-        """Only allow editors to access, and only if the incident is unapproved"""
+        """Only allow editors to access, and only if the incident is unapproved."""
         if super().test_func():
             return not self.get_object().approved
         return False
 
 
 class InjuredCaverHTMXView(EditorOnly, RevisionMixin, View):
-    """Parent class for views that display injured cavers in HTMX"""
+    """Parent class for views that display injured cavers in HTMX."""
 
     template_name = "includes/injured_cavers.html"
 
