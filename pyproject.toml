@@ -3,6 +3,7 @@ requires-python = ">=3.12"
 
 [tool.ruff]
 line-length = 88
+exclude = ["data/", "**/migrations/**"]
 
 [tool.ruff.lint]
 select = ["B", "C4", "D", "DJ", "E", "EXE", "F", "I", "ICN", "N", "RET", "S", "SIM", "UP", "W"]
