@@ -10,7 +10,7 @@ EditLog = logging.getLogger("edit_log")
 
 @receiver(post_save)
 def log_edit(sender, instance, created, **kwargs):
-    if not sender == EditLogEntry or not created:
+    if sender != EditLogEntry or not created:
         return
 
     EditLog.info(str(instance))

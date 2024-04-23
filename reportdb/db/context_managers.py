@@ -2,7 +2,7 @@ from db.models import Incident
 
 
 def task_count(request):
-    """Add pending task counts to the context for use in the sidebar"""
+    """Add pending task counts to the context for use in the sidebar."""
     context = {}
 
     if not request.user.is_authenticated:
