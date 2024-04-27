@@ -7,24 +7,13 @@
   {% if user.is_authenticated and user.is_editor %}
     <a class="nav-link {% active_link 'db:incident_edit' pk=incident.pk %}" href="{% url 'db:incident_edit' incident.pk %}">Edit incident</a>
 
-    {% if incident.approved %}
-      <form action="{% url 'db:incident_unapprove' pk=incident.pk %}" method="post" id="unapproveIncidentForm">
-        {% csrf_token %}
-        <a class="nav-link" href="javascript:{}" onclick="document.getElementById('unapproveIncidentForm').submit(); return false;">
-          Unapprove incident
-        </a>
-      </form>
-    {% else %}
+    {% comment %}
       {% if incident.data_input_source == incident.DataInput.AI %}
         <a class="nav-link" href="{% url 'db:approve_incident_date' incident.pk %}">Approve incident</a>
       {% else %}
         <a class="nav-link" href="{% url 'db:approve_report_text' incident.pk %}">Approve incident</a>
       {% endif %}
-    {% endif %}
-
-    {% if not incident.incident_report %}
-      <a class="nav-link {% active_link 'db:add_report_text' pk=incident.pk %}" href="{% url 'db:add_report_text' incident.pk %}">Add report text</a>
-    {% endif %}
+    {% endcomment %}
   {% endif %}
 
   {% if incident.publication %}

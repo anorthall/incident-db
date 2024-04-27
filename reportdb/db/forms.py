@@ -84,14 +84,13 @@ class BaseIncidentForm(forms.ModelForm):
             "approximate_date",
             "cave",
             "state",
+            "us_state",
             "county",
             "country",
             "category",
             "incident_type",
             "incident_type_2",
             "incident_type_3",
-            "primary_cause",
-            "secondary_cause",
             "group_type",
             "group_size",
             "source",
@@ -101,7 +100,7 @@ class BaseIncidentForm(forms.ModelForm):
             "multiple_incidents",
             "rescue_over_24_hours",
             "vertical",
-            "spar",
+            "self_rescue",
             "incident_report",
             "incident_analysis",
             "incident_summary",
@@ -150,6 +149,7 @@ class IncidentForm(BaseIncidentForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper.form_tag = False
+        self.helper.form_show_errors = False
         self.helper.layout = Layout(
             Div(
                 Field("date", wrapper_class="col-lg-6"),
@@ -160,9 +160,10 @@ class IncidentForm(BaseIncidentForm):
             ),
             HTML("<hr>"),
             Div(
-                Field("cave", wrapper_class="col-lg-6"),
+                Field("cave", wrapper_class="col-lg-12"),
                 Field("state", wrapper_class="col-lg-6"),
                 Field("county", wrapper_class="col-lg-6"),
+                Field("us_state", wrapper_class="col-lg-6"),
                 Field("country", wrapper_class="col-lg-6"),
                 css_class="row my-0",
             ),
@@ -172,8 +173,6 @@ class IncidentForm(BaseIncidentForm):
                 Field("incident_type", wrapper_class="col-lg-6"),
                 Field("incident_type_2", wrapper_class="col-lg-6"),
                 Field("incident_type_3", wrapper_class="col-lg-6"),
-                Field("primary_cause", wrapper_class="col-lg-6"),
-                Field("secondary_cause", wrapper_class="col-lg-6"),
                 Field("aid_type", wrapper_class="col-lg-6"),
                 Field("group_type", wrapper_class="col-lg-6"),
                 Field("group_size", wrapper_class="col-lg-6"),
@@ -187,7 +186,7 @@ class IncidentForm(BaseIncidentForm):
                 CustomCheckbox("multiple_incidents"),
                 CustomCheckbox("rescue_over_24_hours"),
                 CustomCheckbox("vertical"),
-                CustomCheckbox("spar"),
+                CustomCheckbox("self_rescue"),
                 css_class="row g-3",
             ),
             HTML("<hr class='mt-5'>"),
@@ -304,15 +303,12 @@ class ApproveMetadataForm(forms.ModelForm):
             "incident_type",
             "incident_type_2",
             "incident_type_3",
-            "primary_cause",
-            "secondary_cause",
             "aid_type",
             "group_type",
             "group_size",
             "source",
         ]
         widgets = {
-            "secondary_cause": forms.TextInput(attrs={"placeholder": "Optional"}),
             "county": forms.TextInput(attrs={"placeholder": "Optional"}),
         }
 
@@ -339,8 +335,6 @@ class ApproveMetadataForm(forms.ModelForm):
                 Field("incident_type", wrapper_class="col-lg-6"),
                 Field("incident_type_2", wrapper_class="col-lg-6"),
                 Field("incident_type_3", wrapper_class="col-lg-6"),
-                Field("primary_cause", wrapper_class="col-12"),
-                Field("secondary_cause", wrapper_class="col-12"),
                 Field("group_type", wrapper_class="col-lg-6"),
                 Field("group_size", wrapper_class="col-lg-6"),
                 Field("aid_type", wrapper_class="col-lg-6"),
@@ -359,7 +353,7 @@ class ApproveFlagsForm(forms.ModelForm):
             "multiple_incidents",
             "rescue_over_24_hours",
             "vertical",
-            "spar",
+            "self_rescue",
         ]
 
     def __init__(self, *args, **kwargs):

@@ -1,4 +1,3 @@
-from django.contrib import messages
 from django.contrib.auth.mixins import UserPassesTestMixin
 from django.shortcuts import get_object_or_404, render
 from django.views import View
@@ -14,16 +13,6 @@ class EditorOnly(UserPassesTestMixin):
     def test_func(self):
         if self.request.user.is_authenticated:
             return self.request.user.is_editor
-        return False
-
-
-class ApprovalMixin(EditorOnly):
-    """A mixin for views relating to incident approval."""
-
-    def test_func(self):
-        """Only allow editors to access, and only if the incident is unapproved."""
-        if super().test_func():
-            return not self.get_object().approved
         return False
 
 
@@ -44,12 +33,6 @@ class InjuredCaverHTMXView(EditorOnly, RevisionMixin, View):
         else:
             self.incident = get_object_or_404(Incident, pk=self.kwargs["pk"])
 
-        if self.incident.approved:
-            messages.error(
-                request,
-                "This incident has already been approved and can no longer be edited.",
-            )
-            return self.render_to_response()
         return super().dispatch(request, *args, **kwargs)
 
     def render_to_response(self):

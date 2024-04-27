@@ -63,16 +63,6 @@ class Command(BaseCommand):
         incident_type_3 = self.parse_incident_type(
             incident["suggested_incident_type_tertiary"]
         )
-        primary_cause = (
-            incident["suggested_causes"][0]
-            if len(incident["suggested_causes"]) > 0
-            else ""
-        )
-        secondary_cause = (
-            incident["suggested_causes"][1]
-            if len(incident["suggested_causes"]) > 1
-            else ""
-        )
         group_size = (
             incident.get("group_size") if incident.get("group_size", 0) else None
         )
@@ -93,8 +83,6 @@ class Command(BaseCommand):
             vertical=incident["vertical"],
             rescue_over_24_hours=incident["rescue_over_24"],
             group_size=group_size,
-            primary_cause=primary_cause.capitalize(),
-            secondary_cause=secondary_cause.capitalize(),
             incident_type=incident_type,
             incident_type_2=incident_type_2,
             incident_type_3=incident_type_3,
@@ -169,7 +157,7 @@ class Command(BaseCommand):
             if category == value:
                 return key
         else:
-            return Incident.Category.UNKNOWN
+            return ""
 
     def parse_incident_type(self, incident_type: str, primary=False):
         if primary:

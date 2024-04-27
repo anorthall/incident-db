@@ -80,6 +80,15 @@ main {
   font-size: 1rem;
 }
 
+[data-bs-theme=light] #sidebar .header {
+  font-weight: bold;
+}
+
+[data-bs-theme=dark] #sidebar .header {
+  font-weight: 400;
+  color: var(--bs-secondary-text-emphasis);
+}
+
 #sidebar .header:first-child {
   margin-top: 0;
 }
@@ -325,4 +334,10 @@ form hr {
 
 [x-cloak] {
   display: none !important;
+}
+
+/* Index page */
+.incident-year-card:hover {
+  background-color: var(--bs-light-bg-subtle);
+  transition: all 0.1s;
 }

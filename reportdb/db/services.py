@@ -6,8 +6,6 @@ from db.models import Incident
 def highlight_text_from_incident(text, incident):
     """Iterate through the text and highlight any values which match the incident."""
     fields = [  # Fields to search for in the text
-        "primary_cause",
-        "secondary_cause",
         "cave",
         "county",
     ]
