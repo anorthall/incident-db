@@ -9,13 +9,6 @@ def task_count(request):
         return context
 
     context["report_text_pending"] = Incident.objects.need_report_text().count()
-    context["analysis_pending"] = Incident.objects.need_analysis().count()
-    context["approval_pending"] = Incident.objects.pending().count()
-
-    context["total_tasks"] = (
-        context["report_text_pending"]
-        + context["analysis_pending"]
-        + context["approval_pending"]
-    )
+    context["total_tasks"] = context["report_text_pending"]
 
     return context
