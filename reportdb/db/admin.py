@@ -1,13 +1,10 @@
 from dataclasses import dataclass
 
 from django.contrib import admin
-from import_export import resources
-from import_export.admin import ExportActionMixin
 from reversion.admin import VersionAdmin
 
 from .models import Incident, InjuredCaver, Publication
 
-# Set admin site header
 admin.site.site_header = "Incident DB"
 admin.site.site_title = "Incident DB"
 
@@ -53,144 +50,19 @@ class InjuredCaver:
         return result_str
 
 
-class IncidentResource(resources.ModelResource):
-    injured_cavers = resources.Field()
-    human_incident_type = resources.Field(column_name="incident_type")
-    human_incident_cause = resources.Field(column_name="incident_cause")
-    published_in = resources.Field(column_name="publication")
-
-    class Meta:
-        model = Incident
-        exclude = (
-            "created",
-            "updated",
-            "editing_notes",
-            "approximate_date",
-            "keywords",
-            "updated_by",
-            "incident_type",
-            "incident_type_2",
-            "incident_type_3",
-            "primary_cause",
-            "secondary_cause",
-            "publication_page",
-            "publication",
-        )
-
-        export_order = (
-            "id",
-            "date",
-            "published_in",
-            "cave",
-            "state",
-            "county",
-            "country",
-            "category",
-            "human_incident_type",
-            "human_incident_cause",
-            "group_type",
-            "group_size",
-            "aid_type",
-            "incident_report",
-            "incident_analysis",
-            "incident_summary",
-            "injured_cavers",
-            "source",
-            "incident_notes",
-            "incident_references",
-            "aid_type",
-            "fatality",
-            "injury",
-            "multiple_incidents",
-            "rescue_over_24_hours",
-            "vertical",
-            "spar",
-            "approved",
-        )
-
-    def dehydrate_published_in(self, incident):
-        result = incident.publication.name
-        if incident.publication_page:
-            result += f" p. {incident.publication_page}"
-        return result
-
-    def dehydrate_human_incident_type(self, incident):
-        type1 = incident.get_incident_type_display()
-        type2 = incident.get_incident_type_2_display()
-        type3 = incident.get_incident_type_3_display()
-
-        incident_type = type1
-        if type2 != "None":
-            incident_type += f", {type2.lower()}"
-        if type3 != "None":
-            incident_type += f", {type3.lower()}"
-
-        return incident_type
-
-    def dehydrate_human_incident_cause(self, incident):
-        cause1 = incident.primary_cause
-        cause2 = incident.secondary_cause
-
-        cause = cause1
-        if cause2 and cause2 != "None" and cause2 != "Unknown":
-            cause += f", {cause2.lower()}"
-
-        return cause
-
-    def dehydrate_publication(self, incident):
-        return incident.publication.name
-
-    def dehydrate_aid_type(self, incident):
-        if incident.aid_type != "None":
-            return incident.aid_type
-        return "Unknown"
-
-    def dehydrate_date(self, incident):
-        date_format = "%B %-d, %Y"
-        date = incident.date
-        if incident.approximate_date:
-            if date.month == 1 and date.day == 1:
-                return f"{date.year}"
-            if date.day == 1:
-                return f"{date.strftime('%B')} {date.year}"
-            return f"{date.strftime(date_format)}"
-        return date.strftime(date_format)
-
-    def dehydrate_injured_cavers(self, incident):
-        injured_cavers = []
-
-        for caver in incident.injured_cavers.all():
-            name = "Unknown"
-            if caver.first_name or caver.surname:
-                name = f"{caver.first_name} {caver.surname}".strip()
-
-            injured_cavers.append(
-                InjuredCaver(
-                    name=name,
-                    age=caver.age,
-                    sex=caver.sex,
-                    injuries=caver.injuries,
-                    injury_areas=caver.injury_areas,
-                )
-            )
-
-        return "\n\n".join([str(caver) for caver in injured_cavers])
-
-
 @admin.register(Incident)
-class IncidentAdmin(ExportActionMixin, VersionAdmin):
+class IncidentAdmin(VersionAdmin):
     inlines = (InjuredCaverInline,)
-    resource_classes = [IncidentResource]
     list_display = (
         "date",
         "publication",
         "cave",
-        "state",
         "country",
         "category",
         "incident_type",
+        "updated",
     )
-    ordering = ("-date",)
+    ordering = ("-updated",)
     list_filter = (
         "approved",
         "publication",
@@ -208,8 +80,6 @@ class IncidentAdmin(ExportActionMixin, VersionAdmin):
         "county",
         "country",
         "incident_type",
-        "primary_cause",
-        "secondary_cause",
         "editing_notes",
         "incident_report",
         "incident_analysis",
@@ -233,6 +103,7 @@ class IncidentAdmin(ExportActionMixin, VersionAdmin):
                 "fields": (
                     "cave",
                     "state",
+                    "us_state",
                     "county",
                     "country",
                 )
@@ -246,8 +117,6 @@ class IncidentAdmin(ExportActionMixin, VersionAdmin):
                     "incident_type",
                     "incident_type_2",
                     "incident_type_3",
-                    "primary_cause",
-                    "secondary_cause",
                     "aid_type",
                     "group_type",
                     "group_size",

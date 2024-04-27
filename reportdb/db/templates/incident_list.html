@@ -17,7 +17,6 @@
           <th class="d-none d-lg-table-cell">State</th>
           <th class="d-none d-xl-table-cell">Country</th>
           <th class="d-none d-lg-table-cell">Category</th>
-          <th class="d-none d-md-table-cell">Type</th>
           <th class="d-none d-lg-table-cell">Flags</th>
           <th class="d-none d-sm-table-cell"></th>
         </tr>
@@ -31,10 +30,9 @@
             <span class="d-sm-none">{{ incident.date|date:"Y-m-d" }}</span>
           </td>
           <td><a href="{{ incident.get_absolute_url }}">{{ incident.cave }}</a></td>
-          <td class="d-none d-lg-table-cell">{{ incident.state }}</td>
-          <td class="d-none d-xl-table-cell">{{ incident.country }}</td>
+          <td class="d-none d-lg-table-cell">{{ incident.get_state_display }}</td>
+          <td class="d-none d-xl-table-cell">{{ incident.get_country_display }}</td>
           <td class="d-none d-lg-table-cell">{{ incident.get_category_display }}</td>
-          <td class="d-none d-md-table-cell">{{ incident.get_incident_type_display }}</td>
           <td class="d-none d-lg-table-cell">{% include "includes/incident_flags.html" %}</td>
           <td class="text-end d-none d-sm-table-cell">
             <a href="{{ incident.get_absolute_url }}"

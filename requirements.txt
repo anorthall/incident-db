@@ -14,11 +14,11 @@ asgiref==3.8.1
     # via
     #   django
     #   django-htmx
-boto3==1.34.90
+boto3==1.34.93
     # via
     #   -r requirements.in
     #   django-storages
-botocore==1.34.90
+botocore==1.34.93
     # via
     #   boto3
     #   s3transfer
@@ -31,10 +31,6 @@ cfgv==3.4.0
     # via pre-commit
 crispy-bootstrap5==2024.2
     # via -r requirements.in
-defusedxml==0.7.1
-    # via odfpy
-diff-match-patch==20230430
-    # via django-import-export
 distlib==0.3.8
     # via virtualenv
 distro==1.9.0
@@ -49,7 +45,6 @@ django==5.0.4
     #   django-crispy-forms
     #   django-debug-toolbar
     #   django-htmx
-    #   django-import-export
     #   django-reversion
     #   django-storages
 django-active-link==0.1.8
@@ -62,14 +57,10 @@ django-debug-toolbar==4.3.0
     # via -r requirements.in
 django-htmx==1.17.3
     # via -r requirements.in
-django-import-export==3.3.8
-    # via -r requirements.in
 django-reversion==5.0.12
     # via -r requirements.in
 django-storages[s3]==1.14.2
     # via -r requirements.in
-et-xmlfile==1.1.0
-    # via openpyxl
 filelock==3.13.4
     # via virtualenv
 gunicorn==22.0.0
@@ -92,16 +83,10 @@ jmespath==1.0.1
     # via
     #   boto3
     #   botocore
-markuppy==1.14
-    # via tablib
 nodeenv==1.8.0
     # via pre-commit
-odfpy==1.4.1
-    # via tablib
-openai==1.23.2
+openai==1.23.6
     # via -r requirements.in
-openpyxl==3.1.2
-    # via tablib
 packaging==24.0
     # via gunicorn
 pillow==10.3.0
@@ -119,12 +104,10 @@ pydantic-core==2.18.2
 python-dateutil==2.9.0.post0
     # via botocore
 pyyaml==6.0.1
-    # via
-    #   pre-commit
-    #   tablib
+    # via pre-commit
 s3transfer==0.10.1
     # via boto3
-sentry-sdk==1.45.0
+sentry-sdk==2.0.1
     # via -r requirements.in
 six==1.16.0
     # via python-dateutil
@@ -137,8 +120,6 @@ sqlparse==0.5.0
     # via
     #   django
     #   django-debug-toolbar
-tablib[html,ods,xls,xlsx,yaml]==3.5.0
-    # via django-import-export
 tqdm==4.66.2
     # via openai
 typing-extensions==4.11.0
@@ -157,10 +138,6 @@ virtualenv==20.26.0
     # via pre-commit
 whitenoise==6.6.0
     # via -r requirements.in
-xlrd==2.0.1
-    # via tablib
-xlwt==1.3.0
-    # via tablib
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools

@@ -90,8 +90,6 @@ class BaseIncidentForm(forms.ModelForm):
             "incident_type",
             "incident_type_2",
             "incident_type_3",
-            "primary_cause",
-            "secondary_cause",
             "group_type",
             "group_size",
             "source",
@@ -172,8 +170,6 @@ class IncidentForm(BaseIncidentForm):
                 Field("incident_type", wrapper_class="col-lg-6"),
                 Field("incident_type_2", wrapper_class="col-lg-6"),
                 Field("incident_type_3", wrapper_class="col-lg-6"),
-                Field("primary_cause", wrapper_class="col-lg-6"),
-                Field("secondary_cause", wrapper_class="col-lg-6"),
                 Field("aid_type", wrapper_class="col-lg-6"),
                 Field("group_type", wrapper_class="col-lg-6"),
                 Field("group_size", wrapper_class="col-lg-6"),
@@ -304,15 +300,12 @@ class ApproveMetadataForm(forms.ModelForm):
             "incident_type",
             "incident_type_2",
             "incident_type_3",
-            "primary_cause",
-            "secondary_cause",
             "aid_type",
             "group_type",
             "group_size",
             "source",
         ]
         widgets = {
-            "secondary_cause": forms.TextInput(attrs={"placeholder": "Optional"}),
             "county": forms.TextInput(attrs={"placeholder": "Optional"}),
         }
 
@@ -339,8 +332,6 @@ class ApproveMetadataForm(forms.ModelForm):
                 Field("incident_type", wrapper_class="col-lg-6"),
                 Field("incident_type_2", wrapper_class="col-lg-6"),
                 Field("incident_type_3", wrapper_class="col-lg-6"),
-                Field("primary_cause", wrapper_class="col-12"),
-                Field("secondary_cause", wrapper_class="col-12"),
                 Field("group_type", wrapper_class="col-lg-6"),
                 Field("group_size", wrapper_class="col-lg-6"),
                 Field("aid_type", wrapper_class="col-lg-6"),

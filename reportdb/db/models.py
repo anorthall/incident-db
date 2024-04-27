@@ -1,9 +1,12 @@
 import reversion
 from django.conf import settings
+from django.core.exceptions import ValidationError
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from django.db.models import Q
 from django.urls import reverse
+
+from db.choices import Countries, USStates
 
 
 def publication_upload_path(instance, filename):
@@ -125,11 +128,10 @@ class Incident(models.Model):
         INJURY = "Q", "Injury that does not fit other categories"
 
     class Category(models.TextChoices):
-        UNKNOWN = "YY", "Unknown"
-        CAVING = "CA", "Caving"
-        CAVING_RELATED = "CR", "Caving related"
-        DIVING = "CD", "Cave diving"
-        OTHER = "ZZ", "Other"
+        CAVE = "CAVE", "Cave"
+        DIVING = "DIVING", "Cave Diving"
+        MINE = "MINE", "Mine"
+        OTHER = "OTHER", "Other"
 
     class AidType(models.TextChoices):
         UNKNOWN = "YY", "Unknown"
@@ -185,7 +187,15 @@ class Incident(models.Model):
     )
     cave = models.CharField(max_length=100, help_text="If not known, enter 'unknown'.")
     state = models.CharField(
-        max_length=50, blank=True, help_text="Use the full name of the state."
+        max_length=50,
+        blank=True,
+        help_text="For countries other than the USA.",
+    )
+    us_state = models.CharField(
+        "US state",
+        max_length=50,
+        blank=True,
+        choices=USStates.choices,
     )
     county = models.CharField(
         max_length=50,
@@ -194,13 +204,13 @@ class Incident(models.Model):
     )
     country = models.CharField(
         max_length=50,
-        default="USA",
-        help_text="Use 'USA', not 'United States of America'.",
+        default="US",
+        choices=Countries.choices,
     )
     category = models.CharField(
-        max_length=2,
+        max_length=10,
         choices=Category.choices,
-        default=Category.UNKNOWN,
+        blank=True,
         help_text="Select the category that best describes the incident.",
     )
     incident_type = models.CharField(
@@ -224,7 +234,7 @@ class Incident(models.Model):
         choices=SecondaryType.choices,
         default=SecondaryType.NONE,
     )
-    primary_cause = models.CharField(
+    primary_cause = models.CharField(  # Deprecated
         max_length=200,
         help_text=(
             "Briefly describe the primary cause of the incident, for example "
@@ -232,7 +242,7 @@ class Incident(models.Model):
         ),
         blank=True,
     )
-    secondary_cause = models.CharField(
+    secondary_cause = models.CharField(  # Deprecated
         max_length=200,
         blank=True,
         help_text="Briefly describe the secondary cause of the incident.",
@@ -370,6 +380,16 @@ class Incident(models.Model):
 
     objects = IncidentManager()
 
+    class Meta:
+        constraints = (
+            models.CheckConstraint(
+                check=(Q(state="") & ~Q(us_state=""))
+                | (~Q(state="") & Q(us_state=""))
+                | (Q(state="") & Q(us_state="")),
+                name="incident_state_xor_us_state",
+            ),
+        )
+
     def __str__(self):
         return self.date.strftime("%Y-%m-%d") + " " + self.cave
 
@@ -397,6 +417,20 @@ class Incident(models.Model):
                     empty_fields.append(field.verbose_name)
 
         return empty_fields
+
+    def get_state_display(self) -> str:
+        if self.us_state:
+            return self.get_us_state_display()
+        return self.state
+
+    def clean(self) -> None:
+        if self.state and self.us_state:
+            raise ValidationError("State and US state are mutually exclusive.")
+
+        if self.country != "US" and self.us_state:
+            raise ValidationError(
+                "US state should not be set for countries other than the US."
+            )
 
 
 @reversion.register()
