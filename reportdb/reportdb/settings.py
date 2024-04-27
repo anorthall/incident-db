@@ -10,7 +10,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 import os
-import socket
 from pathlib import Path
 
 import dj_database_url
@@ -31,7 +30,6 @@ INTERNAL_IPS = ["127.0.0.1"]
 
 
 # Application definition
-
 INSTALLED_APPS = [
     "whitenoise.runserver_nostatic",
     "core.apps.CoreConfig",
@@ -43,7 +41,6 @@ INSTALLED_APPS = [
     "debug_toolbar",
     "django_htmx",
     "active_link",
-    "import_export",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -101,7 +98,6 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",  # noqa: E501
@@ -120,7 +116,6 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
-
 LANGUAGE_CODE = "en-us"
 TIME_ZONE = "UTC"
 USE_I18N = False
@@ -200,18 +195,3 @@ if not DEBUG and os.environ.get("SENTRY_KEY", None):  # pragma: no cover
 
 # Django active link
 ACTIVE_LINK_STRICT = True
-
-# django-import-export
-IMPORT_EXPORT_IMPORT_PERMISSION_CODE = "import"
-
-# Add Docker host IP to ALLOWED_HOSTS for Dokku healthchecks
-ALLOWED_HOSTS.append(socket.getaddrinfo(socket.gethostname(), "http")[0][4][0])
-
-# Find local IPs for debug toolbar
-if DEBUG:
-    hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
-    INTERNAL_IPS = [ip[: ip.rfind(".")] + ".1" for ip in ips] + [
-        "127.0.0.1",
-        "10.0.2.2",
-        "192.168.65.1",
-    ]
