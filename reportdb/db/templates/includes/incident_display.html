@@ -1,25 +1,29 @@
 <dl class="row g-1">
-  <dt class="col-4 col-xl-2">Publication</dt>
-  <dd class="col-8 col-xl-4">
-    <a class="text-decoration-none" href="{{ incident.publication.get_absolute_url }}">
-      {{ incident.publication|default:"<span class='text-muted'>Not recorded</span>" }}
-    </a>
-
-    {% if incident.publication and incident.publication_page %}
-      {% if incident.publication.get_pdf_url %}
-        <a class="link-secondary text-decoration-none" href="{{ incident.publication.get_pdf_url }}">
-          page {{ incident.publication_page }} <i class="bi bi-file-pdf"></i>
-        </a>
-      {% else %}
-        <span class="text-muted">page {{ incident.publication_page }}</span>
-      {% endif %}
-    {% endif %}
-  </dd>
-
   <dt class="col-4 col-xl-2">Date</dt>
   <dd class="col-8 col-xl-4">
     {{ incident.date|date:"jS M Y" }}
     {% if incident.approximate_date %}<span class="text-muted">approximate</span>{% endif %}
+  </dd>
+
+  <dt class="col-4 col-xl-2">Publication</dt>
+  <dd class="col-8 col-xl-4">
+    {% if incident.publication %}
+      <a class="text-decoration-none" href="{{ incident.publication.get_absolute_url }}">
+        {{ incident.publication.name }}
+      </a>
+    {% else %}
+      <span class="text-muted">Not recorded</span>
+    {% endif %}
+
+    {% if incident.publication and incident.publication_page %}
+      {% if incident.publication.pdf_file %}
+        <a class="link-secondary text-decoration-none" href="{{ incident.publication.pdf_file.url }}">
+          p. {{ incident.publication_page }} <i class="bi bi-file-pdf"></i>
+        </a>
+      {% else %}
+        <span class="text-muted">p. {{ incident.publication_page }}</span>
+      {% endif %}
+    {% endif %}
   </dd>
 
   <dt class="col-4 col-xl-2">Cave</dt>

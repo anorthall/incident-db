@@ -1,7 +1,9 @@
-from dataclasses import dataclass
+from collections import defaultdict
 from datetime import datetime
 
+from core.utils import get_authed_user
 from django.contrib import messages
+from django.db.models import QuerySet
 from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse
 from django.views.generic import DetailView, ListView, TemplateView, UpdateView, View
@@ -18,28 +20,9 @@ from .forms import (
     InjuredCaverForm,
     ReportTextForm,
 )
-from .mixins import ApprovalMixin, EditorOnly, InjuredCaverHTMXView
+from .mixins import EditorOnly, InjuredCaverHTMXView
 from .models import Incident, Publication
 from .services import highlight_text_from_incident, similarity
-
-
-@dataclass
-class IncidentsByYear:
-    """A dataclass for storing incidents by year."""
-
-    year: int  # The year
-    incidents: int  # Total number of incidents
-    approved: int  # Number of incidents approved
-    pending: int  # Number of incidents pending information
-    review: int  # Number of incidents pending review
-    need_text: int  # Number of incidents pending report text
-
-    def __str__(self):
-        return str(self.year)
-
-    def completion_rate(self) -> float:
-        """Return the completion rate as a percentage."""
-        return self.approved / self.incidents * 100
 
 
 class About(TemplateView):
@@ -57,51 +40,21 @@ class Index(TemplateView):
         context = super().get_context_data(**kwargs)
 
         # Build context for the incident list by year
-        incidents = Incident.objects.public()
-        context["incidentmanager"] = Incident.objects
-
-        context["all_incidents_completion"] = 0
-        if bool(incidents):  # Avoid division by zero on empty queryset
-            context["all_incidents_completion"] = (
-                incidents.filter(approved=True).count() / incidents.count() * 100
-            )
-
-        context["all_incidents_need_text"] = incidents.filter(
-            incident_report=""
-        ).count()
+        incidents = Incident.objects.all().values_list("date", flat=True)
 
         # Build a list of IncidentByYear dataclasses with stats for each year
-        incidents_by_year = []
-        for incident in incidents:
-            year = incident.date.year
-            for y in incidents_by_year:
-                if y.year == year:
-                    y.incidents += 1
-                    if incident.approved:
-                        y.approved += 1
-                    else:
-                        y.pending += 1
+        incidents_by_year = defaultdict(int)
+        for incident_date in incidents:
+            if not incident_date:
+                continue
 
-                    if incident.editing_notes:
-                        y.review += 1
+            incidents_by_year[incident_date.year] += 1
 
-                    if not incident.incident_report:
-                        y.need_text += 1
-                    break
-            else:
-                incidents_by_year.append(
-                    IncidentsByYear(
-                        year=year,
-                        incidents=1,
-                        approved=1 if incident.approved else 0,
-                        pending=1 if not incident.approved else 0,
-                        review=1 if incident.editing_notes else 0,
-                        need_text=1 if not incident.incident_report else 0,
-                    )
-                )
+        context["incidents_by_year"] = sorted(
+            incidents_by_year.items(), key=lambda x: x[0], reverse=True
+        )
 
-        incidents_by_year.sort(key=lambda x: x.year)
-        context["incidents_by_year"] = incidents_by_year
+        context["total_incidents"] = len(incidents)
 
         return context
 
@@ -117,7 +70,7 @@ class PublicationDetail(ListView):
             .get_queryset()
             .select_related("publication")
             .filter(publication__id=self.kwargs["publication_id"])
-            .order_by("-approved", "date")
+            .order_by("date")
         )
 
     def get_context_data(self, *args, **kwargs):
@@ -141,45 +94,33 @@ class IncidentList(ListView):
         queryset = (
             super().get_queryset().select_related("publication").order_by("-date")
         )
-        query = self.kwargs["status"]
+        query = self.kwargs["query"]
 
-        # First try listing incidents by year
+        if query == "all":
+            return self.check_queryset(queryset)
+
         try:
             year = int(query)
-            if 1900 < year <= datetime.now().year:
-                yearly_qs = queryset.filter(date__year=year)
-                if not bool(yearly_qs):
-                    messages.error(
-                        self.request,
-                        f"There are no incidents from {year}. Showing all incidents.",
-                    )
-                    return queryset
-
-                self.title = f"Incidents from {year}"
-                return yearly_qs
         except ValueError:
-            pass
+            return self.check_queryset(queryset)
 
-        # Then try listing incidents by status
-        valid_statuses = ["approved", "pending", "review", "text", "edit"]
-        if query in valid_statuses:
-            match query:
-                case "approved":
-                    queryset = Incident.objects.approved()
-                    self.title = "Approved incidents"
-                case "pending":
-                    queryset = Incident.objects.pending()
-                    self.title = "Incidents pending information"
-                case "review":
-                    queryset = Incident.objects.need_review()
-                    self.title = "Incidents pending review"
-                case "text":
-                    queryset = Incident.objects.need_report_text()
-                    self.title = "Incidents pending report text"
-                case "edit":
-                    queryset = Incident.objects.to_edit()
-                    self.title = "Incidents pending editing"
+        if 1900 < year <= datetime.now().year:
+            yearly_qs = queryset.filter(date__year=year)
+            if not bool(yearly_qs):
+                messages.error(
+                    self.request,
+                    f"There are no incidents from {year}. Showing all incidents.",
+                )
+                return queryset
 
+            self.title = f"Incidents from {year}"
+            return yearly_qs
+
+        if not bool(queryset):
+            messages.error(self.request, "There are no incidents to show.")
+        return self.check_queryset(queryset)
+
+    def check_queryset(self, queryset):
         if not bool(queryset):
             messages.error(self.request, "There are no incidents to show.")
         return queryset
@@ -198,13 +139,13 @@ class IncidentDetail(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        if not self.object.approved:
-            incidents_on_same_date = Incident.objects.filter(date=self.object.date)
-            cleaned_incidents = incidents_on_same_date.exclude(pk=self.object.pk)
-            context["incidents_on_same_date"] = cleaned_incidents
+        if user := get_authed_user(self.request):
+            if user.is_editor:
+                context["injured_caver_add_form"] = InjuredCaverForm(self.object)
+                context["incidents_on_same_date"] = Incident.objects.filter(
+                    date=self.object.date
+                ).exclude(pk=self.object.pk)
 
-        context["injured_caver_add_form"] = InjuredCaverForm(self.object)
-        context["incident"] = self.object
         return context
 
 
@@ -233,12 +174,18 @@ class IncidentAddText(EditorOnly, RevisionMixin, UpdateView):
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(**kwargs)
-        with open(self.object.publication.get_text_path()) as f:
-            text = f.read()
+        text = self.object.publication.text_file.read().decode("utf-8")
         text, count = highlight_text_from_incident(text, self.object)
         context["report_text"] = text
         context["find_count"] = count
         return context
+
+    def get_queryset(self) -> QuerySet[Incident]:
+        return Incident.objects.filter(
+            publication__isnull=False,
+            publication__text_file__isnull=False,
+            publication__pdf_file__isnull=False,
+        )
 
     def form_valid(self, form):
         form.instance.updated_by = self.request.user
@@ -315,15 +262,8 @@ class IncidentAddAnalysis(EditorOnly, RevisionMixin, UpdateView):
 class IncidentDelete(EditorOnly, RevisionMixin, View):
     def post(self, request, *args, **kwargs):
         incident = get_object_or_404(Incident, pk=self.kwargs["pk"])
-        if incident.approved:
-            messages.error(
-                request,
-                "Please ensure a report is not marked as approved "
-                "before attempting to delete it.",
-            )
-            return redirect(incident.get_absolute_url())
-
         incident.delete()
+
         EditLogEntry.objects.create(
             user=self.request.user,
             verb=EditLogEntry.DELETED,
@@ -383,13 +323,13 @@ class FindReportToReview(EditorOnly, View):
         return redirect("db:incident_detail", pk=incident.pk)
 
 
-class FindRandomApprovedIncident(View):
+class FindRandomIncident(View):
     def get(self, request, *args, **kwargs):
-        incident = Incident.objects.approved().order_by("?").first()
+        incident = Incident.objects.all().order_by("?").first()
         return redirect("db:incident_detail", pk=incident.pk)
 
 
-class ApproveIncidentDate(ApprovalMixin, RevisionMixin, UpdateView):
+class EditIncidentDate(EditorOnly, RevisionMixin, UpdateView):
     model = Incident
     context_object_name = "incident"
     template_name = "approval/incident_approve_date.html"
@@ -399,7 +339,7 @@ class ApproveIncidentDate(ApprovalMixin, RevisionMixin, UpdateView):
         return reverse("db:approve_report_text", args=[self.object.pk])
 
 
-class ApproveReportText(ApprovalMixin, RevisionMixin, UpdateView):
+class EditReportText(EditorOnly, RevisionMixin, UpdateView):
     model = Incident
     context_object_name = "incident"
     template_name = "approval/incident_approve_text.html"
@@ -426,7 +366,7 @@ class ApproveReportText(ApprovalMixin, RevisionMixin, UpdateView):
         return context
 
 
-class ApproveInjuredCavers(ApprovalMixin, RevisionMixin, DetailView):
+class EditInjuredCavers(EditorOnly, RevisionMixin, DetailView):
     model = Incident
     context_object_name = "incident"
     template_name = "approval/incident_approve_cavers.html"
@@ -438,7 +378,7 @@ class ApproveInjuredCavers(ApprovalMixin, RevisionMixin, DetailView):
         return context
 
 
-class ApproveIncidentMetadata(ApprovalMixin, RevisionMixin, UpdateView):
+class EditIncidentMetadata(EditorOnly, RevisionMixin, UpdateView):
     model = Incident
     context_object_name = "incident"
     template_name = "approval/incident_approve_metadata.html"
@@ -448,7 +388,7 @@ class ApproveIncidentMetadata(ApprovalMixin, RevisionMixin, UpdateView):
         return reverse("db:approve_incident_flags", args=[self.object.pk])
 
 
-class ApproveIncidentFlags(ApprovalMixin, RevisionMixin, UpdateView):
+class EditIncidentFlags(EditorOnly, RevisionMixin, UpdateView):
     model = Incident
     context_object_name = "incident"
     template_name = "approval/incident_approve_flags.html"
@@ -458,37 +398,21 @@ class ApproveIncidentFlags(ApprovalMixin, RevisionMixin, UpdateView):
         return reverse("db:approve_incident_final", args=[self.object.pk])
 
 
-class ApproveIncidentFinal(ApprovalMixin, RevisionMixin, DetailView):
+class EditIncidentFinal(EditorOnly, RevisionMixin, DetailView):
     model = Incident
     context_object_name = "incident"
     template_name = "approval/incident_approve_final.html"
 
     def post(self, request, *args, **kwargs):
         incident = self.get_object()
-        incident.approved = True
         incident.save()
         EditLogEntry.objects.create(
             user=request.user,
             incident=incident,
             verb=EditLogEntry.EDITED,
-            message="approved report",
+            message="edited report",
         )
-        messages.success(request, "The report has been approved.")
-        return redirect("db:incident_detail", pk=incident.pk)
-
-
-class IncidentUnapprove(EditorOnly, RevisionMixin, View):
-    def post(self, request, *args, **kwargs):
-        incident = get_object_or_404(Incident, pk=self.kwargs["pk"])
-        incident.approved = False
-        incident.save()
-        EditLogEntry.objects.create(
-            user=request.user,
-            incident=incident,
-            verb=EditLogEntry.EDITED,
-            message="unapproved report",
-        )
-        messages.success(request, "The report has been unapproved.")
+        messages.success(request, "The report has been edited.")
         return redirect("db:incident_detail", pk=incident.pk)
 
 

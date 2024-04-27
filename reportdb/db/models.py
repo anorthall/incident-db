@@ -16,11 +16,12 @@ def publication_upload_path(instance, filename):
 @reversion.register()
 class Publication(models.Model):
     name = models.CharField(max_length=100)
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
-    public = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     text_file = models.FileField(
-        upload_to=publication_upload_path, blank=True, null=True
+        upload_to=publication_upload_path,
+        blank=True,
+        null=True,
     )
     pdf_file = models.FileField(
         upload_to=publication_upload_path,
@@ -35,51 +36,24 @@ class Publication(models.Model):
     def get_absolute_url(self):
         return reverse("db:publication_detail", kwargs={"publication_id": self.pk})
 
-    def get_pdf_url(self) -> str:
-        if self.pdf_file:
-            return self.pdf_file.url
-        return ""
-
-    def get_text_url(self) -> str:
-        if self.text_file:
-            return f"{settings.STATIC_URL}aca/{self.name}.txt"
-        return ""
-
-    def get_text_path(self):
-        return f"{settings.STATIC_ROOT}/aca/{self.name}.txt"
-
 
 class IncidentManager(models.Manager):
     def get_queryset(self):
         return super().get_queryset().select_related("publication")
 
-    def public(self):
-        return self.get_queryset().filter(publication__public=True)
-
-    def approved(self):
-        return self.public().filter(approved=True)
-
-    def pending(self):
-        return (
-            self.public()
-            .filter(approved=False)
-            .exclude(Q(incident_report="") | Q(incident_report__isnull=True))
-        )
-
     def need_report_text(self):
-        return self.public().filter(
-            Q(incident_report="") | Q(incident_report__isnull=True)
-        )
-
-    def need_analysis(self):
-        return (
-            self.approved()
-            .filter(Q(incident_analysis="") | Q(incident_analysis__isnull=True))
-            .filter(no_analysis=False)
+        return self.all().filter(
+            (Q(incident_report="") | Q(incident_report__isnull=True))
+            & Q(publication__isnull=False)
+            & Q(publication__pdf_file__isnull=False)
+            & Q(publication__text_file__isnull=False)
         )
 
     def need_review(self):
-        return self.public().exclude(editing_notes="")
+        return self.all().exclude(editing_notes="")
+
+    def need_analysis(self):
+        return self.all().filter(no_analysis=False, incident_analysis="")
 
 
 @reversion.register()
@@ -176,6 +150,8 @@ class Incident(models.Model):
         on_delete=models.PROTECT,
         related_name="incidents",
         help_text="The publication that this incident appeared in.",
+        null=True,
+        blank=True,
     )
     publication_page = models.IntegerField(
         help_text=(
@@ -184,12 +160,14 @@ class Incident(models.Model):
         ),
         validators=[MinValueValidator(1)],
         blank=True,
+        null=True,
     )
-    cave = models.CharField(max_length=100, help_text="If not known, enter 'unknown'.")
+
+    cave = models.CharField(max_length=100, help_text="If not known, enter 'Unknown'.")
     state = models.CharField(
         max_length=50,
         blank=True,
-        help_text="For countries other than the USA.",
+        help_text="For countries other than the USA only.",
     )
     us_state = models.CharField(
         "US state",
@@ -292,10 +270,10 @@ class Incident(models.Model):
         verbose_name="Vertical incident",
         help_text="Tick this box if the incident involved vertical caving.",
     )
-    spar = models.BooleanField(
+    self_rescue = models.BooleanField(
         default=False,
-        verbose_name="SPAR",
-        help_text="Tick this box if SPAR (self-rescue) techniques were used.",
+        verbose_name="Self rescue",
+        help_text="Tick this box if self-rescue techniques were used.",
     )
     source = models.CharField(
         max_length=2,
@@ -348,13 +326,6 @@ class Incident(models.Model):
             "These notes will not be visible to the public."
         ),
     )
-    approved = models.BooleanField(
-        default=False,
-        help_text=(
-            "Tick this box if you have reviewed the data for this incident and "
-            "are satisfied that it is correct and ready for publication."
-        ),
-    )
     data_input_source = models.CharField(
         max_length=2,
         choices=DataInput.choices,
@@ -369,8 +340,8 @@ class Incident(models.Model):
         default=False,
         help_text="Tick this box if the original report contained no analysis.",
     )
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     updated_by = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.SET_NULL,
@@ -388,6 +359,10 @@ class Incident(models.Model):
                 | (Q(state="") & Q(us_state="")),
                 name="incident_state_xor_us_state",
             ),
+            models.CheckConstraint(
+                check=(Q(country="US") & Q(state="")) | (~Q(country="US")),
+                name="incident_from_us_cannot_use_state_field",
+            ),
         )
 
     def __str__(self):
@@ -400,13 +375,15 @@ class Incident(models.Model):
         """Return a list of fields that are empty."""
         exclude_fields = [
             "id",
-            "created",
+            "created_at",
             "updated",
             "updated_by",
             "editing_notes",
             "incident_notes",
             "keywords",
             "original_text",
+            "primary_cause",
+            "secondary_cause",
         ]
         empty_fields = []
         for field in self._meta.fields:
@@ -423,6 +400,9 @@ class Incident(models.Model):
             return self.get_us_state_display()
         return self.state
 
+    def get_split_references(self) -> list[str]:
+        return [ref.strip() for ref in self.incident_references.strip().split("\n")]
+
     def clean(self) -> None:
         if self.state and self.us_state:
             raise ValidationError("State and US state are mutually exclusive.")
@@ -431,6 +411,9 @@ class Incident(models.Model):
             raise ValidationError(
                 "US state should not be set for countries other than the US."
             )
+
+        if self.state and self.country == "US":
+            raise ValidationError("Set the state using the US state field.")
 
 
 @reversion.register()

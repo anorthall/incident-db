@@ -35,8 +35,7 @@
           <td class="d-none d-lg-table-cell">{{ incident.get_category_display }}</td>
           <td class="d-none d-lg-table-cell">{% include "includes/incident_flags.html" %}</td>
           <td class="text-end d-none d-sm-table-cell">
-            <a href="{{ incident.get_absolute_url }}"
-               class="btn btn-sm {% if incident.approved %}btn-outline-success{% else %}btn-outline-secondary{% endif %}">
+            <a href="{{ incident.get_absolute_url }}" class="btn btn-sm btn-outline-secondary">
               View
             </a>
           </td>
@@ -45,7 +44,7 @@
       </tbody>
     </table>
     <div class="table-legend">
-      {{ incidents|length }} incidents
+      {{ incidents|length }} incident{{ incidents|pluralize }}
     </div>
   </div>
 {% endblock content %}

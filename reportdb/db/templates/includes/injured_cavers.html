@@ -15,7 +15,7 @@
   <h3 class="section d-flex flex-row justify-content-between align-content-center">
     Injured cavers
     {% if allow_editing_injured_cavers %}
-      {% if not incident.approved and user.is_authenticated and user.is_editor %}
+      {% if user.is_authenticated and user.is_editor %}
         <button data-bs-toggle="modal" data-bs-target="#addCaverModal" class="btn btn-sm btn-primary">Add</button>
       {% endif %}
     {% endif %}
@@ -33,7 +33,7 @@
               <th>Injuries</th>
               <th>Injured areas</th>
               {% if allow_editing_injured_cavers %}
-                {% if not incident.approved and user.is_authenticated and user.is_editor %}<th></th>{% endif %}
+                {% if user.is_authenticated and user.is_editor %}<th></th>{% endif %}
               {% endif %}
             </tr>
           </thead>
@@ -51,7 +51,7 @@
                 <td>{{ caver.injuries|default:"<span class='text-muted'>Not recorded</span>" }}</td>
                 <td>{{ caver.injury_areas|default:"<span class='text-muted'>Not recorded</span>" }}</td>
                 {% if allow_editing_injured_cavers %}
-                  {% if not incident.approved and user.is_authenticated and user.is_editor %}
+                  {% if user.is_authenticated and user.is_editor %}
                     <td class="text-end">
                       <a data-bs-toggle="modal" data-bs-target="#editCaverModal{{ caver.pk }}" class="btn btn-sm btn-outline-primary me-1">
                         Edit
@@ -71,7 +71,7 @@
       <p class="text-muted">No injured cavers recorded.</p>
     {% endif %}
 
-    {% if allow_editing_injured_cavers %}
+    {% if allow_editing_injured_cavers and user.is_editor %}
       {# Delete and edit caver modals #}
       {% for caver in incident.injured_cavers.all %}
         <div class="modal fade" id="deleteCaverModal{{ caver.pk }}" tabindex="-1">
@@ -116,9 +116,7 @@
           </div>
         </div>
       {% endfor %}
-    {% endif %}
 
-    {% if allow_editing_injured_cavers %}
       <div class="modal modal-lg fade" id="addCaverModal" tabindex="-1">
         <div class="modal-dialog">
           <div class="modal-content">

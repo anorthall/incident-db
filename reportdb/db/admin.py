@@ -11,9 +11,9 @@ admin.site.site_title = "Incident DB"
 
 @admin.register(Publication)
 class PublicationAdmin(VersionAdmin):
-    list_display = ("name", "created", "updated")
+    list_display = ("name", "created_at", "updated_at")
     search_fields = ("name",)
-    ordering = ("-created",)
+    ordering = ("-created_at",)
 
 
 @admin.register(InjuredCaver)
@@ -60,11 +60,10 @@ class IncidentAdmin(VersionAdmin):
         "country",
         "category",
         "incident_type",
-        "updated",
+        "updated_at",
     )
-    ordering = ("-updated",)
+    ordering = ("-updated_at",)
     list_filter = (
-        "approved",
         "publication",
         "state",
         "country",
@@ -132,7 +131,7 @@ class IncidentAdmin(VersionAdmin):
                     "multiple_incidents",
                     "rescue_over_24_hours",
                     "vertical",
-                    "spar",
+                    "self_rescue",
                 )
             },
         ),
@@ -155,17 +154,15 @@ class IncidentAdmin(VersionAdmin):
                 "fields": (
                     "data_input_source",
                     "editing_notes",
-                    "approved",
-                    "created",
-                    "updated",
+                    "created_at",
+                    "updated_at",
                 )
             },
         ),
     )
     readonly_fields = (
-        "approved",
-        "created",
-        "updated",
+        "created_at",
+        "updated_at",
         "original_text",
         "data_input_source",
     )

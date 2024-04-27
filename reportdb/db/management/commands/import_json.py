@@ -157,7 +157,7 @@ class Command(BaseCommand):
             if category == value:
                 return key
         else:
-            return Incident.Category.UNKNOWN
+            return ""
 
     def parse_incident_type(self, incident_type: str, primary=False):
         if primary:

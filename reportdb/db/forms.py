@@ -84,6 +84,7 @@ class BaseIncidentForm(forms.ModelForm):
             "approximate_date",
             "cave",
             "state",
+            "us_state",
             "county",
             "country",
             "category",
@@ -99,7 +100,7 @@ class BaseIncidentForm(forms.ModelForm):
             "multiple_incidents",
             "rescue_over_24_hours",
             "vertical",
-            "spar",
+            "self_rescue",
             "incident_report",
             "incident_analysis",
             "incident_summary",
@@ -148,6 +149,7 @@ class IncidentForm(BaseIncidentForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper.form_tag = False
+        self.helper.form_show_errors = False
         self.helper.layout = Layout(
             Div(
                 Field("date", wrapper_class="col-lg-6"),
@@ -158,9 +160,10 @@ class IncidentForm(BaseIncidentForm):
             ),
             HTML("<hr>"),
             Div(
-                Field("cave", wrapper_class="col-lg-6"),
+                Field("cave", wrapper_class="col-lg-12"),
                 Field("state", wrapper_class="col-lg-6"),
                 Field("county", wrapper_class="col-lg-6"),
+                Field("us_state", wrapper_class="col-lg-6"),
                 Field("country", wrapper_class="col-lg-6"),
                 css_class="row my-0",
             ),
@@ -183,7 +186,7 @@ class IncidentForm(BaseIncidentForm):
                 CustomCheckbox("multiple_incidents"),
                 CustomCheckbox("rescue_over_24_hours"),
                 CustomCheckbox("vertical"),
-                CustomCheckbox("spar"),
+                CustomCheckbox("self_rescue"),
                 css_class="row g-3",
             ),
             HTML("<hr class='mt-5'>"),
@@ -350,7 +353,7 @@ class ApproveFlagsForm(forms.ModelForm):
             "multiple_incidents",
             "rescue_over_24_hours",
             "vertical",
-            "spar",
+            "self_rescue",
         ]
 
     def __init__(self, *args, **kwargs):

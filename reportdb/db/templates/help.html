@@ -44,48 +44,8 @@
   <p>
     The <code>Incident report</code> field is automatically compared to the original and flagged if it is significantly different, which
     helps to mitigate the possibility of this information being incorrect. In other cases, however, the AI is asked to make a subjective
-    judgement, such as when populating the <code>Category</code> or <code>Primary cause</code> fields. Editors should take extra
-    time in reviewing these fields and not hesitate to change them if they are incorrect.
-  </p>
-
-  <h3 class="section less-mt">Approval process</h3>
-  <p>
-    The incident approval process should be fairly straightforward and is designed to ensure that the data is correct and
-    consistent. The process consists of either five or six steps, depending on whether the incident was processed by artificial
-    intelligence or not.
-  </p>
-
-  <p>
-    When clicking the <code>Approve reports</code> menu option, you will be presented with the following pages:
-  </p>
-
-  <ol>
-    <li><em>AI incidents</em> &mdash; a page to check the date of the incident is correct.</li>
-    <li><em>All incidents</em> &mdash; a page to check the incident report, analysis, references and summary.</li>
-    <li><em>All incidents</em> &mdash; a page to add any injured cavers to the injured cavers table.</li>
-    <li><em>All incidents</em> &mdash; a page to check the incident metadata.</li>
-    <li><em>All incidents</em> &mdash; a page to check the incident flags.</li>
-    <li><em>All incidents</em> &mdash; a final review page before the incident is approved and published.</li>
-  </ol>
-
-  <p>
-    Each page will display either the original pre-AI-processing text, or the edited incident report, as a reference to help you
-    determine if the data is correct.
-  </p>
-
-  <p>
-    It is strongly recommended to read the text at the top of each approval page, at least initially, as this changes
-    depending on the type of incident being approved and provides guidance on what to look for.
-  </p>
-
-  <h3 class="section less-mt">Errors after approval</h3>
-  <p>
-    Incidents may still be edited after they have been approved and editors are encouraged to do so, should they spot any
-    errors that need correction. Simply select the "Edit incident" option from the menu and make the necessary changes.
-  </p>
-
-  <p>
-    Editing an incident that has been approved will not 'unapprove' it, and the incident will remain published.
+    judgement, such as when populating the <code>Category</code> field. Editors should take extra care in reviewing these fields and not
+    hesitate to change them if they are incorrect.
   </p>
 
   <h2 class="subtitle underline" id="metadataHelp">Incident metadata</h2>
@@ -103,31 +63,28 @@
     The name of the cave in which the incident occurred. If the cave name is not known, you must enter <code>Unknown</code>.
   </p>
 
-  <h3 class="section less-mt">State</h3>
+  <h3 class="section less-mt">State/US State</h3>
   <p>
-    The state in which the incident occurred. Always use the full name of the state &mdash; New York, not NY. If the state
-    is not known, the field must be left blank.
+    The state in which the incident occurred. Either field may be left blank, but only one of them can be completed. Incidents
+    which did not take place in the United States which have a value in the US State field will be rejected.
   </p>
 
   <h3 class="section less-mt">County</h3>
   <p>
-    The full name of the county in which the incident occurred. If the county is not known, the field must be left blank.
+    The county in which the incident occurred. If the county is not known, leave this field blank.
   </p>
 
   <h3 class="section less-mt">Country</h3>
   <p>
-    The country in which the incident occurred. If the incident occurred in the United States, you must enter <code>USA</code>.
-    For all other countries, the full name of the country should be used. If the country is not known, you must enter
-    <code>Unknown</code>.
+    The country in which the incident occurred. This field is mandatory.
   </p>
 
   <h3 class="section less-mt">Category</h3>
   <p>
-    The overall category of the incident. Most incidents will fall into either the <code>Caving</code> or <code>Cave diving</code>
-    categories.
+    Used to distinguish different types of underground activity.
   </p>
 
-   <div class="table-responsive">
+  <div class="table-responsive">
     <table class="table table-sm">
       <thead>
         <tr>
@@ -138,27 +95,21 @@
 
       <tbody>
         <tr>
-          <td><code>Unknown</code></td>
-          <td>It is not possible to determine the category from the incident report.</td>
+          <td><code>Cave</code></td>
+          <td>The incident involves a trip into a cave.</td>
         </tr>
 
         <tr>
-          <td><code>Caving</code></td>
-          <td>The incident involves a trip into a cave, mine, or other underground space.</td>
-        </tr>
-
-        <tr>
-          <td><code>Caving related</code></td>
+          <td><code>Cave Diving</code></td>
           <td>
-            The incident involves a cave, mine, or other underground space but is not typically caving related &mdash; for example
-            a crime committed in a cave.
+            The incident involves diving within a cave, or in a cave-like environment such as a mine.
           </td>
         </tr>
 
         <tr>
-          <td><code>Cave diving</code></td>
+          <td><code>Mine</code></td>
           <td>
-            The incident involves a trip into a cave, mine, or other underground space in which diving equipment was used.
+            The incident involves a trip into a mine. This includes both abandoned and active mines.
           </td>
         </tr>
 
@@ -183,24 +134,6 @@
     These fields are optional and should only be used if the incident can be categorised into more than one type. For example,
     if a caver suffered a fall which was caused by faulty equipment, the primary type would be <code>Caver fall</code> and the
   secondary type would be <code>Equipment problems</code>. In most cases, <code>None</code> will be selected.
-
-  <h3 class="section less-mt">Primary and secondary cause</h3>
-  <p>
-    These fields are a free form text description of what you feel the causes of the incident were. The secondary cause field should
-    only be used when there was clearly more than one cause. Some examples of values found in these fields may be:
-  </p>
-
-  <ul>
-    <li>Not properly prepared</li>
-    <li>Poor judgement</li>
-    <li>Inaccurate weather forecast</li>
-    <li>Lack of training</li>
-  </ul>
-
-  <p>
-    These fields are optional, but it is strongly recommended that you fill in at least the <code>Primary cause</code> field. If no cause
-    can be determined, you must leave both of these fields blank.
-  </p>
 
   <h3 class="section less-mt">Aid type</h3>
   <p>
@@ -380,12 +313,12 @@
         </tr>
 
         <tr>
-          <td><code>SPAR</code></td>
+          <td><code>Self rescue</code></td>
           <td>
-            Self-rescue (SPAR) techniques were used by the caving group to resolve the incident. This does not include any techniques used by any external
-            rescue teams which attended later. An example of SPAR would be a caver who fell and injured themselves but was able to exit the cave without
-            assistance from their group, or a group which set up a hauling system themselves. This flag must be selected if the SPAR was unsuccessful
-            and organised rescue later took place.
+            Self-rescue techniques were used by the caving group to resolve the incident. This does not include any techniques used by any external
+            rescue teams which attended later. An example of self rescue would be a caver who fell and injured themselves but was able to exit the
+            cave without assistance from their group, or a group which set up a hauling system themselves. This flag must still be selected if the
+            self rescue was unsuccessful and organised rescue later took place.
           </td>
         </tr>
       </tbody>
@@ -395,14 +328,15 @@
   <h2 class="subtitle underline">Incident text fields</h2>
   <h3 class="section less-mt">Incident report</h3>
   <p>
-    The original text of the incident report from the ACA Journal or submitter of the incident. This field should contain a
-    factual description of the events that took place underground <strong>only</strong> and should not contain any
-    analysis or references to external publications or resources.
+    The original text of the incident report from the person who reported it, or from the journal from which it was taken.
+    This field should contain a factual description of the events that took place underground <strong>only</strong> and
+    should not contain any analysis or references to external publications or resources.
   </p>
 
   <h3 class="section less-mt">Incident analysis</h3>
   <p>
-    Any analysis of the incident which was included in the original publication. Do not provide your own analysis.
+    Any analysis of the incident which was included in the original journal, or any analysis by the person who reported the
+    incident. Do not provide your own analysis.
   </p>
 
   <h3 class="section less-mt">Summary</h3>
@@ -434,17 +368,5 @@
   <ul>
     <li>Some parts of the incident report were missing from the original publication.</li>
     <li>This incident report was later found to be inaccurate in the respect of ...</li>
-  </ul>
-
-  <h3 class="section less-mt">Editing notes</h3>
-  <p>
-    The editing notes field is only visible to people who are signed in as an editor of the database. It should contain information
-    relating to editing only. If the editing notes field is populated, it will be considered as having <em>items to action</em> and
-    it will not be possible to approve it. An example of text contained in the editing notes field may be:
-  </p>
-
-  <ul>
-    <li>Is this cave name correct? I think it is misspelt.</li>
-    <li>Is this incident a duplicate of the incident on 1984-05-01?</li>
   </ul>
 {% endblock %}
