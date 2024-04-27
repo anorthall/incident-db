@@ -132,34 +132,29 @@ STATIC_URL = "/static/"
 STATIC_ROOT = os.environ.get("STATIC_ROOT", "/app/staticfiles")
 STATICFILES_DIRS = [BASE_DIR / "static"]
 
-USE_S3 = os.environ.get("AWS_STORAGE_BUCKET_NAME", False)
-if USE_S3 is not False:  # pragma: no cover
-    AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
-    AWS_S3_REGION_NAME = os.environ.get("AWS_S3_REGION_NAME")
-    AWS_S3_ACCESS_KEY_ID = os.environ.get("AWS_S3_ACCESS_KEY_ID")
-    AWS_S3_SECRET_ACCESS_KEY = os.environ.get("AWS_S3_SECRET_ACCESS_KEY")
-    AWS_S3_CUSTOM_DOMAIN = os.environ.get(
-        "AWS_S3_CUSTOM_DOMAIN",
-        f"{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com",
-    )
+AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
+AWS_S3_REGION_NAME = os.environ.get("AWS_S3_REGION_NAME")
+AWS_S3_ACCESS_KEY_ID = os.environ.get("AWS_S3_ACCESS_KEY_ID")
+AWS_S3_SECRET_ACCESS_KEY = os.environ.get("AWS_S3_SECRET_ACCESS_KEY")
+AWS_S3_CUSTOM_DOMAIN = os.environ.get(
+    "AWS_S3_CUSTOM_DOMAIN",
+    f"{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com",
+)
 
-    MEDIA_LOCATION = "media"
-    MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIA_LOCATION}/"  # noqa: E231
+MEDIA_LOCATION = "media"
+MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIA_LOCATION}/"  # noqa: E231
 
-    STORAGES = {
-        "default": {
-            "BACKEND": "storages.backends.s3.S3Storage",
-            "OPTIONS": {
-                "location": MEDIA_LOCATION,
-            },
+STORAGES = {
+    "default": {
+        "BACKEND": "storages.backends.s3.S3Storage",
+        "OPTIONS": {
+            "location": MEDIA_LOCATION,
         },
-        "staticfiles": {
-            "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
-        },
-    }
-else:
-    MEDIA_URL = "/media/"
-    MEDIA_ROOT = os.environ.get("MEDIA_ROOT", "/app/mediafiles")
+    },
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+    },
+}
 
 
 # Default primary key field type
@@ -209,53 +204,8 @@ ACTIVE_LINK_STRICT = True
 # django-import-export
 IMPORT_EXPORT_IMPORT_PERMISSION_CODE = "import"
 
-# Loggers
-DEFAULT_LOG_LEVEL = "INFO"
-
-LOGGING = {
-    "version": 1,
-    "disable_existing_loggers": False,
-    "formatters": {
-        "simple": {
-            "format": "[{levelname}] [{asctime}] {message}",
-            "style": "{",
-        },
-    },
-    "handlers": {
-        "django_logs": {
-            "level": os.environ.get("DJANGO_LOG_LEVEL", DEFAULT_LOG_LEVEL),
-            "class": "logging.FileHandler",
-            "filename": os.environ.get("DJANGO_LOG_LOCATION", "/app/logs/django.log"),
-            "formatter": "simple",
-        },
-        "edit_log": {
-            "level": "INFO",
-            "class": "logging.FileHandler",
-            "filename": os.environ.get("EDIT_LOG_LOCATION", "/app/logs/edit_log.log"),
-            "formatter": "simple",
-        },
-        "console": {
-            "level": os.environ.get("DJANGO_LOG_LEVEL", DEFAULT_LOG_LEVEL),
-            "class": "logging.StreamHandler",
-            "formatter": "simple",
-        },
-    },
-    "loggers": {
-        "django": {
-            "handlers": ["django_logs", "console"],
-            "level": os.environ.get("DJANGO_LOG_LEVEL", DEFAULT_LOG_LEVEL),
-            "propagate": True,
-        },
-        "edit_log": {
-            "handlers": ["edit_log"],
-            "level": "INFO",
-        },
-    },
-}
-
 # Add Docker host IP to ALLOWED_HOSTS for Dokku healthchecks
 ALLOWED_HOSTS.append(socket.getaddrinfo(socket.gethostname(), "http")[0][4][0])
-
 
 # Find local IPs for debug toolbar
 if DEBUG:

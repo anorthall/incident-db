@@ -8,8 +8,8 @@ from reversion.admin import VersionAdmin
 from .models import Incident, InjuredCaver, Publication
 
 # Set admin site header
-admin.site.site_header = "ACA DB"
-admin.site.site_title = "ACA DB"
+admin.site.site_header = "Incident DB"
+admin.site.site_title = "Incident DB"
 
 
 @admin.register(Publication)

@@ -163,7 +163,7 @@ cython_debug/
 # Mac
 .DS_Store
 
-# ACA Reports
+# Application specific
 reportdb/media
 etc/dev.env
 data/openai-formatter/settings.py

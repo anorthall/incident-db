@@ -3,7 +3,7 @@
 {% block main_content_class %}smaller-container{% endblock %}
 
 {% block title %}Incident in {{ incident.cave }} on {{ incident.date }}{% endblock %}
-{% block description %}An ACA report regarding an incident in {{ incident.cave }} on {{ incident.date }}.{% endblock %}
+{% block description %}Details of an incident {{ incident.cave }} on {{ incident.date }}.{% endblock %}
 
 {% block content %}
   {% include "includes/incident_header.html" %}
