@@ -1,3 +1,11 @@
 <small class="text-muted mt-3 d-block">
-  This record was last updated on {{ incident.updated|date:"jS M Y" }} at {{ incident.updated|time:"H:i e" }}.
+  {% if incident.created_at == incident.updated_at %}
+    This record was created on {{ incident.created_at|date:"jS M Y" }} at {{ incident.created_at|time:"H:i e" }}.
+  {% else %}
+    This record was last updated on {{ incident.updated_at|date:"jS M Y" }} at {{ incident.updated_at|time:"H:i e" }}.
+  {% endif %}
+
+  {% if incident.data_input_source == incident.DataInput.AI %}
+    The data was processed and input using AI.
+  {% endif %}
 </small>

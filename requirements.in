@@ -5,7 +5,6 @@ django-active-link
 django-crispy-forms
 django-debug-toolbar
 django-htmx
-django-import-export
 django-reversion
 django-storages[s3]
 dj-database-url

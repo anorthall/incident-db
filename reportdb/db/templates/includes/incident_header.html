@@ -1,16 +1,3 @@
 <h1 class="page-header">
   <span class="extra d-none d-sm-inline">{{ verb }} incident {% if incident.cave %}at</span> {{ incident.cave }}{% else %}on</span> {{ incident.date|date }}{% endif %}
-  {% if incident.approved %}
-    <span class="ms-sm-1 small text-success"
-          data-bs-toggle="tooltip"
-          data-bs-title="This incident has been checked and the data is complete and correct.">
-      <i class="bi bi-check-circle-fill"></i>
-    </span>
-  {% else %}
-    <span class="ms-sm-1 small text-danger"
-          data-bs-toggle="tooltip"
-          data-bs-title="Data entry for this incident is incomplete and may contain errors or omissions.">
-      <i class="bi bi-exclamation-triangle-fill"></i>
-    </span>
-  {% endif %}
 </h1>
