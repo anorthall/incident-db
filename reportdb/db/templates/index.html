@@ -4,53 +4,21 @@
 
 {% block content %}
   <h1 class="page-header">Caving Incident Database</h1>
-  <p class="lead mb-3">A project of the <a href="https://caves.org/" class="text-decoration-none">National Speleological Society</a>.</p>
+  <p class="lead">A project of the <a href="https://caves.org/" class="text-decoration-none">National Speleological Society</a>.</p>
 
-  <div class="table-responsive">
-    <table class="table table-hover text-center">
-      <thead>
-        <tr>
-          <th>Year</th>
-          <th>Incidents</th>
-          <th class="d-none d-sm-table-cell">Approved</th>
-          <th class="d-none d-lg-table-cell">Pending</th>
-          <th class="d-none d-xl-table-cell">Review</th>
-          <th class="d-none d-md-table-cell">Completion</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        {% for year in incidents_by_year %}
-          <tr class="align-middle" data-href="{% url 'db:incident_list' status=year %}">
-            <td><a href="{% url 'db:incident_list' status=year.year %}">{{ year }}</a></td>
-            <td>{{ year.incidents }}</td>
-            <td class="d-none d-sm-table-cell">{{ year.approved }}</td>
-            <td class="d-none d-lg-table-cell">{{ year.pending }}</td>
-            <td class="d-none d-xl-table-cell">{{ year.review }}</td>
-            <td class="d-none d-md-table-cell">{{ year.completion_rate|floatformat:0 }}%</td>
-          </tr>
-        {% endfor %}
-        <tr class="align-middle" data-href="{% url 'db:incident_list' status='all' %}">
-          <td><a href="{% url 'db:incident_list' status='all' %}">Total</a></td>
-          <td>{{ incidentmanager.all|length }}</td>
-          <td class="d-none d-sm-table-cell">{{ incidentmanager.approved|length }}</td>
-          <td class="d-none d-lg-table-cell">{{ incidentmanager.pending|length }}</td>
-          <td class="d-none d-xl-table-cell">{{ incidentmanager.need_review|length }}</td>
-          <td class="d-none d-md-table-cell">{{ all_incidents_completion|floatformat:0 }}%</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="small">
-    <h3 class="section mt-2">Legend</h3>
-    <ul class="text-muted">
-      <li><strong>Incidents</strong> &mdash; total number of incidents recorded.</li>
-      <li><strong>Approved</strong> &mdash; number of incidents that have been edited and approved as correct.</li>
-      <li><strong>Pending</strong> &mdash; number of incidents that require data to be added.</li>
-      <li><strong>Review</strong> &mdash; number of incidents that have editing notes, indicating they require review or there is a problem with the data.</li>
-      <li><strong>Completion</strong> &mdash; percentage of incidents that have been marked as approved.</li>
-    </ul>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 mt-5">
+    {% for year, count in incidents_by_year %}
+      <div class="col">
+        <a href="{% url 'db:incident_list' query=year %}" class="text-decoration-none">
+          <div class="card text-center incident-year-card mb-4">
+            <div class="card-body">
+              <h5 class="card-title fw-semibold">{{ year }}</h5>
+              <p class="card-text text-secondary-emphasis">{{ count }} incident{{ count|pluralize }}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
   </div>
 
   {% if user.is_authenticated and user.is_editor %}

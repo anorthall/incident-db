@@ -54,11 +54,11 @@
       onclick="getFoundText().scrollIntoView();">
       Try and find relevant text
     </button>
-    {% if incident.publication.get_pdf_url %}
-      <a class="btn btn-sm btn-primary mb-2 mb-lg-0 me-lg-2" href="{{ incident.publication.get_pdf_url }}" target="_blank">View original PDF file</a>
+    {% if incident.publication.pdf_file %}
+      <a class="btn btn-sm btn-primary mb-2 mb-lg-0 me-lg-2" href="{{ incident.publication.pdf_file.url }}" target="_blank">View original PDF file</a>
     {% endif %}
-    {% if incident.publication.get_text_url %}
-      <a class="btn btn-sm btn-secondary mb-2 mb-lg-0" href="{{ incident.publication.get_text_url }}" target="_blank">View extracted text file</a>
+    {% if incident.publication.text_file %}
+      <a class="btn btn-sm btn-secondary mb-2 mb-lg-0" href="{{ incident.publication.text_file.url }}" target="_blank">View extracted text file</a>
     {% endif %}
   </div>
 

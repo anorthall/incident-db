@@ -57,6 +57,9 @@
     }
 
     function updateValidation(form, excluded) {
+      let us_state_value = document.getElementById('id_us_state').value;
+      let state_value = document.getElementById('id_state').value;
+
       Array.from(form.elements).forEach((input) => {
         if (input.type === 'submit') {
           return;
@@ -65,7 +68,15 @@
         }
 
         if (input.value === '') {
-          input.classList.add('is-invalid');
+          if (input.id === 'id_us_state' || input.id === 'id_state') {
+            if (us_state_value === '' && state_value === '') {
+              input.classList.add('is-invalid');
+            } else {
+              input.classList.remove('is-invalid');
+            }
+          } else {
+            input.classList.add('is-invalid');
+          }
         } else if (input.tagName === 'SELECT') {
           if (input.value === 'YY') {
             input.classList.add('is-invalid');
