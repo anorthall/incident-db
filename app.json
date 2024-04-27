@@ -1,6 +1,6 @@
 {
-  "name": "aca report db",
-  "description": "A Django app containing a database of ACA reports",
+  "name": "incident report db",
+  "description": "A Django app containing a database of caving incident reports",
   "keywords": ["django"],
   "repository": "https://github.com/anorthall/incident-db",
   "healthchecks": {
