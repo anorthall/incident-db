@@ -1,31 +1,3 @@
-﻿Year,Month,Day,Approximate date,Cave,State,County,Country,Category,Injury,Type,Primary cause,Secondary cause,Caver firstname,Caver surname,,,Caver age,Caver sex,Group type,Aid,Aid in/out of cave,Multiple people involved?,Multiple incidents,Rescue over 24h,Injuries,Injury areas,ACA issue w/report,Page,Incident Report?,Notes,SPAR,Vertical
-1974,4,1,TRUE,Castleguard,Alberta,,Canada,caving,yes,caver fall,,,Ralph,Ewers,,,,male,,,,,,,hairline ankle fracture,,1974,13,,,,no
-1974,4,30,,Black Chasm,California,,,caving,yes,caver fall,"inexperience, carelessness",,Bruce,McMilian,,,23,male,,,,,,,"compressed spine fracture, bruises, lacerations",,1974,13,,,,no
-1974,5,1,,Mefert's Cave,Florida,,USA,caving,no,lost,inexperience,,,,,,,,,,,,,,,,1974,6,,,,no
-1974,5,11,,Peacock Slough,Florida,,USA,cave diving,fatality,drowning,,,"Peter C. Pinson, John Edward Beam",Pinson; Beam,,,,male,,recovery,,,,,,,1974,7,,,,no
-1974,7,22,,Little River Springs,Florida,,USA,cave diving,fatality,drowning,inexperience,"panicking, low visibility",Robert W,Kottemier,,,27,male,,recovery,,,,,,,1974,8,,,,no
-1974,9,1,TRUE,unidentified cave,Florida,,USA,cave diving,fatality,drowning,,,Thomas; James; Eric; Henry,Crowder; Bennett; Sedwick; Nielsen,,,,male,,recovery,,,,,,,1974,9,,,,no
-1974,3,15,,Peacock Slough,Florida,,USA,cave diving,fatality,drowning,,,,,,,,,,recovery,,,,,,,1974,10,,,,no
-1974,11,30,,Deadman's Drop,Florida,,,caving,no,stranded,,,"Wayne Kircher, Bobby Shaver",Kircher; Shaver,,,,male,,,,,,,,,1974,16,,,,yes
-1974,3,10,,Eller's Cave,Indiana,,USA,caving,yes,caver fall,,,Cindy,Dare,,,18,male,,,,,,,broken leg,,1974,6,,,yes,no
-1974,6,22,,Goochland Cave,Kentucky,,USA,caving,yes,caver fall,fatigue,,Larry,Baldwin,,,38,male,,,,,,,compound fracture of ring finger,,1974,7,,,yes,no
-1974,9,8,,Blue Grass Grotto,Kentucky,,USA,caving,yes,caver fall,,,Scott,Schillereff,,,19,male,,,,,,,"fractured right hand, bruised knee",,1974,9,,,,no
-1974,9,1,TRUE,Livingston's Cave,Kentucky,,USA,caving,no,lost,inexperience,,Arvil; Dick; Henry; Tommy,West; Simpson; Robertson; Wilburn,,,,male,,,,,,,,,1974,10,,,,no
-1974,3,16,,Cascade Falls Cave,Kentucky,,,caving,no,caver fall,,,Robin,Martin,,,18,male,,,,,,,hypothermia,,1974,10,,,,yes
-1974,1,1,TRUE,Sloans Valley Cave,Kentucky,,,caving,yes,caver fall,inexperience,exhaustion,Susan J.,Reeves,,,,female,,,,,,,lost consciousness,,1974,19,,Post Office Entrance,,yes
-1974,1,26,,Antonia Pit,Missouri,,USA,caving,no,difficulty on rope,,,Jeff,Wallace,,,20,male,,,,,,,,,1974,5,,,,yes
-1974,1,26,,Bat Cave,New Mexico,,USA,caving,yes,caver fall,,,Clinton Theodore,Burke,,,15,male,,,,,,,broken leg,,1974,5,,,,yes
-1974,8,24,,Fort Stanton,New Mexico,,USA,caving,yes,other (chemical burn),,,Lee H,Skinner,,,34,male,,,,,,,second degree burn,,1974,9,,,,no
-1974,12,29,,Queen of the Guadalupes,New Mexico,,,caving,yes,caver fall,,,George,Wood,,,27,male,,,,,,,"compressed lumbar vertebrae, forehead abrasion",,1974,17,,,,
-1974,12,1,TRUE,Sandia Cavers,New Mexico,,,caving,yes,,,,John J.,Corcoran,,,,male,,,,,,,laceration,,1974,18,,,,yes
-1974,2,20,,J-4,Pennsylvania,,USA,caving,no,lost,,,Blair; Leroy; Wayne; John,Kennedy; warner; perryman,,,"",male,,,,,,,,,1974,6,,,,no
-1974,6,23,,Hosterman's Pit,Pennsylvania,,USA,caving,yes,rockfall,,,Dave,Spencer,,,,male,,,,,,,"broken leg, severe laceration",,1974,7,,,,yes
-1974,1,1,TRUE,Laurel Caverns,Pennsylvania,,,caving,yes,caver fall,,,Bill,Brock,,,20,male,,,,,,,broken hip,,1974,19,,,,no
-1974,10,1,TRUE,unidentified cave,Tennessee,,,caving,yes,caver fall,,,Roger,Cole,,,14,male,,,,,,,broken wrist,,1974,15,,,,no
-1974,11,3,,unidentified cave,Texas,,,caving,yes,caver fall,inexperience,gold fever,Mauricio,Suarez,,,22,male,,,,,,,"rope burns, lacerations, knee injury",,1974,15,,,,yes
-1973,12,8,,Organ Cave,West Virginia,,USA,caving,no,difficulty on rope,,,Mike,Dyas,,,,,,,,,,,,,1974,3,,,,yes
-1974,1,25,,Canterbury Cave,West Virginia,,USA,caving,yes,caver fall,,,Albert,Ogden,,,23,male,,,,,,,"broken right leg, back injury",,1974,4,,,,yes
-1974,10,19,,Sinnett-Thorn Mountain Cave,West Virginia,,,caving,yes,caver fall,,,Shelly,Burch,,,16,female,,,,,,,"back injury, broken teeth, deep lacerations",,1974,14,,,,no
-1974,10,20,,Hellhole,West Virginia,Pendleton,,caving,yes,"caver fall, lost control on rappel",,,,,,,,male,,,,,,,badly fractured ankle,,1974,14,,,,yes
-1974,12,22,,X Cave,West Virginia,,,caving,no,rigging issues,rigging to a single bolt,,Jim,Borden,,,,male,,,,,,,,,1974,17,,Cave name is a pseudonym,,yes
-1974,4,1,TRUE,unidentified cave,Wyoming,,,caving,no,lost,,,Alan; Ralph,Hunt; Calvin,,,21,male,,,,,,,,,1974,12,,,,no
+version https://git-lfs.github.com/spec/v1
+oid sha256:9051f21a887bba1635fa0f13edf655c5a7857319e3ce1cdcd782cec357822f46
+size 4597

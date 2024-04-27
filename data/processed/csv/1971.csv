@@ -1,12 +1,3 @@
-﻿Year,Month,Day,Approximate date,Cave,State,County,Country,Category,Injury,Type,Primary cause,Secondary cause,Caver firstname,Caver surname,Caver age,Caver sex,Group type,Aid,Multiple people involved,Multiple incidents,Rescue over 24h,Injuries,Injury areas,Publication,Page,Notes,SPAR,Vertical
-1971,10,1,TRUE,Guadalupe Cave,New MexiColorado,,USA,Caving,yes,caver fall,hold broke,,Hill,Carol,30,F,Cavers,no,No,No,No,"fracture, concussion, abrasions, other","ribs, lung",ACA 1971,2,,Yes,No
-1971,1,23,,Big Horn Caverns,Wyoming,,USA,Caving,no,lost control on rappel,let go with braking hand,,Savio,Renee,19,F,novice cavers,no,No,No,No,,,ACA 1971,2,,No,No
-1971,4,7,,Conley Hole,Tennessee,,USA,Caving,yes,difficulty on rope,prusiks slipped,,Bromer,Bill,17,M,novice cavers,inside,No,No,No,"fracture, contusion","ankle, chin",ACA 1971,3,,No,No
-1971,4,10,,Grays Cave,Alabama,,USA,Caving,yes,caver fall,hold broke,,Malakowski,Michael,24,M,novice cavers,inside,No,No,No,contusions,leg,ACA 1971,4,,No,No
-1971,5,15,,Cemetary Pit,Georgia,,USA,Caving,yes,rockfall,dislodged by caver,,Hunsaker,Bill,,M,Cavers,no,No,No,No,contusion,head,ACA 1971,4,,No,No
-1971,5,23,,Unknown,West Virginia,,USA,Caving,no,equipment problems,ladder broke,,Peduzzi,Mike,22,M,Cavers,no,No,No,No,none,,ACA 1971,5,,No,No
-1971,6,1,TRUE,Sparrow Sink,Texas,,USA,Caving,Fatality,caver fall,equipment problems,,unknown,,,M,novice cavers,recovery,No,No,No,unknown,,ACA 1971,6,,No,No
-1971,6,2,,Hoopers Well,Alabama,,USA,Caving,yes,stranded,could not ascend hand-over-hand,,Powell,Steve,16,M,novice cavers,inside,No,No,No,abrasions,"leg, hands",ACA 1971,6,,No,No
-1971,6,18,,Church Cave,California,,USA,Caving,Fatality,caver fall,unknown,,Jesse,Werner,24,M,Cavers,recovery,No,No,No,unknown,,ACA 1971,6,,No,No
-1971,7,4,,Stephens Gap Cave,Alabama,,USA,Caving,yes,caver fall,slipped,,Gunter,Guy,19,M,Cavers,inside,No,No,No,"internal injuries, abrasions, lacerations","liver, elbow",ACA 1971,7,,No,No
-1971,1,1,TRUE,Organ Cave,West Virginia,,USA,Caving,no,stranded,could not climb out,,Canfield,John,16,M,novice cavers,inside,No,No,No,none,,ACA 1971,8,,No,No
+version https://git-lfs.github.com/spec/v1
+oid sha256:90f48d41b683705e5051faaa193aa1731cc80aafc24534b356b0c83fcc6756ec
+size 2117

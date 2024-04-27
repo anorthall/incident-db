@@ -1,33 +1,3 @@
-﻿Year,Month,Day,Approximate date,Cave,State,County,Country,Category,Injury,Type,Primary cause,Secondary cause,Caver firstname,Caver surname,Caver age,Caver sex,Group type,Aid,Aid in/out of cave,Multiple people,Multiple incidents,Rescue over 24h,Injuries,Injury areas,ACA issue w/report,Page,Incident Report?,Notes,SPAR,Vertical
-1971,12,30,,Oregon Caves,Oregon,,USA,Caving,Yes,Climber Fall,Faulty Scaling Pole,,Erro,Whitfield,,F,Cavers,Inside,In,No,No,No,"Broken tooth, cut lip",Head,1972,2,No,Hemet came off,Yes,Yes
-1971,12,1,TRUE,Wayne Cave,Indiana,,USA,Caving,Yes,other (dislocation),Crawling,,,,,,,Inside,In,,,No,Dislocated Shoulder,Shoulder,1972,3,No,,Yes,No
-1972,1,15,,Arm Pit Cave,Pennsylvania,,USA,Caving,No,Stuck,Foot Stuck,,Roger,Young,18,M,Novice,Inside,In,No,No,No,Weakness,,1972,3,No,,No,No
-1972,2,5,,Sauta Cave,Alabama,,USA,Caving,Yes,Caver Fall,Not on Belay,,Tom,Pogue,18,M,Cavers,Inside,In/Out,No,No,No,Lacerations and Bruises,"Head, Arms, Shoulders",1972,4,No,,Yes,Yes
-1972,2,20,,Grotto Cave,Indiana,,USA,Caving,No,Lost,,,Harry,Hill,19,M,Novice,,,Yes,No,No,,,1972,4,No,,No,No
-1972,2,20,,Grotto Cave,Indiana,,USA,Caving,No,Lost,,,Linda,Bringle,16,F,Novice,,,Yes,No,No,,,1972,4,No,,No,No
-1972,3,18,,Black Abys,Arizona,,USA,Caving,Yes,"Caver Fall, Rockfall",Loose Breakdown,,Pete,Kokalis,,M,Cavers,Inside,In/Out,No,No,No,Broken Bones,Lower Body,1972,4,No,,Yes,Yes
-1972,1,1,TRUE,Sullivan Cave,Indiana,,USA,Caving,No,Lost,,,Loretta,Snelson,20,F,Novice,Inside,In,Yes,No,Yes,,,1972,5,No,,No,No
-1972,1,1,TRUE,Sullivan Cave,Indiana,,USA,Caving,No,Lost,,,Mark,Snelson,24,M,Novice,Inside,In,Yes,No,Yes,,,1972,5,No,,No,No
-1972,1,1,TRUE,Shaft Cave,Indiana,,USA,Caving,No,Lost,Inexperience,,,,,,College Students,Inside,In,Yes,No,No,,,1972,5,No,,No,Yes
-1972,4,15,,Devil's Sinkhole,Texas,,USA,Caving,Fatality,Climber Fall,Gear Malfunction,,Algeline,Palmer,,F,Cavers,Inside,In/Out,No,No,No,Fatality,,1972,6,No,,Yes,Yes
-1972,5,27,,Dig near Lilburn Cave,California,,USA,Caving,Yes,Rockfall,Loose Rock,,Chris,Day,,M,Cavers,,,Yes,No,No,Bruises,,1972,8,No,,Yes,Yes
-1972,5,27,,Dig near Lilburn Cave,California,,USA,Caving,Yes,Rockfall,Loose Rock,,Bob,Webber (Wagner),,M,Cavers,,,Yes,No,No,Bruises,,1972,8,No,,Yes,Yes
-1972,5,27,,Dig near Lilburn Cave,California,,USA,Caving,Yes,Rockfall,Loose Rock,,Keith,Britain,,M,Cavers,Inside,In/Out,Yes,No,No,Head Injury,Head,1972,8,No,,Yes,Yes
-1972,5,27,,Dig near Lilburn Cave,California,,USA,Caving,Yes,Rockfall,Loose Rock,,Ellis,Hedlund,,M,Cavers,,,Yes,No,No,Bruises,,1972,8,No,,Yes,Yes
-1972,5,28,,Hellhole,West Virginia,,USA,Caving,Yes,Rockfall,Loose Rock,,Gary,Dart,30,M,Cavers,Inside,In/Out,No,No,No,"Bone Gouge, Muscle Damage",Arm,1972,8,No,,Yes,Yes
-1972,6,1,,Unnamed Pit,Tennessee,,USA,Caving,Yes,Rockfall,Loose Rock,,John,Heiss,20,M,Cavers,,,No,No,No,"Cuts, Bruises","Head, Shoulder",1972,9,No,,Yes,Yes
-1972,6,25,,Aqua Caliente Cave,Arizona,,USA,Caving,Yes,Caver Fall,Inexperience,,John,Mundo,73,M,Hikers,,No,No,No,No,"Potential Cracked Skull, Potential Dislocated Shoulder","Head, Shoulder",1972,10,No,,No,No
-1972,7,1,,Sotano de la Tinaja,,,Mexico,cave diving,No,Diver with no Air,Inexperienced Diver,,Don,Brousard,,M,Cavers,Inside,In,No,No,No,Lost Consiousness,,1972,10,No,,Yes,No
-1972,7,3,,Dynamited Cave,Washington,,USA,Caving,No,Stuck,Inexperience,,,,"",M,Novice,Inside,In,Yes,No,No,,,1972,11,No,,No,Yes
-1972,8,15,,Onyx Cave,Arizona,,USA,Caving,No,Lost,Inexperience,,Pete,Jensen,,M,Novice,Inside,In,Yes,No,Yes,,,1972,11,No,,No,No
-1972,8,15,,Onyx Cave,Arizona,,USA,Caving,No,Lost,Inexperience,,Jessee,Jensen,,M,Novice,Inside,In,Yes,No,Yes,,,1972,11,No,,No,No
-1972,8,15,,Onyx Cave,Arizona,,USA,Caving,No,Lost,Inexperience,,Ted,Jansen,,M,Novice,Inside,In,Yes,No,Yes,,,1972,11,No,,No,No
-1972,8,27,,Little River Springs,Florida,,USA,Cave Diving,Fatality,Drowning,Unprepared,,Kenneth,DeGrazia,23,M,Scuba Driver,,No,Yes,No,No,,,1972,11,No,,No,No
-1972,8,27,,Little River Springs,Florida,,USA,Cave Diving,Fatality,Drowning,Unprepared,,Michael,Williams,24,M,Scuba Driver,,No,Yes,No,No,,,1972,11,No,,No,No
-1972,8,27,,Little River Springs,Florida,,USA,Cave Diving,Fatality,Drowning / Stabbing,Unprepared,,Robert,Grauer,18,M,Scuba Driver,,No,Yes,No,No,,,1972,11,No,,No,No
-1972,9,1,TRUE,Climax Cave,Georgia,,USA,Caving,No,acetylene,Inexperience,,Tom,Ross,20,M,Cavers,,No,No,No,No,,,1972,12,No,,No,No
-1972,9,1,TRUE,Fort Stanton Cave,New Mexico,,USA,Caving,Yes,Caver fall,Inexperience,,Phillip,Neale,18,M,Novice,Inside,In,No,No,No,Broken Foot,Foot,1972,12,No,,Yes,No
-1972,12,3,,Moyers Twin Falls,West Virginia,,USA,Caving,Yes,Caver Fall,Vertical Gear Malfunction,,Bruce,Smith,24,M,Individual Caver,,No,No,No,No,Broken foot,Foot,1972,13,No,,Yes,Yes
-1972,12,30,,Fischers Pit,Texas,,USA,Caving,Fatality,Caver Fall,Inexperience,,Henry,Hernandex,17,M,Novice,Inside,In/Out,No,No,No,Fatality,,1972,14,No,,No,Yes
-1972,12,31,,Dead Deer Cave,Texas,,USA,Caving,No,Stranded,Inexperience,,,,"",M,Novice,Inside,In,Yes,No,No,,,1972,14,No,,No,Yes
-1972,1,1,TRUE,Pumpkin Pit,Texas,,USA,Caving,Yes,Shock,Falling Gear,,,,"",M,Cavers,,No,No,No,No,Psychogenic Shock,Hand,1972,14,No,,Yes,Yes
+version https://git-lfs.github.com/spec/v1
+oid sha256:d2173674b65542af98bc9e7dd9333ddbb38fd5b905a575e044b3b85aceed6e06
+size 5131
