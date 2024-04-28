@@ -51,7 +51,10 @@
 
 <h5 class="header">Project</h5>
 
-<a class="nav-link {% active_link "db:search" %}" href="{% url "db:search" %}">Search</a>
+{% if ALGOLIA_ENABLED %}
+  <a class="nav-link {% active_link "db:search" %}" href="{% url "db:search" %}">Search</a>
+{% endif %}
+
 <a class="nav-link {% active_link "db:help" %}" href="{% url "db:help" %}">Help</a>
 <a class="nav-link {% active_link "db:about" %}" href="{% url "db:about" %}">About</a>
 <a class="nav-link" href="{% url "db:random_incident" %}">Random</a>

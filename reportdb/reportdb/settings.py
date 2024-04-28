@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     "debug_toolbar",
     "django_htmx",
     "active_link",
-    "algoliasearch_django",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -225,6 +224,11 @@ ALGOLIA = {
     "API_KEY": ALGOLIA_API_KEY,
 }
 
+ALGOLIA_ENABLED = False
+
+if ALGOLIA_APPLICATION_ID and ALGOLIA_SEARCH_KEY and ALGOLIA_API_KEY:
+    INSTALLED_APPS.append("algoliasearch_django")
+    ALGOLIA_ENABLED = True
 
 # Google Tag Manager
 GOOGLE_GTM_TAG = os.environ.get("GOOGLE_GTM_TAG", "")

@@ -14,4 +14,5 @@ def algolia_search_key(_: HttpRequest) -> dict[str, Any]:
     return {
         "ALGOLIA_APPLICATION_ID": settings.ALGOLIA_APPLICATION_ID,
         "ALGOLIA_SEARCH_KEY": settings.ALGOLIA_SEARCH_KEY,
+        "ALGOLIA_ENABLED": settings.ALGOLIA_ENABLED,
     }
