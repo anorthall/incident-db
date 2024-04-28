@@ -8,6 +8,7 @@ urlpatterns = [
     path("", views.Index.as_view(), name="index"),
     path("about/", views.About.as_view(), name="about"),
     path("help/", views.Help.as_view(), name="help"),
+    path("search/", views.Search.as_view(), name="search"),
     path("pub/<int:publication_id>/", views.PublicationDetail.as_view(), name="publication_detail"),  # noqa: E501
     path("list/<query>/", views.IncidentList.as_view(), name="incident_list"),  # noqa: E501
     path("i/<int:pk>/", views.IncidentDetail.as_view(), name="incident_detail"),

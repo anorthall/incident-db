@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block main_content_class %}smaller-container{% endblock %}
+
+{% block header_scripts %}
+  <!--suppress JSUnresolvedReference -->
+  <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.23.3/dist/algoliasearch-lite.umd.js" integrity="sha256-1QNshz86RqXe/qsCBldsUu13eAX6n/O98uubKQs87UI=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.67.0/dist/instantsearch.production.min.js" integrity="sha256-TW7D3X/i/W+RUgEeDppEnFT2ixv5lzplKH0c58D92dY=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@8.1.0/themes/satellite-min.css" integrity="sha256-p/rGN4RGy6EDumyxF9t7LKxWGg6/MZfGhJM/asKkqvA=" crossorigin="anonymous">
+{% endblock %}
+
+{% block content %}
+  <h1 class="page-header">Search</h1>
+
+  <div class="mt-4 ais-InstantSearch">
+    <div id="searchbox"></div>
+    <div id="hits"></div>
+    <div id="pagination"></div>
+  </div>
+
+  <script type="text/javascript">
+    const searchClient = algoliasearch('{{ ALGOLIA_APPLICATION_ID }}', '{{ ALGOLIA_SEARCH_KEY }}');
+
+    const search = instantsearch({
+      indexName: 'Incident',
+      searchClient,
+    });
+
+    search.addWidgets([
+      instantsearch.widgets.searchBox({
+        container: '#searchbox',
+      }),
+
+      instantsearch.widgets.hits({
+        container: '#hits',
+        templates: {
+          item: (hit, { html, components }) => html`
+            <div>
+              <h1>${components.Highlight({hit, attribute: "cave"})}</h1>
+              <p>${components.Highlight({hit, attribute: "incident_summary"})}</p>
+            </div>
+          `,
+        },
+      })
+    ]);
+
+    search.start();
+  </script>
+{% endblock %}
