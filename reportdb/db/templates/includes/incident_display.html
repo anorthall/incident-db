@@ -17,7 +17,7 @@
 
     {% if incident.publication and incident.publication_page %}
       {% if incident.publication.pdf_file %}
-        <a class="link-secondary text-decoration-none" href="{{ incident.publication.pdf_file.url }}">
+        <a class="link-secondary text-decoration-none" target="_blank" href="{{ incident.publication.pdf_file.url }}">
           p. {{ incident.publication_page }} <i class="bi bi-file-pdf"></i>
         </a>
       {% else %}
