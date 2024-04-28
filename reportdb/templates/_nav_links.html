@@ -18,7 +18,7 @@
 
   {% if incident.publication %}
     {% if incident.publication.pdf_file %}
-      <a class="nav-link" href="{{ incident.publication.pdf_file.url }}">View PDF</a>
+      <a class="nav-link" href="{{ incident.publication.pdf_file.url }}" target="_blank">View PDF</a>
     {% endif %}
   {% endif %}
 {% endif %}

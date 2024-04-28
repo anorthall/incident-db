@@ -61,7 +61,7 @@
         </span>
         <span class="d-flex align-content-center justify-content-end">
           {% if incident.publication and incident.publication.pdf_file %}
-            <a class="btn btn-sm btn-secondary me-2" href="{{ incident.publication.pdf_file.url }}"><i class="bi bi-file-pdf-fill"></i></a>
+            <a class="btn btn-sm btn-secondary me-2" target="_blank" href="{{ incident.publication.pdf_file.url }}"><i class="bi bi-file-pdf-fill"></i></a>
           {% endif %}
           <button type="button" class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#reportModal"><i class="bi bi-question-lg"></i></button>
         </span>
