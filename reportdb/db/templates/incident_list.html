@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}{{ title }}{% endblock %}
+{% block title %}{{ page_title }}{% endblock %}
 {% block description %}A list of caving incident reports.{% endblock %}
 
 {% block content %}
@@ -10,10 +10,10 @@
 
   <p class="text-body-secondary small">
     {% if filter_type %}
-      Found {{ incidents|length }} incident{{ incidents|pluralize }} matching the {{ filter_type }}
+      Found {{ total_count }} incident{{ total_count|pluralize }} matching the {{ filter_type }}
       '{{ filter }}'.
     {% else %}
-      Found {{ incidents|length }} incident{{ incidents|pluralize }}.
+      Found {{ total_count }} incident{{ total_count|pluralize }}.
     {% endif %}
   </p>
 
@@ -53,7 +53,9 @@
       </tbody>
     </table>
     <div class="table-legend">
-      {{ incidents|length }} incident{{ incidents|pluralize }}
+      {{ incidents|length }} incident{{ incidents|pluralize }} shown
     </div>
   </div>
+
+  {% include "paginate_bootstrap.html" %}
 {% endblock content %}

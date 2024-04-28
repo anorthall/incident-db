@@ -165,6 +165,7 @@ class IncidentList(ListView):
     model = Incident
     template_name = "incident_list.html"
     context_object_name = "incidents"
+    paginate_by = 100
 
     def __init__(self):
         self.filter: str = ""
@@ -173,10 +174,8 @@ class IncidentList(ListView):
         super().__init__()
 
     def get_queryset(self, *args, **kwargs):
-        queryset = (
-            super().get_queryset().select_related("publication").order_by("-date")
-        )
         query = self.kwargs["query"].lower()
+        queryset: QuerySet[Incident] = super().get_queryset().order_by("-date")
 
         # First match by category
         match query:
@@ -229,21 +228,34 @@ class IncidentList(ListView):
                     self.request,
                     f"There are no incidents from {year}. Showing all incidents.",
                 )
-                return queryset
+                return self.prepare_queryset(queryset)
 
             self.filter = str(year)
             self.filter_type = "year"
-            return yearly_qs
+            return self.prepare_queryset(yearly_qs)
 
         return self.prepare_queryset(queryset)
 
-    def prepare_queryset(self, queryset):
+    def prepare_queryset(self, queryset: QuerySet[Incident]) -> QuerySet[Incident]:
+        self.total_count = queryset.count()
+
         if not bool(queryset):
             messages.error(self.request, "There are no incidents to show.")
         return queryset
 
+    def get_page_title(self) -> str:
+        if self.filter_type == "year":
+            return f"Incidents from {self.filter}"
+        if self.filter_type == "flag":
+            return f"Incidents flagged as {self.filter}"
+        if self.filter_type == "category":
+            return f"{self.filter.capitalize()} incidents"
+        return "Incident list"
+
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
+        context["page_title"] = self.get_page_title()
+        context["total_count"] = self.total_count
         context["filter"] = self.filter
         context["filter_type"] = self.filter_type
         return context
