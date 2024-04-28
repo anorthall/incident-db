@@ -254,6 +254,11 @@ class IncidentDetail(DetailView):
     template_name = "incident_detail.html"
     context_object_name = "incident"
 
+    def get_queryset(self) -> QuerySet[Incident]:
+        return Incident.objects.select_related("publication").prefetch_related(
+            "injured_cavers"
+        )
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
