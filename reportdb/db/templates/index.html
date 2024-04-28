@@ -7,13 +7,13 @@
   <p class="lead">A project of the <a href="https://caves.org/" class="text-decoration-none">National Speleological Society</a>.</p>
 
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 mt-5">
-    {% for year, count in incidents_by_year %}
+    {% for data in incidents_by_year %}
       <div class="col">
-        <a href="{% url 'db:incident_list' query=year %}" class="text-decoration-none">
+        <a href="{% url 'db:incident_list' query=data.slug %}" class="text-decoration-none">
           <div class="card text-center incident-year-card mb-4">
             <div class="card-body">
-              <h5 class="card-title fw-semibold">{{ year }}</h5>
-              <p class="card-text text-secondary-emphasis">{{ count }} incident{{ count|pluralize }}</p>
+              <h5 class="card-title fw-semibold">{{ data.name }}</h5>
+              <p class="card-text text-secondary-emphasis">{{ data.count }} incident{{ data.count|pluralize }}</p>
             </div>
           </div>
         </a>

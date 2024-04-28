@@ -1,4 +1,4 @@
-from collections import defaultdict
+from dataclasses import dataclass
 from datetime import datetime
 
 from core.utils import get_authed_user
@@ -24,6 +24,16 @@ from .mixins import EditorOnly, InjuredCaverHTMXView
 from .models import Incident, Publication
 from .services import highlight_text_from_incident, similarity
 
+# 'Flags' (boolean fields) that can be used to filter incidents
+# Mapping of BooleanField names to human-readable labels
+ALLOWED_QUERY_FLAGS: dict[str, str] = {
+    "fatality": "fatality",
+    "injury": "injury",
+    "rescue_over_24_hours": "long rescue",
+    "self_rescue": "self rescue",
+    "vertical": "vertical",
+}
+
 
 class About(TemplateView):
     template_name = "about.html"
@@ -33,28 +43,98 @@ class Help(TemplateView):
     template_name = "help.html"
 
 
+@dataclass
+class IncidentByYear:
+    name: str
+    slug: str
+    count: int
+
+
 class Index(TemplateView):
     template_name = "index.html"
+
+    def count_by_year(
+        self,
+        year: int,
+        incidents: dict[str, IncidentByYear],
+    ) -> None:
+        year_str: str = str(year)
+        if not year_str:
+            return
+
+        if year_str not in incidents:
+            incidents[year_str] = IncidentByYear(
+                name=year_str,
+                slug=year_str,
+                count=1,
+            )
+        else:
+            incidents[year_str].count += 1
+
+    def count_by_category(
+        self,
+        category: str,
+        incidents: dict[str, IncidentByYear],
+    ) -> None:
+        try:
+            category_label: str = str(Incident.Category(category).label)
+        except ValueError:
+            category_label = "Uncategorised"
+
+        if category_label not in incidents:
+            incidents[category_label] = IncidentByYear(
+                name=category_label,
+                slug=category_label.lower().replace(" ", "-"),
+                count=1,
+            )
+        else:
+            incidents[category_label].count += 1
+
+    def count_by_flag(
+        self,
+        incident: dict[str, str],
+        incidents: dict[str, IncidentByYear],
+    ) -> None:
+        for flag in ALLOWED_QUERY_FLAGS:
+            if incident.get(flag, False):
+                flag_label: str = ALLOWED_QUERY_FLAGS[flag]
+
+                if flag_label not in incidents:
+                    incidents[flag_label] = IncidentByYear(
+                        name=flag_label,
+                        slug=flag.replace("_", "-"),
+                        count=1,
+                    )
+                else:
+                    incidents[flag_label].count += 1
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
         # Build context for the incident list by year
-        incidents = Incident.objects.all().values_list("date", flat=True)
-
-        # Build a list of IncidentByYear dataclasses with stats for each year
-        incidents_by_year = defaultdict(int)
-        for incident_date in incidents:
-            if not incident_date:
-                continue
-
-            incidents_by_year[incident_date.year] += 1
-
-        context["incidents_by_year"] = sorted(
-            incidents_by_year.items(), key=lambda x: x[0], reverse=True
+        incidents = Incident.objects.all().values(
+            "date",
+            "category",
+            *ALLOWED_QUERY_FLAGS.keys(),
         )
 
-        context["total_incidents"] = len(incidents)
+        # Build a list of IncidentByYear dataclasses with stats for each year
+        incidents_by_year: dict[str, IncidentByYear] = {}
+        incidents_by_category: dict[str, IncidentByYear] = {}
+        incidents_by_flag: dict[str, IncidentByYear] = {}
+        for incident in incidents:
+            category: str = incident.get("category", "Uncategorised")
+
+            self.count_by_year(incident["date"].year, incidents_by_year)
+            self.count_by_category(category, incidents_by_category)
+            self.count_by_flag(incident, incidents_by_flag)
+
+        context["incidents_by_year"]: list[IncidentByYear] = [
+            IncidentByYear(name="All", slug="all", count=Incident.objects.count()),
+            *sorted(incidents_by_category.values(), key=lambda x: x.name),
+            *sorted(incidents_by_flag.values(), key=lambda x: x.name),
+            *sorted(incidents_by_year.values(), key=lambda x: x.name),
+        ]
 
         return context
 
@@ -87,24 +167,62 @@ class IncidentList(ListView):
     context_object_name = "incidents"
 
     def __init__(self):
-        self.title = "Incident list"
+        self.filter: str = ""
+        self.filter_type: str = "category"
+        self.total_count: int = 0
         super().__init__()
 
     def get_queryset(self, *args, **kwargs):
         queryset = (
             super().get_queryset().select_related("publication").order_by("-date")
         )
-        query = self.kwargs["query"]
+        query = self.kwargs["query"].lower()
 
-        if query == "all":
-            return self.check_queryset(queryset)
+        # First match by category
+        match query:
+            case "all":
+                self.filter_type = ""
+                return self.prepare_queryset(queryset)
+            case "uncategorised":
+                self.filter = "uncategorised"
+                return self.prepare_queryset(queryset.filter(category=""))
+            case "other":
+                self.filter = "other"
+                return self.prepare_queryset(
+                    queryset.filter(category=Incident.Category.OTHER),
+                )
+            case "cave":
+                self.filter = "cave"
+                return self.prepare_queryset(
+                    queryset.filter(category=Incident.Category.CAVE),
+                )
+            case "mine":
+                self.filter = "mine"
+                return self.prepare_queryset(
+                    queryset.filter(category=Incident.Category.MINE),
+                )
+            case "cave-diving":
+                self.filter = "cave diving"
+                return self.prepare_queryset(
+                    queryset.filter(category=Incident.Category.DIVING),
+                )
 
+        # Now try matching by flags
+        flag_query = query.replace("-", "_")
+        print(flag_query)
+        if flag_query in ALLOWED_QUERY_FLAGS:
+            self.filter = ALLOWED_QUERY_FLAGS[flag_query]
+            self.filter_type = "flag"
+            return self.prepare_queryset(queryset.filter(**{flag_query: True}))
+
+        # Finally, try matching by year
         try:
             year = int(query)
         except ValueError:
-            return self.check_queryset(queryset)
+            self.filter_type = ""
+            return self.prepare_queryset(queryset)
 
-        if 1900 < year <= datetime.now().year:
+        if 1800 < year <= datetime.now().year:
             yearly_qs = queryset.filter(date__year=year)
             if not bool(yearly_qs):
                 messages.error(
@@ -113,21 +231,21 @@ class IncidentList(ListView):
                 )
                 return queryset
 
-            self.title = f"Incidents from {year}"
+            self.filter = str(year)
+            self.filter_type = "year"
             return yearly_qs
 
-        if not bool(queryset):
-            messages.error(self.request, "There are no incidents to show.")
-        return self.check_queryset(queryset)
+        return self.prepare_queryset(queryset)
 
-    def check_queryset(self, queryset):
+    def prepare_queryset(self, queryset):
         if not bool(queryset):
             messages.error(self.request, "There are no incidents to show.")
         return queryset
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
-        context["title"] = self.title
+        context["filter"] = self.filter
+        context["filter_type"] = self.filter_type
         return context
 
 
