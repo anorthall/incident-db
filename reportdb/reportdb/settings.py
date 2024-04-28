@@ -64,6 +64,7 @@ MIDDLEWARE = [
     "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
+# noinspection PyUnresolvedReferences
 ROOT_URLCONF = "reportdb.urls"
 
 TEMPLATES = [
@@ -199,4 +200,13 @@ ACTIVE_LINK_STRICT = True
 
 
 # Add Docker host IP to ALLOWED_HOSTS for Dokku healthchecks
-ALLOWED_HOSTS.append(socket.getaddrinfo(socket.gethostname(), "http")[0][4][0])
+ALLOWED_HOSTS.append(socket.getaddrinfo(socket.gethostname(), "http")[0][4][0])  # type: ignore[attr-defined]
+
+
+# Find local IPs for debug toolbar
+hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
+INTERNAL_IPS = [ip[: ip.rfind(".")] + ".1" for ip in ips] + [
+    "127.0.0.1",
+    "10.0.2.2",
+    "192.168.65.1",
+]
