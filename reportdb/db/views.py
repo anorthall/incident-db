@@ -181,28 +181,32 @@ class IncidentList(ListView):
         match query:
             case "all":
                 self.filter_type = ""
-                return self.prepare_queryset(queryset)
+                return self.prepare_queryset(query, queryset)
             case "uncategorised":
                 self.filter = "uncategorised"
-                return self.prepare_queryset(queryset.filter(category=""))
+                return self.prepare_queryset(query, queryset.filter(category=""))
             case "other":
                 self.filter = "other"
                 return self.prepare_queryset(
+                    query,
                     queryset.filter(category=Incident.Category.OTHER),
                 )
             case "cave":
                 self.filter = "cave"
                 return self.prepare_queryset(
+                    query,
                     queryset.filter(category=Incident.Category.CAVE),
                 )
             case "mine":
                 self.filter = "mine"
                 return self.prepare_queryset(
+                    query,
                     queryset.filter(category=Incident.Category.MINE),
                 )
             case "cave-diving":
                 self.filter = "cave diving"
                 return self.prepare_queryset(
+                    query,
                     queryset.filter(category=Incident.Category.DIVING),
                 )
 
@@ -212,32 +216,40 @@ class IncidentList(ListView):
         if flag_query in ALLOWED_QUERY_FLAGS:
             self.filter = ALLOWED_QUERY_FLAGS[flag_query]
             self.filter_type = "flag"
-            return self.prepare_queryset(queryset.filter(**{flag_query: True}))
+            return self.prepare_queryset(query, queryset.filter(**{flag_query: True}))
 
         # Finally, try matching by year
         try:
             year = int(query)
         except ValueError:
-            self.filter_type = ""
-            return self.prepare_queryset(queryset)
+            return self.prepare_queryset(query, queryset, invalid_query=True)
 
         if 1800 < year <= datetime.now().year:
             yearly_qs = queryset.filter(date__year=year)
             if not bool(yearly_qs):
                 messages.error(
-                    self.request,
-                    f"There are no incidents from {year}. Showing all incidents.",
+                    self.request, f"There are no incidents from {year} in the database."
                 )
-                return self.prepare_queryset(queryset)
+                self.filter_type = ""
+                return self.prepare_queryset(query, queryset)
 
             self.filter = str(year)
             self.filter_type = "year"
-            return self.prepare_queryset(yearly_qs)
+            return self.prepare_queryset(query, yearly_qs)
 
-        return self.prepare_queryset(queryset)
+        return self.prepare_queryset(query, queryset, invalid_query=True)
 
-    def prepare_queryset(self, queryset: QuerySet[Incident]) -> QuerySet[Incident]:
+    def prepare_queryset(
+        self, query: str, queryset: QuerySet[Incident], invalid_query: bool = False
+    ) -> QuerySet[Incident]:
         self.total_count = queryset.count()
+
+        if invalid_query:
+            self.filter_type = ""
+            messages.error(
+                self.request,
+                f"Invalid query: '{query}'. Showing all incidents.",
+            )
 
         if not bool(queryset):
             messages.error(self.request, "There are no incidents to show.")
