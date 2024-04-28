@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "debug_toolbar",
     "django_htmx",
     "active_link",
+    "algoliasearch_django",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -78,6 +79,8 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "core.context_managers.google_tag_manager",
+                "core.context_managers.algolia_search_key",
                 "db.context_managers.task_count",
             ],
         },
@@ -210,3 +213,18 @@ INTERNAL_IPS = [ip[: ip.rfind(".")] + ".1" for ip in ips] + [
     "10.0.2.2",
     "192.168.65.1",
 ]
+
+
+# Agolia search
+ALGOLIA_APPLICATION_ID = os.environ.get("ALGOLIA_APPLICATION_ID", "")
+ALGOLIA_SEARCH_KEY = os.environ.get("ALGOLIA_SEARCH_KEY", "")
+ALGOLIA_API_KEY = os.environ.get("ALGOLIA_API_KEY", "")
+
+ALGOLIA = {
+    "APPLICATION_ID": ALGOLIA_APPLICATION_ID,
+    "API_KEY": ALGOLIA_API_KEY,
+}
+
+
+# Google Tag Manager
+GOOGLE_GTM_TAG = os.environ.get("GOOGLE_GTM_TAG", "")

@@ -654,3 +654,7 @@ class IncidentRedirect(View):
     def get(self, request, *args, **kwargs):
         path = self.kwargs["path"]
         return redirect(f"/i/{path}/")
+
+
+class Search(TemplateView):
+    template_name = "search.html"
