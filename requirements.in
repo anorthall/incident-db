@@ -11,6 +11,7 @@ dj-database-url
 gunicorn
 humanize
 openai
+orjson
 Pillow
 pre-commit
 psycopg2

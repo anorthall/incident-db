@@ -14,11 +14,11 @@ asgiref==3.8.1
     # via
     #   django
     #   django-htmx
-boto3==1.34.93
+boto3==1.34.98
     # via
     #   -r requirements.in
     #   django-storages
-botocore==1.34.93
+botocore==1.34.98
     # via
     #   boto3
     #   s3transfer
@@ -59,9 +59,9 @@ django-htmx==1.17.3
     # via -r requirements.in
 django-reversion==5.0.12
     # via -r requirements.in
-django-storages[s3]==1.14.2
+django-storages[s3]==1.14.3
     # via -r requirements.in
-filelock==3.13.4
+filelock==3.14.0
     # via virtualenv
 gunicorn==22.0.0
     # via -r requirements.in
@@ -85,7 +85,9 @@ jmespath==1.0.1
     #   botocore
 nodeenv==1.8.0
     # via pre-commit
-openai==1.23.6
+openai==1.25.1
+    # via -r requirements.in
+orjson==3.10.3
     # via -r requirements.in
 packaging==24.0
     # via gunicorn
@@ -120,7 +122,7 @@ sqlparse==0.5.0
     # via
     #   django
     #   django-debug-toolbar
-tqdm==4.66.2
+tqdm==4.66.4
     # via openai
 typing-extensions==4.11.0
     # via
@@ -134,7 +136,7 @@ urllib3==2.2.1
     # via
     #   botocore
     #   sentry-sdk
-virtualenv==20.26.0
+virtualenv==20.26.1
     # via pre-commit
 whitenoise==6.6.0
     # via -r requirements.in
