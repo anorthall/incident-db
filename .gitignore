@@ -133,7 +133,7 @@ venv.bak/
 .spyderproject
 .spyproject
 
-# Rope project settings
+# Rope. project settings
 .ropeproject
 
 # mkdocs documentation
@@ -166,4 +166,7 @@ cython_debug/
 # Application specific
 reportdb/media
 etc/dev.env
-data/openai-formatter/settings.py
+
+# direnv/local env
+.direnv
+env-secrets.env
