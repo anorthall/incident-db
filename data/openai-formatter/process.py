@@ -44,6 +44,7 @@ MODEL = "gpt-4-turbo"
 INPUT_TOKEN_COST = 0.00003
 OUTPUT_TOKEN_COST = 0.00006
 
+ALLOWED_MODELS = ["gpt-4-turbo", "gpt-3.5-turbo", "gpt3.5", "gpt-4"]
 CHAT_COMPLETIONS_ENDPOINT = "/v1/chat/completions"
 
 
@@ -185,6 +186,13 @@ def main() -> None:
         help="Maximum number of incidents to process.",
         default=0,
     )
+    parser.add_argument(
+        "--model",
+        type=str,
+        help="Model to use for processing.",
+        default=MODEL,
+        choices=ALLOWED_MODELS,
+    )
     args = parser.parse_args()
 
     check_args(args)
@@ -202,7 +210,7 @@ def main() -> None:
             os.mkdir("batches")
 
     if args.operation == "collectbatch":
-        run_collect_batch(client, args)
+        run_collect_batch(client)
         return
 
     if args.operation == "batch":
@@ -264,9 +272,9 @@ def build_messages(report: str, prompt: str) -> list[dict[str, str]]:
     ]
 
 
-def get_openai_request_args(messages: list[dict[str, str]]) -> dict[str, Any]:
+def get_openai_request_args(model: str, messages: list[dict[str, str]]) -> dict[str, Any]:
     return {
-        "model": MODEL,
+        "model": model,
         "response_format": {"type": "json_object"},
         "seed": 1,
         "messages": messages,
@@ -342,7 +350,7 @@ def collect_batch_results(client: OpenAI, batch: Batch) -> str | None:
     return output_file_name
 
 
-def run_collect_batch(client: OpenAI, args: argparse.Namespace) -> None:
+def run_collect_batch(client: OpenAI) -> None:
     """Collect completed batch results."""
     log("Collecting batch results.", print_msg=True)
     batches: list[Batch] = list(client.batches.list())
@@ -396,7 +404,7 @@ def run_processing_batch(client: OpenAI, args: argparse.Namespace) -> None:
             "custom_id": f"{normalise_file_name(args.name)}-{timestamp}-{num}",
             "method": "POST",
             "url": CHAT_COMPLETIONS_ENDPOINT,
-            "body": get_openai_request_args(messages),
+            "body": get_openai_request_args(args.model, messages),
         }
         jobs.append(orjson.dumps(batch_args) + b"\n")
 
@@ -499,7 +507,7 @@ def run_processing_sync(client: OpenAI, args: argparse.Namespace) -> None:
         try:
             request_start_time: float = default_timer()
             response = client.chat.completions.create(
-                **get_openai_request_args(messages),
+                **get_openai_request_args(args.model, messages),
             )
             request_duration: timedelta = timedelta(seconds=default_timer() - request_start_time)
 
