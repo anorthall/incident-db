@@ -9,7 +9,7 @@ EditLog = logging.getLogger("edit_log")
 
 
 @receiver(post_save)
-def log_edit(sender, instance, created, **kwargs):
+def log_edit(sender, instance, created, **kwargs):  # type: ignore
     if sender != EditLogEntry or not created:
         return
 
