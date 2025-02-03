@@ -1,9 +1,11 @@
+from django.http import HttpRequest
+
 from db.models import Incident
 
 
-def task_count(request):
+def task_count(request: HttpRequest) -> dict[str, int]:
     """Add pending task counts to the context for use in the sidebar."""
-    context = {}
+    context: dict[str, int] = {}
 
     if not request.user.is_authenticated:
         return context
