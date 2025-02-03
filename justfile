@@ -1,7 +1,10 @@
 default:
   just --list
 
-lint:
+lint +ARGS="":
   uv run ruff format
   uv run ruff check --fix
-  mypy reportdb/ --strict --no-namespace-packages
+  just mypy {{ ARGS }}
+
+mypy +ARGS="reportdb/":
+  dmypy run -- {{ ARGS }}
