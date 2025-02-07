@@ -8,9 +8,8 @@ from django.contrib import messages
 
 django_stubs_ext.monkeypatch()
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+DJANGO_ROOT = BASE_DIR / "reportdb"
 
 SECRET_KEY = os.environ.get("SECRET_KEY", "insecure-secret-key")
 ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "http://127.0.0.1").split()
@@ -58,7 +57,7 @@ ROOT_URLCONF = "conf.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": ["templates"],
+        "DIRS": [DJANGO_ROOT / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -115,7 +114,7 @@ USE_TZ = True
 # Static and media files (CSS, JavaScript, Images)
 STATIC_URL = "/static/"
 STATIC_ROOT = os.environ.get("STATIC_ROOT", "/app/staticfiles")
-STATICFILES_DIRS = [BASE_DIR / "static"]
+STATICFILES_DIRS = [DJANGO_ROOT / "static"]
 
 AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
 AWS_S3_REGION_NAME = os.environ.get("AWS_S3_REGION_NAME")

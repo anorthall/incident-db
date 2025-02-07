@@ -1,6 +1,6 @@
 #!/bin/bash
-CONF_ROOT="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-PROJECT_ROOT="${CONF_ROOT}/.."
+SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+PROJECT_ROOT="$SCRIPT_DIR/.."
 APP_ROOT="${PROJECT_ROOT}/reportdb"
 
 if [ -z "$VIRTUAL_ENV" ]
@@ -38,40 +38,31 @@ then
     fi
 
     cd "$PROJECT_ROOT" || exit 1
-    echo "Starting server..."
 
-    # shellcheck disable=SC2030
-    granian --interface wsgi \
-            --host 0.0.0.0 \
-            --port "${PORT:=8000}" \
-            --workers 1 \
-            --respawn-failed-workers \
-            --reload \
-            --reload-paths backend/src \
-            --no-ws \
-            --threading-mode workers \
-            conf.wsgi:application &
+    gunicorn \
+      --bind "0.0.0.0:$PORT" \
+      --workers 2 \
+      --reload \
+      --reload-engine inotify \
+      --name incidentdb-django \
+      conf.wsgi:application
 fi
 
 # Run production server
 if [ "$1" = "start" ]
 then
-    cd "$APP_ROOT" || exit 1
+    NUM_CORES=$(nproc)
+    NUM_WORKERS=$((NUM_CORES * 2 + 1))
+    echo "Detected $NUM_CORES, running with $NUM_WORKERS workers"
 
-    echo "Collecting static files..."
-    python manage.py collectstatic --no-input
-
-    cd "$PROJECT_ROOT" || exit 1
     echo "Starting server..."
-    # shellcheck disable=SC2031
-    granian --interface wsgi \
-            --host 0.0.0.0 \
-            --port "${PORT:=8000}"  \
-            --workers 4 \
-            --respawn-failed-workers \
-            --no-reload \
-            --no-ws \
-            --threading-mode workers \
-            --workers-lifetime 600 \
-            conf.wsgi:application &
+    gunicorn \
+      --bind "0.0.0.0:$PORT" \
+      --workers "$NUM_WORKERS" \
+      --preload \
+      --max-requests 1000 \
+      --max-requests-jitter 200 \
+      --keep-alive 10 \
+      --name incidentdb-django \
+      conf.wsgi:application
 fi

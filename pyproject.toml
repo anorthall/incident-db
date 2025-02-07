@@ -17,6 +17,7 @@ dependencies = [
     "django-storages[s3]",
     "gunicorn",
     "humanize",
+    "inotify>=0.2.10",
     "openai",
     "orjson",
     "Pillow",
