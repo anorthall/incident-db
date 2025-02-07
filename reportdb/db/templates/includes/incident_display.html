@@ -1,0 +1,61 @@
+<dl class="row g-1">
+  <dt class="col-4 col-xl-2">Date</dt>
+  <dd class="col-8 col-xl-4">
+    {{ incident.date|date:"jS M Y" }}
+    {% if incident.approximate_date %}<span class="text-muted">approximate</span>{% endif %}
+  </dd>
+
+  <dt class="col-4 col-xl-2">Publication</dt>
+  <dd class="col-8 col-xl-4">
+    {% if incident.publication %}
+      <a class="text-decoration-none" href="{{ incident.publication.get_absolute_url }}">
+        {{ incident.publication.name }}
+      </a>
+    {% else %}
+      <span class="text-muted">Not recorded</span>
+    {% endif %}
+
+    {% if incident.publication and incident.publication_page %}
+      {% if incident.publication.pdf_file %}
+        <a class="link-secondary text-decoration-none" target="_blank" href="{{ incident.publication.pdf_file.url }}">
+          p. {{ incident.publication_page }} <i class="bi bi-file-pdf"></i>
+        </a>
+      {% else %}
+        <span class="text-muted">p. {{ incident.publication_page }}</span>
+      {% endif %}
+    {% endif %}
+  </dd>
+
+  <dt class="col-4 col-xl-2">Cave</dt>
+  <dd class="col-8 col-xl-4">{{ incident.cave|default:"Unknown" }}</dd>
+
+  <dt class="col-4 col-xl-2">State</dt>
+  <dd class="col-8 col-xl-4">{{ incident.get_state_display|default:"Unknown" }}</dd>
+
+  <dt class="col-4 col-xl-2">County</dt>
+  <dd class="col-8 col-xl-4">{{ incident.county|default:"Unknown" }}</dd>
+
+  <dt class="col-4 col-xl-2">Country</dt>
+  <dd class="col-8 col-xl-4">{{ incident.get_country_display|default:"Unknown" }}</dd>
+
+  <dt class="col-4 col-xl-2">Category</dt>
+  <dd class="col-8 col-xl-4">{{ incident.get_category_display }}</dd>
+
+  <dt class="col-4 col-xl-2">Incident type</dt>
+  <dd class="col-8 col-xl-4">{{ incident.get_incident_type_display }}</dd>
+
+  <dt class="col-4 col-xl-2">Group type</dt>
+  <dd class="col-8 col-xl-4">{{ incident.get_group_type_display }}</dd>
+
+  <dt class="col-4 col-xl-2">Group size</dt>
+  <dd class="col-8 col-xl-4">{{ incident.group_size|default:"Unknown" }}</dd>
+
+  <dt class="col-4 col-xl-2">Aid type</dt>
+  <dd class="col-8 col-xl-4">{{ incident.get_aid_type_display }}</dd>
+
+  <dt class="col-4 col-xl-2">Source</dt>
+  <dd class="col-8 col-xl-4">{{ incident.get_source_display }}</dd>
+
+  <dt class="col-4 col-xl-2">Incident flags</dt>
+  <dd class="col-8 col-xl-4">{% include "includes/incident_flags.html" %}</dd>
+</dl>

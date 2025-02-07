@@ -1,0 +1,38 @@
+{% if incident.data_input_source == incident.DataInput.AI %}
+  <div class="approval-report-text">
+    <h3 class="section d-flex align-content-center justify-content-between">
+      Original text
+      <span class="d-flex align-content-center justify-content-end">
+        <button type="button" class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#originalTextModal"><i class="bi bi-question-lg"></i></button>
+      </span>
+    </h3>
+    <div class="indent">{{ incident.original_text|linebreaks }}</div>
+    <p class="form-text mt-2">
+      The above is the original text which was used by the AI to generate the formatted incident report.<br>
+      It is shown here to allow you to check the work of the AI and will never be displayed publicly.
+    </p>
+  </div>
+
+  <div class="modal fade" id="originalTextModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">Original text</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>
+            This field contains the original text which was used by AI to generate the formatted incident report.
+          </p>
+          <p>
+            This field is shown purely to allow you to check the work of the AI. The text within this field will never
+            be shown to anyone except editors, and is not editable.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}

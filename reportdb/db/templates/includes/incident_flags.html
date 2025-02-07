@@ -1,0 +1,25 @@
+{% if incident.fatality %}
+  <i class="bi bi-emoji-dizzy" data-bs-toggle="tooltip" data-bs-title="Fatality"></i>&nbsp;
+{% elif incident.injury %}
+  <i class="bi bi-bandaid" data-bs-toggle="tooltip" data-bs-title="Injury"></i>&nbsp;
+{% endif %}
+
+{% if incident.vertical %}
+  <i class="bi bi-ladder" data-bs-toggle="tooltip" data-bs-title="Vertical"></i>&nbsp;
+{% endif %}
+
+{% if incident.aid_type != incident.AidType.UNKNOWN and incident.aid_type != incident.AidType.NONE %}
+  <i class="bi bi-heart-pulse" data-bs-toggle="tooltip" data-bs-title="{{ incident.get_aid_type_display }}"></i>&nbsp;
+{% endif %}
+
+{% if incident.multiple_incidents %}
+  <i class="bi bi-diagram-2" data-bs-toggle="tooltip" data-bs-title="Multiple incidents"></i>&nbsp;
+{% endif %}
+
+{% if incident.self_rescue %}
+  <i class="bi bi-gear" data-bs-toggle="tooltip" data-bs-title="Self rescue"></i>&nbsp;
+{% endif %}
+
+{% if incident.rescue_over_24_hours %}
+  <i class="bi bi-clock-history" data-bs-toggle="tooltip" data-bs-title="Rescue over 24 hours in duration"></i>&nbsp;
+{% endif %}
