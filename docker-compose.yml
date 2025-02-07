@@ -1,6 +1,6 @@
 services:
   db:
-    image: postgres:16.0
+    image: postgres:17
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
@@ -16,7 +16,7 @@ services:
     ports:
       - "8000:8000"
     env_file:
-      - etc/dev.env
+      - conf/dev.env
     depends_on:
       - db
 
