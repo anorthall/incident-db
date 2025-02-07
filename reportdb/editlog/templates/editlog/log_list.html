@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Edit log{% endblock %}
+{% block description %}A list of edits made to the report database.{% endblock %}
+
+{% block content %}
+  <h1 class="page-header">Editing log</h1>
+  <div class="table-responsive">
+    <table class="table table-sm table-striped table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Date</th>
+          <th scope="col">Editor</th>
+          <th scope="col">Incident</th>
+          <th scope="col" class="d-none d-xxl-table-cell">Action</th>
+          <th scope="col" class="d-none d-xxl-table-cell">Changes</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for log in logs %}
+          <tr>
+            <td>
+              <span class="d-none d-sm-inline">{{ log.timestamp|date }} {{ log.timestamp|time }}</span>
+              <span class="d-sm-none">{{ log.timestamp|date:"Y-m-d" }} {{ log.timestamp|date:"H:m" }}</span>
+            </td>
+            <td>{{ log.user }}</td>
+            <td>
+              {% if log.incident %}
+                <a href="{{ log.incident.get_absolute_url }}">
+                  <span class="d-none d-md-inline">{{ log.incident }}</span>
+                  <span class="d-md-none">{{ log.incident.cave|truncatechars:15 }}</span>
+                </a>
+              {% else %}
+                {{ log.incident_name }}
+              {% endif %}
+            </td>
+            <td class="d-none d-xxl-table-cell">{{ log.verb|capfirst }}</td>
+            <td class="d-none d-xxl-table-cell">{{ log.message|capfirst }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% include "paginate_bootstrap.html" %}
+  </div>
+{% endblock %}

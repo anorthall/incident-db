@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block main_content_class %}smaller-container{% endblock %}
+
+{% block content %}
+  <h1 class="page-header">Caving Incident Database</h1>
+  <p class="lead">A project of the <a href="https://caves.org/" class="text-decoration-none">National Speleological Society</a>.</p>
+
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 mt-5">
+    {% for data in incidents_by_year %}
+      <div class="col">
+        <a href="{% url 'db:incident_list' query=data.slug %}" class="text-decoration-none">
+          <div class="card text-center incident-year-card mb-4">
+            <div class="card-body">
+              <h5 class="card-title fw-semibold">{{ data.name }}</h5>
+              <p class="card-text text-secondary-emphasis">{{ data.count }} incident{{ data.count|pluralize }}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+
+  {% if user.is_authenticated and user.is_editor %}
+    <h3 class="section">Support</h3>
+    <p>
+      Thank you for helping with this project! If you have any questions, please contact Pete Johnson
+      (for issues relating to the project) or Andrew Northall (for issues relating to this website in particular)
+      &mdash; <code>pete@caves.org</code> or <code>andrew@caver.dev</code>.
+    </p>
+  {% endif %}
+{% endblock %}

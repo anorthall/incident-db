@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block main_content_class %}smaller-container{% endblock %}
+
+{% block title %}Approve incident in {{ incident.cave }}{% endblock %}
+
+{% block content %}
+  <div class="progress mb-3" role="progressbar" aria-label="Form progress" aria-valuenow="Step 3 of 5" aria-valuemin="0" aria-valuemax="100" style="height: 20px">
+    <div class="progress-bar" style="width: 60%">60%</div>
+  </div>
+
+  <h1 class="page-header">
+    <span class="extra d-none d-sm-inline">Approving {% if incident.cave %}</span> {{ incident.cave }}{% else %}on</span> {{ incident.date|date }}{% endif %}
+  </h1>
+  <p class="lead">
+    Please review the incident report and fill out the metadata fields as appropriate.
+  </p>
+
+  <p>
+    Fields that are marked as unknown, other, or blank, are highlighted for your attention. This highlighting does not
+    necessarily mean that the field is incorrect, but rather that it needs to be checked to ensure that more specific
+    data is not available.
+  </p>
+
+  {% if incident.data_input_source == incident.DataInput.AI %}
+    <p>
+      <mark>This incident was processed by AI. Please pay special attention to the category, incident type, primary/secondary cause, and group size fields.</mark>
+      The AI is not particularly good at subjective judgements and these fields may be incorrect.
+    </p>
+  {% endif %}
+
+  <div class="approval-report-text">
+    <h3 class="section">Incident report</h3>
+    <div class="indent">{{ incident.incident_report|linebreaks }}</div>
+
+    {% if incident.incident_analysis %}
+      <div class="indent">
+        <small class="text-muted">Analysis</small>
+        {{ incident.incident_analysis|linebreaks }}
+      </div>
+    {% endif %}
+
+    {% if incident.incident_references %}
+      <div class="indent">
+        <small class="text-muted">References</small>
+        {{ incident.incident_references|linebreaks }}
+      </div>
+    {% endif %}
+  </div>
+
+  <h3 class="section d-flex flex-row justify-content-between align-content-center">
+    Metadata
+    <a class="btn btn-sm btn-secondary" target="_blank" href="{% url 'db:help' %}#metadataHelp"><i class="bi bi-question-lg"></i></a>
+  </h3>
+
+  <form method="post" class="approval-metadata" id="metadataForm">
+    {% csrf_token %}
+    {% crispy form %}
+
+    <div class="d-flex justify-content-end align-items-center mt-4">
+      <button type="button" data-bs-toggle="modal" data-bs-target="#previousPageModal" class="btn btn-secondary me-2">Go back</button>
+      <button class="btn btn-primary">Next <i class="ms-1 bi bi-arrow-right"></i></button>
+    </div>
+  </form>
+
+  {% include "approval/includes/highlight_incomplete_js.html" with form_id="metadataForm" %}
+
+  <div class="modal fade" id="previousPageModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">Are you sure?</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>
+            Any changes you have made will be lost when returning to the previous page. Are you sure
+            you want to go back?
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <a href="{% url 'db:approve_injured_cavers' pk=incident.pk %}" class="btn btn-danger">Go back</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

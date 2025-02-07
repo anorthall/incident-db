@@ -1,0 +1,80 @@
+[project]
+name = "cave-incident-db"
+authors = [
+    { name = "Andrew Northall", email = "andrew@northall.me.uk" }
+]
+version = "1.0.0"
+requires-python = ">=3.13"
+dependencies = [
+    "boto3",
+    "crispy-bootstrap5",
+    "dj-database-url",
+    "django",
+    "django-active-link",
+    "django-crispy-forms",
+    "django-debug-toolbar",
+    "django-htmx",
+    "django-storages[s3]",
+    "gunicorn",
+    "humanize",
+    "openai",
+    "orjson",
+    "Pillow",
+    "psycopg[binary]",
+    "sentry-sdk",
+    "tzdata",
+    "whitenoise",
+]
+
+[dependency-groups]
+dev = [
+    "pre-commit",
+    "ruff",
+    "rust-just",
+    "mypy",
+    "django-stubs[compatible-mypy]",
+    "types-pytz",
+    "types-python-dateutil",
+    "boto3-stubs",
+]
+
+[tool.mypy]
+plugins = ["mypy_django_plugin.main"]
+exclude = ["data/"]
+mypy_path = "stubs"
+strict = true
+
+[[tool.mypy.overrides]]
+module = "crispy_forms"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "crispy_forms.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "crispy_bootstrap5.bootstrap5"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "debug_toolbar"
+ignore_missing_imports = true
+
+[tool.django-stubs]
+django_settings_module = "reportdb.settings"
+
+[tool.ruff]
+line-length = 100
+exclude = ["data/", "**/migrations/**"]
+
+[tool.ruff.lint]
+select = ["B", "C4", "D", "DJ", "E", "EXE", "F", "I", "ICN", "N", "RET", "S", "SIM", "UP", "W"]
+extend-select = ["E501"]
+ignore = ["D417", "D100", "D101", "D102", "D103", "D104", "D105", "D106", "D107", "S101", "SIM102"]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]
+"**/migrations/*.py" = ["E501", "FBT003"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"

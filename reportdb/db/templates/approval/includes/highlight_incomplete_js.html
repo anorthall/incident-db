@@ -1,0 +1,55 @@
+<script>
+  // Script to highlight empty fields or fields that are set to unknown
+  // when the page loads and when the user changes a field
+
+  const form = document.getElementById('{{ form_id }}');
+  const excluded = getExcluded(form);
+
+  form.addEventListener('input', function(event) {
+    updateValidation(form, excluded);
+  });
+
+  updateValidation(form, excluded);
+  function getExcluded(form) {
+    const excluded = [
+      "incident_type_2",
+      "incident_type_3",
+      "incident_notes",
+      "editing_notes"];
+
+    // Exclude any fields that already have is-invalid set by the backend
+    Array.from(form.elements).forEach((input) => {
+      if (input.classList.contains('is-invalid')) {
+        excluded.push(input.name);
+      }
+    });
+
+    return excluded;
+  }
+
+  function updateValidation(form, excluded) {
+    Array.from(form.elements).forEach((input) => {
+      if (input.type === 'submit') {
+        return;
+      } else if (excluded.includes(input.name)) {
+        return;
+      }
+
+      if (input.value === '') {
+        input.classList.add('is-invalid');
+      } else if (input.tagName === 'SELECT') {
+        if (input.value === 'YY' || input.value === 'ZZ') {
+          input.classList.add('is-invalid');
+        } else if (input.value === 'XX') {
+          if (input.name !== 'aid_type') {
+            input.classList.add('is-invalid');
+          }
+        } else {
+          input.classList.remove('is-invalid');
+        }
+      } else {
+        input.classList.remove('is-invalid');
+      }
+    });
+  }
+</script>
