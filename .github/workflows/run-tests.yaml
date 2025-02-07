@@ -25,12 +25,12 @@ jobs:
         uses: astral-sh/setup-uv@v5
 
       - name: Install dependencies
-        run: |
-          uv sync --frozen
+        run: uv sync --frozen
 
       - name: Run Django tests
         env:
-          PYTHONPATH: ${{ github.workspace }}/reportdb
+          PYTHONPATH: ${{ github.workspace }}
+          DJANGO_SETTINGS_MODULE: conf.settings
         run: |
           uv run reportdb/manage.py test
 
