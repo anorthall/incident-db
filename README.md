@@ -15,7 +15,7 @@ the website for more information about the project.
 
 ## Django application
 
-This fairly straightforward application lives within the `reportdb/` and `etc/` folders, and is
+This fairly straightforward application lives within the `cidb/` and `etc/` folders, and is
 run using docker-compose (or Dokku in production). The applications allows a basic CRUD interface for
 incident reports, and has management commands (`import_json` and `import_csv`) to enable the mass
 import of incident reports from the processing scripts in `data/`.

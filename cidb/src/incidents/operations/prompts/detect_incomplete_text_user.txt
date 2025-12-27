@@ -1,0 +1,12 @@
+Check if any of these text fields appear to be cut off or incomplete.
+
+REPORT:
+{report}
+
+ANALYSIS:
+{analysis}
+
+REFERENCES:
+{references}
+
+Identify which fields (if any) appear truncated and explain why.

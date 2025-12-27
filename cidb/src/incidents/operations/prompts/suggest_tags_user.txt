@@ -1,0 +1,15 @@
+Suggest tags for this incident from the available list.
+
+AVAILABLE TAGS:
+{available_tags}
+
+INCIDENT REPORT:
+{report}
+
+ANALYSIS:
+{analysis}
+
+CAVE:
+{cave_name}
+
+Select which tags from the available list apply to this incident.

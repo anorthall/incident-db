@@ -32,7 +32,7 @@ jobs:
           PYTHONPATH: ${{ github.workspace }}
           DJANGO_SETTINGS_MODULE: conf.settings
         run: |
-          uv run reportdb/manage.py test
+          uv run cidb/manage.py test
 
     services:
       postgres:

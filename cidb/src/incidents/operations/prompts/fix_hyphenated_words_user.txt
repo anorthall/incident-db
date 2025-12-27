@@ -1,0 +1,4 @@
+Fix any incorrectly hyphenated words in this text. Return the corrected text.
+
+Text to fix:
+{text}

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--suppress EqualityComparisonWithCoercionJS, ES6ConvertVarToLetConst -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          "gtm.start": new Date().getTime(),
+          event: "gtm.js",
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "%VITE_TAG_MANAGER_ID%");
+    </script>
+
+    <!--suppress ES6ConvertVarToLetConst -->
+    <script>
+      (function () {
+        var theme = localStorage.getItem("theme");
+        if (theme === "system") {
+          if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            document.documentElement.classList.add("dark");
+          }
+        } else if (theme !== "light") {
+          document.documentElement.classList.add("dark");
+        }
+      })();
+    </script>
+
+    <title>CIDB - Caving Incident DB</title>
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://cidb.dev/cdn/assets/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="https://cidb.dev/cdn/assets/favicon.svg" />
+    <link rel="shortcut icon" href="https://cidb.dev/cdn/assets/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https://cidb.dev/cdn/assets/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="CIDB" />
+    <link rel="manifest" href="https://cidb.dev/cdn/assets/site.webmanifest" />
+  </head>
+
+  <body>
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=%VITE_TAG_MANAGER_ID%"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe>
+    </noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

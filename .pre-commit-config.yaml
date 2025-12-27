@@ -1,15 +1,36 @@
 repos:
--   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
     hooks:
-    -   id: check-yaml
-    -   id: end-of-file-fixer
-        exclude: app/templates/users/_user_tag.html
-    -   id: trailing-whitespace
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
 
-- repo: https://github.com/astral-sh/ruff-pre-commit
-  rev: v0.1.11
-  hooks:
-    - id: ruff
-      args: [ --fix ]
-    - id: ruff-format
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.14.13
+    hooks:
+      - id: ruff-check
+      - id: ruff-format
+
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.5.0
+    hooks:
+      - id: detect-secrets
+        args: [ '--baseline', '.secrets.baseline', '--exclude-files', 'frontend/cidb/pnpm-lock.yamls' ]
+        exclude: package.lock.json
+
+  - repo: local
+    hooks:
+      - id: eslint
+        name: eslint
+        entry: bash -c 'cd frontend/cidb && pnpm exec eslint --fix "${@#frontend/cidb/}"' --
+        language: system
+        files: ^frontend/cidb/.*\.(js|jsx|ts|tsx)$
+        exclude: node_modules
+
+      - id: prettier
+        name: prettier
+        entry: bash -c 'cd frontend/cidb && pnpm exec prettier --write --ignore-unknown "${@#frontend/cidb/}"' --
+        language: system
+        files: ^frontend/cidb/.*\.(js|jsx|ts|tsx|json|css|md)$
+        exclude: node_modules

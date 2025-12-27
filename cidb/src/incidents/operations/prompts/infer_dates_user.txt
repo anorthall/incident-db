@@ -1,0 +1,18 @@
+Infer the date for this incident.
+
+CURRENT KNOWN DATE: {current_date} (precision: {date_precision})
+
+ADJACENT REPORTS:
+- Previous report date: {prev_date}
+- Next report date: {next_date}
+
+ORIGINAL PUBLICATION TEXT:
+{source_content}
+
+INCIDENT REPORT:
+{report}
+
+REFERENCES:
+{references}
+
+Based on the above, infer the most precise date you can with high confidence.
