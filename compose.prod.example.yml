@@ -1,0 +1,44 @@
+services:
+  web:
+    image: ghcr.io/anorthall/incident-db:latest
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    env_file:
+      - prod.env
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/healthcheck/')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    depends_on:
+      postgres:
+        condition: service_healthy
+      valkey:
+        condition: service_started
+
+  postgres:
+    image: postgres:18
+    restart: unless-stopped
+    volumes:
+      - ./data/postgres:/var/lib/postgresql
+    environment:
+      POSTGRES_DB: cidb
+      POSTGRES_USER: cidb
+      POSTGRES_PASSWORD: changeme
+    healthcheck:
+      test: ["CMD-ARGS", "pg_isready", "-U", "cidb"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  valkey:
+    image: valkey/valkey:latest
+    restart: unless-stopped
+    volumes:
+      - ./data/valkey:/data
+
+volumes:
+  postgres_data:
+  valkey_data:

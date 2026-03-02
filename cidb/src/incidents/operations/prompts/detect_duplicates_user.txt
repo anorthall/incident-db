@@ -1,0 +1,15 @@
+Determine if these two incident reports describe the same event.
+
+INCIDENT A (ID: {id_a}):
+Cave: {cave_a}
+Date: {date_a}
+Report: {report_a}
+Analysis: {analysis_a}
+
+INCIDENT B (ID: {id_b}):
+Cave: {cave_b}
+Date: {date_b}
+Report: {report_b}
+Analysis: {analysis_b}
+
+Are these the same incident? If yes, which should be the primary (kept) record?

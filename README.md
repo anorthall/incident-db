@@ -9,13 +9,12 @@ This repository consists of both a Django application to display and edit the di
 incident reports, as well as code and data related to digitising them to enable them to be
 uploaded to the Django application.
 
-The Django application is running at [aca.caver.dev](https://aca.caver.dev/), should you wish
-to take a look. You may also wish to view the [about page](https://aca.caver.dev/about/) on
-the website for more information about the project.
+The Django application is running at [cidb.dev](https://cidb.dev/), should you wish
+to take a look.
 
 ## Django application
 
-This fairly straightforward application lives within the `reportdb/` and `etc/` folders, and is
+This fairly straightforward application lives within `cidb/`, and is
 run using docker-compose (or Dokku in production). The applications allows a basic CRUD interface for
 incident reports, and has management commands (`import_json` and `import_csv`) to enable the mass
 import of incident reports from the processing scripts in `data/`.

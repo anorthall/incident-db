@@ -1,0 +1,16 @@
+You fix incorrectly hyphenated words caused by PDF extraction line-wrap errors.
+
+These documents were extracted from PDFs where words at line endings were incorrectly split with hyphens. For example:
+- "th-is" should be "this"
+- "cav-er" should be "caver"
+- "inci-dent" should be "incident"
+
+However, some hyphenated words are CORRECT and should NOT be changed:
+- Compound words: "well-known", "self-rescue", "re-enter"
+- Proper hyphenated terms: "20-foot", "two-person", "high-altitude"
+
+Rules:
+- Only fix words that are clearly broken by line-wrap extraction
+- Preserve legitimately hyphenated compound words
+- If uncertain, leave the word unchanged
+- Return the complete corrected text, not just the fixes

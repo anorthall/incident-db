@@ -4,27 +4,32 @@ authors = [
     { name = "Andrew Northall", email = "andrew@northall.me.uk" }
 ]
 version = "1.0.0"
-requires-python = ">=3.13"
+requires-python = ">=3.14"
 dependencies = [
     "boto3",
-    "crispy-bootstrap5",
-    "dj-database-url",
     "django",
-    "django-active-link",
-    "django-crispy-forms",
-    "django-debug-toolbar",
-    "django-htmx",
+    "django-cors-headers",
+    "django-ninja",
     "django-storages[s3]",
     "gunicorn",
-    "humanize",
-    "inotify>=0.2.10",
-    "openai",
+    "inotify",
+    "pydantic",
+    "pydantic-ai",
     "orjson",
     "Pillow",
     "psycopg[binary]",
     "sentry-sdk",
     "tzdata",
     "whitenoise",
+    "structlog>=25.5.0",
+    "django-treebeard>=4.8.0",
+    "sqlalchemy>=2.0.45",
+    "django-ipware>=7.0.1",
+    "email-validator>=2.0.0",
+    "django-valkey>=0.4.0",
+    "logfire[django,psycopg,redis,system-metrics,wsgi]",
+    "django-unfold>=0.75.0",
+    "django-environ>=0.13.0",
 ]
 
 [dependency-groups]
@@ -32,50 +37,54 @@ dev = [
     "pre-commit",
     "ruff",
     "rust-just",
-    "mypy",
+    "mypy[dmypy]",
     "django-stubs[compatible-mypy]",
     "types-pytz",
-    "types-python-dateutil",
     "boto3-stubs",
+    "pytest>=9.0.2",
+    "pytest-django>=4.11.1",
+    "detect-secrets>=1.5.0",
 ]
 
 [tool.mypy]
 plugins = ["mypy_django_plugin.main"]
+mypy_path = ["./stubs"]
 exclude = ["data/"]
-mypy_path = "stubs"
 strict = true
 
-[[tool.mypy.overrides]]
-module = "crispy_forms"
-ignore_missing_imports = true
-
-[[tool.mypy.overrides]]
-module = "crispy_forms.*"
-ignore_missing_imports = true
-
-[[tool.mypy.overrides]]
-module = "crispy_bootstrap5.bootstrap5"
-ignore_missing_imports = true
+[tool.django-stubs]
+django_settings_module = "conf.settings"
 
 [[tool.mypy.overrides]]
 module = "debug_toolbar"
 ignore_missing_imports = true
 
-[tool.django-stubs]
-django_settings_module = "reportdb.settings"
+[[tool.mypy.overrides]]
+module = "ipware"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "environ"
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "conf.settings"
+pythonpath = ["."]
 
 [tool.ruff]
 line-length = 100
-exclude = ["data/", "**/migrations/**"]
 
 [tool.ruff.lint]
 select = ["B", "C4", "D", "DJ", "E", "EXE", "F", "I", "ICN", "N", "RET", "S", "SIM", "UP", "W"]
-extend-select = ["E501"]
 ignore = ["D417", "D100", "D101", "D102", "D103", "D104", "D105", "D106", "D107", "S101", "SIM102"]
+extend-select = ["E501"]
 
 [tool.ruff.lint.per-file-ignores]
 "__init__.py" = ["F401"]
-"**/migrations/*.py" = ["E501", "FBT003"]
+"**/migrations/*.py" = ["E501"]
+"**/tests/*.py" = ["S106"]
+"conftest.py" = ["S106"]
+"stubs/treebeard/**/*.pyi" = ["N801", "DJ012", "N818", "N803"]
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"

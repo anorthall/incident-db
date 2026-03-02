@@ -1,37 +1,34 @@
-# syntax=docker/dockerfile:1
-FROM python:3.13-slim
-COPY --from=ghcr.io/astral-sh/uv:0.5.29 /uv /uvx /bin/
+FROM python:3.14-slim
+COPY --from=ghcr.io/astral-sh/uv:0.9.18 /uv /uvx /bin/
 
 ENV UV_COMPILE_BYTECODE=1
 ENV UV_FROZEN=1
 ENV UV_LINK_MODE=copy
 ENV UV_PROJECT_ENVIRONMENT=/app/.venv
 ENV VIRTUAL_ENV=${UV_PROJECT_ENVIRONMENT}
-ENV PYTHONPATH="/app/:/app/reportdb/"
+ENV PYTHONPATH="/app/:/app/cidb/"
 ENV PATH="/app/.venv/bin:${PATH}"
 ENV DJANGO_SETTINGS_MODULE=conf.settings
+ENV SECRET_KEY="insecure-key-change-me"
 
-RUN mkdir -p /app /opt/uv /app/staticfiles /app/mediafiles
+RUN mkdir -p /app /app/staticfiles && \
+    groupadd app && useradd -g app -d /app app && \
+    chown -R app:app /app
 
-WORKDIR /app
-
-# Install system dependencies
 RUN apt-get update && apt-get install -y \
     build-essential \
     libpq-dev \
     postgresql-client \
     netcat-traditional \
-    tini
+    tini && rm -rf /var/lib/apt/lists/*
 
-COPY uv.lock pyproject.toml /app/
-RUN uv sync --frozen
-COPY . /app/
-RUN uv run /app/reportdb/manage.py collectstatic --noinput && \
-    groupadd app && useradd -g app -d /app app && \
-    chmod +x /app/conf/run.sh && \
-    chown app -R /app
-
+WORKDIR /app
+COPY --chown=app:app . .
 USER app
 
+RUN uv sync --frozen && \
+    uv run /app/cidb/manage.py collectstatic --noinput && \
+    chmod +x /app/cidb/conf/run.sh
+
 ENTRYPOINT ["/usr/bin/tini", "--"]
-CMD ["/app/conf/run.sh", "start"]
+CMD ["/app/cidb/conf/run.sh", "start"]
