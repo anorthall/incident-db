@@ -1,0 +1,9 @@
+Check if this report ends with duplicate reference text and remove it if found.
+
+REPORT TEXT:
+{report}
+
+REFERENCE CITATIONS:
+{references}
+
+Return the cleaned report text (or the original if no duplicate was found).

@@ -1,0 +1,13 @@
+Generate a title for this cave incident:
+
+Cave: {cave_name}
+Location: {location}
+
+Report:
+{report}
+
+Analysis:
+{analysis}
+
+References:
+{references}

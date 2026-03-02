@@ -14,7 +14,6 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
 lib64/
 parts/
 sdist/
@@ -164,9 +163,14 @@ cython_debug/
 .DS_Store
 
 # Application specific
-reportdb/media
-etc/dev.env
-
-# direnv/local env
-.direnv
-env-secrets.env
+cidb/media
+cidb/conf/dev.env
+tmp/
+secrets.env
+*.dump
+.logfire/
+.claude/
+node_modules/
+errored.tfstate
+.postgres/
+.terraform/

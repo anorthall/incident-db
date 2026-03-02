@@ -1,0 +1,13 @@
+Generate a summary for this cave incident:
+
+Cave: {cave_name}
+Location: {location}
+
+Report:
+{report}
+
+Analysis:
+{analysis}
+
+Tags:
+{tags}

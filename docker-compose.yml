@@ -1,26 +1,48 @@
 services:
-  db:
-    image: postgres:17
-    volumes:
-      - postgres:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_DB=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-
   web:
     build: .
-    command: /app/conf/run.sh devserver
+    command: /app/cidb/conf/run.sh devserver
+    restart: unless-stopped
     volumes:
-      - ./reportdb/:/app/reportdb/
+      - ./cidb/:/app/cidb/
     ports:
       - "8000:8000"
     environment:
       - PORT=8000
     env_file:
-      - conf/dev.env
+      - cidb/conf/dev.env
     depends_on:
-      - db
+      - postgres
+      - valkey
+    networks:
+      - cidb
+
+  postgres:
+    image: postgres:18
+    restart: unless-stopped
+    volumes:
+      - ./.postgres:/var/lib/postgresql
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    networks:
+      - cidb
+
+  valkey:
+    image: valkey/valkey:latest
+    restart: unless-stopped
+    volumes:
+      - valkey:/var/lib/valkey
+    networks:
+      - cidb
+
+networks:
+  cidb:
+    driver: bridge
 
 volumes:
   postgres:
+  valkey:
