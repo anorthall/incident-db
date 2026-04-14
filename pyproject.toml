@@ -41,7 +41,7 @@ dev = [
     "django-stubs[compatible-mypy]",
     "types-pytz",
     "boto3-stubs",
-    "pytest>=9.0.2",
+    "pytest>=9.0.3",
     "pytest-django>=4.11.1",
     "detect-secrets>=1.5.0",
 ]
