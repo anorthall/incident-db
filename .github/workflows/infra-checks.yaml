@@ -7,6 +7,10 @@ on:
     paths:
       - "tf/**"
       - "deploy/**"
+      - "Dockerfile"
+      - "pyproject.toml"
+      - "uv.lock"
+      - "cidb/**"
 
 jobs:
   terraform:
@@ -38,3 +42,60 @@ jobs:
 
       - name: Shellcheck
         run: shellcheck deploy/*.sh
+
+  # The image is otherwise only built on push to main, so a Dockerfile that
+  # cannot build would merge green and only fail after it was too late.
+  image:
+    name: Image Builds
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v6
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build for arm64
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          platforms: linux/arm64
+          push: false
+          load: true
+          tags: cidb:pr
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Start and wait for the healthcheck
+        run: |
+          set -euo pipefail
+          docker network create cidb-ci
+          docker run -d --name pg --network cidb-ci \
+            -e POSTGRES_DB=cidb -e POSTGRES_USER=cidb \
+            -e POSTGRES_HOST_AUTH_METHOD=trust postgres:18
+          for _ in $(seq 1 30); do
+            docker exec pg pg_isready -U cidb -d cidb >/dev/null 2>&1 && break
+            sleep 2
+          done
+          # DEBUG=false is deliberate: it is the value that used to crash
+          # gunicorn on import, so this pins that regression. The throwaway
+          # database uses trust auth and the key is generated here, so no
+          # credential is written down.
+          docker run -d --name web --network cidb-ci \
+            -e SECRET_KEY="$(head -c 32 /dev/urandom | base64)" \
+            -e DEBUG=false \
+            -e DJANGO_ALLOWED_HOSTS=localhost \
+            -e DATABASE_URL="postgres://cidb@pg:5432/cidb" \
+            cidb:pr
+          for _ in $(seq 1 30); do
+            if docker exec web python -c \
+              'import urllib.request;urllib.request.urlopen("http://localhost:8000/core/healthcheck/")' \
+              >/dev/null 2>&1; then
+              echo "healthcheck passed"
+              exit 0
+            fi
+            sleep 2
+          done
+          echo "healthcheck never passed; container logs:"
+          docker logs web
+          exit 1

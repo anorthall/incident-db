@@ -9,9 +9,6 @@ ENV VIRTUAL_ENV=${UV_PROJECT_ENVIRONMENT}
 ENV PYTHONPATH="/app/:/app/cidb/"
 ENV PATH="/app/.venv/bin:${PATH}"
 ENV DJANGO_SETTINGS_MODULE=cidb.conf.settings
-# Build-time placeholder only, so collectstatic can run. Production overrides it
-# from prod.env, and deploy.sh refuses to start if the real value is not set.
-ENV SECRET_KEY="insecure-key-change-me" # pragma: allowlist secret
 
 RUN mkdir -p /app /app/staticfiles && \
     groupadd app && useradd -g app -d /app app && \
@@ -28,8 +25,11 @@ WORKDIR /app
 COPY --chown=app:app . .
 USER app
 
+# SECRET_KEY is scoped to collectstatic rather than baked in as an ENV, so an
+# image that reaches production without a real key fails loudly instead of
+# running with a publicly known one.
 RUN uv sync --frozen && \
-    uv run /app/cidb/manage.py collectstatic --noinput && \
+    SECRET_KEY=collectstatic-only uv run /app/cidb/manage.py collectstatic --noinput && \
     chmod +x /app/cidb/conf/run.sh
 
 ENTRYPOINT ["/usr/bin/tini", "--"]

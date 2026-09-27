@@ -31,20 +31,19 @@ then
     cd "$PROJECT_ROOT" || exit 1
 
     gunicorn \
-      --bind "0.0.0.0:$PORT" \
+      --bind "0.0.0.0:${PORT:-8000}" \
       --workers 2 \
       --reload \
-      --reload-engine inotify \
       --worker-class gthread \
       --name cidb-django \
-      conf.wsgi:application
+      cidb.conf.wsgi:application
 fi
 
 if [ "$1" = "start" ]
 then
     echo "Starting server..."
     gunicorn \
-      --bind "0.0.0.0:$PORT" \
+      --bind "0.0.0.0:${PORT:-8000}" \
       --workers "${WEB_CONCURRENCY:-4}" \
       --preload \
       --max-requests 10000 \
@@ -52,5 +51,5 @@ then
       --worker-class gthread \
       --keep-alive 10 \
       --name cidb-django \
-      conf.wsgi:application
+      cidb.conf.wsgi:application
 fi

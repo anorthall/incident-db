@@ -174,3 +174,6 @@ node_modules/
 errored.tfstate
 .postgres/
 .terraform/
+
+# Rendered production env, never committed
+deploy/prod.env

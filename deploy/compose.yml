@@ -13,6 +13,8 @@ services:
     env_file:
       - path: prod.env
         required: false
+    environment:
+      PORT: 8000
     logging: *logging
     healthcheck:
       test:
