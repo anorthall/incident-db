@@ -30,3 +30,13 @@ test-frontend +ARGS="":
 test:
     just test-backend
     just test-frontend
+
+prod-shell:
+    aws ssm start-session --target "$CIDB_PROD_INSTANCE_ID"
+
+prod-manage +ARGS:
+    aws ssm send-command \
+      --instance-ids "$CIDB_PROD_INSTANCE_ID" \
+      --document-name AWS-RunShellScript \
+      --parameters 'commands=["cd /opt/cidb && docker compose --env-file prod.env -f compose.yml exec -T web python cidb/manage.py {{ ARGS }}"]' \
+      --query Command.CommandId --output text

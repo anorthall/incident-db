@@ -478,8 +478,15 @@ distribution resource; `strip_cdn_prefix`; `api_cache`; `api_origin`.
    distribution updated in place. Apply.
 3. **Parameters.** `aws ssm put-parameter` for each key in §7; the Hetzner
    box's `prod.env` is the source for most values.
-4. **First boot.** cloud-init runs `deploy.sh main`: migrations create the
-   schema, the site comes up empty, Caddy obtains its certificate.
+4. **First boot fails at the placeholder guard — this is expected.** cloud-init
+   runs `deploy.sh main`, which refuses to start because every parameter still
+   holds Terraform's literal `placeholder` value. Serving traffic with a
+   publicly known `SECRET_KEY` would mean forgeable sessions, so the deploy
+   dies loudly instead. Set the real values (step 3), then re-run the deploy —
+   either the GitHub workflow or `/opt/cidb/deploy.sh main` over SSM.
+   Steps 3 and 4 are therefore in this order only on paper; in practice the
+   apply, the failed first boot, the parameter values and the re-run all
+   happen in one sitting.
 5. **GitHub.** Create the `production` environment; set the six variables from
    Terraform outputs; run both workflows once via `workflow_dispatch`.
 6. **Verify** (§13).
@@ -520,7 +527,7 @@ Each item proves the layer the next one depends on:
 | Backup now | `sudo systemctl start cidb-backup.service` |
 | Restore | `sudo /opt/cidb/restore.sh latest` |
 | Restore drill (quarterly) | restore into a scratch database, count rows, drop it |
-| Rebuild the server | `terraform apply -replace=module.nss_incidents_ec2.aws_instance.this[0]`; data volume reattaches; ~10 min |
+| Rebuild the server | **Stop the stack first** over SSM (`cd /opt/cidb && docker compose --env-file prod.env -f compose.yml down`), then `terraform apply -replace=module.nss_incidents_ec2.aws_instance.this[0]`; data volume reattaches; ~10 min. Stopping first avoids a dirty force-detach of a mounted filesystem with Postgres mid-write — `aws_volume_attachment` is destroyed before the instance terminates, and `stop_instance_before_detaching` cannot be set because `disable_api_stop = true`. |
 | Rotate a secret | `aws ssm put-parameter --overwrite`, then re-run the deploy workflow |
 | Resize | change `instance_type`, apply; the data volume survives |
 | Disk full | log rotation and image pruning prevent it; `docker system df` if not |
@@ -536,6 +543,7 @@ Each item proves the layer the next one depends on:
 | Frontend deploy fails mid-way | Old `index.html` still references old assets, which are not yet deleted |
 | Backup fails or is missed | Sentry Crons alerts by email |
 | Instance dies | SPA still served from S3/CloudFront; `terraform apply` builds a new instance on the same data volume |
+| Data volume not attached at boot | cloud-init waits ~120s for the device, then **fails the boot loudly** rather than letting Postgres write to the `delete_on_termination` root volume. `deploy.sh` re-asserts the mountpoint before starting Postgres, and a `docker.service` drop-in carries `RequiresMountsFor=/opt/cidb/data` so a reboot without the volume cannot start the stack either. Recover by mounting the volume and re-running `deploy.sh main`. Note this race recurs on **every** instance replacement, not just first boot, because `user_data_replace_on_change = true` means any cloud-init edit replaces the instance |
 | Data volume lost | Restore from the newest S3 dump (≤ 24 h old) or DLM snapshot (≤ 7 days) |
 | Certificate issuance fails | Caddy retries; `api.*` returns TLS errors, CloudFront 502s; uptime check alerts |
 

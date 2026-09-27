@@ -26,3 +26,26 @@ jobs:
 
       - name: Ruff format
         run: ruff format --check --diff
+
+  mypy:
+    runs-on: ubuntu-latest
+    name: Mypy
+    env:
+      DEBUG: "true"
+      SECRET_KEY: "ci-only-not-a-secret" # pragma: allowlist secret
+      PYTHONPATH: ${{ github.workspace }}:${{ github.workspace }}/cidb
+      DJANGO_SETTINGS_MODULE: cidb.conf.settings
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v6
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          activate-environment: true
+
+      - name: Install dependencies
+        run: uv sync --frozen
+
+      - name: Mypy
+        run: mypy ./
