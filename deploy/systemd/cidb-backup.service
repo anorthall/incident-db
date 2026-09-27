@@ -1,0 +1,8 @@
+[Unit]
+Description=CIDB Postgres backup to S3
+After=docker.service
+Requires=docker.service
+
+[Service]
+Type=oneshot
+ExecStart=/opt/cidb/backup.sh

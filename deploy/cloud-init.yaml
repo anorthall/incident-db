@@ -1,0 +1,120 @@
+#cloud-config
+package_update: true
+packages:
+  - docker
+  - dnf-automatic
+  - git
+  - e2fsprogs
+  - util-linux
+
+write_files:
+  - path: /etc/dnf/automatic.conf
+    content: |
+      [commands]
+      upgrade_type = security
+      apply_updates = yes
+    append: false
+
+  - path: /etc/systemd/system/docker.service.d/10-cidb-data.conf
+    content: |
+      [Unit]
+      RequiresMountsFor=/opt/cidb/data
+    append: false
+
+runcmd:
+  - mkdir -p /usr/local/lib/docker/cli-plugins /opt/cidb/data
+  - curl -fsSL -o /usr/local/lib/docker/cli-plugins/docker-compose
+    "https://github.com/docker/compose/releases/download/${compose_version}/docker-compose-linux-aarch64"
+  - chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
+  - systemctl enable --now dnf-automatic.timer
+
+  - |
+    set -eu
+    die() {
+      echo "CIDB BOOTSTRAP FAILED: $*" | tee /dev/console >&2
+      logger -t cidb-bootstrap -p user.crit "BOOTSTRAP FAILED: $*" || true
+      echo "$*" > /opt/cidb/BOOTSTRAP-FAILED || true
+      exit 1
+    }
+
+    dev=""
+    for _ in $(seq 1 60); do
+      udevadm settle --timeout=5 || true
+      for cand in /dev/sdf /dev/xvdf; do
+        if [ -b "$cand" ]; then
+          dev="$(readlink -f "$cand")"
+          break
+        fi
+      done
+      if [ -n "$dev" ]; then
+        break
+      fi
+      sleep 2
+    done
+
+    if [ -z "$dev" ]; then
+      root_disk="$(lsblk -nro PKNAME "$(findmnt -nro SOURCE /)" 2>/dev/null | head -1)"
+      if [ -z "$root_disk" ]; then
+        root_disk="$(basename "$(findmnt -nro SOURCE /)")"
+      fi
+      found=""
+      count=0
+      for disk in $(lsblk -dnro NAME,TYPE | awk '$2 == "disk" { print $1 }'); do
+        if [ "$disk" = "$root_disk" ]; then
+          continue
+        fi
+        found="/dev/$disk"
+        count=$((count + 1))
+      done
+      if [ "$count" -eq 1 ]; then
+        dev="$found"
+        echo "cidb-bootstrap: /dev/sdf never appeared, using sole non-root disk $dev"
+      else
+        die "data volume not found ($count candidate non-root disks; expected exactly 1)"
+      fi
+    fi
+
+    echo "cidb-bootstrap: data device resolved to $dev"
+
+    fstype="$(blkid -s TYPE -o value "$dev" 2>/dev/null || true)"
+    if [ -z "$fstype" ]; then
+      mkfs.ext4 -L cidb-data "$dev" || die "mkfs.ext4 on $dev failed"
+    elif [ "$fstype" != ext4 ]; then
+      die "$dev already holds a $fstype filesystem; refusing to touch it"
+    else
+      label="$(blkid -s LABEL -o value "$dev" 2>/dev/null || true)"
+      if [ "$label" != cidb-data ]; then
+        e2label "$dev" cidb-data || die "could not label existing filesystem on $dev"
+      fi
+    fi
+
+    udevadm settle --timeout=10 || true
+    grep -q 'LABEL=cidb-data' /etc/fstab || \
+      echo 'LABEL=cidb-data /opt/cidb/data ext4 defaults,nofail,x-systemd.device-timeout=30 0 2' >> /etc/fstab
+    systemctl daemon-reload
+    mountpoint -q /opt/cidb/data || mount /opt/cidb/data || mount -a || true
+    mountpoint -q /opt/cidb/data || die "/opt/cidb/data is not a mountpoint after mounting $dev"
+
+    echo "cidb-bootstrap: /opt/cidb/data mounted from $dev"
+    mkdir -p /opt/cidb/data/postgres /opt/cidb/data/caddy
+
+  - systemctl enable --now docker
+  - curl -fsSL -o /opt/cidb/deploy.sh
+    "https://raw.githubusercontent.com/anorthall/incident-db/main/deploy/deploy.sh"
+  - chmod +x /opt/cidb/deploy.sh
+  - curl -fsSL -o /etc/systemd/system/cidb-backup.service
+    "https://raw.githubusercontent.com/anorthall/incident-db/main/deploy/systemd/cidb-backup.service"
+  - curl -fsSL -o /etc/systemd/system/cidb-backup.timer
+    "https://raw.githubusercontent.com/anorthall/incident-db/main/deploy/systemd/cidb-backup.timer"
+  - systemctl daemon-reload
+  - systemctl enable --now cidb-backup.timer
+
+  - |
+    set -eu
+    if ! mountpoint -q /opt/cidb/data; then
+      echo "CIDB BOOTSTRAP FAILED: refusing to deploy, /opt/cidb/data is not mounted" \
+        | tee /dev/console >&2
+      logger -t cidb-bootstrap -p user.crit "refusing to deploy, data volume not mounted" || true
+      exit 1
+    fi
+    /opt/cidb/deploy.sh main
