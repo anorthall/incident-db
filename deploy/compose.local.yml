@@ -1,0 +1,27 @@
+# Local smoke-test overlay for compose.yml. Runs the real production stack on
+# this machine: same image build, same compose file, same Caddy config. Only the
+# things that cannot exist locally are swapped — a locally built image instead of
+# GHCR, named volumes instead of /opt/cidb, and unprivileged ports.
+services:
+  web:
+    image: cidb:local
+
+  postgres:
+    # Throwaway database, so it uses trust auth and no credential is written
+    # down anywhere. Production uses password auth via POSTGRES_PASSWORD.
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+    volumes:
+      - cidb-local-pg:/var/lib/postgresql
+
+  caddy:
+    ports: !override
+      - "8080:80"
+      - "8443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - cidb-local-caddy:/data
+
+volumes:
+  cidb-local-pg:
+  cidb-local-caddy:

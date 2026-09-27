@@ -40,3 +40,6 @@ prod-manage +ARGS:
       --document-name AWS-RunShellScript \
       --parameters 'commands=["cd /opt/cidb && docker compose --env-file prod.env -f compose.yml exec -T web python cidb/manage.py {{ ARGS }}"]' \
       --query Command.CommandId --output text
+
+smoke-test:
+    ./deploy/smoke-test.sh
