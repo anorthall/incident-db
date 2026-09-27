@@ -8,7 +8,7 @@ data "aws_ssm_parameter" "al2023_arm64" {
 
 module "nss_incidents_ec2" {
   source  = "terraform-aws-modules/ec2-instance/aws"
-  version = "6.2.0"
+  version = "6.4.1"
 
   ami  = data.aws_ssm_parameter.al2023_arm64.value
   name = "nss-incidents"

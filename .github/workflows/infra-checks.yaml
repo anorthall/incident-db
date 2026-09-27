@@ -23,7 +23,7 @@ jobs:
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v3
         with:
-          terraform_version: 1.14.3
+          terraform_version: 1.16.4
 
       - name: Format check
         run: terraform -chdir=tf fmt -check -recursive

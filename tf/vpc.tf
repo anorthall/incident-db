@@ -8,7 +8,7 @@ data "aws_availability_zones" "available" {}
 
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
-  version = "6.6.0"
+  version = "6.7.3"
 
   name = "nss-incidents-vpc"
   cidr = local.vpc_cidr

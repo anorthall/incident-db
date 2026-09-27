@@ -1,6 +1,6 @@
 module "wildcard_cert" {
   source  = "terraform-aws-modules/acm/aws"
-  version = "6.3.0"
+  version = "6.3.1"
 
   domain_name                 = var.frontend_domain_name
   zone_id                     = aws_route53_zone.nss_incidents.zone_id
