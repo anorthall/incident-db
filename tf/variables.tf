@@ -10,14 +10,14 @@ variable "frontend_domain_name" {
   default     = "incidents.caves.org"
 }
 
-variable "origin_domain_name" {
-  type        = string
-  description = "Domain name for the origin web server for the frontend"
-  default     = "origin.incidents.caves.org"
-}
-
 variable "api_domain_name" {
   type        = string
   description = "Domain name for the API"
   default     = "api.incidents.caves.org"
+}
+
+variable "instance_type" {
+  type        = string
+  description = "EC2 instance type for the application server"
+  default     = "t4g.small"
 }

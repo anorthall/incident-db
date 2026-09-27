@@ -10,7 +10,7 @@ data "aws_iam_policy_document" "s3_read" {
   for_each = local.s3_buckets
 
   statement {
-    sid = "CIDBS3BucketRead"
+    sid = "CIDBS3BucketRead${each.key}"
     actions = [
       "s3:ListBucket",
       "s3:GetBucketLocation",
@@ -19,7 +19,7 @@ data "aws_iam_policy_document" "s3_read" {
   }
 
   statement {
-    sid = "CIDBS3BucketReadObjects"
+    sid = "CIDBS3BucketReadObjects${each.key}"
     actions = [
       "s3:GetObject",
       "s3:GetObjectVersion",
@@ -32,7 +32,7 @@ data "aws_iam_policy_document" "s3_write" {
   for_each = local.s3_buckets
 
   statement {
-    sid = "CIDBS3ListBucket"
+    sid = "CIDBS3ListBucket${each.key}"
     actions = [
       "s3:ListBucket",
       "s3:GetBucketLocation",
@@ -41,7 +41,7 @@ data "aws_iam_policy_document" "s3_write" {
   }
 
   statement {
-    sid = "CIDBS3BucketWriteObjects"
+    sid = "CIDBS3BucketWriteObjects${each.key}"
     actions = [
       "s3:GetObject",
       "s3:GetObjectVersion",
@@ -74,11 +74,37 @@ data "aws_iam_policy_document" "cdn_bucket_cloudfront_access_policy" {
     sid       = "AllowCloudFrontCDNGetObject"
     effect    = "Allow"
     actions   = ["s3:GetObject"]
-    resources = [module.cdn_bucket.s3_bucket_arn, "${module.cdn_bucket.s3_bucket_arn}/*"]
+    resources = ["${module.cdn_bucket.s3_bucket_arn}/*"]
 
     principals {
-      type        = "AWS"
-      identifiers = [aws_cloudfront_origin_access_identity.cdn.iam_arn]
+      type        = "Service"
+      identifiers = ["cloudfront.amazonaws.com"]
+    }
+
+    condition {
+      test     = "StringEquals"
+      variable = "AWS:SourceArn"
+      values   = [aws_cloudfront_distribution.cdn.arn]
+    }
+  }
+}
+
+data "aws_iam_policy_document" "frontend_bucket_cloudfront_access" {
+  statement {
+    sid       = "AllowCloudFrontFrontendGetObject"
+    effect    = "Allow"
+    actions   = ["s3:GetObject"]
+    resources = ["${module.frontend_bucket.s3_bucket_arn}/*"]
+
+    principals {
+      type        = "Service"
+      identifiers = ["cloudfront.amazonaws.com"]
+    }
+
+    condition {
+      test     = "StringEquals"
+      variable = "AWS:SourceArn"
+      values   = [aws_cloudfront_distribution.cdn.arn]
     }
   }
 }

@@ -43,13 +43,3 @@ resource "aws_route53_record" "api_dns_records" {
   ttl     = local.default_ttl
   records = [each.value]
 }
-
-resource "aws_route53_record" "origin_dns_records" {
-  for_each = local.server_ip_addresses
-
-  zone_id = aws_route53_zone.nss_incidents.zone_id
-  name    = var.origin_domain_name
-  type    = each.key
-  ttl     = local.default_ttl
-  records = [each.value]
-}

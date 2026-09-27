@@ -31,6 +31,30 @@ module "cdn_bucket" {
   ]
 }
 
+module "frontend_bucket" {
+  source           = "terraform-aws-modules/s3-bucket/aws"
+  bucket           = "nss-incidents-frontend"
+  attach_policy    = true
+  policy           = data.aws_iam_policy_document.frontend_bucket_cloudfront_access.json
+  object_ownership = "BucketOwnerEnforced"
+  version          = "5.10.0"
+
+  versioning = {
+    enabled = true
+  }
+
+  lifecycle_rule = [
+    {
+      id      = "DeleteOldVersions"
+      enabled = true
+      filter  = { prefix = "" }
+      noncurrent_version_expiration = {
+        days = 30
+      }
+    },
+  ]
+}
+
 module "data_bucket" {
   source  = "terraform-aws-modules/s3-bucket/aws"
   bucket  = "nss-incidents-data"
@@ -67,7 +91,15 @@ module "backup_bucket" {
       enabled = true
       filter  = { prefix = "" }
       noncurrent_version_expiration = {
-        days = 365
+        days = 30
+      }
+    },
+    {
+      id      = "ExpireOldBackups"
+      enabled = true
+      filter  = { prefix = "postgres/" }
+      expiration = {
+        days = 90
       }
     },
   ]
