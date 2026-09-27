@@ -57,7 +57,7 @@ irreplaceable dataset safe.
 | Secrets Manager secrets created, never populated, never read | `tf/secrets.tf` | $0.40/secret/month for nothing |
 | `run.sh start` never runs `migrate` | `cidb/conf/run.sh` | Deploys cannot apply migrations |
 | Healthcheck probes `/healthcheck/` | `compose.prod.example.yml` | Route is `/core/healthcheck/`; the check always fails |
-| Unrouted paths return 500, not 404 | app (observed on `api.cidb.dev`) | CDN and monitoring cannot distinguish "missing" from "broken" |
+| Unrouted paths return 500, not 404 | **deployed build only** — not `main` (see §18) | CDN and monitoring cannot distinguish "missing" from "broken" |
 | `AWS_S3_ACCESS_KEY_ID` defaults to `""` | `cidb/conf/settings.py` | Prevents boto3 falling back to the instance role |
 | Eleven `https://cidb.dev/cdn/assets/…` URLs hard-coded | `frontend/cidb/src/constants.ts`, `index.html` | caves.org would load its branding from cidb.dev |
 | Valkey configured as the Django cache | `cidb/conf/settings.py`, compose | No code calls the cache; sessions are DB-backed. Pure overhead |
@@ -433,7 +433,7 @@ Existing `backend-tests`, `frontend-tests`, `lint` (now with mypy), plus:
 | `SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")`; `SESSION_COOKIE_SECURE` and `CSRF_COOKIE_SECURE` = `not DEBUG` | `cidb/conf/settings.py` |
 | Visitor cookie `secure` flag uses `request.is_secure()` instead of the `SERVER_NAME` check | `cidb/src/core/middleware.py` |
 | Gunicorn worker count from `WEB_CONCURRENCY` (default 4; production sets 3) | `cidb/conf/run.sh` |
-| Reproduce and fix unrouted paths returning 500; add a test asserting an unknown path returns 404 with `DEBUG=False` | app + `cidb/src/core/tests/` |
+| Add regression tests asserting unknown paths return 404 with `DEBUG=False` (no code fix needed — see §18) | `cidb/src/core/tests/test_http_errors.py` |
 | Fix the 12 mypy errors (`api/schemas/feedback.py`, `conf/settings.py`) | as listed |
 | Move the eleven brand assets into `frontend/cidb/public/` (`favicon.svg`, `favicon.ico`, `favicon-96x96.png`, `apple-touch-icon.png`, `site.webmanifest`, `img/*.png`); reference them root-relative | `frontend/cidb/index.html`, `src/constants.ts` |
 | Delete `compose.prod.example.yml` (superseded by `deploy/compose.yml`); remove `valkey` from `docker-compose.yml` | repo root |
@@ -574,6 +574,17 @@ Approximate us-west-2 on-demand, per month.
 - The monthly bill is within a few dollars of §16.
 
 ## 18. Corrections to earlier findings
+
+- **The 404-renders-as-500 bug is not in `main`.** Verified against a real
+  database on 2026-09-27: `/nonexistent-xyz`, `/core/nope` and `/api/v1/nope`
+  all return 404, and `/api/v1/incidents/<non-integer>` returns 422, which is
+  correct django-ninja path-parameter validation. The 500s observed on
+  `api.cidb.dev` come from the December 2025 build deployed there; the defect
+  was fixed somewhere in the v2 work. §10 therefore asks only for regression
+  tests, not a fix.
+- **The GHCR package is publicly pullable.** Confirmed by an anonymous token
+  pull listing tags `latest` and `sha-c534099`, so the server needs no
+  registry credentials, as §8 assumes.
 
 - `frontend/cidb/pnpm-workspace.yaml` does **not** contain a broken
   placeholder in the repo. The `allowBuilds:` lines observed locally were
