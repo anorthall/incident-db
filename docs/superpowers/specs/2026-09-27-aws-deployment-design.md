@@ -235,6 +235,18 @@ or the repo:
 `DATABASE_URL` is not stored; `deploy.sh` composes
 `postgres://cidb:${POSTGRES_PASSWORD}@postgres:5432/cidb`.
 
+Two constraints on this list:
+
+- **Never add `DJANGO_SETTINGS_MODULE`.** Compose's `env_file` overrides the
+  image's `ENV`, so a parameter of that name would silently take precedence
+  over the Dockerfile and could reintroduce the dual-import split that §10
+  removed. `cidb/manage.py` sets no default of its own, so the container
+  environment is the only thing deciding it.
+- **Values are not quoted.** `prod.env` is read three ways — `source`,
+  `--env-file` and compose's `env_file` — which disagree about quoting and
+  escaping. The current values are all simple, but a value containing spaces,
+  quotes or `#` needs checking against all three before it is set.
+
 ## 8. The server
 
 ### Division of labour
@@ -291,9 +303,11 @@ On the box:
 
 1. Resolve `<sha>` (or `main`) to a full commit via the GitHub API; derive
    `IMAGE_TAG=sha-<7 chars>`.
-2. Fetch `deploy/{compose.yml,Caddyfile,backup.sh,restore.sh,systemd/*}` at
-   that commit into `/opt/cidb/`, so the compose file always matches the
-   image.
+2. Fetch `deploy/{compose.yml,Caddyfile,backup.sh,restore.sh}` at that commit
+   into `/opt/cidb/`, so the compose file always matches the image. Also fetch
+   `deploy/systemd/*` into `/etc/systemd/system/`, and only when a unit has
+   actually changed, `daemon-reload` and reload the timer — so the backup
+   schedule can be changed by a deploy rather than an instance replacement.
 3. Render `prod.env` from `aws ssm get-parameters-by-path --path /cidb/prod
    --with-decryption`, add `IMAGE_TAG`, `GIT_SHA`, `DATABASE_URL`. Record the
    previously deployed tag as `PREVIOUS_IMAGE_TAG`.
@@ -525,7 +539,7 @@ Each item proves the layer the next one depends on:
 | Run a data operation | `just prod-manage run_data_operations …` |
 | Logs | `docker compose logs -f web` from the shell; Logfire for history |
 | Backup now | `sudo systemctl start cidb-backup.service` |
-| Restore | `sudo /opt/cidb/restore.sh latest` |
+| Restore | `sudo /opt/cidb/restore.sh latest`. If `pg_restore` fails, `web` is deliberately left stopped rather than serving a half-restored database — fix the cause and re-run, or `docker compose up -d web` to accept the current state |
 | Restore drill (quarterly) | restore into a scratch database, count rows, drop it |
 | Rebuild the server | **Stop the stack first** over SSM (`cd /opt/cidb && docker compose --env-file prod.env -f compose.yml down`), then `terraform apply -replace=module.nss_incidents_ec2.aws_instance.this[0]`; data volume reattaches; ~10 min. Stopping first avoids a dirty force-detach of a mounted filesystem with Postgres mid-write — `aws_volume_attachment` is destroyed before the instance terminates, and `stop_instance_before_detaching` cannot be set because `disable_api_stop = true`. |
 | Rotate a secret | `aws ssm put-parameter --overwrite`, then re-run the deploy workflow |

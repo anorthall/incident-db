@@ -29,6 +29,25 @@ for f in compose.yml Caddyfile backup.sh restore.sh; do
     "https://raw.githubusercontent.com/${REPO}/${SHA}/deploy/${f}"
 done
 chmod +x "${APP_DIR}/backup.sh" "${APP_DIR}/restore.sh"
+
+units_changed=false
+for unit in cidb-backup.service cidb-backup.timer; do
+  curl -fsSL -o "/tmp/${unit}" \
+    "https://raw.githubusercontent.com/${REPO}/${SHA}/deploy/systemd/${unit}"
+  if ! cmp -s "/tmp/${unit}" "/etc/systemd/system/${unit}"; then
+    install -m 0644 "/tmp/${unit}" "/etc/systemd/system/${unit}"
+    units_changed=true
+  fi
+  rm -f "/tmp/${unit}"
+done
+
+if [ "$units_changed" = true ]; then
+  systemctl daemon-reload
+  systemctl reenable cidb-backup.timer
+  systemctl restart cidb-backup.timer
+  log "systemd units updated and timer reloaded"
+fi
+
 log "fetched deploy files at ${SHORT}"
 
 umask 077
