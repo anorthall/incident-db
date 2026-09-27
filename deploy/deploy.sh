@@ -65,16 +65,21 @@ for required in SECRET_KEY POSTGRES_PASSWORD ACME_EMAIL API_DOMAIN BACKUP_BUCKET
     log "FAILED: ${required} missing or empty in prod.env (check /cidb/prod in Parameter Store)"
     exit 1
   }
-  if grep -q "^${required}=placeholder$" "${APP_DIR}/prod.env"; then
-    log "FAILED: ${required} is still the Terraform placeholder value."
-    log "  Expected on a first boot: Terraform creates every /cidb/prod parameter as"
-    log "  'placeholder' with ignore_changes, so real values are set out of band afterwards."
-    log "  Refusing to serve traffic with a publicly known SECRET_KEY. Set the real values:"
-    log "    aws ssm put-parameter --name /cidb/prod/${required} --value '<value>' --overwrite"
-    log "  then re-run: /opt/cidb/deploy.sh main"
-    exit 1
-  fi
 done
+
+# Checked across every key, not a list: an unset SENTRY_DSN is merely absent,
+# but one reading "placeholder" is truthy and raises BadDsn at settings import,
+# crash-looping the container. Any key left at the placeholder is a failure.
+unset_keys="$(grep -E '^[A-Za-z0-9_]+=placeholder$' "${APP_DIR}/prod.env" | cut -d= -f1 || true)"
+if [ -n "$unset_keys" ]; then
+  log "FAILED: these parameters still hold the Terraform placeholder value:"
+  for k in $unset_keys; do log "    /cidb/prod/${k}"; done
+  log "  Expected on a first boot: Terraform creates each parameter as 'placeholder'"
+  log "  with ignore_changes, so real values are set out of band afterwards. Set them:"
+  log "    aws ssm put-parameter --name /cidb/prod/<KEY> --value '<value>' --overwrite --type SecureString"
+  log "  then re-run: /opt/cidb/deploy.sh main"
+  exit 1
+fi
 
 POSTGRES_PASSWORD="$(grep '^POSTGRES_PASSWORD=' "${APP_DIR}/prod.env" | cut -d= -f2-)"
 echo "DATABASE_URL=postgres://cidb:${POSTGRES_PASSWORD}@postgres:5432/cidb" \
