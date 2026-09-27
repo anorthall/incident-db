@@ -26,7 +26,6 @@ dependencies = [
     "sqlalchemy>=2.0.45",
     "django-ipware>=7.0.1",
     "email-validator>=2.0.0",
-    "django-valkey>=0.4.0",
     "logfire[django,psycopg,redis,system-metrics,wsgi]",
     "django-unfold>=0.75.0",
     "django-environ>=0.13.0",
@@ -53,7 +52,7 @@ exclude = ["data/"]
 strict = true
 
 [tool.django-stubs]
-django_settings_module = "conf.settings"
+django_settings_module = "cidb.conf.settings"
 
 [[tool.mypy.overrides]]
 module = "debug_toolbar"
@@ -63,12 +62,8 @@ ignore_missing_imports = true
 module = "ipware"
 ignore_missing_imports = true
 
-[[tool.mypy.overrides]]
-module = "environ"
-ignore_missing_imports = true
-
 [tool.pytest.ini_options]
-DJANGO_SETTINGS_MODULE = "conf.settings"
+DJANGO_SETTINGS_MODULE = "cidb.conf.settings"
 pythonpath = ["."]
 
 [tool.ruff]

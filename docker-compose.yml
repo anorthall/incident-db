@@ -13,7 +13,6 @@ services:
       - cidb/conf/dev.env
     depends_on:
       - postgres
-      - valkey
     networks:
       - cidb
 
@@ -31,18 +30,9 @@ services:
     networks:
       - cidb
 
-  valkey:
-    image: valkey/valkey:latest
-    restart: unless-stopped
-    volumes:
-      - valkey:/var/lib/valkey
-    networks:
-      - cidb
-
 networks:
   cidb:
     driver: bridge
 
 volumes:
   postgres:
-  valkey:

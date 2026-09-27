@@ -125,7 +125,7 @@ class VisitorTrackingMiddleware:
             max_age=COOKIE_MAX_AGE,
             httponly=True,
             samesite="Lax",
-            secure=not request.META.get("SERVER_NAME", "").startswith("localhost"),
+            secure=request.is_secure(),
         )
 
         return response

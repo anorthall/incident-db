@@ -1,8 +1,8 @@
 from pathlib import Path
 
 import django_stubs_ext
-import environ
 from django.urls import reverse_lazy
+from environ import Env
 
 from cidb.conf.apm.sentry_config import configure_sentry
 
@@ -15,10 +15,10 @@ configure_logging()
 BASE_DIR = Path(__file__).resolve().parent.parent
 DJANGO_ROOT = BASE_DIR / "cidb"
 
-env = environ.Env()
+env = Env()
 
 DEBUG = env.bool("DEBUG", default=False)
-SECRET_KEY = env.str("SECRET_KEY", default="insecure-secret-key" if DEBUG else environ.Env.NOTSET)
+SECRET_KEY = env.str("SECRET_KEY", default="insecure-secret-key" if DEBUG else Env.NOTSET)
 ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=["127.0.0.1"])
 CSRF_TRUSTED_ORIGINS = env.list("CSRF_TRUSTED_ORIGINS", default=["http://127.0.0.1"])
 
@@ -82,16 +82,10 @@ DATABASES = {
 DATABASES["default"]["CONN_MAX_AGE"] = 600
 DATABASES["default"]["CONN_HEALTH_CHECKS"] = True
 
-VALKEY_URL = env.str("VALKEY_URL", default="valkey://valkey:6379/0")
-
 CACHES = {
     "default": {
-        "BACKEND": "django_valkey.cache.ValkeyCache",
-        "LOCATION": VALKEY_URL,
-        "OPTIONS": {
-            "CLIENT_CLASS": "django_valkey.client.DefaultClient",
-        },
-        "KEY_PREFIX": "cidb",
+        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+        "LOCATION": "cidb",
         "TIMEOUT": 3600,
     }
 }
@@ -112,13 +106,15 @@ STATIC_URL = "/static/"
 STATIC_ROOT = env.str("STATIC_ROOT", default="/app/staticfiles")
 
 AWS_STORAGE_BUCKET_NAME = env.str("AWS_STORAGE_BUCKET_NAME", default="")
-AWS_S3_REGION_NAME = env.str("AWS_S3_REGION_NAME", default="")
-AWS_S3_ACCESS_KEY_ID = env.str("AWS_S3_ACCESS_KEY_ID", default="")
-AWS_S3_SECRET_ACCESS_KEY = env.str("AWS_S3_SECRET_ACCESS_KEY", default="")
+AWS_S3_REGION_NAME = env.str("AWS_S3_REGION_NAME", default="us-west-2")
+AWS_S3_ACCESS_KEY_ID = env.str("AWS_S3_ACCESS_KEY_ID", default=None) or None
+AWS_S3_SECRET_ACCESS_KEY = env.str("AWS_S3_SECRET_ACCESS_KEY", default=None) or None
 AWS_S3_CUSTOM_DOMAIN = env.str(
     "AWS_S3_CUSTOM_DOMAIN",
     default=f"{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com",
 )
+AWS_QUERYSTRING_AUTH = False
+AWS_DEFAULT_ACL = None
 
 MEDIA_LOCATION = "media"
 MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIA_LOCATION}/"  # noqa: E231
@@ -166,6 +162,10 @@ SESSION_COOKIE_SAMESITE = "Lax"
 SESSION_COOKIE_HTTPONLY = True
 CSRF_COOKIE_SAMESITE = "Lax"
 CSRF_COOKIE_HTTPONLY = True
+
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+SESSION_COOKIE_SECURE = not DEBUG
+CSRF_COOKIE_SECURE = not DEBUG
 
 UNFOLD = {
     "SITE_TITLE": "CIDB Admin",

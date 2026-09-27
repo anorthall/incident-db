@@ -8,8 +8,10 @@ ENV UV_PROJECT_ENVIRONMENT=/app/.venv
 ENV VIRTUAL_ENV=${UV_PROJECT_ENVIRONMENT}
 ENV PYTHONPATH="/app/:/app/cidb/"
 ENV PATH="/app/.venv/bin:${PATH}"
-ENV DJANGO_SETTINGS_MODULE=conf.settings
-ENV SECRET_KEY="insecure-key-change-me"
+ENV DJANGO_SETTINGS_MODULE=cidb.conf.settings
+# Build-time placeholder only, so collectstatic can run. Production overrides it
+# from prod.env, and deploy.sh refuses to start if the real value is not set.
+ENV SECRET_KEY="insecure-key-change-me" # pragma: allowlist secret
 
 RUN mkdir -p /app /app/staticfiles && \
     groupadd app && useradd -g app -d /app app && \

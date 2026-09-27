@@ -23,6 +23,25 @@ class IncidentMinimalSchema(Schema):
     title: str
 
 
+def _incident_of(report: ContentReport) -> IncidentMinimalSchema | None:
+    if not report.incident:
+        return None
+    return IncidentMinimalSchema(
+        id=report.incident.id,
+        title=report.incident.title,
+    )
+
+
+def _reporter_of(report: ContentReport) -> ReporterSchema | None:
+    if not report.reporter:
+        return None
+    email = report.reporter.emails[0] if report.reporter.emails else None
+    return ReporterSchema(
+        id=str(report.reporter.id),
+        email=email,
+    )
+
+
 class FeedbackListItemSchema(Schema):
     id: int
     incident: IncidentMinimalSchema | None
@@ -37,39 +56,20 @@ class FeedbackListItemSchema(Schema):
     updated_at: datetime
 
     @classmethod
-    def _base_kwargs(cls, report: ContentReport) -> dict[str, object]:
-        incident = None
-        if report.incident:
-            incident = IncidentMinimalSchema(
-                id=report.incident.id,
-                title=report.incident.title,
-            )
-
-        reporter = None
-        if report.reporter:
-            email = report.reporter.emails[0] if report.reporter.emails else None
-            reporter = ReporterSchema(
-                id=str(report.reporter.id),
-                email=email,
-            )
-
-        return {
-            "id": report.id,
-            "incident": incident,
-            "url": report.url,
-            "reason": report.reason,
-            "reason_display": ReportReason(report.reason).label,
-            "description": report.description,
-            "status": report.status,
-            "status_display": ReportStatus(report.status).label,
-            "reporter": reporter,
-            "created_at": report.created_at,
-            "updated_at": report.updated_at,
-        }
-
-    @classmethod
     def from_report(cls, report: ContentReport) -> FeedbackListItemSchema:
-        return cls(**cls._base_kwargs(report))
+        return cls(
+            id=report.id,
+            incident=_incident_of(report),
+            url=report.url,
+            reason=report.reason,
+            reason_display=ReportReason(report.reason).label,
+            description=report.description,
+            status=report.status,
+            status_display=ReportStatus(report.status).label,
+            reporter=_reporter_of(report),
+            created_at=report.created_at,
+            updated_at=report.updated_at,
+        )
 
 
 class FeedbackDetailSchema(FeedbackListItemSchema):
@@ -77,7 +77,20 @@ class FeedbackDetailSchema(FeedbackListItemSchema):
 
     @classmethod
     def from_report(cls, report: ContentReport) -> FeedbackDetailSchema:
-        return cls(**cls._base_kwargs(report), reviewer_notes=report.reviewer_notes)
+        return cls(
+            id=report.id,
+            incident=_incident_of(report),
+            url=report.url,
+            reason=report.reason,
+            reason_display=ReportReason(report.reason).label,
+            description=report.description,
+            status=report.status,
+            status_display=ReportStatus(report.status).label,
+            reporter=_reporter_of(report),
+            created_at=report.created_at,
+            updated_at=report.updated_at,
+            reviewer_notes=report.reviewer_notes,
+        )
 
 
 class ResolveRequest(Schema):

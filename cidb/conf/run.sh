@@ -45,7 +45,7 @@ then
     echo "Starting server..."
     gunicorn \
       --bind "0.0.0.0:$PORT" \
-      --workers 4 \
+      --workers "${WEB_CONCURRENCY:-4}" \
       --preload \
       --max-requests 10000 \
       --max-requests-jitter 2000 \

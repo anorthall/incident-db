@@ -65,3 +65,11 @@ class TestVisitorTrackingMiddleware:
         resp = api_client.get("/api/v1/auth/csrf")
         assert resp.status_code == 200
         assert Visitor.objects.count() == 1
+
+    def test_visitor_cookie_secure_behind_tls_proxy(self, api_client: Client) -> None:
+        resp = api_client.get("/api/v1/incidents/search", headers={"X-Forwarded-Proto": "https"})
+        assert resp.cookies["cidb_visitor"]["secure"] is True
+
+    def test_visitor_cookie_not_secure_over_plain_http(self, api_client: Client) -> None:
+        resp = api_client.get("/api/v1/incidents/search")
+        assert not resp.cookies["cidb_visitor"]["secure"]
