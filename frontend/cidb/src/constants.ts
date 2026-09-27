@@ -21,13 +21,13 @@ export const TYPING_SPEED_MS = 120;
 export const DELETING_SPEED_MS = 60;
 export const TYPING_PAUSE_MS = 4000;
 
-export const CIDBLogoForLightMode = "https://cidb.dev/cdn/assets/img/cidb-light-transparent-md.png";
-export const CIDBLogoForDarkMode = "https://cidb.dev/cdn/assets/img/cidb-dark-transparent-md.png";
-export const CIDBIconForDarkMode = "https://cidb.dev/cdn/assets/img/cidb-dark-icon.png";
-export const CIDBIconForLightMode = "https://cidb.dev/cdn/assets/img/cidb-light-icon.png";
+export const CIDBLogoForLightMode = "/img/cidb-light-transparent-md.png";
+export const CIDBLogoForDarkMode = "/img/cidb-dark-transparent-md.png";
+export const CIDBIconForDarkMode = "/img/cidb-dark-icon.png";
+export const CIDBIconForLightMode = "/img/cidb-light-icon.png";
 
-export const DiscordIconForLightMode = "https://cidb.dev/cdn/assets/img/discord-icon-light.png";
-export const DiscordIconForDarkMode = "https://cidb.dev/cdn/assets/img/discord-icon-dark.png";
+export const DiscordIconForLightMode = "/img/discord-icon-light.png";
+export const DiscordIconForDarkMode = "/img/discord-icon-dark.png";
 
 const DISCORD_URL = "https://discord.gg/uMN7ndXQ";
 
