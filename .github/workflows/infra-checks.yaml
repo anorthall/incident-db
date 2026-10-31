@@ -13,25 +13,25 @@ on:
       - "cidb/**"
 
 jobs:
-  terraform:
-    name: Terraform
+  opentofu:
+    name: OpenTofu
     runs-on: ubuntu-latest
     steps:
       - name: Check out source
         uses: actions/checkout@v6
 
-      - name: Install Terraform
-        uses: hashicorp/setup-terraform@v3
+      - name: Install OpenTofu
+        uses: opentofu/setup-opentofu@v2
         with:
-          terraform_version: 1.16.4
+          tofu_version: 1.13.2
 
       - name: Format check
-        run: terraform -chdir=tf fmt -check -recursive
+        run: tofu -chdir=tf fmt -check -recursive
 
       - name: Validate
         run: |
-          terraform -chdir=tf init -backend=false
-          terraform -chdir=tf validate
+          tofu -chdir=tf init -backend=false
+          tofu -chdir=tf validate
 
   shellcheck:
     name: Shellcheck

@@ -4,7 +4,7 @@ module "cdn_bucket" {
   attach_policy    = true
   policy           = data.aws_iam_policy_document.cdn_bucket_cloudfront_access_policy.json
   object_ownership = "BucketOwnerEnforced"
-  version          = "5.16.1"
+  version          = "5.17.0"
 
   versioning = {
     enabled = true
@@ -37,7 +37,7 @@ module "frontend_bucket" {
   attach_policy    = true
   policy           = data.aws_iam_policy_document.frontend_bucket_cloudfront_access.json
   object_ownership = "BucketOwnerEnforced"
-  version          = "5.16.1"
+  version          = "5.17.0"
 
   versioning = {
     enabled = true
@@ -58,7 +58,7 @@ module "frontend_bucket" {
 module "data_bucket" {
   source  = "terraform-aws-modules/s3-bucket/aws"
   bucket  = "nss-incidents-data"
-  version = "5.16.1"
+  version = "5.17.0"
 
   versioning = {
     enabled = true
@@ -79,7 +79,7 @@ module "data_bucket" {
 module "backup_bucket" {
   source  = "terraform-aws-modules/s3-bucket/aws"
   bucket  = "nss-incidents-backups"
-  version = "5.16.1"
+  version = "5.17.0"
 
   versioning = {
     enabled = true
@@ -108,7 +108,7 @@ module "backup_bucket" {
 module "tfstate_bucket" {
   source  = "terraform-aws-modules/s3-bucket/aws"
   bucket  = "nss-incidents-tfstate"
-  version = "5.16.1"
+  version = "5.17.0"
 
   versioning = {
     enabled = true

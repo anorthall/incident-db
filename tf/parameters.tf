@@ -1,10 +1,10 @@
 // Secret values are created as a literal "placeholder" and set once out of band
-// with put-parameter, so they never enter Terraform state or this repository.
+// with put-parameter, so they never enter OpenTofu state or this repository.
 // deploy.sh refuses to start while any required value is still "placeholder", so
 // a first boot fails loudly rather than serving traffic with a publicly known
 // SECRET_KEY. ACME_EMAIL is not secret but only the operator knows it.
 //
-// Non-secret values Terraform already knows are seeded with their real values, so
+// Non-secret values OpenTofu already knows are seeded with their real values, so
 // they need no manual step and cannot be left as a placeholder that reaches the
 // application. ignore_changes means a value edited by hand is never reverted.
 data "aws_region" "current" {}

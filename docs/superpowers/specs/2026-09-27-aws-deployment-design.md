@@ -255,7 +255,7 @@ Terraform **provisions** (instance, volume, EIP, security group, role,
 parameters). cloud-init **bootstraps** once. `deploy.sh` **converges** the
 application to a git SHA. `backup.sh` and `restore.sh` **move data**. Nothing
 on the box exists outside the repo or Parameter Store; a rebuild is
-`terraform apply` plus one deploy.
+`tofu apply` plus one deploy.
 
 ### Files
 
@@ -431,12 +431,12 @@ Triggers: push to `main` touching `frontend/**`; `workflow_dispatch`.
 
 Existing `backend-tests`, `frontend-tests`, `lint` (now with mypy), plus:
 
-- `terraform fmt -check` and `terraform validate` when `tf/**` changes.
+- `tofu fmt -check` and `tofu validate` when `tf/**` changes.
 - `shellcheck deploy/*.sh` when `deploy/**` changes.
 
 ### Not in CI
 
-`terraform apply` — run manually with the `cidb-nss` profile.
+`tofu apply` — run manually with the `cidb-nss` profile.
 
 ## 10. Application changes
 
@@ -541,7 +541,7 @@ Each item proves the layer the next one depends on:
 | Backup now | `sudo systemctl start cidb-backup.service` |
 | Restore | `sudo /opt/cidb/restore.sh latest`. If `pg_restore` fails, `web` is deliberately left stopped rather than serving a half-restored database — fix the cause and re-run, or `docker compose up -d web` to accept the current state |
 | Restore drill (quarterly) | restore into a scratch database, count rows, drop it |
-| Rebuild the server | **Stop the stack first** over SSM (`cd /opt/cidb && docker compose --env-file prod.env -f compose.yml down`), then `terraform apply -replace=module.nss_incidents_ec2.aws_instance.this[0]`; data volume reattaches; ~10 min. Stopping first avoids a dirty force-detach of a mounted filesystem with Postgres mid-write — `aws_volume_attachment` is destroyed before the instance terminates, and `stop_instance_before_detaching` cannot be set because `disable_api_stop = true`. |
+| Rebuild the server | **Stop the stack first** over SSM (`cd /opt/cidb && docker compose --env-file prod.env -f compose.yml down`), then `tofu apply -replace=module.nss_incidents_ec2.aws_instance.this[0]`; data volume reattaches; ~10 min. Stopping first avoids a dirty force-detach of a mounted filesystem with Postgres mid-write — `aws_volume_attachment` is destroyed before the instance terminates, and `stop_instance_before_detaching` cannot be set because `disable_api_stop = true`. |
 | Rotate a secret | `aws ssm put-parameter --overwrite`, then re-run the deploy workflow |
 | Resize | change `instance_type`, apply; the data volume survives |
 | Disk full | log rotation and image pruning prevent it; `docker system df` if not |
@@ -556,7 +556,7 @@ Each item proves the layer the next one depends on:
 | SSM command times out | CI red; box state is whatever `deploy.sh` left, which is always a running image |
 | Frontend deploy fails mid-way | Old `index.html` still references old assets, which are not yet deleted |
 | Backup fails or is missed | Sentry Crons alerts by email |
-| Instance dies | SPA still served from S3/CloudFront; `terraform apply` builds a new instance on the same data volume |
+| Instance dies | SPA still served from S3/CloudFront; `tofu apply` builds a new instance on the same data volume |
 | Data volume not attached at boot | cloud-init waits ~120s for the device, then **fails the boot loudly** rather than letting Postgres write to the `delete_on_termination` root volume. `deploy.sh` re-asserts the mountpoint before starting Postgres, and a `docker.service` drop-in carries `RequiresMountsFor=/opt/cidb/data` so a reboot without the volume cannot start the stack either. Recover by mounting the volume and re-running `deploy.sh main`. Note this race recurs on **every** instance replacement, not just first boot, because `user_data_replace_on_change = true` means any cloud-init edit replaces the instance |
 | Data volume lost | Restore from the newest S3 dump (≤ 24 h old) or DLM snapshot (≤ 7 days) |
 | Certificate issuance fails | Caddy retries; `api.*` returns TLS errors, CloudFront 502s; uptime check alerts |

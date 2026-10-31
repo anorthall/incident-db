@@ -27,10 +27,10 @@ behind Caddy. Merging to `main` deploys automatically — the backend and fronte
 workflows, so a UI change does not redeploy the API.
 
 - **Design and rationale:** `docs/superpowers/specs/2026-09-27-aws-deployment-design.md`
-- **Infrastructure:** `tf/` (Terraform; applied manually, not from CI)
+- **Infrastructure:** `tf/` (OpenTofu; applied manually, not from CI)
 - **Server configuration:** `deploy/` — the compose stack, Caddyfile, and the deploy, backup and
   restore scripts. Everything the server runs is in this directory, so rebuilding it is
-  `terraform apply` followed by one deploy.
+  `tofu apply` followed by one deploy.
 
 Routine operations:
 
@@ -42,7 +42,7 @@ Routine operations:
 | Run a management command | `just prod-manage <args>` |
 | Back up now | `sudo systemctl start cidb-backup.service` |
 | Restore | `sudo /opt/cidb/restore.sh latest` |
-| Rebuild the server | Stop the stack over SSM first, then `terraform apply -replace=...` — see the spec's runbook |
+| Rebuild the server | Stop the stack over SSM first, then `tofu apply -replace=...` — see the spec's runbook |
 
 Server access is via AWS Session Manager, so there is no SSH key and no open port 22. Both
 `just prod-shell` and `just prod-manage` read `CIDB_PROD_INSTANCE_ID` from `secrets.env`.

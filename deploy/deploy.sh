@@ -72,9 +72,9 @@ done
 # crash-looping the container. Any key left at the placeholder is a failure.
 unset_keys="$(grep -E '^[A-Za-z0-9_]+=placeholder$' "${APP_DIR}/prod.env" | cut -d= -f1 || true)"
 if [ -n "$unset_keys" ]; then
-  log "FAILED: these parameters still hold the Terraform placeholder value:"
+  log "FAILED: these parameters still hold the OpenTofu placeholder value:"
   for k in $unset_keys; do log "    /cidb/prod/${k}"; done
-  log "  Expected on a first boot: Terraform creates each parameter as 'placeholder'"
+  log "  Expected on a first boot: OpenTofu creates each parameter as 'placeholder'"
   log "  with ignore_changes, so real values are set out of band afterwards. Set them:"
   log "    aws ssm put-parameter --name /cidb/prod/<KEY> --value '<value>' --overwrite --type SecureString"
   log "  then re-run: /opt/cidb/deploy.sh main"
