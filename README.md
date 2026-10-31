@@ -27,7 +27,8 @@ behind Caddy. Merging to `main` deploys automatically — the backend and fronte
 workflows, so a UI change does not redeploy the API.
 
 - **Design and rationale:** `docs/superpowers/specs/2026-09-27-aws-deployment-design.md`
-- **Infrastructure:** `tf/` (OpenTofu; applied manually, not from CI)
+- **Infrastructure:** `tf/` (OpenTofu; applied manually, not from CI). DNS records live in the
+  Cloudflare `caves.org` zone, so applying needs `CLOUDFLARE_API_TOKEN` (DNS edit on that zone)
 - **Server configuration:** `deploy/` — the compose stack, Caddyfile, and the deploy, backup and
   restore scripts. Everything the server runs is in this directory, so rebuilding it is
   `tofu apply` followed by one deploy.

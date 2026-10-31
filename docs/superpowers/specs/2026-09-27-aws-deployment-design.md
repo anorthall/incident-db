@@ -101,7 +101,7 @@ backups to a bucket that already exists.
 ## 4. Architecture
 
 ```
-incidents.caves.org  (Route53 alias → CloudFront, ACM wildcard cert)
+incidents.caves.org  (Cloudflare DNS-only CNAME → CloudFront, ACM wildcard cert)
 │
 ├─ /              → S3  nss-incidents-frontend   (OAC; viewer-request function
 │                                                 rewrites extension-less paths
@@ -132,8 +132,11 @@ GitHub Actions ──OIDC──► deploy role ──► ssm:SendCommand  deploy
 
 ## 5. Edge: CloudFront, S3, ACM, Route53
 
-**Unchanged:** the Route53 zone and delegation set, the `incidents` and `api`
-records, the ACM wildcard certificate (`acm.tf`), the `strip_cdn_prefix`
+**Changed since:** DNS moved from Route53 to the existing Cloudflare caves.org
+zone (`dns.tf`). The records are DNS-only, and the ACM validation records are
+created in Cloudflare.
+
+**Unchanged:** the ACM wildcard certificate (`acm.tf`), the `strip_cdn_prefix`
 function, the `cdn`, `data`, `backups` and `tfstate` buckets.
 
 **New bucket** `nss-incidents-frontend`: private, `BucketOwnerEnforced`,
@@ -456,8 +459,7 @@ Existing `backend-tests`, `frontend-tests`, `lint` (now with mypy), plus:
 
 ## 11. Terraform changes
 
-**Keep:** `providers.tf`, `acm.tf`, `vpc.tf`; the Route53 zone, delegation
-set, `frontend_dns_records`, `api_dns_records`; the four existing buckets;
+**Keep:** `providers.tf`, `acm.tf`, `vpc.tf`; the DNS records (now Cloudflare, see `dns.tf`); the four existing buckets;
 `policies.tf`'s `s3_read`/`s3_write` documents and policies; the
 distribution resource; `strip_cdn_prefix`; `api_cache`; `api_origin`.
 
