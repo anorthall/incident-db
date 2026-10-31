@@ -1,7 +1,7 @@
-variable "cloudflare_zone_id" {
+variable "root_domain_name" {
   type        = string
-  description = "ID of the existing Cloudflare zone for caves.org"
-  default     = "6fb59bbb337572f22c08d626ad901165" # pragma: allowlist secret
+  description = "Root domain name for the application"
+  default     = "incidents.caves.org"
 }
 
 variable "frontend_domain_name" {

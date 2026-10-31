@@ -6,10 +6,6 @@ terraform {
       source  = "hashicorp/aws"
       version = "6.71.0"
     }
-    cloudflare = {
-      source  = "cloudflare/cloudflare"
-      version = "5.28.1"
-    }
   }
 
   backend "s3" {
@@ -19,8 +15,6 @@ terraform {
     use_lockfile = true
   }
 }
-
-provider "cloudflare" {}
 
 provider "aws" {
   region = "us-west-2"

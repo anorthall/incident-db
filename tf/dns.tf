@@ -6,36 +6,40 @@ locals {
   }
 }
 
-resource "cloudflare_dns_record" "frontend" {
-  zone_id = var.cloudflare_zone_id
-  name    = var.frontend_domain_name
-  type    = "CNAME"
-  content = aws_cloudfront_distribution.cdn.domain_name
-  ttl     = local.default_ttl
-  proxied = false
+resource "aws_route53_delegation_set" "nss_incidents" {
+  reference_name = "nss-incidents"
 }
 
-resource "cloudflare_dns_record" "api" {
+output "nameservers" {
+  value       = aws_route53_delegation_set.nss_incidents.name_servers
+  description = "Nameservers for the root domain"
+}
+
+resource "aws_route53_zone" "nss_incidents" {
+  name              = var.root_domain_name
+  delegation_set_id = aws_route53_delegation_set.nss_incidents.id
+}
+
+resource "aws_route53_record" "frontend_dns_records" {
+  for_each = toset(["A", "AAAA"])
+
+  zone_id = aws_route53_zone.nss_incidents.zone_id
+  name    = var.frontend_domain_name
+  type    = each.key
+
+  alias {
+    name                   = aws_cloudfront_distribution.cdn.domain_name
+    zone_id                = aws_cloudfront_distribution.cdn.hosted_zone_id
+    evaluate_target_health = false
+  }
+}
+
+resource "aws_route53_record" "api_dns_records" {
   for_each = local.server_ip_addresses
 
-  zone_id = var.cloudflare_zone_id
+  zone_id = aws_route53_zone.nss_incidents.zone_id
   name    = var.api_domain_name
   type    = each.key
-  content = each.value
   ttl     = local.default_ttl
-  proxied = false
-}
-
-resource "cloudflare_dns_record" "acm_validation" {
-  for_each = {
-    for option in module.wildcard_cert.acm_certificate_domain_validation_options :
-    trimsuffix(option.resource_record_name, ".") => trimsuffix(option.resource_record_value, ".")...
-  }
-
-  zone_id = var.cloudflare_zone_id
-  name    = each.key
-  type    = "CNAME"
-  content = each.value[0]
-  ttl     = local.default_ttl
-  proxied = false
+  records = [each.value]
 }
